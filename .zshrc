@@ -39,7 +39,6 @@ alias jupyter-venv="python -m ipykernel install --user --name=$1"
 alias pyjson="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/pyjson.py' $1 $2"
 alias opts="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/man_opts.py' $1 $2"
 alias nodeps="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/nodeps.py'"
-alias gcm="git add -m '$@'"
 alias zrc='nvim ~/.zshrc'
 alias vrc='nvim ~/rcfiles/init.vim'
 alias ql='quick-look'
