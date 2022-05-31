@@ -72,23 +72,6 @@ function mj {
         fi
 }
 
-function rclean {
-        # Cleans specific words from current git repo
-        touch temp_remove.txt
-        for text in "$@"
-        do
-                # Puts each argument into the temporary file
-                echo $text > temp_remove.txt
-        done
-        rm temp_remove.txt
-        # Clean file's contents throughout the repo
-        bfg --replace-text temp_remove.txt .git
-        git reflog expire --expire=now --all && git gc --prune=now --aggressive
-        # Removes extraneous files
-        rm -r .git.bfg-report
-        git push --force
-}
-
 function gitsetup {
         # Sets up a git repository in current folder
         git init

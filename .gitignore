@@ -15,3 +15,6 @@ venv
 # IDE & Text editor files
 .idea
 .vscode
+
+# Repo-cleaning report
+.git.bfg-report
