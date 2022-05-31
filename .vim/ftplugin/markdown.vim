@@ -4,8 +4,10 @@ set wrapmargin=0
 set wrap
 set linebreak
 
+" Underlines incorrectly spelled words
 set spell
 
+" Horizontal traversal
 noremap + 30l
 noremap - 30h
 " The four below make wrapped lines easier to traverse

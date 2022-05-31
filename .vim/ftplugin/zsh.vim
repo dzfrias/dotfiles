@@ -3,5 +3,5 @@ syntax match sectionHeader '\v# *-.+-'
 highlight link sectionHeader HighlightComment
 
 " Traverses sectionHeaders
-noremap <silent> <C-]> /\v# -.+-<CR>:noh<CR>
-noremap <silent> <C-[> ?\v# -.+-<CR>:noh<CR>
+noremap <silent> ‘ /\v# -.+-<CR>:noh<CR>
+noremap <silent> “ ?\v# -.+-<CR>:noh<CR>

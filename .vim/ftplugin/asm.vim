@@ -1,3 +1,4 @@
+" Highlights these words
 syn match asmMacro "fword"
 syn match asmMacro "qword"
 syn match asmMacro "dword"
@@ -6,6 +7,7 @@ syn match asmMacro "ptr"
 
 highlight link asmMacro Macro
 
+" Highlights registers
 syn match asmRegister "\<[re]\?[abcd][xhl]\>"
 syn match asmRegister "\<[re]\?[sd]il\?\>"
 syn match asmRegister "\<[re]\?[sbi]pl\?\>"
