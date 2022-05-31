@@ -1,0 +1,17 @@
+# MacOS files
+.DS_Store
+
+# Generated tag files
+tags
+
+# Python caches
+__pycache__
+
+# Environments
+venv
+.envrc
+.env
+
+# IDE & Text editor files
+.idea
+.vscode
