@@ -25,6 +25,8 @@ alias py='python3'
 # Views the markdown file
 alias md="command nvim $1 -c 'MarkdownPreview'"
 alias reload='exec zsh'
+# In case of mistype
+alias relaod='reload'
 # Creates a new virtual environment with global packages included
 alias venv='echo "layout python-venv" > .envrc && direnv allow .'
 alias activate='source venv/bin/activate'
@@ -40,14 +42,16 @@ alias pyjson="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/she
 alias opts="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/man_opts.py' $1 $2"
 alias nodeps="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/nodeps.py'"
 alias zrc='nvim ~/.zshrc'
-alias vrc='nvim ~/rcfiles/init.vim'
+alias vrc='nvim ~/dotfiles/init.vim'
+# Quick Look on a file
 alias ql='quick-look'
 alias newrepo='gh repo create'
 alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
+# To perform calculations
 alias cc='noglob calc'
 
 
-# -EXPORTS-
+# -EXPORTS & VARIABLES-
 export EDITOR=nvim
 # Highlights anything with main.* as purple to exa
 export EXA_COLORS='main.*=35'
@@ -57,6 +61,8 @@ export DIRENV_LOG_FORMAT=
 export MANPAGER='sh -c "col -bx | bat -l man -p"'
 # z doesn't follow symlinks
 export _Z_NO_RESOLVE_SYMLINKS=1
+DWNL="$HOME/Downloads"
+DTOP="$HOME/Desktop"
 
 
 # -BINDKEYS-
@@ -77,7 +83,7 @@ bindkey -s 'uu' 'cd ..^M'
 
 
 # -FUNCTIONS-
-source "$HOME/.dotfiles/.functions.zsh"
+source "$HOME/dotfiles/.functions.zsh"
 
 
 # -ZLE-
