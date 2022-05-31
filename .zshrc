@@ -113,10 +113,10 @@ function ea {
 function tea {
     if [[ $PWD =~ "Rust" ]]; then
         # Only ignores the target directory if in a rust project
-        ea -T --ignore-glob="__pycache__|venv|My\ Code|target" $@
+        ea -T --ignore-glob="__pycache__|venv|My\ Code|.git|target" $@
         return
     fi
-    ea -T --ignore-glob="__pycache__|venv|My\ Code" $@
+    ea -T --ignore-glob="__pycache__|venv|My\ Code|.git" $@
 }
 
 function nvim {
