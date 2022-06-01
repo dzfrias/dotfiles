@@ -12,16 +12,6 @@ fi
 g++ -std=c++20 $1 -o $2 && "$PWD/"$2
 }
 
-function gdocs {
-        s=$PWD
-        cd "$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/gdocs"
-        activate
-        py main.py $1 $2 $s
-        deactivate
-        cd $s
-        unset s
-}
-
 function ea {
         amount=`ls | wc -l | xargs`
         if [ $amount -gt 10 ]; then
@@ -35,10 +25,10 @@ function ea {
 function tea {
         if [[ $PWD =~ "Rust" ]]; then
                 # Only ignores the target directory if in a rust project
-                ea -T --ignore-glob="__pycache__|venv|My\ Code|.git|target" $@
+                ea -T --ignore-glob="$EXA_IGNORE|target" $@
                 return
         fi
-        ea -T --ignore-glob="__pycache__|venv|My\ Code|.git" $@
+        ea -T --ignore-glob=$EXA_IGNORE $@
 }
 
 function nvim {
@@ -54,24 +44,6 @@ function nvim {
         command nvim $1
 }
 
-function mj {
-        if [[ $1 == "prev" ]]; then
-                out=`$HOME/iCloud/Executables/mj jump $2`
-                last_dir=$PWD
-                cd $out
-                pwd
-                echo
-                ls
-                cd $last_dir
-                unset last_dir
-                return
-        fi
-        out=`$HOME/iCloud/Executables/mj $1 $2`
-        if [[ $1 == "jump" || $1 == "undo" ]]; then
-                cd $out
-        fi
-}
-
 function gitsetup {
         # Sets up a git repository in current folder
         git init
@@ -81,16 +53,6 @@ function gitsetup {
         git remote -v
         git branch -m main
         git push origin -u main
-}
-
-function gclass {
-        s=$PWD
-        cd "$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/gclass"
-        activate
-        py main.py
-        deactivate
-        cd $s
-        unset s
 }
 
 function gal {

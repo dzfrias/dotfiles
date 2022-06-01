@@ -34,14 +34,13 @@ alias activate='source venv/bin/activate'
 alias pb='pbcopy'
 # Turns json dictionaries into json files
 alias exa='exa -l -h --no-user --icons --no-permissions --git'
+# Reads a symlink
 alias fsym='readlink -f'
 alias googlepip='pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib'
 # Sets up a virtual environment for jupyter notebook
 alias jupyter-venv="python -m ipykernel install --user --name=$1"
-alias pyjson="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/pyjson.py' $1 $2"
-alias opts="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/man_opts.py' $1 $2"
-alias nodeps="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/nodeps.py'"
 alias zrc='nvim ~/.zshrc'
+alias ezrc="nvim $EXTRA_CONFIG_PATH"
 alias vrc='nvim ~/dotfiles/.config/nvim/init.vim'
 # Quick Look on a file
 alias ql='quick-look'
@@ -49,7 +48,9 @@ alias newrepo='gh repo create'
 alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
 # To perform calculations
 alias cc='noglob calc'
+# Alias for committing with a message
 alias gcm='gcmsg'
+# Makes bat the diff pager
 alias gd='git diff | bat'
 
 
@@ -63,31 +64,27 @@ export DIRENV_LOG_FORMAT=
 export MANPAGER='sh -c "col -bx | bat -l man -p"'
 # z doesn't follow symlinks
 export _Z_NO_RESOLVE_SYMLINKS=1
+export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
 DWNL="$HOME/Downloads"
 DTOP="$HOME/Desktop"
 
 
 # -BINDKEYS-
-# inoremap jk <Esc> for the command line
+# Maps jk to normal mode in the zsh line editor
 bindkey jk vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
 bindkey '^[[Z' autosuggest-accept
 # Binds search keys
 bindkey '^K' up-line-or-search
 bindkey '^J' down-line-or-search
-# Binds these keys to write and enter the corresponding commands
-bindkey -s '^P' 'cd ~/iCloud/Python^M'
-bindkey -s '^R' 'cd ~/iCloud/Rust^M'
-bindkey -s '^X' 'cd ~/iCloud/Executables^M'
-bindkey -s '^W' 'cd ~/iCloud/Web^M'
-bindkey -s '^N' 'cd ~/iCloud/Markdown^M'
-bindkey -s 'uu' 'cd ..^M'
-bindkey -s '^H' 'cd ~/dotfiles^M'
+# Clears the prompt, writes the text, and enters it
+bindkey -s 'uu' '^Ucd ..^M'
+bindkey -s '^H' '^Ucd ~/dotfiles^M'
 
 
 # -FUNCTIONS-
 source "$HOME/dotfiles/.functions.zsh"
-
+source $EXTRA_CONFIG_PATH
 
 # -ZLE-
 function zle-line-init {
