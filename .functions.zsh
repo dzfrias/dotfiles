@@ -15,20 +15,20 @@ function g+ {
 function ea {
     amount=`ls | wc -l | xargs`
     if [ $amount -gt 10 ]; then
-            command exa --icons -I My\ Code --group-directories-first -1 $@
+            command exa --icons -I $EXA_IGNORE --group-directories-first -1 $@
             return
     fi
-    command exa --icons -I My\ Code --group-directories-first $@
+    command exa --icons -I $EXA_IGNORE --group-directories-first $@
     unset amount
 }
 
 function tea {
     if [[ $PWD =~ "Rust" ]]; then
             # Only ignores the target directory if in a rust project
-            ea -T --ignore-glob="$EXA_IGNORE|target" $@
+            ea -T --ignore-glob="$TEA_IGNORE|target" $@
             return
     fi
-    ea -T --ignore-glob=$EXA_IGNORE $@
+    ea -T --ignore-glob=$TEA_IGNORE $@
 }
 
 function nvim {
@@ -59,11 +59,11 @@ function gal {
     printf '%s\n' $aliases[$1]
 }
 
-function calc() {
+function calc {
     python3 -c "from math import *; print($*);"
 }
 
-function precmd() {
+function precmd {
     # Newline after every prompt
     print ""
     # Vertical cursor every prompt

@@ -18,6 +18,21 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh --init --shell zsh --config ~/.oh-my-zsh/themes/jandedobbeleer.omp.json)"
 
 
+# -EXPORTS & VARIABLES-
+export EDITOR=nvim
+# Highlights anything with main.* as purple to exa
+export EXA_COLORS='main.*=35'
+# Makes direnv not log anything
+export DIRENV_LOG_FORMAT=
+# Changes man pages to be viewed with bat
+export MANPAGER='sh -c "col -bx | bat -l man -p"'
+# z doesn't follow symlinks
+export _Z_NO_RESOLVE_SYMLINKS=1
+export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
+DWNL="$HOME/Downloads"
+DTOP="$HOME/Desktop"
+
+
 # -ALIASES-
 alias ex='exit'
 alias ls='ls -G'
@@ -54,21 +69,6 @@ alias gcm='gcmsg'
 alias gd='git diff | bat'
 # pip freeze into requirements.txt, but doesn't include pynvim
 alias pypkgs="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requirements.txt"
-
-
-# -EXPORTS & VARIABLES-
-export EDITOR=nvim
-# Highlights anything with main.* as purple to exa
-export EXA_COLORS='main.*=35'
-# Makes direnv not log anything
-export DIRENV_LOG_FORMAT=
-# Changes man pages to be viewed with bat
-export MANPAGER='sh -c "col -bx | bat -l man -p"'
-# z doesn't follow symlinks
-export _Z_NO_RESOLVE_SYMLINKS=1
-export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
-DWNL="$HOME/Downloads"
-DTOP="$HOME/Desktop"
 
 
 # -BINDKEYS-
