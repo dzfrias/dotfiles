@@ -102,7 +102,7 @@ autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabs
 " Loads settings for plugins
 source ~/.config/nvim/plugin_settings.vim
 
-let g:tokyonight_style = "night"
+let g:tokyonight_style = 'night'
 " $HOME/.local/share/nvim/plugged/tokyonight.nvim/lua/tokyonight
 " for customization of colors
 colorscheme tokyonight

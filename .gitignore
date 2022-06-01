@@ -12,7 +12,7 @@ venv
 .envrc
 .env
 
-# IDE & Text editor files
+# IDE & text editor files
 .idea
 .vscode
 

@@ -42,13 +42,14 @@ alias pyjson="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/she
 alias opts="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/man_opts.py' $1 $2"
 alias nodeps="py '$HOME/Library/Mobile Documents/com~apple~CloudDocs/My Code/shell/nodeps.py'"
 alias zrc='nvim ~/.zshrc'
-alias vrc='nvim ~/dotfiles/init.vim'
+alias vrc='nvim ~/dotfiles/.config/nvim/init.vim'
 # Quick Look on a file
 alias ql='quick-look'
 alias newrepo='gh repo create'
 alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
 # To perform calculations
 alias cc='noglob calc'
+alias gcm='gcmsg'
 
 
 # -EXPORTS & VARIABLES-
@@ -80,6 +81,7 @@ bindkey -s '^X' 'cd ~/iCloud/Executables^M'
 bindkey -s '^W' 'cd ~/iCloud/Web^M'
 bindkey -s '^N' 'cd ~/iCloud/Markdown^M'
 bindkey -s 'uu' 'cd ..^M'
+bindkey -s '^H' 'cd ~/dotfiles^M'
 
 
 # -FUNCTIONS-
@@ -111,6 +113,7 @@ function zle-keymap-select {
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+
 
 # -HIGHLIGHT STYLES-
 typeset -A ZSH_HIGHLIGHT_STYLES
