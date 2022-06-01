@@ -25,7 +25,7 @@ export EXA_COLORS='main.*=35'
 # Makes direnv not log anything
 export DIRENV_LOG_FORMAT=
 # Changes man pages to be viewed with bat
-export MANPAGER='sh -c "col -bx | bat -l man -p"'
+export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 # z doesn't follow symlinks
 export _Z_NO_RESOLVE_SYMLINKS=1
 export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
@@ -48,7 +48,7 @@ alias activate='source venv/bin/activate'
 # Takes whatever is piped and copies it to clipboard (and prints it)
 alias pb='pbcopy'
 # Turns json dictionaries into json files
-alias exa='exa -l -h --no-user --icons --no-permissions --git'
+alias exa='exa --long --header --no-user --icons --no-permissions --git'
 # Reads a symlink
 alias fsym='readlink -f'
 alias googlepip='pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib'

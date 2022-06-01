@@ -15,10 +15,10 @@ function g+ {
 function ea {
     amount=`ls | wc -l | xargs`
     if [ $amount -gt 10 ]; then
-            command exa --icons -I $EXA_IGNORE --group-directories-first -1 $@
+            command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first --oneline $@
             return
     fi
-    command exa --icons -I $EXA_IGNORE --group-directories-first $@
+    command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
     unset amount
 }
 
@@ -50,9 +50,9 @@ function gitsetup {
     git add .
     git commit -m 'Initial commit'
     git remote add origin $1
-    git remote -v
+    git remote --verbose
     git branch -m main
-    git push origin -u main
+    git push origin --set-upstream main
 }
 
 function gal {
