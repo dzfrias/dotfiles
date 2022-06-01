@@ -1,9 +1,17 @@
 " -SETTINGS-
-set relativenumber
 syntax on
+
+" Number system
+set relativenumber
+
+" Don't wrap lines
 set nowrap
+
+" Better searches: highlighted and matches shown
 set hlsearch
 set showmatch
+
+" Block movement doesn't open folds
 set foldopen-=block
 
 " Sets up nicer tab experience
@@ -14,7 +22,7 @@ set expandtab
 set colorcolumn=80
 highlight ColorColumn ctermbg=42
 
-" No nested folds, fold based on indend
+" No nested folds, fold based on indent
 set foldmethod=indent
 set foldlevelstart=2
 set foldnestmax=1
@@ -28,6 +36,7 @@ noremap gg gg0
 " Puts semicolon at the end of a line
 nnoremap <silent> <C-s> maA;<Esc>`a:delmarks a<CR>
 nnoremap <CR> o<Esc>
+
 inoremap jk <Esc>
 " Pairs
 inoremap { {}<Esc>ha

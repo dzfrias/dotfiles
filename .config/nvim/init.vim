@@ -38,6 +38,7 @@ set guicursor=c:ver20,i:ver20,ci:ver20,cr:ver20
 set updatetime=100
 " Sets clipboard to system clipboard
 set clipboard=unnamed
+" Filetype settings
 filetype on
 filetype plugin on
 let callcmd='echo ' . @%
@@ -93,9 +94,8 @@ function OverLineNo()
     endif
 endfunction
 
-" Calls after reading the file
+" Checks if the number of lines is over 300, and if so, fold all
 autocmd BufRead * :call OverLineNo()
-autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 
 " -MISC-
