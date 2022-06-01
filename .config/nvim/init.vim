@@ -41,6 +41,7 @@ set clipboard=unnamed
 " Filetype settings
 filetype on
 filetype plugin on
+" callcmd is used when \r is typed and the current file is run
 let callcmd='echo ' . @%
 
 
@@ -61,7 +62,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " Opens floating terminal
 nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
 " Opens floating terminal and calls the command to run the file. It also is
-" exited after any user input. See ftplugin for callcmd
+" exited after any user input
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.g.callcmd, '&&', 'read -n 1 && exit'})<CR>
 " Makes vim-move work on MacOS (for alt keys)
 nnoremap <silent> ∆ <Esc>:m .+1<CR>

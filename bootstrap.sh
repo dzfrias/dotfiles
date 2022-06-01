@@ -21,6 +21,7 @@ brew bundle --file ~/dotfiles/Brewfile
 # Install oh-my-zsh and keep the current zshrc
 export KEEP_ZSHRC='yes'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Clone the non-core plugins
 source .omzplugs.zsh
 
 # Install vim-plug

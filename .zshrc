@@ -50,6 +50,7 @@ alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
 # To perform calculations
 alias cc='noglob calc'
 alias gcm='gcmsg'
+alias gd='git diff | bat'
 
 
 # -EXPORTS & VARIABLES-
