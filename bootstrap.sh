@@ -27,6 +27,7 @@ source $HOME/dotfiles/.omzplugs.zsh
 # Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+command nvim -c 'PlugInstall'
 
 # Convenient symlink
 ln -s $HOME/Library/Mobile Documents/com~apple~CloudDocs $HOME/iCloud

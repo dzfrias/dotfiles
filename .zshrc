@@ -12,6 +12,7 @@ plugins=(
     thefuck
     alias-tips
     autoupdate
+    zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 # Not oh-my-zsh, but sets up theme
@@ -28,6 +29,7 @@ export DIRENV_LOG_FORMAT=
 export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 # z doesn't follow symlinks
 export _Z_NO_RESOLVE_SYMLINKS=1
+# Where extra zsh configurations are stored
 export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
 DWNL="$HOME/Downloads"
 DTOP="$HOME/Desktop"
@@ -123,8 +125,6 @@ ZSH_HIGHLIGHT_STYLES[arg0]="fg=cyan"
 
 
 # -PLUGIN SETUP-
-# Sets up syntax highlighting
-source "$HOME/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Sets up lf icons
 source "$HOME/.config/lf/icons.zsh"
 # Sets up lf that changes directory
