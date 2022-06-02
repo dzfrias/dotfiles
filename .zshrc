@@ -12,6 +12,7 @@ plugins=(
     thefuck
     alias-tips
     autoupdate
+    pip
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
@@ -69,8 +70,12 @@ alias cc='noglob calc'
 alias gcm='gcmsg'
 # Makes bat the diff pager
 alias gd='git diff | bat'
+# Amend git commit
+alias gamm='git commit --amend'
 # pip freeze into requirements.txt, but doesn't include pynvim
-alias pypkgs="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requirements.txt"
+alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requirements.txt"
+alias pipin='pip install'
+alias wpip='which pip3'
 
 
 # -BINDKEYS-
@@ -122,6 +127,12 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=blue,underline"
 ZSH_HIGHLIGHT_STYLES[precommand]="fg=blue,underline"
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=cyan"
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#bb9af7'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=#db4b4b'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=#db4b4b'
 
 
 # -PLUGIN SETUP-
