@@ -48,18 +48,17 @@ alias relaod='reload'
 # Creates a new virtual environment with global packages included
 alias venv='echo "layout python-venv" > .envrc && direnv allow .'
 alias activate='source venv/bin/activate'
-# Takes whatever is piped and copies it to clipboard (and prints it)
+# Takes whatever is piped and copies it to clipboard
 alias pb='pbcopy'
-# Turns json dictionaries into json files
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 # Reads a symlink
 alias fsym='readlink -f'
 alias googlepip='pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib'
 # Sets up a virtual environment for jupyter notebook
 alias jupyter-venv="python -m ipykernel install --user --name=$1"
-alias zrc='nvim ~/.zshrc'
+alias zrc="nvim $HOME/dotfiles/.zshrc"
 alias ezrc="nvim $EXTRA_CONFIG_PATH"
-alias vrc='nvim ~/dotfiles/.config/nvim/init.vim'
+alias vrc="nvim $HOME/dotfiles/.config/nvim/init.vim"
 # Quick Look on a file
 alias ql='quick-look'
 alias newrepo='gh repo create'
@@ -69,13 +68,14 @@ alias cc='noglob calc'
 # Alias for committing with a message
 alias gcm='gcmsg'
 # Makes bat the diff pager
-alias gd='git diff | bat'
+alias gd='git diff | bat --plain'
 # Amend git commit
 alias gamm='git commit --amend'
 # pip freeze into requirements.txt, but doesn't include pynvim
 alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requirements.txt"
-alias pipin='pip install'
-alias wpip='which pip3'
+# Makes pip have to have venv to install to prevent accidental global installs
+alias pipin='pip install --require-virtualenv'
+alias pipw='which pip3'
 
 
 # -BINDKEYS-
