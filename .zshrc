@@ -13,6 +13,7 @@ plugins=(
     alias-tips
     autoupdate
     pip
+    zsh-autopair
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
@@ -65,9 +66,9 @@ alias newrepo='gh repo create'
 alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
 # To perform calculations
 alias cc='noglob calc'
-# Alias for committing with a message
-alias gcm='gcmsg'
-# Makes bat the diff pager
+# Alias for committing with a message and adding all
+alias gcm='gcam'
+# Makes bat the diff pager with no styling
 alias gd='git diff | bat --plain'
 # Amend git commit
 alias gamm='git commit --amend'
