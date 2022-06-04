@@ -11,8 +11,6 @@ brew "bat"
 brew "openjdk"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9", link: false
 # Core application library for C
 brew "glib"
 # Validating, recursive, caching DNS resolver
@@ -69,6 +67,10 @@ brew "oh-my-posh"
 brew "php"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Feature-rich console based todo list manager
+brew "task"
+# Shell wrapper for Taskwarrior commands
+brew "tasksh"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # JavaScript package manager

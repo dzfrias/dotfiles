@@ -100,18 +100,7 @@ source "$HOME/dotfiles/.zsh_stuff/functions.zsh"
 source $EXTRA_CONFIG_PATH
 
 # -ZLE-
-# function zle-line-init {
-#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-#     RPS2=$RPS1
-#     zle reset-prompt
-# }
-
 function zle-keymap-select {
-    # Change visual text showing which mode
-    # RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    # RPS2=$RPS1
-    # zle reset-prompt
-
     # Change cursor for depending on the mode
     if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
         echo -ne '\e[2 q'
@@ -122,7 +111,6 @@ function zle-keymap-select {
         echo -ne '\e[6 q'
     fi
 }
-zle -N zle-line-init
 zle -N zle-keymap-select
 
 
