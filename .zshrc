@@ -18,7 +18,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 # Not oh-my-zsh, but sets up theme
-eval "$(oh-my-posh --init --shell zsh --config ~/.oh-my-zsh/themes/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config ~/dotfiles/.zsh_stuff/theme.json)"
 
 
 # -EXPORTS & VARIABLES-
@@ -38,6 +38,7 @@ DTOP="$HOME/Desktop"
 
 
 # -ALIASES-
+alias cl='clear'
 alias ex='exit'
 alias ls='ls -G'
 alias py='python3'
@@ -77,6 +78,8 @@ alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requi
 # Makes pip have to have venv to install to prevent accidental global installs
 alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
+# Taskwarrior
+alias t='task'
 
 
 # -BINDKEYS-
@@ -93,21 +96,21 @@ bindkey -s '^H' '^Ucd ~/dotfiles^M'
 
 
 # -FUNCTIONS-
-source "$HOME/dotfiles/.functions.zsh"
+source "$HOME/dotfiles/.zsh_stuff/functions.zsh"
 source $EXTRA_CONFIG_PATH
 
 # -ZLE-
-function zle-line-init {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
+# function zle-line-init {
+#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
 
 function zle-keymap-select {
     # Change visual text showing which mode
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
+    # RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    # RPS2=$RPS1
+    # zle reset-prompt
 
     # Change cursor for depending on the mode
     if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
@@ -125,15 +128,22 @@ zle -N zle-keymap-select
 
 # -HIGHLIGHT STYLES-
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=blue,underline"
+# Modifiers like sudo and command
 ZSH_HIGHLIGHT_STYLES[precommand]="fg=blue,underline"
+# The main part of commands
 ZSH_HIGHLIGHT_STYLES[arg0]="fg=cyan"
+# Keywords like for and if (purple)
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#bb9af7'
+# 'string', "string", and $"string"
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=green'
+# 'string and "string (red)
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=#db4b4b'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=#db4b4b'
+# - options (dark cyan)
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#0db9d7'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#0db9d7'
 
 
 # -PLUGIN SETUP-
