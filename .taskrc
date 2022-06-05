@@ -1,0 +1,56 @@
+# -General Config-
+data.location=$HOME/.task
+news.version=2.6.0
+# No nags about more urgent tasks
+nag=
+
+
+# -Aliases-
+alias.homework=add project:School +homework
+alias.work=next +homework
+alias.tod=+TODAY
+alias.tom=+TOMORROW
+alias.mod=modify
+alias.cal=calendar
+alias.cancel=done +cancelled
+alias.del=delete
+alias.ann=annotate
+
+
+# -Urgency Modifiers-
+# Age doesn't contribute to urgency
+urgency.age.coefficient=0
+# Tags don't affect urgency
+urgency.tags.coefficient=0
+# Coding projects don't have any urgency
+urgency.user.project.Coding.coefficient=-1
+# Easy work is less urgent
+urgency.user.tag.easy.coefficient=-3.5
+
+
+# -Colors-
+include dark-violets-256.theme
+# Sky blue
+color.due.today=rgb045
+# Light blue
+color.due=rgb135
+# Purple
+color.project.Coding=rgb215
+# Green
+color.completed=rgb032
+# Red
+color.overdue=rgb501
+color.header=yellow
+color.footnote=yellow
+# Sky blue on dark blue
+color.active=rgb045 on rgb002
+# Deep red
+color.tag.cancelled=rgb400
+
+# Order of what colors are shown when multiple are applicable
+rule.precedence.color=deleted,tag.cancelled,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+
+# -Reports-
+report.next.labels=ID,Active,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+report.next.columns=id,start.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
