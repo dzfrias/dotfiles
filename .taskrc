@@ -52,5 +52,11 @@ rule.precedence.color=deleted,tag.cancelled,completed,active,keyword.,tag.,proje
 
 
 # -Reports-
-report.next.labels=ID,Active,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
-report.next.columns=id,start.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.next.labels=ID,Active,Deps,P,Project,Tag,Recur,S,When,Due,Until,Description,Urg
+report.next.columns=id,start.age,depends,priority,project,tags,recur,scheduled.countdown,when,due.relative,until.remaining,description,urgency
+
+
+# -UDAs-
+dateformat.report=b d
+uda.when.type=date
+uda.estimate.label=When
