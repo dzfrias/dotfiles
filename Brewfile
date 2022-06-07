@@ -69,8 +69,6 @@ brew "php"
 brew "ripgrep"
 # Feature-rich console based todo list manager
 brew "task"
-# Shell wrapper for Taskwarrior commands
-brew "tasksh"
 # Programmatically correct mistyped console commands
 brew "thefuck"
 # JavaScript package manager

@@ -19,3 +19,7 @@ syntax match pythonStatement '\v^\s*match(.*:$)@='
 " Matches the word 'case'
 syntax keyword pythonStatement case
 highlight link pythonStatement Statement
+
+" Puts pprint at the top of the file
+command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
+command! Dprint normal mpggdd`pdmp

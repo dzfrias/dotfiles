@@ -80,6 +80,7 @@ alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
 # Taskwarrior
 alias t='task'
+alias tt='taskwarrior-tui'
 
 
 # -BINDKEYS-
