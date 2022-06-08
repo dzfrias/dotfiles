@@ -38,7 +38,6 @@ DTOP="$HOME/Desktop"
 
 
 # -ALIASES-
-alias cl='clear'
 alias ex='exit'
 alias ls='ls -G'
 alias py='python3'
@@ -63,7 +62,8 @@ alias ezrc="nvim $EXTRA_CONFIG_PATH"
 alias vrc="nvim $HOME/dotfiles/.config/nvim/init.vim"
 # Quick Look on a file
 alias ql='quick-look'
-alias newrepo='gh repo create'
+# Creates local repo, makes new github repo, then pushes
+alias newrepo='git init && gh repo create && git push --set-upstream origin main'
 alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
 # To perform calculations
 alias cc='noglob calc'

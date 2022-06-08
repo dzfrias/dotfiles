@@ -22,4 +22,5 @@ highlight link pythonStatement Statement
 
 " Puts pprint at the top of the file
 command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
+" Deletes first line in a file
 command! Dprint normal mpggdd`pdmp
