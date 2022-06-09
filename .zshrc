@@ -78,8 +78,12 @@ alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requi
 # Makes pip have to have venv to install to prevent accidental global installs
 alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
-# Taskwarrior
+alias crn='crontab'
+# Taskwarrior, see .taskrc for all taskwarrior configuration
 alias t='task'
+alias to='t tod'
+alias tc='t code'
+alias ta='t add'
 alias tt='taskwarrior-tui'
 
 
