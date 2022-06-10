@@ -61,7 +61,7 @@ report.work.labels=ID,Active,Deps,P,Project,Tag,Recur,S,When,Due,Until,Descripti
 report.work.columns=id,start.age,depends,priority,project,tags,recur,scheduled.countdown,when,due.relative,until.remaining,description,urgency
 # Only shows with urgency over 0
 report.work.filter=status:pending -WAITING limit:page urgency.over:0
-# Groups by day, then by urgency
+# Groups by day, then sort by urgency
 report.work.sort=when+/,urgency-,due+
 
 # Next

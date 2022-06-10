@@ -1,12 +1,12 @@
 function g+ {
     if [[ ${1: -4} != ".cpp" ]]; then
-            # Adds .cpp to first input if there isn't one already
-            1="${1}.cpp"
+        # Adds .cpp to first input if there isn't one already
+        1="${1}.cpp"
     fi
     if [[ $# != 2 ]]; then
-            # If only one argument is given, sets the terminal output to be
-            # the first argument without .cpp
-            2="${1:s/.cpp/}"
+        # If only one argument is given, sets the terminal output to be
+        # the first argument without .cpp
+        2="${1:s/.cpp/}"
     fi
     # Run special C++ configuration with C++20
     g++ -std=c++20 $1 -o $2 && "$PWD/"$2
@@ -14,21 +14,23 @@ function g+ {
 
 function ea {
     amount=`ls | wc -l | xargs`
-    if [ $amount -gt 10 ]; then
-            command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first --oneline $@
-            return
+    if [ $amount -gt 10 ]
+    then
+        command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first --oneline $@
+    else
+        command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
     fi
-    command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
     unset amount
 }
 
 function tea {
-    if [[ $PWD =~ "Rust" ]]; then
-            # Only ignores the target directory if in a rust project
-            ea -T --ignore-glob="$TEA_IGNORE|target" $@
-            return
+    if [[ $PWD =~ "Rust" ]]
+    then
+        # Only ignores the target directory if in a rust project
+        ea -T --ignore-glob="$TEA_IGNORE|target" $@
+    else
+        ea -T --ignore-glob=$TEA_IGNORE $@
     fi
-    ea -T --ignore-glob=$TEA_IGNORE $@
 }
 
 function nvim {

@@ -9,3 +9,5 @@
 [core]
 	excludesFile = ~/.gitignore
 	editor = nvim
+[init]
+	defaultBranch = main

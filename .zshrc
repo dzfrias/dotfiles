@@ -81,9 +81,10 @@ alias pipw='which pip3'
 alias crn='crontab'
 # Taskwarrior, see .taskrc for all taskwarrior configuration
 alias t='task'
-alias to='t tod'
-alias tc='t code'
-alias ta='t add'
+alias to='task tod'
+alias tc='task code'
+alias ta='task add'
+alias tn='task next'
 alias tt='taskwarrior-tui'
 
 
