@@ -49,7 +49,6 @@ alias relaod='reload'
 # Creates a new virtual environment with global packages included
 alias venv='echo "layout python-venv" > .envrc && direnv allow .'
 alias activate='source venv/bin/activate'
-# Takes whatever is piped and copies it to clipboard
 alias pb='pbcopy'
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 # Reads a symlink
@@ -86,6 +85,7 @@ alias tc='task code'
 alias ta='task add'
 alias tn='task next'
 alias tt='taskwarrior-tui'
+alias notif='terminal-notifier'
 
 
 # -BINDKEYS-

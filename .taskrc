@@ -3,7 +3,6 @@ data.location=$HOME/.task
 news.version=2.6.0
 # No nags about more urgent tasks
 nag=
-# No dates for annotations, just a dash
 # Zero width unicode character so nothing shows up for annotations
 dateformat.annotation=​
 default.command=work
@@ -76,7 +75,7 @@ report.next.sort=urgency-,when+,due+
 report.code.description=View coding tasks sorted by project
 report.code.columns=id,start.age,depends,priority,project,tags,recur,scheduled.countdown,when,due.relative,until.remaining,description,urgency
 report.code.labels=ID,Active,Deps,P,Project,Tag,Recur,S,When,Due,Until,Description,Urg
-report.code.sort=project+/,urgency-
+report.code.sort=project+/,urgency-,entry-
 report.code.filter=status:pending -WAITING limit:page project:Coding
 
 # <Abbrev of month> <unpadded day>
