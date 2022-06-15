@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Cleans repo of arguments and removes the last line to avoid confusion
+bfg --replace-text <(echo $@) .git | sed '$d'
+rm -r .git.bfg-report
+# Finishes cleaning
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push --force
