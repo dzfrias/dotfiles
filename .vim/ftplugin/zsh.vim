@@ -8,3 +8,5 @@ noremap <silent> “ ?\v# -.+-<CR>:noh<CR>
 
 setlocal shiftwidth=2
 setlocal softtabstop=2
+
+let callcmd='./' . @%
