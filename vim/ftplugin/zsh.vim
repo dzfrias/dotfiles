@@ -6,6 +6,9 @@ highlight link sectionHeader HighlightComment
 noremap <silent> ‘ /\v# -.+-<CR>:noh<CR>
 noremap <silent> “ ?\v# -.+-<CR>:noh<CR>
 
+" Shebang line
+iabbrev #! #!/usr/local/bin/zsh
+
 setlocal shiftwidth=2
 setlocal softtabstop=2
 

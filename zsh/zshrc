@@ -18,7 +18,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 # Not oh-my-zsh, but sets up theme;
-eval "$(oh-my-posh --init --shell zsh --config ~/dotfiles/.zsh_stuff/theme.json)"
+eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/zsh/theme.json)"
 
 
 # -EXPORTS-
@@ -56,9 +56,9 @@ alias fsym='readlink -f'
 alias googlepip='pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib'
 # Sets up a virtual environment for jupyter notebook
 alias jupyter-venv="python -m ipykernel install --user --name=$1"
-alias zrc="nvim $HOME/dotfiles/.zshrc"
+alias zrc="nvim $HOME/.zshrc"
 alias ezrc="nvim $EXTRA_CONFIG_PATH"
-alias vrc="nvim $HOME/dotfiles/.config/nvim/init.vim"
+alias vrc="nvim $HOME/.dotfiles/config/nvim/init.vim"
 # Quick Look on a file
 alias ql='quick-look'
 # Creates local repo, makes new github repo, then pushes
@@ -72,8 +72,7 @@ alias gcm='gcam'
 alias gd='git diff | bat --plain'
 # Amend git commit
 alias gamm='git commit --amend'
-# pip freeze into requirements.txt, but doesn't include pynvim
-alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requirements.txt"
+unalias pipreq
 # Makes pip have to have venv to install to prevent accidental global installs
 alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
@@ -102,12 +101,15 @@ bindkey '^K' up-line-or-search
 bindkey '^J' down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu' '^Ucd ..^M'
-bindkey -s '^H' '^Ucd ~/dotfiles^M'
+bindkey -s '^H' '^Ucd ~/.dotfiles^M'
 
 
 # -FUNCTIONS-
-source "$HOME/dotfiles/.zsh_stuff/functions.zsh"
+source "$HOME/.dotfiles/zsh/functions.zsh"
 source $EXTRA_CONFIG_PATH
+source $HOME/.dotfiles/zsh/autoload.sh
+fpath=("$HOME/.dotfiles/zsh/autoload" $fpath)
+autoload giste pipreq
 
 # -ZLE-
 function zle-keymap-select {

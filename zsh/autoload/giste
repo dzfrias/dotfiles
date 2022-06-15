@@ -1,0 +1,60 @@
+#!/usr/local/bin/zsh
+
+# Checks if number of arguments equals 1
+if [[ $# == 0 ]]; then
+  echo 'Needs at least one argument'
+  return 1
+fi
+
+# Tests if the sync option is present
+if (($@[(Ie)$(echo '-s')])); then
+  sync=true
+  if [[ $# == 1 ]]; then
+    echo 'Needs a file to target'
+    return 1
+  fi
+elif [[ $# > 1 ]]; then
+  echo 'Invalid option'
+  return 1
+else
+  # Sync option is not present
+  sync=false
+fi
+
+# Uses the pcre engine for regular expressions
+setopt RE_MATCH_PCRE
+
+gist_ids=()
+
+gists=($(gh gist list))
+# Pushes first item to gist_ids, it will always be a gist id
+gist_ids+=${gists[1]}
+for part in $gists; do
+  # Checks if length of string is 32, a there's a number, and the last element
+  # was a iso formatted datetime
+  if [[ ${#part} == 32 && $part =~ '\d' && $last =~ '\d{4}-\d\d-\d\dT(?:\d\d:){2}\d\dZ' ]]; then
+    gist_ids+=$part
+  fi
+  last=$part
+done
+
+for gist_id in $gist_ids; do
+  # Gets files of specified gist
+  files=$(gh gist view $gist_id --files)
+  for file in $files; do
+    # Checks if the files have the same name
+    if [[ $file == $1 ]]; then
+      # Checks if sync is true
+      if (! $sync); then
+        echo "Opening $file of gist with '$EDITOR'"
+        # Opens the gist in $EDITOR
+        gh gist edit $gist_id --filename $file
+      else
+        echo "$file synced with gist"
+        # Replaces contents of gist with contents of file
+        gh gist edit $gist_id $file
+      fi
+      break 2
+    fi
+  done
+done
