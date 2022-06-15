@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 function g+() {
   if [[ ${1: -4} != ".cpp" ]]; then
     # Adds .cpp to first input if there isn't one already

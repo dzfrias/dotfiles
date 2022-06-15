@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 cd ${ZSH_CUSTOM1:-$ZSH/custom}/plugins
 
 # alias-tips, gives a notification when an alias could've been used

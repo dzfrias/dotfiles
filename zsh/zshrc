@@ -72,6 +72,7 @@ alias gcm='gcam'
 alias gd='git diff | bat --plain'
 # Amend git commit
 alias gamm='git commit --amend'
+# The pip oh-my-zsh plugin has a pipreq alias
 unalias pipreq
 # Makes pip have to have venv to install to prevent accidental global installs
 alias pipin='pip install --require-virtualenv'
@@ -107,9 +108,8 @@ bindkey -s '^H' '^Ucd ~/.dotfiles^M'
 # -FUNCTIONS-
 source "$HOME/.dotfiles/zsh/functions.zsh"
 source $EXTRA_CONFIG_PATH
+# This script will load everything in the autload directory
 source $HOME/.dotfiles/zsh/autoload.sh
-fpath=("$HOME/.dotfiles/zsh/autoload" $fpath)
-autoload giste pipreq
 
 # -ZLE-
 function zle-keymap-select {
