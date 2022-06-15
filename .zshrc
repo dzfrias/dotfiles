@@ -17,11 +17,11 @@ plugins=(
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-# Not oh-my-zsh, but sets up theme
+# Not oh-my-zsh, but sets up theme;
 eval "$(oh-my-posh --init --shell zsh --config ~/dotfiles/.zsh_stuff/theme.json)"
 
 
-# -EXPORTS & VARIABLES-
+# -EXPORTS-
 export EDITOR=nvim
 # Highlights anything with main.* as purple to exa
 export EXA_COLORS='main.*=35'
@@ -33,8 +33,8 @@ export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 export _Z_NO_RESOLVE_SYMLINKS=1
 # Where extra zsh configurations are stored
 export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
-DWNL="$HOME/Downloads"
-DTOP="$HOME/Desktop"
+export DWNL="$HOME/Downloads"
+export DTOP="$HOME/Desktop"
 
 
 # -ALIASES-
@@ -77,6 +77,7 @@ alias pipreq="pip freeze | rg '^(?!.*msgpack|greenlet|pynvim).*' --pcre2 > requi
 # Makes pip have to have venv to install to prevent accidental global installs
 alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
+alias pipf='pip freeze'
 alias crn='crontab'
 # Taskwarrior, see .taskrc for all taskwarrior configuration
 alias t='task'
@@ -86,6 +87,9 @@ alias ta='task add'
 alias tn='task next'
 alias tt='taskwarrior-tui'
 alias notif='terminal-notifier'
+alias chx='chmod +x'
+# Makes a new temp file and puts into editor
+alias mkt='nvim $(mktemp)'
 
 
 # -BINDKEYS-

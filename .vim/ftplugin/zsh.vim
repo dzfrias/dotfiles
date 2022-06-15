@@ -6,5 +6,5 @@ highlight link sectionHeader HighlightComment
 noremap <silent> ‘ /\v# -.+-<CR>:noh<CR>
 noremap <silent> “ ?\v# -.+-<CR>:noh<CR>
 
-setlocal shiftwidth=4
-setlocal softtabstop=4
+setlocal shiftwidth=2
+setlocal softtabstop=2
