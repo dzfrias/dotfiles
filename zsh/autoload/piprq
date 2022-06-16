@@ -3,8 +3,18 @@
 # Gets the imports from .py files and puts them into requirements.txt
 
 
-# Create requirements.txt, or remove it's contents if it exists
-echo -n '' > requirements.txt
+case $1 in
+  '-r' | '--requirements')
+    requirements=true
+    ;;
+  ?*)
+    # Check if string has something in it
+    echo 'Invalid arguments'
+    return 1
+    ;;
+  *)
+    requirements=false
+esac
 
 # Get all imports from .py files and turn it into an array, ignores the venv dir
 imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
@@ -15,6 +25,10 @@ if [[ $? == 2 ]]; then
 fi
 pip_freeze=$(pip freeze)
 
+if ($requirements); then
+  # Makes empty requirements.txt or clears it if it exists
+  echo -n '' > requirements.txt
+fi
 
 added=()
 for module in $imports; do
@@ -27,9 +41,13 @@ for module in $imports; do
     if [[ -z $version ]]; then
       continue
     fi
-    # Appends to requirements.txt
-    echo $version >> requirements.txt
-    echo "$version put in requirements.txt"
+    if ($requirements); then
+      # Appends to requirements.txt
+      echo $version >> requirements.txt
+      echo "$version put in requirements.txt"
+    else
+      echo $version
+    fi
     added+=$module
   fi
 done
