@@ -59,7 +59,10 @@ for gist_id in $gist_ids; do
         # Replaces contents of gist with contents of file
         gh gist edit $gist_id $file
       fi
+      # Breaks out of both loops
       break 2
     fi
   done
 done
+
+return 0

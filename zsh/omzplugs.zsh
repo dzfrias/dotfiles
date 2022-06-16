@@ -1,3 +1,5 @@
+# Installs oh-my-zsh plugins that are not already procided
+
 cd ${ZSH_CUSTOM1:-$ZSH/custom}/plugins
 
 # alias-tips, gives a notification when an alias could've been used
