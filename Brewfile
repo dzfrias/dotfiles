@@ -53,8 +53,6 @@ brew "pandoc"
 brew "jupyterlab"
 # Style and grammar checker
 brew "languagetool"
-# Terminal file manager
-brew "lf"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Fast, highly customisable system info script
