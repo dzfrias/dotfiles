@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Adds directory to fpath
 fpath=("$HOME/.dotfiles/zsh/autoload" $fpath)
 

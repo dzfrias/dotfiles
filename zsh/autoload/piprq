@@ -1,10 +1,14 @@
 #!/bin/zsh
 
+# Gets the imports from .py files and puts them into requirements.txt
+
+
 # Create requirements.txt, or remove it's contents if it exists
 echo -n '' > requirements.txt
 
-# Get all imports from .py files and turn it into an array
+# Get all imports from .py files and turn it into an array, ignores the venv dir
 imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
+# If last command's status code is 2
 if [[ $? == 2 ]]; then
   echo 'No .py files found'
   return 1

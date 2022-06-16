@@ -1,5 +1,10 @@
 #!/usr/local/bin/zsh
 
+# Edits a gist with the given file name (argument one)
+# Optional -s option that syncs the target file rather than opening it in
+# $EDITOR
+
+
 # Checks if number of arguments equals 1
 if [[ $# == 0 ]]; then
   echo 'Needs at least one argument'
