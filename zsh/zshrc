@@ -31,8 +31,6 @@ export DIRENV_LOG_FORMAT=
 export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 # z doesn't follow symlinks
 export _Z_NO_RESOLVE_SYMLINKS=1
-# Where extra zsh configurations are stored
-export EXTRA_CONFIG_PATH="$HOME/.extra_zsh.zsh"
 export DWNL="$HOME/Downloads"
 export DTOP="$HOME/Desktop"
 
@@ -57,7 +55,7 @@ alias googlepip='pip install --upgrade google-api-python-client google-auth-http
 # Sets up a virtual environment for jupyter notebook
 alias jupyter-venv="python -m ipykernel install --user --name=$1"
 alias zrc="nvim $HOME/.zshrc"
-alias ezrc="nvim $EXTRA_CONFIG_PATH"
+alias ezrc="nvim $HOME/.dotfiles/zsh/extra.zsh"
 alias vrc="nvim $HOME/.dotfiles/config/nvim/init.vim"
 # Quick Look on a file
 alias ql='quick-look'
@@ -105,7 +103,7 @@ bindkey -s '^H' '^Ucd ~/.dotfiles^M'
 
 # -FUNCTIONS-
 source "$HOME/.dotfiles/zsh/functions.zsh"
-source $EXTRA_CONFIG_PATH
+source "$HOME/.dotfiles/zsh/extra.zsh"
 # This script will load everything in the autload directory
 source $HOME/.dotfiles/zsh/autoload.zsh
 

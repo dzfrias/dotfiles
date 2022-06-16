@@ -14,8 +14,7 @@ function g+() {
 
 function ea() {
   amount=`ls | wc -l | xargs`
-  if [ $amount -gt 10 ]
-  then
+  if [ $amount -gt 10 ]; then
     command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first --oneline $@
   else
     command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
@@ -24,8 +23,7 @@ function ea() {
 }
 
 function tea() {
-  if [[ $PWD =~ "Rust" ]]
-  then
+  if [[ $PWD =~ "Rust" ]]; then
     # Only ignores the target directory if in a rust project
     ea -T --ignore-glob="$TEA_IGNORE|target" $@
   else
@@ -67,7 +65,7 @@ function calc() {
 
 function precmd() {
   # Newline after every prompt
-  print ""
+  print ''
   # Vertical cursor every prompt
   echo -ne '\e[6 q'
 }
