@@ -31,19 +31,6 @@ function tea() {
   fi
 }
 
-function nvim() {
-  # Used specifically for C++ coding so a .cpp doesn't have to be added
-  # after each file
-  string=$(file $1)
-  # This substring appears in all executables made by C++
-  substring="Mach-O 64-bit executable x86_64"
-  # Tests if the file type contains the substring
-  if test "${string#*$substring}" != "$string"; then
-    1="${1}.cpp"
-  fi
-  command nvim $1
-}
-
 function gitsetup() {
   # Sets up a git repository in current folder
   git init

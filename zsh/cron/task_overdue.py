@@ -1,6 +1,7 @@
 #!/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
 
 # Changes tasks' when uda to today if the when uda is set to before today
+# Run on the first minute of every day
 
 
 import json
