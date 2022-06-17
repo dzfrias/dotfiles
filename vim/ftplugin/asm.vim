@@ -1,17 +1,15 @@
-" Highlights these words
-syn match asmMacro "fword"
-syn match asmMacro "qword"
-syn match asmMacro "dword"
-syn match asmMacro "byte"
-syn match asmMacro "ptr"
+" Highlights qword, dword, fword, and word
+syntax match asmMacro "\v[fqd]?word"
+" Highlights these keywords
+syntax keyword asmMacro byte ptr
 
 highlight link asmMacro Macro
 
 " Highlights registers
-syn match asmRegister "\<[re]\?[abcd][xhl]\>"
-syn match asmRegister "\<[re]\?[sd]il\?\>"
-syn match asmRegister "\<[re]\?[sbi]pl\?\>"
-syn match asmRegister "\<r[0-9]\+[dwb]\?\>"
-syn match asmRegister "[^\t]\<[cdefgs]s\>"hs=s+1
+syntax match asmRegister "\<[re]\?[abcd][xhl]\>"
+syntax match asmRegister "\<[re]\?[sd]il\?\>"
+syntax match asmRegister "\<[re]\?[sbi]pl\?\>"
+syntax match asmRegister "\<r[0-9]\+[dwb]\?\>"
+syntax match asmRegister "[^\t]\<[cdefgs]s\>"hs=s+1
 
 highlight link asmRegister StorageClass

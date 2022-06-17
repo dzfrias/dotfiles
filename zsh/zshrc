@@ -73,7 +73,9 @@ alias gamm='git commit --amend'
 alias pipin='pip install --require-virtualenv'
 alias pipw='which pip3'
 alias pipf='pip freeze'
+# List cron jobs
 alias crnl='crontab -l'
+# List crontab
 alias crne='crontab -e'
 # Taskwarrior, see .taskrc for all taskwarrior configuration
 alias t='task'
@@ -86,6 +88,7 @@ alias notif='terminal-notifier'
 alias chx='chmod +x'
 # Makes a new temp file and puts into editor
 alias mkt='nvim $(mktemp)'
+alias sbat='bat --paging=never'
 
 
 # -BINDKEYS-
@@ -123,6 +126,8 @@ zle -N zle-keymap-select
 
 
 # -HIGHLIGHT STYLES-
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
+# for all possible highlight options
 typeset -A ZSH_HIGHLIGHT_STYLES
 # Modifiers like sudo and command
 ZSH_HIGHLIGHT_STYLES[precommand]="fg=blue,underline"
