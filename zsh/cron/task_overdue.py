@@ -5,18 +5,18 @@
 
 
 import json
-from datetime import date
 from os import popen
 
 
 def get_tasks():
+    # Gets pending tasks with 'when' before today
     tasks = popen('task when.before:tod status:pending export').read()
     return json.loads(tasks)
 
 
 def change_date(task_id: int):
-    today = date.today().isoformat()
-    command = f'task mod {task_id} when:{today}'
+    # Modifies the task to be set to today
+    command = f'task modify {task_id} when:today'
     popen(command)
 
 
