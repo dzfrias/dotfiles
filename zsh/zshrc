@@ -102,6 +102,7 @@ bindkey '^J' down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu' '^Ucd ..^M'
 bindkey -s '^H' '^Ucd ~/.dotfiles^M'
+bindkey -s '^T' '^Ucd ~/.temporary^M'
 
 
 # -FUNCTIONS-
@@ -145,3 +146,8 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=#db4b4b'
 # - options (dark cyan)
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#0db9d7'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#0db9d7'
+
+
+# -MISC-
+# Puts crontab into cron.txt
+crontab -l > ~/.dotfiles/setup/resources/cron.txt

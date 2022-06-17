@@ -1,8 +1,8 @@
-# Installs oh-my-zsh plugins that are not already procided
+# Installs oh-my-zsh plugins that are not already provided
 
 cd ${ZSH_CUSTOM1:-$ZSH/custom}/plugins
 
-# alias-tips, gives a notification when an alias could've been used
+# Gives a notification when an alias could've been used
 git clone https://github.com/djui/alias-tips.git
 # Autoupdates oh-my-zsh plugins
 git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/plugins/autoupdate

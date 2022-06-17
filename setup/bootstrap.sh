@@ -32,9 +32,9 @@ command nvim -c 'PlugInstall'
 
 # Convenient symlink
 ln -s ~/Library/Mobile Documents/com~apple~CloudDocs ~/iCloud
-
 # Personal config file
 touch ~/.dotfiles/zsh/extra.zsh
-
 # Sets crontab to cron.txt
 crontab ~/.dotfiles/setup/resources/cron.txt
+# All files in here will be removed every day
+mkdir ~/.temporary
