@@ -1,3 +1,15 @@
+#!/bin/zsh
+
+function _edit_cron() {
+  # Adds $1 to crontab
+
+  # <() didn't work, so doing it the worse way
+  echo $(crontab -l) > _edit_cron_temp.txt
+  echo $1 >> _edit_cron_temp.txt
+  crontab _edit_cron_temp.txt
+  rm _edit_cron_temp.txt
+}
+
 xcode-select --install
 
 git clone https://github.com/Diego17230/dotfiles.git ~/.dotfiles
