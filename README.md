@@ -7,7 +7,7 @@ Any executable files in the `zsh/autoload` directly will be [autoloaded](https:/
 
 
 ### Symlinks
-To add files to the symlink script, edit `setup/resources/home.txt`. All lines should be of the form `SRC DEST` where `SRC` is the file or glob pattern in `~/.dotfiles` to be symlinked and `DEST` is the destination. `DEST` is optional, and if it is not specified, `SRC` will be symlinked into `$HOME` with a `.` prepended to its name. These files will be symlinked when `bootstrap.sh` is run.
+To add files to the symlink script, edit `setup/resources/symlink.txt`. All lines should be of the form `SRC DEST` where `SRC` is the file or glob pattern in `~/.dotfiles` to be symlinked and `DEST` is the destination. `DEST` is optional, and if it is not specified, `SRC` will be symlinked into `$HOME` with a `.` prepended to its name. These files will be symlinked when `bootstrap.sh` is run.
 
 **Examples:**
 - `zsh/zshrc` turns into `ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc`
