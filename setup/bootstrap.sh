@@ -12,7 +12,9 @@ mkdir ~/.config
 brew bundle --file ~/.dotfiles/setup/Brewfile
 
 # Symlink files from ~/.dotfiles
-zsh symlink.zsh
+zsh ~/.dotfiles/setup/symlink.zsh
+# Makes appropriate files executable
+zsh ~/.dotfiles/setup/executables.zsh
 
 # Install oh-my-zsh and keep the current zshrc
 export KEEP_ZSHRC='yes'
@@ -35,4 +37,4 @@ ln -s ~/Library/Mobile Documents/com~apple~CloudDocs ~/iCloud
 touch ~/.dotfiles/zsh/extra.zsh
 
 # Sets crontab to cron.txt
-crontab ~/.dotfiles/setup/cron.txt
+crontab ~/.dotfiles/setup/resources/cron.txt

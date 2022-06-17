@@ -6,7 +6,7 @@ function home() {
   # is not specified, the file will be symlinked to be $HOME
 
   # Splits home.txt into an array of lines
-  local home_files=(${(f)"$(cat home.txt)"})
+  local home_files=(${(f)"$(cat resources/home.txt)"})
 
   # So the iter variables are local
   local home_file=
