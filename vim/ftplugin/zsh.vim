@@ -13,4 +13,4 @@ inoremap [[ [[  ]]<Esc>hhi
 setlocal shiftwidth=2
 setlocal softtabstop=2
 
-let callcmd='./' . @%
+let callcmd='zsh ' . @%

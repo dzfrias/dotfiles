@@ -1,0 +1,3 @@
+PATH="/usr/local/bin" 
+ 
+1 0 * * * '/Users/diegofrias/.dotfiles/zsh/cron/task_overdue.py' 

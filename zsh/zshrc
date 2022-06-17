@@ -9,7 +9,6 @@ plugins=(
     direnv
     macos
     web-search
-    thefuck
     alias-tips
     autoupdate
     pip

@@ -1,0 +1,5 @@
+zsh/zshrc
+vim/vimrc
+misc/taskrc
+git/*
+vim/ftplugin ~/.vim
