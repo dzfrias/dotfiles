@@ -3,3 +3,4 @@ vim/vimrc
 misc/taskrc
 git/*
 vim/ftplugin ~/.vim
+config/nvim ~/.neovim

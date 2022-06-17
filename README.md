@@ -3,7 +3,7 @@ My important dotfiles! I wouldn't recommend cloning this repository directly, as
 
 
 ### Autoload
-Any executable files in the zsh/autoload directly will be [autoloaded](https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions).
+Any executable files in the `zsh/autoload` directly will be [autoloaded](https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions).
 
 
 ### Symlinks

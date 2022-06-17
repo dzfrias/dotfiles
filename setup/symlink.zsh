@@ -13,7 +13,7 @@ function home() {
   for home_file in $home_files; do
     # Splits each line by word
     local info=(${=home_file})
-    local src="~/.dotfiles/$info[1]"
+    local src="$HOME/.dotfiles/$info[1]"
     local dest=$info[2]
 
     local match=
