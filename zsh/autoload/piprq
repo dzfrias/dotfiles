@@ -51,5 +51,3 @@ for module in $imports; do
     added+=$module
   fi
 done
-
-return 0

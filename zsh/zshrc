@@ -84,8 +84,6 @@ alias tn='task next'
 alias tt='taskwarrior-tui'
 alias notif='terminal-notifier'
 alias chx='chmod +x'
-# Makes a new temp file and puts into editor
-alias mkt='nvim $(mktemp)'
 alias sbat='bat --paging=never'
 
 

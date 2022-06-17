@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# Generates a file or directory (if the -d option is specified) into the
+# ~/.temporary directory. Every day, the contents of ~/.temporary are cleared
+
+
+if [[ $# > 1 ]]; then
+  echo 'Needs one or zero arguments'
+  return 1
+fi
+
+# Generates random number
+random=$(shuf -i 1-1000 -n 1)
+temp_path="$HOME/.temporary"
+if [[ $1 == '-d' ]]; then
+  mkdir "$temp_path/$random"
+  cd "$temp_path/$random"
+else
+  # Defaults to the txt file extension
+  ext=${1:-txt}
+  nvim "$temp_path/$random.$ext"
+fi
