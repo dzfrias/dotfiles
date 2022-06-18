@@ -35,3 +35,4 @@ git commit --message='Initial commit'
 # Creates a new GitHub repo interactively
 gh repo create $1 $view_status --remote origin --source .
 git push --set-upstream origin main
+echo 'All set up!'
