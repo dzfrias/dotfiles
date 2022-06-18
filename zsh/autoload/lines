@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# Counts the number of lines of all files in the current directory. If the
+# -r or --recurse option is passed, recursively counts the lines of files
+
+
+case $1 in
+  '-r' | '--recurse')
+    wc -l **/*(.)
+    ;;
+  '')
+    wc -l *(.)
+    ;;
+  *)
+    echo 'Bad arguments'
+    return 1
+esac

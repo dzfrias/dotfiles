@@ -3,7 +3,7 @@ My important dotfiles! I wouldn't recommend cloning this repository directly, as
 
 
 ### Autoload
-Any executable files in the `zsh/autoload` directly will be [autoloaded](https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions).
+Any files in the `zsh/autoload` directly will be [autoloaded](https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions).
 
 
 ### Symlinks
@@ -13,10 +13,6 @@ To add files to the symlink script, edit `setup/resources/symlink.txt`. All line
 - `zsh/zshrc` turns into `ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc`
 - `vim/ftplugin ~/.vim` turns into `ln -s ~/.dotfiles/vim/ftplugin ~/.vim`
 - `git/*` turns into `ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig` and `ln -s ~/.dotfiles/git/gitignore ~/.gitignore` along with any other files in the `git` directory.
-
-
-### Executables
-To add files to the executables script, edit `setup/resources/executables.txt`. All lines should be of the form `FILE_OR_GLOB`. Any file or glob pattern specified will be made executable when `bootstrap.sh` is run.
 
 
 ### Cron

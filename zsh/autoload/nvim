@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# If user tries to edit a directory, first attempts to edit files of the form
+# DIRNAME.* before exiting with an error.
+
+
 # Needed for the #q glob flag
 setopt EXTENDED_GLOB
 
