@@ -1,9 +1,11 @@
 #!/bin/zsh
 
 # Generates a file or directory (if the -d option is specified) into the
-# ~/.temporary directory. Every day, the contents of ~/.temporary are cleared
+# ~/.temporary directory. Optional first argument as the file extension of the
+# generated file. The contents of ~/.temporary are cleared daily
 
 
+# Checks if there is more than one argument
 if [[ $# > 1 ]]; then
   echo 'Needs one or zero arguments'
   return 1
@@ -16,7 +18,7 @@ if [[ $1 == '-d' ]]; then
   mkdir "$temp_path/$random"
   cd "$temp_path/$random"
 else
-  # Defaults to the txt file extension
+  # Defaults to the txt file extension if no arguments are present
   ext=${1:-txt}
   nvim "$temp_path/$random.$ext"
 fi

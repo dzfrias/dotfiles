@@ -33,58 +33,9 @@ export _Z_NO_RESOLVE_SYMLINKS=1
 
 
 # -ALIASES-
-alias ex='exit'
-alias ls='ls -G'
-alias py='python3'
-# Views the markdown file
-alias md="command nvim $1 -c 'MarkdownPreview'"
-alias reload='exec zsh'
-# In case of mistype
-alias relaod='reload'
-# Creates a new virtual environment with global packages included
-alias venv='echo "layout python-venv" > .envrc && direnv allow .'
-alias activate='source venv/bin/activate'
-alias pb='pbcopy'
-alias exa='exa --long --header --no-user --icons --no-permissions --git'
-# Reads a symlink
-alias fsym='readlink -f'
-alias googlepip='pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib'
-# Sets up a virtual environment for jupyter notebook
-alias jupyter-venv="python -m ipykernel install --user --name=$1"
-alias zrc="nvim $HOME/.zshrc"
-alias ezrc="nvim $HOME/.dotfiles/zsh/extra.zsh"
-alias vrc="nvim $HOME/.dotfiles/config/nvim/init.vim"
-# Quick Look on a file
-alias ql='quick-look'
-# Creates local repo, makes new github repo, then pushes
-alias newrepo='git init && gh repo create && git push --set-upstream origin main'
-alias omzplugs='cd ~/.oh-my-zsh/custom/plugins'
-# To perform calculations
-alias cc='noglob calc'
-# Alias for committing with a message and adding all
-alias gcm='gcam'
-# Makes bat the diff pager with no styling
-alias gd='git diff | bat --plain'
-# Amend git commit
-alias gamm='git commit --amend'
-# Makes pip have to have venv to install to prevent accidental global installs
-alias pipin='pip install --require-virtualenv'
-alias pipw='which pip3'
-alias pipf='pip freeze'
-# List cron jobs
-alias crnl='crontab -l'
-# List crontab
-alias crne='crontab -e'
-# Taskwarrior, see .taskrc for all taskwarrior configuration
-alias t='task'
-alias to='task tod'
-alias tc='task code'
-alias ta='task add'
-alias tn='task next'
-alias tt='taskwarrior-tui'
-alias notif='terminal-notifier'
-alias chx='chmod +x'
-alias sbat='bat --paging=never'
+for file in ~/.dotfiles/zsh/aliases/*; do
+    source $file
+done
 
 
 # -BINDKEYS-

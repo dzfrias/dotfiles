@@ -67,8 +67,6 @@ brew "php"
 brew "ripgrep"
 # Feature-rich console based todo list manager
 brew "task"
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # JavaScript package manager
 brew "yarn"
 cask "font-hack-nerd-font"
