@@ -1,16 +1,20 @@
 #!/bin/zsh
 
+# Needed for the #q glob flag
+setopt EXTENDED_GLOB
+
 # Checks if the first argument is a directory
 if [[ -d $1 ]]; then
   new="$1.*"
-  # Matches the glob pattern
-  file=(${~new})
-  # Checks if the glob matches anything
-  if [[ -f $file ]]; then
+  # Checks if the glob matches by checking the amount of matches
+  if [[ -n ${~new}(#qN) ]]; then
+    # Matches the glob pattern
+    file=(${~new})
     # Uses command to non-recursively call neovim
     command nvim $file ${@[2,-1]}
   else
     echo "$1 is a directory!"
+    return 1
   fi
 else
   command nvim $@
