@@ -6,4 +6,4 @@
 
 # Executes the AppleScript. Putting the AppleScript in autoload was causing an
 # error, so this was the other option
-osascript resources/repoview/execute.scpt
+osascript resources/repoview.scpt

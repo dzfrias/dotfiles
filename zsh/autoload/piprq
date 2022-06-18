@@ -34,7 +34,7 @@ added=()
 for module in $imports; do
   SEARCH="^\b$module\b" 
   # Check if module is not in the txt file of modules and if it isn't in $added
-  if [[ -z $(grep $SEARCH "$HOME/.dotfiles/zsh/autoload/resources/piprq/std_lib.txt") && ${added[(Ie)$module]} == 0 ]]; then
+  if [[ -z $(grep $SEARCH "$HOME/.dotfiles/zsh/autoload/resources/piprq.txt") && ${added[(Ie)$module]} == 0 ]]; then
     # Gets version from pip freeze
     version=$(echo $pip_freeze | grep $SEARCH)
     # Checks if string is empty (module not in pip freeze)

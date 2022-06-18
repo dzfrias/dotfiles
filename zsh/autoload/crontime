@@ -1,0 +1,35 @@
+#!/usr/local/bin/zsh
+
+setopt RE_MATCH_PCRE
+
+if [[ $# != 1 ]]; then
+  echo 'Needs one argument'
+  return 1
+fi
+
+# Gets length of string minus 1
+str_len=$(( ${#1} - 1 ))
+for i in {1..$str_len}; do
+  # Character of string at the index
+  char=${1:$i:1}
+  if [[ $char == ' ' ]]; then
+    continue
+  fi
+
+  # Tests if character is not one of these
+  if [[ $char != '*' && $char != '/' && ! $char =~ '^\d+$' ]]; then
+    echo "Invalid character: $char"
+    return 1
+  fi
+done
+
+# Checks if the amount of words is not equal to five
+if [[ ${#${=1}} != 5 ]]; then
+  echo 'Needs five parts for valid cron time'
+  return 1
+fi
+
+# Substitutes spaces for underscores and forms url
+url="https://crontab.guru/#${1:gs/ /_}"
+# Opens url
+open -u $url

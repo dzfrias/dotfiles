@@ -16,7 +16,7 @@ def get_tasks():
 
 def change_date(task_id: int):
     # Modifies the task to be set to today
-    command = f'task modify {task_id} when:today'
+    command = f'task modify {task_id} when:today rc.hooks=0'
     popen(command)
 
 

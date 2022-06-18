@@ -50,7 +50,6 @@ bindkey '^J' down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu' '^Ucd ..^M'
 bindkey -s '^H' '^Ucd ~/.dotfiles^M'
-bindkey -s '^T' '^Ucd ~/.temporary^M'
 
 
 # -FUNCTIONS-
