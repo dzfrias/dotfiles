@@ -1,3 +1,5 @@
+# vim:syntax=gitconfig
+
 [user]
 	name = Diego
 	email = 96022404+Diego17230@users.noreply.github.com

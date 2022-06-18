@@ -38,6 +38,10 @@ set guicursor=c:ver20,i:ver20,ci:ver20,cr:ver20
 set updatetime=100
 " Sets clipboard to system clipboard
 set clipboard=unnamed
+" Allows for settings to be declard on the first line of a file
+set modeline
+" The range of lines a modeline can be declared
+set modelines=1
 " Filetype settings
 filetype on
 filetype plugin on
