@@ -8,8 +8,6 @@ alias relaod='reload'
 alias pb='pbcopy'
 # Reads a symlink
 alias fsym='readlink -f'
-# Quick Look on a file
-alias ql='quick-look'
 # To perform calculations
 alias cc='noglob calc'
 # List cron jobs
