@@ -6,6 +6,3 @@ alias gd='git diff | bat --plain'
 alias gamm='git commit --amend'
 # Counts all commits made on the current day
 alias gtod='git rev-list --count --after=today00:00:00 --all'
-
-# Creates a new repo in a plain directory
-alias newrepo='git init && gh repo create && git push --set-upstream origin main'

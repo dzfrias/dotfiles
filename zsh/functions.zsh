@@ -13,8 +13,8 @@ function g+() {
 }
 
 function ea() {
-  local file_amount=$(ls | wc -l | xargs)
-  if (( $file_amount > 10 )); then
+  local file_amount=$(ls | wc -l)
+  if [[ $file_amount -gt 10 ]]; then
     command exa \
       --icons \
       --ignore-glob $EXA_IGNORE \
