@@ -21,3 +21,7 @@ To add files to the executables script, edit `setup/resources/executables.txt`. 
 
 ### Cron
 The contents of `setup/resources/cron.txt` will be put into the user's crontab when `bootstrap.sh` is run.
+
+
+### Aliases
+Any files in the `zsh/aliases` directory will be sourced when `.zshrc` is run.
