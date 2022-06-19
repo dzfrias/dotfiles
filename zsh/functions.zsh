@@ -35,17 +35,6 @@ function tea() {
   fi
 }
 
-function gitsetup() {
-  # Sets up a git repository in current folder
-  git init
-  git add .
-  git commit -m 'Initial commit'
-  git remote add origin $1
-  git remote --verbose
-  git branch -m main
-  git push origin --set-upstream main
-}
-
 function gal() {
   # Shows what an alias is aliased to
   printf '%s\n' $aliases[$1]

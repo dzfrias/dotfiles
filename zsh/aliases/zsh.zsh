@@ -6,8 +6,6 @@ alias reload='exec zsh'
 alias relaod='reload'
 # Copies to clipboard
 alias pb='pbcopy'
-# Reads a symlink
-alias fsym='readlink -f'
 # To perform calculations
 alias cc='noglob calc'
 # List cron jobs
@@ -24,3 +22,4 @@ alias sbat='bat --paging=never'
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 # Makes a notification
 alias notif='terminal-notifier'
+alias ggl='google'

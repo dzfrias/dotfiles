@@ -20,7 +20,7 @@ zsh ~/.dotfiles/setup/executables.zsh
 export KEEP_ZSHRC='yes'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Clone the non-core plugins
-zsh ~/.dotfiles/zsh/omzplugs.zsh
+zsh ~/.dotfiles/setup/omzplugs.zsh
 
 # Install a script for vim-plug
 curl -fLo ~/.dotfiles/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
