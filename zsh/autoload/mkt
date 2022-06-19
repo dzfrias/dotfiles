@@ -14,23 +14,22 @@ if [[ $# > 1 ]]; then
 fi
 
 # Generates random number
-random=$(shuf -i 1-1000 -n 1)
-temp_path="$HOME/.temporary"
+local random=$(shuf -i 1-1000 -n 1)
+local temp_path="$HOME/.temporary"
 case $1 in
-  '-d' || '--dir')
+  '-d' | '--dir')
     # Makes a directory
     mkdir "$temp_path/$random"
     cd "$temp_path/$random"
     ;;
-  '-c' || '--clipboard')
+  '-c' | '--clipboard')
     # Makes a txt file and pastes system clipboard into it
-    new_file="$temp_path/$random.txt"
+    local new_file="$temp_path/$random.txt"
     pbpaste > $new_file
     nvim $new_file
     ;;
   *)
     # Defaults to the txt file extension if no arguments are present
-    ext=${1:-txt}
+    local ext=${1:-txt}
     nvim "$temp_path/$random.$ext"
-    ;;
 esac

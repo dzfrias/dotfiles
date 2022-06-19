@@ -8,10 +8,11 @@ if [[ $# != 1 ]]; then
 fi
 
 # Gets length of string minus 1
-str_len=$(( ${#1} - 1 ))
+local str_len=$(( ${#1} - 1 ))
+local i=
 for i in {1..$str_len}; do
   # Character of string at the index
-  char=${1:$i:1}
+  local char=${1:$i:1}
   if [[ $char == ' ' ]]; then
     continue
   fi
@@ -30,6 +31,6 @@ if [[ ${#${=1}} != 5 ]]; then
 fi
 
 # Substitutes spaces for underscores and forms url
-url="https://crontab.guru/#${1:gs/ /_}"
+local url="https://crontab.guru/#${1:gs/ /_}"
 # Opens url
 open -u $url

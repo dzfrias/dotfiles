@@ -13,7 +13,7 @@ fi
 
 # Tests if the sync option is present
 if (($@[(Ie)$(echo '-s')])); then
-  sync=true
+  local sync=true
   if [[ $# == 1 ]]; then
     echo 'Needs a file to target'
     return 1
@@ -23,29 +23,32 @@ elif [[ $# > 1 ]]; then
   return 1
 else
   # Sync option is not present
-  sync=false
+  local sync=false
 fi
 
 # Uses the pcre engine for regular expressions
 setopt RE_MATCH_PCRE
 
-gist_ids=()
+local gist_ids=()
 
-gists=($(gh gist list))
+local gists=($(gh gist list))
 # Pushes first item to gist_ids, it will always be a gist id
 gist_ids+=${gists[1]}
+local part=
 for part in $gists; do
   # Checks if length of string is 32, a there's a number, and the last element
   # was a iso formatted datetime
   if [[ ${#part} == 32 && $part =~ '\d' && $last =~ '\d{4}-\d\d-\d\dT(?:\d\d:){2}\d\dZ' ]]; then
     gist_ids+=$part
   fi
-  last=$part
+  local last=$part
 done
 
+local gist_id=
 for gist_id in $gist_ids; do
   # Gets files of specified gist
-  files=$(gh gist view $gist_id --files)
+  local files=$(gh gist view $gist_id --files)
+  local file=
   for file in $files; do
     # Checks if the files have the same name
     if [[ $file == $1 ]]; then

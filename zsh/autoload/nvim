@@ -9,11 +9,11 @@ setopt EXTENDED_GLOB
 
 # Checks if the first argument is a directory
 if [[ -d $1 ]]; then
-  new="$1.*"
+  local new="$1.*"
   # Checks if the glob matches by checking the amount of matches
   if [[ -n ${~new}(#qN) ]]; then
     # Matches the glob pattern
-    file=(${~new})
+    local file=(${~new})
     # Uses command to non-recursively call neovim
     command nvim $file ${@[2,-1]}
   else

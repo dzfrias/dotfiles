@@ -5,7 +5,7 @@
 
 case $1 in
   '-r' | '--requirements')
-    requirements=true
+    local requirements=true
     ;;
   ?*)
     # Check if string has something in it
@@ -13,30 +13,31 @@ case $1 in
     return 1
     ;;
   *)
-    requirements=false
+    local requirements=false
 esac
 
 # Get all imports from .py files and turn it into an array, ignores the venv dir
-imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
+local imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
 # If last command's status code is 2
 if [[ $? == 2 ]]; then
   echo 'No .py files found'
   return 1
 fi
-pip_freeze=$(pip freeze)
+local pip_freeze=$(pip freeze)
 
 if ($requirements); then
   # Makes empty requirements.txt or clears it if it exists
   echo -n '' > requirements.txt
 fi
 
-added=()
+local added=()
+local module=
 for module in $imports; do
-  SEARCH="^\b$module\b" 
+  local SEARCH="^\b$module\b" 
   # Check if module is not in the txt file of modules and if it isn't in $added
   if [[ -z $(grep $SEARCH "$HOME/.dotfiles/zsh/autoload/resources/piprq.txt") && ${added[(Ie)$module]} == 0 ]]; then
     # Gets version from pip freeze
-    version=$(echo $pip_freeze | grep $SEARCH)
+    local version=$(echo $pip_freeze | grep $SEARCH)
     # Checks if string is empty (module not in pip freeze)
     if [[ -z $version ]]; then
       continue

@@ -12,10 +12,10 @@ fi
 
 case $2 in
   'private' || 'pri')
-    view_status='--private'
+    local view_status='--private'
     ;;
   'public' || 'pub')
-    view_status='--public'
+    local view_status='--public'
     ;;
   *)
     echo 'Invalid view status. Must be "pub[lic]" or "pri[vate]"'
@@ -26,7 +26,7 @@ esac
 git init
 
 # Adds a README if no other files exist in the directory
-file_count=$(ls | wc -l)
+local file_count=$(ls | wc -l)
 if [[ $file_count -eq 0 ]]; then
   touch README.md
   # Gets the endmost part of $PWD and puts it into README.md
