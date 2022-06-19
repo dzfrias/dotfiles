@@ -11,7 +11,7 @@ function _enumerate() {
   local path=
   for path in $@; do
     # Removes the './' at the start of the element
-    echo "$i. ${path#./}"
+    echo "$i. $BOLD${path#./}$PLAIN"
     # Increments i
     (( i+=1 ))
   done
@@ -40,16 +40,21 @@ case $1 in
     fi
 esac
 
+# ANSI escape sequence for bold text
+local BOLD=$(tput bold)
+# ANSI escape sequence for normal text
+local PLAIN=$(tput sgr0)
 local matches=($(fd "^$search.*" --type d))
 
 # Checks case for the number of matches
 case ${#matches} in
   1)
+    local new_dir="$BOLD$matches[1]$PLAIN"
     if [[ ! -v preview ]]; then
-      echo "Changed directory to $matches[1]!"
+      echo "Changed directory to $new_dir!"
       cd $matches[1]
     else
-      echo "Would change directory to: $matches[1]"
+      echo "Would change directory to: $new_dir"
     fi
     ;;
   0)
@@ -73,7 +78,8 @@ case ${#matches} in
       echo "Invalid input: $result"
       return 1
     fi
-    echo "Changed directory to $matches[$result]!"
+    local new_dir="$BOLD$matches[$result]$PLAIN"
+    echo "Changed directory to $new_dir!"
     cd $matches[$result]
 esac
 
