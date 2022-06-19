@@ -1,5 +1,8 @@
 #!/usr/local/bin/zsh
 
+# Looks up the argument that was passed on crontab guru
+
+
 setopt RE_MATCH_PCRE
 
 if [[ $# != 1 ]]; then

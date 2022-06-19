@@ -6,7 +6,7 @@
 
 
 if [[ $# != 2 ]]; then
-  echo 'Need two arguments'
+  echo 'Need two arguments of the form: NAME VIEW_STATUS'
   return 1
 fi
 

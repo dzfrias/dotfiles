@@ -45,8 +45,8 @@ bindkey jk vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
 bindkey '^[[Z' autosuggest-accept
 # Binds search keys
-bindkey '^K' up-line-or-search
-bindkey '^J' down-line-or-search
+bindkey '˚' up-line-or-search
+bindkey '∆' down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu' '^Ucd ..^M'
 bindkey -s '^H' '^Ucd ~/.dotfiles^M'

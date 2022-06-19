@@ -1,0 +1,78 @@
+#!/bin/zsh
+
+# Changes to a directory nested anywhere within the current directory's
+# subdirectories. Optional -p or --preview option for showing which directory
+# it would change to
+
+
+function enumerate() {
+  # Prints each argument (path) with the one-based index to the left
+  local i=1
+  local path=
+  for path in $@; do
+    # Removes the './' at the start of the element
+    echo "$i. ${path#./}"
+    # Increments i
+    (( i+=1 ))
+  done
+}
+
+case $1 in
+  '-p' | '--preview')
+    local preview=true
+    local search=$2
+    # Checks if search is anything
+    if [[ -z $search ]]; then
+      echo 'Need a search pattern'
+      return 1
+    fi
+    ;;
+  '')
+    echo 'Need at least one argument'
+    return 1
+    ;;
+  *)
+    # Search is first argument
+    local search=$1
+    # Checks if the preview option is present
+    if [[ $2 == '-p' || $2 == '--preview' ]]; then
+      local preview=true
+    fi
+esac
+
+local matches=($(fd "^$search.*" --type d))
+
+# Checks case for the number of matches
+case ${#matches} in
+  1)
+    if [[ ! -v preview ]]; then
+      echo "Changed directory to $matches[1]!"
+      cd $matches[1]
+    else
+      echo "Would change directory to: $matches[1]"
+    fi
+    ;;
+  0)
+    echo 'No matches found'
+    return 1
+    ;;
+  *)
+    echo 'Multiple matches!'
+    enumerate $matches
+
+    # Checks if preview is set
+    if [[ -v preview ]]; then
+      return 0
+    fi
+
+    local result=
+    # Gets user input for directory to change to
+    vared -p 'Choose the directory: ' -c result
+    # Checks if user input is not a number or is not within bounds of $matches
+    if [[ ! $result =~ '^[0-9]+$' || -z $matches[$result] ]]; then
+      echo "Invalid input: $result"
+      return 1
+    fi
+    echo "Changed directory to $matches[$result]!"
+    cd $matches[$result]
+esac
