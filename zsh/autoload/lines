@@ -5,13 +5,23 @@
 # lines in every subdirectory
 
 
+function _print_lines() {
+  # Prints line counts of files in the given glob pattern, sorted in descending
+  # order
+  local count=$(wc -l ${~1})
+  # Gets the last line of the $count (the total)
+  local total=${${(f)count}[-1]}
+  # Removes the last line of $count, sorts, and appends the last line again
+  echo $count | sed '$d' | sort --reverse | cat - <(echo $total)
+}
+
 if [[ $# > 2 ]]; then
   echo 'Too many arguments'
   return 1
 fi
 
 if [[ -z $1 ]]; then
-  wc -l *(.)
+  _print_lines '*(.)'
   return 0
 fi
 
@@ -22,7 +32,7 @@ case $1 in
       pattern+="*$2"
     fi
     pattern+='*(.)'
-    wc -l ${~pattern}
+    _print_lines $pattern
     ;;
   *)
     if [[ $2 == '-r' || $2 == '--recurse' ]]; then
@@ -30,9 +40,9 @@ case $1 in
       local pattern='**/'
     fi
     pattern+="*$1*(.)"
-    # Turns $pattern into a glob pattern with ${~}
-    wc -l ${~pattern}
+    _print_lines $pattern
 esac
 
 # Needed for weird behavior with +=
 unset pattern
+unfunction _print_lines
