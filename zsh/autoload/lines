@@ -1,7 +1,8 @@
 #!/bin/zsh
 
-# Counts the number of lines of all files in the current directory. If the
-# -r or --recurse option is passed, recursively counts the lines of files
+# Counts the number of lines of all files or files with a given substring in 
+# the current directory. If the -r or --recurse option is passed, counts the
+# lines in every subdirectory
 
 
 if [[ $# > 2 ]]; then
@@ -20,14 +21,16 @@ case $1 in
     if [[ -n $2 ]]; then
       pattern+="*$2"
     fi
-    local pattern+='*(.)'
+    pattern+='*(.)'
     wc -l ${~pattern}
     ;;
   *)
     if [[ $2 == '-r' || $2 == '--recurse' ]]; then
+      # Prefixes glob pattern with the 'every subdirectory' match
       local pattern='**/'
     fi
     pattern+="*$1*(.)"
+    # Turns $pattern into a glob pattern with ${~}
     wc -l ${~pattern}
 esac
 

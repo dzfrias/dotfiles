@@ -76,3 +76,6 @@ case ${#matches} in
     echo "Changed directory to $matches[$result]!"
     cd $matches[$result]
 esac
+
+# Gets rid of the enumerate function
+unfunction enumerate
