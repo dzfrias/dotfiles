@@ -5,7 +5,7 @@
 # it would change to
 
 
-function enumerate() {
+function _enumerate() {
   # Prints each argument (path) with the one-based index to the left
   local i=1
   local path=
@@ -58,7 +58,7 @@ case ${#matches} in
     ;;
   *)
     echo 'Multiple matches!'
-    enumerate $matches
+    _enumerate $matches
 
     # Checks if preview is set
     if [[ -v preview ]]; then
@@ -78,4 +78,4 @@ case ${#matches} in
 esac
 
 # Gets rid of the enumerate function
-unfunction enumerate
+unfunction _enumerate
