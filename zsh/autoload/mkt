@@ -2,7 +2,9 @@
 
 # Generates a file or directory (if the -d option is specified) into the
 # ~/.temporary directory. Optional first argument as the file extension of the
-# generated file. The contents of ~/.temporary are cleared daily
+# generated file. The contents of ~/.temporary are cleared daily. If the
+# -c option is provided, a txt file is generated with the system clipboard's
+# contents in it.
 
 
 # Checks if there is more than one argument
@@ -14,11 +16,21 @@ fi
 # Generates random number
 random=$(shuf -i 1-1000 -n 1)
 temp_path="$HOME/.temporary"
-if [[ $1 == '-d' ]]; then
-  mkdir "$temp_path/$random"
-  cd "$temp_path/$random"
-else
-  # Defaults to the txt file extension if no arguments are present
-  ext=${1:-txt}
-  nvim "$temp_path/$random.$ext"
-fi
+case $1 in
+  '-d' || '--dir')
+    # Makes a directory
+    mkdir "$temp_path/$random"
+    cd "$temp_path/$random"
+    ;;
+  '-c' || '--clipboard')
+    # Makes a txt file and pastes system clipboard into it
+    new_file="$temp_path/$random.txt"
+    pbpaste > $new_file
+    nvim $new_file
+    ;;
+  *)
+    # Defaults to the txt file extension if no arguments are present
+    ext=${1:-txt}
+    nvim "$temp_path/$random.$ext"
+    ;;
+esac

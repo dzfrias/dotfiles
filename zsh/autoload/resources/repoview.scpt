@@ -1,6 +1,7 @@
 --Opens the current repo in GitHub on Google Chrome
 
 
+activate application "Google Chrome"
 tell application "Google Chrome"
     --Get the name of the repository with the current owner
     set command to "gh repo view --json 'nameWithOwner' | sed -e 's/{\"nameWithOwner\"://g' -e 's/[\"}]//g'"

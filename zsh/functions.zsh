@@ -13,8 +13,10 @@ function g+() {
 }
 
 function ea() {
+  # Counts files in current directory
   local file_amount=$(ls | wc -l)
   if [[ $file_amount -gt 10 ]]; then
+    # Icons, directories first, and every file gets its own line
     command exa \
       --icons \
       --ignore-glob $EXA_IGNORE \
@@ -22,6 +24,7 @@ function ea() {
       --oneline \
       $@
   else
+    # Icons and directories come first
     command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
   fi
 }
