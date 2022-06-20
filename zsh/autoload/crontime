@@ -10,6 +10,14 @@ if [[ $# != 1 ]]; then
   return 1
 fi
 
+# Allowed values not of the regular cron time form
+local allowed=(@monthly @daily @yearly @weekly @hourly)
+# Check if the first argument is in the array
+if (($allowed[(Ie)$1])); then
+  open -u "https://crontab.guru/#$1"
+  return 0
+fi
+
 # Gets length of string minus 1
 local str_len=$(( ${#1} - 1 ))
 local i=
