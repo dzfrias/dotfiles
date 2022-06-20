@@ -1,5 +1,5 @@
 # Dotfiles
-My important dotfiles! I wouldn't recommend cloning this repository directly, as it hasn't been tested yet. Configuring for Linux and Windows will definitely not work out of the box, as this is meant for macOS.
+My important dotfiles! I wouldn't recommend cloning this repository directly, as it hasn't been tested yet. Configuring for Linux and Windows will definitely not work out of the box.
 
 
 ### Autoload

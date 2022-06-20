@@ -13,6 +13,7 @@ alias crnl='crontab -l'
 # Edit crontab
 alias crne='crontab -e'
 alias chx='chmod +x'
+alias gal="echo $aliases[$1]"
 
 
 # -CLI-OPTIONS-
