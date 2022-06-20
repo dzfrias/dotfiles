@@ -38,6 +38,11 @@ function tea() {
   fi
 }
 
+function gal() {
+  # Shows what an alias is aliased to
+  printf '%s\n' $aliases[$1]
+}
+
 function calc() {
   # Evaluates arguments in python with the math library
   python3 -c "from math import *; print($*);"

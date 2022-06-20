@@ -11,17 +11,24 @@ function _print_lines() {
   local count=$(wc -l ${~1})
   # Gets the last line of the $count (the total)
   local total=${${(f)count}[-1]}
-  # Removes the last line of $count, sorts, and appends the last line again
-  echo $count | sed '$d' | sort --reverse | cat - <(echo $total)
+  if [[ ${#total} == 1 ]]; then
+    # $total will be of length 1 if there is only one match to $count
+    echo $count
+  else
+    # Removes the last line of $count, sorts, and appends the last line again
+    echo $count | sed '$d' | sort --reverse | cat - <(echo $total)
+  fi
 }
 
 if [[ $# > 2 ]]; then
   echo 'Too many arguments'
+  unfunction _print_lines
   return 1
 fi
 
 if [[ -z $1 ]]; then
   _print_lines '*(.)'
+  unfunction _print_lines
   return 0
 fi
 
