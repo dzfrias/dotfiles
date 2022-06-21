@@ -27,6 +27,7 @@ Plug 'alvan/vim-closetag'
 Plug 'rhysd/clever-f.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'matze/vim-move'
+Plug 'keith/swift.vim'
 call plug#end()
 
 
@@ -101,6 +102,7 @@ endfunction
 
 " Checks if the number of lines is over 300, and if so, fold all
 autocmd BufRead * :call OverLineNo()
+autocmd BufRead,BufNewFile *.swift set tabstop=2 shiftwidth=2
 
 
 " -MISC-
