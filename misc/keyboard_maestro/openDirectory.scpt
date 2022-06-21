@@ -22,9 +22,5 @@ tell application "iTerm2"
     tell current session of current window
         --Goes to directory
         write text "cd " & fileDirectory
-        --Delay so prompt can finish appearing (would cause bug otherwise)
-        delay 1
-        --Edits with neovim
-        write text "nvim " & filePath
     end tell
 end tell
