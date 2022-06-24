@@ -26,7 +26,6 @@ Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 Plug 'rhysd/clever-f.vim'
 Plug 'svermeulen/vim-easyclip'
-Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 call plug#end()
 
@@ -87,10 +86,6 @@ imap <C-v> <C-y>,
 imap ‘ <Plug>(copilot-next)
 imap “ <Plug>(copilot-previous)
 
-
-" Makes vim-move work on macOS (for alt keys)
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
 " Makes easyclip cut bound to gm rather than m
 xmap gm <Plug>MoveMotionXPlug
 

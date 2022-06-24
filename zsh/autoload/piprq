@@ -16,6 +16,7 @@ case $1 in
     local requirements=false
 esac
 
+# Needed for the qN flag
 setopt EXTENDED_GLOB
 # Check if any .py files exist anywhere in the directory
 if [[ -z **/*.py(#qN) ]]; then
