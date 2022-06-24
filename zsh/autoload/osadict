@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Opens the Script Editor's dictionary
+
+
+# Runs the resources/osadict.scpt script with no stdout
+osascript ~/.dotfiles/zsh/autoload/resources/osadict.scpt > /dev/null
