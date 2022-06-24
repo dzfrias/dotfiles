@@ -13,6 +13,7 @@ alias crnl='crontab -l'
 # Edit crontab
 alias crne='crontab -e'
 alias chx='chmod +x'
+alias rmr='rm -r'
 
 
 # -CLI-OPTIONS-

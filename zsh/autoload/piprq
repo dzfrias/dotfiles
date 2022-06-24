@@ -16,13 +16,16 @@ case $1 in
     local requirements=false
 esac
 
-# Get all imports from .py files and turn it into an array, ignores the venv dir
-local imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
-# If last command's status code is 2
-if [[ $? == 2 ]]; then
-  echo 'No .py files found'
+setopt EXTENDED_GLOB
+# Check if any .py files exist anywhere in the directory
+if [[ -z **/*.py(#qN) ]]; then
+  echo 'No .py files found in current directory'
   return 1
 fi
+unsetopt EXTENDED_GLOB
+
+# Get all imports from .py files and turn it into an array, ignores the venv dir
+local imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching --no-line-number --no-filename --glob '*.py' --ignore-file <(echo venv))}")
 local pip_freeze=$(pip freeze)
 
 if ($requirements); then

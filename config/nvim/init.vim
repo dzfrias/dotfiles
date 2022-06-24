@@ -27,7 +27,7 @@ Plug 'alvan/vim-closetag'
 Plug 'rhysd/clever-f.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'matze/vim-move'
-Plug 'keith/swift.vim'
+Plug 'github/copilot.vim'
 call plug#end()
 
 
@@ -83,8 +83,12 @@ inoremap <silent> <C-l> <Esc>:tabn<CR>
 inoremap <silent> <C-h> <Esc>:tabp<CR>
 " Triggers emmet autocomplete
 imap <C-v> <C-y>,
+" Fixes alt key not working on macOS
+imap ‘ <Plug>(copilot-next)
+imap “ <Plug>(copilot-previous)
 
-" Makes vim-move work on MacOS (for alt keys)
+
+" Makes vim-move work on macOS (for alt keys)
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 " Makes easyclip cut bound to gm rather than m
