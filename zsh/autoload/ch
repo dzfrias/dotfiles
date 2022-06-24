@@ -4,6 +4,10 @@
 # subdirectories. Optional -p or --preview option for showing which directory
 # it would change to
 
+# ANSI escape sequence for bold text
+readonly local BOLD=$(tput bold)
+# ANSI escape sequence for plain text
+readonly local PLAIN=$(tput sgr0)
 
 function _enumerate() {
   # Prints each argument (path) with the one-based index to the left
@@ -40,10 +44,6 @@ case $1 in
     fi
 esac
 
-# ANSI escape sequence for bold text
-local BOLD=$(tput bold)
-# ANSI escape sequence for normal text
-local PLAIN=$(tput sgr0)
 local matches=($(fd "^$search.*" --type d))
 
 # Checks case for the number of matches
