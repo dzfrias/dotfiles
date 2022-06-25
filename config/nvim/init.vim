@@ -7,7 +7,6 @@ source ~/.vimrc
 
 " -PLUGINS-
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'

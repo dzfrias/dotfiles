@@ -8,3 +8,4 @@ alias vrc="nvim $HOME/.dotfiles/config/nvim/init.vim"
 alias mrkd="command nvim $1 -c 'MarkdownPreview'"
 alias plugc='nvim +PlugClean +qall'
 alias plugi='nvim +PlugInstall +qall'
+alias plugu='nvim +PlugUpdate +qall'

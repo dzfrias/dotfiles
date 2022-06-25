@@ -6,7 +6,7 @@ noremap <buffer> <silent> “ ?\v# -.+-<CR>:noh<CR>
 iabbrev <buffer>  #!  /usr/local/bin/zsh
 inoremap <buffer> [[  [[  ]]<Esc>hhi
 
-setlocal shiftwidt =2
+setlocal shiftwidth=2
 setlocal softtabstop=2
 
 let b:callcmd='zsh ' . @%
