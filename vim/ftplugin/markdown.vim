@@ -8,12 +8,12 @@ setlocal linebreak
 setlocal spell
 
 " Horizontal traversal
-noremap + 30l
-noremap - 30h
+noremap <buffer> + 30l
+noremap <buffer> - 30h
 " The four below make wrapped lines easier to traverse
-noremap <silent> k gk
-noremap <silent> j gj
-noremap <silent> 0 g0
-noremap <silent> $ g$
+noremap <buffer> <silent> k gk
+noremap <buffer> <silent> j gj
+noremap <buffer> <silent> 0 g0
+noremap <buffer> <silent> $ g$
 
 let b:callcmd='open ' . @%

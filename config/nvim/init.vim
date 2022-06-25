@@ -82,7 +82,7 @@ imap     “                  <Plug>(copilot-previous)
 
 " -VISUAL-
 " Makes easyclip cut bound to gm rather than m
-xmap gm <Plug>MoveMotionXPlug
+xmap     gm                 <Plug>MoveMotionXPlug
 
 
 " -COMMANDS & FUNCTIONS-

@@ -9,8 +9,8 @@ setlocal colorcolumn=79
 let b:callcmd='py ' . @%
 
 " Correct some spelling
-iabbrev slef self
-iabbrev sefl self
+iabbrev <buffer> slef self
+iabbrev <buffer> sefl self
 
 " Puts pprint at the top of the file
 command! Pprint normal mpggOfrom pprint import pprintjk`pdmp

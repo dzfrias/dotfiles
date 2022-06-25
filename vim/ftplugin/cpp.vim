@@ -4,6 +4,6 @@ function Eatchar(pat)
     return (c =~ a:pat) ? '' : c
 endfunc
 " Removes whitespace after the abbreviation
-iabbrev <silent> std std::<C-r>=Eatchar('\m\s\<bar>/')<CR>
+iabbrev <buffer> <silent> std std::<C-r>=Eatchar('\m\s\<bar>/')<CR>
 
 let b:callcmd='g+ ' . @%
