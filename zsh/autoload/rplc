@@ -1,20 +1,12 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 
-local all
-zmodload zsh/zutil
-zparseopts -D -E -F a=all -all=all || return 1
+# Replaces text with the form 'OLD/NEW' (first argument) in files matching glob
+# pattern (second argument)
 
-# Checks if the --all flag is set
-if [[ -n $all ]]; then
-  if [[ $# != 1 ]]; then
-    echo 'Usage: rplc REPLACE [FILE|--all]'
-    return 1
-  fi
-  ls *(.) | xargs sed -i '' "s/$1/g"
-else
-  if [[ $# != 2 ]]; then
-    echo 'Usage: rplc REPLACE [FILE|--all]'
-    return 1
-  fi
-  sed -i '' "s/$1/g" $2
+
+if [[ $# < 2 ]]; then
+  echo 'Usage: rplc REPLACE GLOB'
 fi
+
+# Replaces contents of files matching GLOB with a sed replace expression
+ls ${@:2} | xargs sed -i '' "s/$1/g"
