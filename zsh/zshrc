@@ -41,12 +41,12 @@ done
 
 # -BINDKEYS-
 # Maps jk to normal mode in the zsh line editor
-bindkey jk vi-cmd-mode
+bindkey jk       vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
-bindkey '^[[Z' autosuggest-accept
+bindkey '^[[Z'   autosuggest-accept
 # Binds search keys
-bindkey '˚' up-line-or-search
-bindkey '∆' down-line-or-search
+bindkey '˚'      up-line-or-search
+bindkey '∆'      down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu' '^Ucd ..^M'
 bindkey -s '^H' '^Ucd ~/.dotfiles^M'
@@ -57,6 +57,7 @@ source "$HOME/.dotfiles/zsh/functions.zsh"
 source "$HOME/.dotfiles/zsh/extra.zsh"
 # This script will load everything in the autload directory
 source $HOME/.dotfiles/zsh/autoload.zsh
+
 
 # -ZLE-
 function zle-keymap-select {

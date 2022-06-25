@@ -1,0 +1,20 @@
+#!/usr/local/bin/zsh
+
+local all
+zmodload zsh/zutil
+zparseopts -D -E -F a=all -all=all || return 1
+
+# Checks if the --all flag is set
+if [[ -n $all ]]; then
+  if [[ $# != 1 ]]; then
+    echo 'Usage: rplc REPLACE [FILE|--all]'
+    return 1
+  fi
+  ls *(.) | xargs sed -i '' "s/$1/g"
+else
+  if [[ $# != 2 ]]; then
+    echo 'Usage: rplc REPLACE [FILE|--all]'
+    return 1
+  fi
+  sed -i '' "s/$1/g" $2
+fi
