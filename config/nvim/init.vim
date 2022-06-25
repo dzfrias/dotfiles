@@ -104,6 +104,7 @@ endfunction
 " Checks if the number of lines is over 300, and if so, fold all
 autocmd BufRead * :call OverLineNo()
 autocmd BufRead,BufNewFile *.swift set tabstop=2 shiftwidth=2
+" TODO: Add autocmd like this for .vim files and .py files
 autocmd BufReadPost *.zsh,~/.zshrc syntax match sectionHeader '\v# *-.+-' | highlight link sectionHeader HighlightComment
 
 
