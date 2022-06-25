@@ -1,2 +1,2 @@
-set colorcolumn=100
-let callcmd='swift ' . @%
+setlocal colorcolumn=100
+let b:callcmd='swift ' . @%

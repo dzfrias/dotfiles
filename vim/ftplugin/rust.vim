@@ -1,2 +1,2 @@
-set colorcolumn=100
-let callcmd='cargo run'
+setlocal colorcolumn=100
+let b:callcmd='cargo run'

@@ -1,11 +1,11 @@
 " These four settings will soft wrap text at the width of the screen
-set textwidth=0
-set wrapmargin=0
-set wrap
-set linebreak
+setlocal textwidth=0
+setlocal wrapmargin=0
+setlocal wrap
+setlocal linebreak
 
 " Underlines incorrectly spelled words
-set spell
+setlocal spell
 
 " Horizontal traversal
 noremap + 30l
@@ -16,4 +16,4 @@ noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
 
-let callcmd='open ' . @%
+let b:callcmd='open ' . @%

@@ -24,3 +24,4 @@ alias exa='exa --long --header --no-user --icons --no-permissions --git'
 # Makes a notification
 alias notif='terminal-notifier'
 alias ggl='google'
+alias todo='rg "^\s*.?.? TODO:"'
