@@ -1,6 +1,7 @@
 " -VIMRC-
 let s:section_header_regex = '\v" -[^-]+-{2,}'
 
+" NextLineIsSectionHeader() - returns 1 if the next line is a section header
 function! s:NextLineIsSectionHeader(lnum)
     " Get next line
     let l:next_line=getline(a:lnum+1)
@@ -12,6 +13,7 @@ function! s:NextLineIsSectionHeader(lnum)
     endif
 endfunction
 
+" GetVimrcFold is the foldexpr for vimrc and init.vim
 function! GetVimrcFold(lnum)
     let l:line=getline(a:lnum)
     " Check if line is a section header

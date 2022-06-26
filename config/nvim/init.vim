@@ -49,7 +49,7 @@ let callcmd    ='echo ' . @%
 
 " -MAPPINGS--------------------------------------------------------------------
 " -NORMAL-
-" Will jump between folds
+" Jump between folds
 noremap  <s-j>              zj
 noremap  <s-k>              zk
 " Opens folds
@@ -60,47 +60,47 @@ noremap  <silent> <C-l>     :tabn<CR>
 noremap  <silent> <C-h>     :tabp<CR>
 nnoremap <leader>w          :write<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
-" Opens floating terminal
+" Open floating terminal
 nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
-" Opens floating terminal and calls the command to run the file. It also is
-" exited after any user input
+" Open floating terminal and call the command to run the file. Existed after
+" the escape key is pressed.
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
-" Makes easyclip cut bound to gm rather than m
+" For easyclip
 nnoremap gm                 <Plug>MoveMotionPlug
 nnoremap gmm                <Plug>MoveMotionLinePlug
-" Triggers emmet autocomplete
+" Trigger emmet autocomplete
 nmap     <C-v>              <C-y>,
 
 " -INSERT-
-" Traversing tabs in insert mode
+" Traverse tabs better in insert mode
 inoremap <silent> <C-l>     <Esc>:tabn<CR>
 inoremap <silent> <C-h>     <Esc>:tabp<CR>
 " Fixes alt key not working on macOS
 inoremap ‘                  <Plug>(copilot-next)
 inoremap “                  <Plug>(copilot-previous)
-" Triggers emmet autocomplete
+" Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
 
 " -VISUAL-
-" Makes easyclip cut bound to gm rather than m
+" Make easyclip cut bound to gm rather than m
 xnoremap gm                 <Plug>MoveMotionXPlug
 
 
 " -COMMANDS & FUNCTIONS--------------------------------------------------------
-function OverLineNo()
-    " Checks total line numbers
-    if str2nr(line('$')) > 300
-        " Folds everything
-        normal zM
+" OverLineNo() checks if the total amount of lines is over 300, and if so,
+" folds everything
+function! OverLineNo()
+    if line('$') > 300
+        " Fold everything
+        normal! zM
     endif
 endfunction
 
-" Checks if the number of lines is over 300, and if so, fold all
 autocmd BufRead * :call OverLineNo()
 
 
 " -MISC------------------------------------------------------------------------
-" Loads settings for plugins
+" Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
 
 let g:tokyonight_style = 'night'

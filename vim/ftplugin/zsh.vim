@@ -11,6 +11,7 @@ let b:callcmd='zsh ' . @%
 " -ZSHRC-
 let s:section_header_regex = '\v# -[^-]+-{2,}'
 
+" NextLineIsSectionHeader() - returns 1 if the next line is a section header
 function! s:NextLineIsSectionHeader(lnum)
     " Get next line
     let l:next_line=getline(a:lnum+1)
@@ -22,6 +23,7 @@ function! s:NextLineIsSectionHeader(lnum)
     endif
 endfunction
 
+" GetZshrcFold() is the foldexpr for zshrc
 function! GetZshrcFold(lnum)
     let l:line=getline(a:lnum)
     " Check if line is a section header
@@ -34,7 +36,7 @@ function! GetZshrcFold(lnum)
     return '1'
 endfunction
 
-" Check if editing vimrc or init.vim
+" Check if editing zshrc
 if expand('%') =~? '\v.*zshrc$'
     setlocal foldmethod=expr
     setlocal foldexpr=GetZshrcFold(v:lnum)
