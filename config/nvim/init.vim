@@ -48,7 +48,6 @@ let callcmd    ='echo ' . @%
 
 
 " -MAPPINGS--------------------------------------------------------------------
-
 " -NORMAL-
 " Will jump between folds
 noremap  <s-j>              zj
