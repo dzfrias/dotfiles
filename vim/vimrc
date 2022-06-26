@@ -1,4 +1,4 @@
-" -SETTINGS-
+" -SETTINGS--------------------------------------------------------------------
 syntax on
 
 " Number system
@@ -30,7 +30,7 @@ set foldnestmax=1
 colorscheme zellner
 
 
-" -MAPPINGS-
+" -MAPPINGS--------------------------------------------------------------------
 noremap <space> za
 noremap gg gg0
 " Puts semicolon at the end of a line
