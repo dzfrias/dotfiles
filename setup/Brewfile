@@ -86,9 +86,13 @@ brew "heroku/brew/heroku"
 cask "alfred"
 cask "font-hack-nerd-font"
 cask "font-inconsolata"
+# Desktop client for GitHub repositories
+cask "github"
 # Web browser
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Automation software
 cask "keyboard-maestro"
+# Team communication and collaboration software
+cask "slack"
