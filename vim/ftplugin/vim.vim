@@ -16,7 +16,7 @@ function! GetVimrcFold(lnum)
     return '1'
 endfunction
 
-" Check if editing zshrc
+" Check if editing vimrc or init.vim
 if expand('%') =~? '\v.*(init.vim|vimrc)$'
     setlocal foldmethod=expr
     setlocal foldexpr=GetVimrcFold(v:lnum)
