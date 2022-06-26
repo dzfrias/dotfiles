@@ -1,4 +1,4 @@
-# -OH-MY-ZSH-
+# -OH-MY-ZSH-------------------------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
     git
@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/zsh/theme.json)"
 
 
-# -EXPORTS-
+# -EXPORTS---------------------------------------------------------------------
 export EDITOR=nvim
 # Highlights anything with main.* as purple to exa
 export EXA_COLORS='main.*=35'
@@ -33,13 +33,13 @@ export _Z_NO_RESOLVE_SYMLINKS=1
 export MBOX="$HOME/.mbox"
 
 
-# -ALIASES-
+# -ALIASES---------------------------------------------------------------------
 for file in ~/.dotfiles/zsh/aliases/*; do
   source $file
 done
 
 
-# -BINDKEYS-
+# -BINDKEYS--------------------------------------------------------------------
 # Maps jk to normal mode in the zsh line editor
 bindkey    jk      vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
@@ -52,14 +52,14 @@ bindkey -s 'uu'    '^Ucd ..^M'
 bindkey -s '^H'    '^Ucd ~/.dotfiles^M'
 
 
-# -FUNCTIONS-
+# -FUNCTIONS-------------------------------------------------------------------
 source "$HOME/.dotfiles/zsh/functions.zsh"
 source "$HOME/.dotfiles/zsh/extra.zsh"
 # This script will load everything in the autload directory
 source $HOME/.dotfiles/zsh/autoload.zsh
 
 
-# -ZLE-
+# -ZLE-------------------------------------------------------------------------
 function zle-keymap-select {
   # Change cursor for depending on the mode
   if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
@@ -74,7 +74,7 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 
 
-# -HIGHLIGHT STYLES-
+# -HIGHLIGHT STYLES------------------------------------------------------------
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
 # for all possible highlight options
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -96,6 +96,6 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#0db9d7'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#0db9d7'
 
 
-# -MISC-
+# -MISC------------------------------------------------------------------------
 # Puts crontab into cron.txt
 crontab -l > ~/.dotfiles/setup/resources/cron.txt
