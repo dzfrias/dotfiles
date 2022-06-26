@@ -14,6 +14,7 @@ alias crnl='crontab -l'
 alias crne='crontab -e'
 alias chx='chmod +x'
 alias rmr='rm -r'
+alias rpv='repoview'
 
 
 # -CLI-OPTIONS-
