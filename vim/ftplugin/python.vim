@@ -12,7 +12,7 @@ let b:callcmd='py ' . @%
 iabbrev <buffer> slef self
 iabbrev <buffer> sefl self
 
-" Puts pprint at the top of the file
+" Put pprint at the top of the file
 command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
-" Deletes first line in a file
+" Delete first line in a file
 command! Dprint normal mpggdd`pdmp
