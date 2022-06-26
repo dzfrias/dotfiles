@@ -1,11 +1,3 @@
-" -ale-
-let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.10/bin/python3'
-let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/3.10/bin/python3'
-let g:ale_python_flake8_executable = 'python3'
-let g:ale_python_flake8_options = '-m flake8'
-let g:ale_python_pyflakes_executable = 'pyflakes3'
-
-
 " -vim-signature-
 let g:SignatureMarkTextHLDynamic = 1
 
@@ -51,12 +43,7 @@ set cmdheight=2
 set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set signcolumn=number
 
 " Disable < pairs in html, vim-autoclose is better
 autocmd BufRead,BufNewFile *.htm,*.html let b:coc_pairs_disabled = ["<"]
@@ -76,11 +63,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
