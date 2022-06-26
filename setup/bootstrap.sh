@@ -3,7 +3,7 @@
 # Installs xcode
 xcode-select --install
 
-git clone https://github.com/Diego17230/dotfiles.git ~/.dotfiles
+git clone https://github.com/dzfrias/dotfiles.git ~/.dotfiles
 
 mkdir ~/.config
 
