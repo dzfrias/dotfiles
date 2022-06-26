@@ -41,15 +41,15 @@ done
 
 # -BINDKEYS-
 # Maps jk to normal mode in the zsh line editor
-bindkey jk       vi-cmd-mode
+bindkey    jk      vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
-bindkey '^[[Z'   autosuggest-accept
-# Binds search keys
-bindkey '˚'      up-line-or-search
-bindkey '∆'      down-line-or-search
+bindkey    '^[[Z'  autosuggest-accept
+# Binds history keys to alt-k and alt-j
+bindkey    '˚'     up-line-or-search
+bindkey    '∆'     down-line-or-search
 # Clears the prompt, writes the text, and enters it
-bindkey -s 'uu' '^Ucd ..^M'
-bindkey -s '^H' '^Ucd ~/.dotfiles^M'
+bindkey -s 'uu'    '^Ucd ..^M'
+bindkey -s '^H'    '^Ucd ~/.dotfiles^M'
 
 
 # -FUNCTIONS-
