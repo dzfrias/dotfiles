@@ -1,11 +1,12 @@
-" Runs vimrc
+" -VIM-------------------------------------------------------------------------
+" Adds ~/.vim to runtimepath
 set runtimepath^=~/.vim
 set runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
 
-" -PLUGINS-
+" -PLUGINS---------------------------------------------------------------------
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -31,7 +32,7 @@ Plug 'github/copilot.vim'
 call plug#end()
 
 
-" -SETTINGS-
+" -SETTINGS--------------------------------------------------------------------
 set modeline
 set background =dark
 " Sets cursor to line when not in normal mode
@@ -46,6 +47,8 @@ set modelines  =1
 let callcmd    ='echo ' . @%
 
 
+" -MAPPINGS--------------------------------------------------------------------
+
 " -NORMAL-
 " Will jump between folds
 noremap  <s-j>              zj
@@ -57,34 +60,34 @@ noremap  gi                 gi<Esc>
 noremap  <silent> <C-l>     :tabn<CR>
 noremap  <silent> <C-h>     :tabp<CR>
 nnoremap <leader>w          :write<CR>
-nnoremap <C-n>              :NERDTreeToggle<CR>
+nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 " Opens floating terminal
 nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
 " Opens floating terminal and calls the command to run the file. It also is
 " exited after any user input
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
+" Makes easyclip cut bound to gm rather than m
+nnoremap gm                 <Plug>MoveMotionPlug
+nnoremap gmm                <Plug>MoveMotionLinePlug
 " Triggers emmet autocomplete
 nmap     <C-v>              <C-y>,
-" Makes easyclip cut bound to gm rather than m
-nmap     gm                 <Plug>MoveMotionPlug
-nmap     gmm                <Plug>MoveMotionLinePlug
 
 " -INSERT-
 " Traversing tabs in insert mode
 inoremap <silent> <C-l>     <Esc>:tabn<CR>
 inoremap <silent> <C-h>     <Esc>:tabp<CR>
+" Fixes alt key not working on macOS
+inoremap ‘                  <Plug>(copilot-next)
+inoremap “                  <Plug>(copilot-previous)
 " Triggers emmet autocomplete
 imap     <C-v>              <C-y>,
-" Fixes alt key not working on macOS
-imap     ‘                  <Plug>(copilot-next)
-imap     “                  <Plug>(copilot-previous)
 
 " -VISUAL-
 " Makes easyclip cut bound to gm rather than m
-xmap     gm                 <Plug>MoveMotionXPlug
+xnoremap gm                 <Plug>MoveMotionXPlug
 
 
-" -COMMANDS & FUNCTIONS-
+" -COMMANDS & FUNCTIONS--------------------------------------------------------
 function OverLineNo()
     " Checks total line numbers
     if str2nr(line('$')) > 300
@@ -97,7 +100,7 @@ endfunction
 autocmd BufRead * :call OverLineNo()
 
 
-" -MISC-
+" -MISC------------------------------------------------------------------------
 " Loads settings for plugins
 source ~/.config/nvim/plugin_settings.vim
 

@@ -4,6 +4,7 @@
 # subdirectories. Optional -p or --preview option for showing which directory
 # it would change to
 
+
 # ANSI escape sequence for bold text
 readonly local BOLD=$(tput bold)
 # ANSI escape sequence for plain text
