@@ -1,4 +1,3 @@
-" -VIMRC-
 let s:section_header_regex = '\v" -[^-]+-{2,}'
 
 " NextLineIsSectionHeader() - returns 1 if the next line is a section header
@@ -19,7 +18,7 @@ function! GetVimrcFold(lnum)
     " Check if line is a section header
     if l:line =~? s:section_header_regex
         return '1'
-    " Check if the line is blank
+        " Check if the line is blank
     elseif s:NextLineIsSectionHeader(a:lnum)
         return '0'
     endif
