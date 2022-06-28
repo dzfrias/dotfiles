@@ -25,10 +25,7 @@ function! GetZshrcFold(lnum)
     return '1'
 endfunction
 
-" Check if editing zshrc
-if expand('%') =~? '\v.*zshrc$'
-    setlocal foldmethod=expr
-    setlocal foldexpr=GetZshrcFold(v:lnum)
-    " Fold all
-    normal! zM
-endif
+setlocal foldmethod=expr
+setlocal foldexpr=GetZshrcFold(v:lnum)
+" Fold all
+normal! zM
