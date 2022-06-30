@@ -36,17 +36,23 @@ call plug#end()
 
 " -SETTINGS--------------------------------------------------------------------
 set modeline
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set shortmess+=c
+set signcolumn=number
 set background =dark
 " Sets cursor to line when not in normal mode
-set guicursor  =c:ver20,i:ver20,ci:ver20,cr:ver20
+set guicursor=c:ver20,i:ver20,ci:ver20,cr:ver20
 " The time of updating, specifically used for plugins like gitgutter
-set updatetime =100
+set updatetime=100
 " Sets clipboard to system clipboard
-set clipboard  =unnamed
+set clipboard=unnamed
 " The range of lines a modeline can be declared
-set modelines  =1
+set modelines=1
 " callcmd is used when \r is typed and the current file is run
-let callcmd    ='echo ' . @%
+let callcmd='echo ' . @%
 
 
 " -MAPPINGS--------------------------------------------------------------------

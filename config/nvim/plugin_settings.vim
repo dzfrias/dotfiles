@@ -36,19 +36,6 @@ autocmd BufRead *.scpt setlocal commentstring=--%s
 
 " -coc-
 let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-python', 'coc-prettier']
-" TextEdit might fail if hidden is not set.
-set hidden
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-" Give more space for displaying messages.
-set cmdheight=2
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=number
-
 " Disable < pairs in html, vim-autoclose is better
 autocmd BufRead,BufNewFile *.htm,*.html let b:coc_pairs_disabled = ["<"]
 
