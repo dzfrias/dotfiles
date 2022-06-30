@@ -1,12 +1,15 @@
 #!/usr/local/bin/zsh
 
+zmodload zsh/mapfile
+
 function home() {
   # Symlinks files in symlink.txt to their appropriate destination. Lines in
   # the symlink.txt are of the form '$src $dest' where $dest can be optional.
   # If $dest is not specified, the file will be symlinked to be $HOME.
 
+  readonly FILENAME='resources/symlink.txt'
   # Splits symlink.txt into an array of lines
-  local home_files=(${(f)"$(cat resources/symlink.txt)"})
+  local home_files=("${(f)mapfile[$FILENAME]}")
 
   # So the iter variables are local
   local home_file=
