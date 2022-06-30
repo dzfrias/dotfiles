@@ -29,6 +29,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'svermeulen/vim-easyclip'
 Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
+Plug 'dzfrias/vim-foldjump'
 call plug#end()
 
 
