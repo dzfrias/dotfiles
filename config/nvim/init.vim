@@ -13,7 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'chrisbra/NrrwRgn'
-Plug 'psliwka/vim-smoothie'
+Plug 'declancm/cinnamon.nvim'
 Plug 'numToStr/FTerm.nvim'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
@@ -30,6 +30,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 Plug 'dzfrias/vim-foldjump'
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 
