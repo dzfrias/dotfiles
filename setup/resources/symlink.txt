@@ -2,5 +2,5 @@ zsh/zshrc
 vim/vimrc
 misc/taskrc
 git/*
-vim/ftplugin ~/.vim
-config/nvim ~/.neovim
+vim/nvim ~/.config/nvim
+vim/nvim ~/.neovim

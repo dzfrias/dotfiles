@@ -42,7 +42,7 @@ set nowritebackup
 set cmdheight=2
 set shortmess+=c
 set signcolumn=number
-set background =dark
+set background=dark
 " Sets cursor to line when not in normal mode
 set guicursor=c:ver20,i:ver20,ci:ver20,cr:ver20
 " The time of updating, specifically used for plugins like gitgutter
@@ -52,7 +52,7 @@ set clipboard=unnamed
 " The range of lines a modeline can be declared
 set modelines=1
 " callcmd is used when \r is typed and the current file is run
-let callcmd='echo ' . @%
+let g:callcmd='echo ' . @%
 
 
 " -MAPPINGS--------------------------------------------------------------------
