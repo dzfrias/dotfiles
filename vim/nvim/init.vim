@@ -12,7 +12,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'chrisbra/NrrwRgn'
 Plug 'declancm/cinnamon.nvim'
 Plug 'numToStr/FTerm.nvim'
 Plug 'kshenoy/vim-signature'

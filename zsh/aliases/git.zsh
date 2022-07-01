@@ -9,3 +9,4 @@ alias gtod='git rev-list --count --after=today00:00:00 --all'
 # Adds all files and commits with message
 alias gcma='git add --all && gcm'
 alias gc='git add --all && git commit --verbose --all'
+alias gprv='git push && repoview'
