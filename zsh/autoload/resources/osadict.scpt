@@ -1,5 +1,3 @@
-#!/usr/bin/osascript
-
 -- Opens the dictionary selector for the Script Editor app
 
 
