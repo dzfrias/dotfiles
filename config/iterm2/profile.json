@@ -32,7 +32,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7921568751335144
   },
-  "Right Option Key Sends" : 0,
+  "Right Option Key Sends" : 2,
   "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
@@ -79,8 +79,8 @@
               "Green Component" : 0.70588237047195435
             },
             "base: priority" : 5,
-            "base: compression resistance" : 1,
             "minwidth" : "0",
+            "base: compression resistance" : 1,
             "maxwidth" : 1.7976931348623157e+308
           },
           "layout advanced configuration dictionary value" : {
@@ -144,9 +144,10 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.9268307089805603
   },
+  "Right Option Key Changeable" : true,
   "BM Growl" : true,
-  "AWDS Window Directory" : "",
   "Icon" : 0,
+  "AWDS Window Directory" : "",
   "Ansi 3 Color" : {
     "Red Component" : 0.87843137979507446,
     "Color Space" : "sRGB",
@@ -154,8 +155,8 @@
     "Alpha Component" : 1,
     "Green Component" : 0.68627452850341797
   },
-  "Use Non-ASCII Font" : false,
   "Shortcut" : "",
+  "Use Non-ASCII Font" : false,
   "Use Custom Tab Title" : false,
   "Link Color" : {
     "Red Component" : 0.45098039507865906,
@@ -174,7 +175,7 @@
   "Unlimited Scrollback" : false,
   "Custom Command" : "No",
   "AWDS Tab Option" : "No",
-  "Title Components" : 2,
+  "Title Components" : 130,
   "Keyboard Map" : {
     "0xf700-0x260000" : {
       "Text" : "[1;6A",
@@ -398,8 +399,8 @@
     "Green Component" : 0.46274510025978088
   },
   "Name" : "Main",
-  "Guid" : "C8D6624C-F858-46AD-913E-1C85CC2944AC",
   "Blinking Cursor" : false,
+  "Guid" : "C8D6624C-F858-46AD-913E-1C85CC2944AC",
   "Ansi 8 Color" : {
     "Red Component" : 0.25490197539329529,
     "Color Space" : "sRGB",
@@ -455,7 +456,7 @@
   "Command" : "",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Minimum Contrast" : 0,
   "Ansi 15 Color" : {
     "Red Component" : 0.75294119119644165,
@@ -497,7 +498,7 @@
   },
   "Columns" : 151,
   "Visual Bell" : true,
-  "Custom Directory" : "No",
   "ASCII Ligatures" : false,
+  "Custom Directory" : "No",
   "Thin Strokes" : 4
 }
