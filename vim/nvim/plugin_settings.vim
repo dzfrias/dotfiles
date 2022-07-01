@@ -36,8 +36,6 @@ autocmd BufRead *.scpt setlocal commentstring=--%s
 
 " -coc-
 let g:coc_global_extensions = ['coc-snippets', 'coc-pairs', 'coc-python', 'coc-prettier']
-" Disable < pairs in html, vim-autoclose is better
-autocmd BufRead,BufNewFile *.htm,*.html let b:coc_pairs_disabled = ["<"]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

@@ -78,6 +78,8 @@ nnoremap gm                 <Plug>MoveMotionPlug
 nnoremap gmm                <Plug>MoveMotionLinePlug
 " Trigger emmet autocomplete
 nmap     <C-v>              <C-y>,
+" Surround to end of line with vim-surround
+nmap     ysS                ys$
 
 " -INSERT-
 " Traverse tabs better in insert mode

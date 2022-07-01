@@ -15,4 +15,5 @@ alias gprv='git push && repoview'
 # -GITHUB-
 alias ghl='ghlink'
 alias ghf='ghfork'
+alias ghn='newrepo'
 alias rpv='repoview'
