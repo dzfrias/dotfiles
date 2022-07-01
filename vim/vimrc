@@ -31,7 +31,6 @@ colorscheme zellner
 
 
 " -MAPPINGS--------------------------------------------------------------------
-noremap <space> za
 noremap gg gg0
 " Puts semicolon at the end of a line
 nnoremap <silent> <C-s> maA;<Esc>`a:delmarks a<CR>
