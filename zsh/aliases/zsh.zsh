@@ -15,7 +15,6 @@ alias crne='crontab -e'
 alias chx='chmod +x'
 alias rmr='rm -r'
 alias srmr='sudo rm -r'
-alias rpv='repoview'
 
 
 # -CLI-OPTIONS-
@@ -27,3 +26,4 @@ alias exa='exa --long --header --no-user --icons --no-permissions --git'
 alias notif='terminal-notifier'
 alias ggl='google'
 alias todo='rg "^\s*.?.? TODO:"'
+alias rpv='repoview'
