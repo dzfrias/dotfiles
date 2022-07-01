@@ -30,6 +30,7 @@ Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 Plug 'dzfrias/vim-foldjump'
 Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/applescript.vim'
 call plug#end()
 
 
