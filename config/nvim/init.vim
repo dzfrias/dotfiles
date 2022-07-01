@@ -57,9 +57,8 @@ let callcmd='echo ' . @%
 
 " -MAPPINGS--------------------------------------------------------------------
 " -NORMAL-
-" Jump between folds
+" Jump down to nearest line with foldlevel > 0
 noremap  <s-j>              zj
-noremap  <s-k>              zk
 " Opens folds
 noremap  <space><space>     za
 noremap  gi                 gi<Esc>
