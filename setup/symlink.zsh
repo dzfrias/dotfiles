@@ -39,7 +39,7 @@ function config() {
 
   local config_dir=
   # Everything in the config dir
-  for config_dir in ~/.dotfiles/config/*; do
+  for config_dir in ~/.dotfiles/misc/config/*; do
     ln -s $config_dir ~/.config
   done
 }
