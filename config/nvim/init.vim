@@ -83,9 +83,6 @@ nmap     <C-v>              <C-y>,
 " Traverse tabs better in insert mode
 inoremap <silent> <C-l>     <Esc>:tabn<CR>
 inoremap <silent> <C-h>     <Esc>:tabp<CR>
-" Fixes alt key not working on macOS
-inoremap ‘                  <Plug>(copilot-next)
-inoremap “                  <Plug>(copilot-previous)
 " Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
 
