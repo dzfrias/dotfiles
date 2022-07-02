@@ -1,24 +1,27 @@
 #!/bin/zsh
 
 
-data=$(
+local results=$(
 gh repo view \
   --json 'languages' \
   --jq '.languages.[] | .node.name, .size'
 )
-data=(${(f)data})
+local data=(${(f)results})
 
+local ordered_data=
 typeset -A ordered_data
 
-total=0
+local total=0
 for (( i=1; i<=${#data}; i++ )); do
   if (( i % 2 == 0 )); then
-    total=$((total + ${data[i]}))
+    local total=$((total + ${data[i]}))
   else
     ordered_data[${data[i]}]=${data[i+1]}
   fi
 done
 
+local language=
+local size=
 for language size in ${(kv)ordered_data}; do
   echo "$language: $((size*100/total))%"
 done | sort -k1.2
