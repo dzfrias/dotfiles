@@ -95,5 +95,11 @@ ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#0db9d7'
 
 
 # -MISC------------------------------------------------------------------------
-# Puts crontab into cron.txt
-crontab -l > ~/.dotfiles/setup/resources/cron.txt
+# Anonymous function to set up the crontab file
+function () {
+  readonly local CRON_FILE="$HOME/.dotfiles/setup/resources/crontab"
+  # Modeline to set syntax
+  echo "# vim:syntax=crontab\n" > $CRON_FILE
+  # Puts crontab into cron.txt
+  crontab -l >> $CRON_FILE
+}
