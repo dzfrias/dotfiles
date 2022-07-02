@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# Opens the GitHub stars page
+
+
+osascript ~/.dotfiles/zsh/autoload/resources/ghstars.scpt

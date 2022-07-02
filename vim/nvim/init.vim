@@ -53,7 +53,7 @@ set clipboard=unnamed
 " The range of lines a modeline can be declared
 set modelines=1
 " callcmd is used when \r is typed and the current file is run
-let g:callcmd='echo ' . @%
+let g:callcmd = 'echo ' . @%
 
 
 " -MAPPINGS--------------------------------------------------------------------

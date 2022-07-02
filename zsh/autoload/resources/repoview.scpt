@@ -8,12 +8,7 @@ tell application "Google Chrome"
     -- Execute command and store output in repoName
     set repoName to do shell script command
 
-    -- Gets the url of the first tab
-    set tab1 to get URL of tab 1 of first window
-    if tab1 contains "https://github.com/" then
-        -- Set the url of the first tab to the repo
-        set (URL of tab 1 of first window) to "https://github.com/" & repoName
-        -- Switch to tab 1
-        set active tab index of first window to 1
-    end if
+    set repoUrl to "https://github.com/" & repoName
+    -- Opens repoUrl in Google Chrome (see _ghopen.scpt)
+    do shell script "osascript ~/.dotfiles/zsh/autoload/resources/_ghopen.scpt " & repoUrl
 end tell
