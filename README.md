@@ -16,7 +16,7 @@ To add files to the symlink script, edit [setup/resources/symlink.txt](https://g
 
 
 ### Cron
-The contents of [setup/resources/cron.txt](https://github.com/dzfrias/dotfiles/blob/main/setup/resources/cron.txt) will be put into the user's crontab when [setup/bootstrap.sh](https://github.com/dzfrias/dotfiles/blob/main/setup/bootstrap.sh) is run.
+The contents of [setup/resources/crontab](https://github.com/dzfrias/dotfiles/blob/main/setup/resources/crontab) will be put into the user's crontab when [setup/bootstrap.sh](https://github.com/dzfrias/dotfiles/blob/main/setup/bootstrap.sh) is run.
 
 
 ### Aliases
