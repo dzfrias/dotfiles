@@ -2,12 +2,12 @@
 
 zmodload zsh/mapfile
 
-function home() {
+function () {
   # Symlinks files in symlink.txt to their appropriate destination. Lines in
   # the symlink.txt are of the form '$src $dest' where $dest can be optional.
   # If $dest is not specified, the file will be symlinked to be $HOME.
 
-  readonly FILENAME='resources/symlink.txt'
+  readonly local FILENAME='resources/symlink.txt'
   # Splits symlink.txt into an array of lines
   local home_files=("${(f)mapfile[$FILENAME]}")
 
@@ -34,7 +34,7 @@ function home() {
   done
 }
 
-function config() {
+function () {
   # Symlinks all directories in config into the ~/.config directory
 
   local config_dir
@@ -43,6 +43,3 @@ function config() {
     ln -s $config_dir ~/.config
   done
 }
-
-home
-config
