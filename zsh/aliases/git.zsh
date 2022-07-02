@@ -7,9 +7,7 @@ alias gd='git diff | bat --plain'
 alias gamm='git commit --amend'
 # Counts all commits made on the current day
 alias gtod='git rev-list --count --after=today00:00:00 --all'
-# Adds all files and commits with message
-alias gcma='git add --all && gcm'
-alias gc='git add --all && git commit --verbose --all'
+alias gc='git add --all && git commit --verbose'
 alias gprv='git push && repoview'
 
 # -GITHUB-
