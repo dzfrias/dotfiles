@@ -21,6 +21,13 @@ let g:EasyClipAutoFormat = 1
 let g:EasyClipUseCutDefaults = 0
 
 
+" -vim-fugitive-
+" Open pager with these mappings
+autocmd User FugitivePager 
+      \ nnoremap <buffer> <s-j> zj |
+      \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp
+
+
 " -cinnamon.nvim-
 lua require('cinnamon').setup()
 
