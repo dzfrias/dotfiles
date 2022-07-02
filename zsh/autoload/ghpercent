@@ -10,11 +10,10 @@ gh repo view \
 # Split the results into an array by newlines
 local data=(${(f)results})
 
-local ordered_data
-# Make an associative array
-typeset -A ordered_data
+# Declare an associative array
+local -A ordered_data
 
-local total=0
+local total=0.0
 local i
 for (( i=1; i<=${#data}; i++ )); do
   # If the index of the item is even, it will be a size, so add it to the total
@@ -29,7 +28,10 @@ done
 local language
 local size
 for language size in ${(kv)ordered_data}; do
-  # Gets percentage of total size of the language
-  echo "$language: $((size*100/total))%"
+  # Get percentage of total size of the language as a float
+  local -F percentage=$((size * 100 / total))
+  echo -n "$language: "
+  # Print the percentage rounded to one decimal place
+  printf "%.1f%%\n" $percentage
 # Sort by size
-done | sort -k1.2
+done | sort --key=1.2
