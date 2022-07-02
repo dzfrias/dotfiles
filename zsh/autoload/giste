@@ -34,7 +34,7 @@ local gist_ids=()
 local gists=($(gh gist list))
 # Pushes first item to gist_ids, it will always be a gist id
 gist_ids+=${gists[1]}
-local part=
+local part
 for part in $gists; do
   # Checks if length of string is 32, a there's a number, and the last element
   # was a iso formatted datetime
@@ -44,11 +44,11 @@ for part in $gists; do
   local last=$part
 done
 
-local gist_id=
+local gist_id
 for gist_id in $gist_ids; do
   # Gets files of specified gist
   local files=$(gh gist view $gist_id --files)
-  local file=
+  local file
   for file in $files; do
     # Checks if the files have the same name
     if [[ $file == $1 ]]; then

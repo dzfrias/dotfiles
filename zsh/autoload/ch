@@ -13,7 +13,7 @@ readonly local PLAIN=$(tput sgr0)
 function _enumerate() {
   # Prints each argument (path) with the one-based index to the left
   local i=1
-  local path=
+  local path
   for path in $@; do
     # Removes the './' at the start of the element
     echo "$i. $BOLD${path#./}$PLAIN"
@@ -71,7 +71,7 @@ case ${#matches} in
       return 0
     fi
 
-    local result=
+    local result
     # Gets user input for directory to change to
     vared -p 'Choose the directory: ' -c result
     # Checks if user input is not a number or is not within bounds of $matches

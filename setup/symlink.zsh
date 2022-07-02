@@ -12,14 +12,14 @@ function home() {
   local home_files=("${(f)mapfile[$FILENAME]}")
 
   # So the iter variables are local
-  local home_file=
+  local home_file
   for home_file in $home_files; do
     # Splits each line by word
     local info=(${=home_file})
     local src="$HOME/.dotfiles/$info[1]"
     local dest=$info[2]
 
-    local match=
+    local match
     # Turns $src into a glob pattern
     for match in ${~src}; do
       # Checks if $dest is empty
@@ -37,7 +37,7 @@ function home() {
 function config() {
   # Symlinks all directories in config into the ~/.config directory
 
-  local config_dir=
+  local config_dir
   # Everything in the config dir
   for config_dir in ~/.dotfiles/misc/config/*; do
     ln -s $config_dir ~/.config

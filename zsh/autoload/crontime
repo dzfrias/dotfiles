@@ -20,7 +20,7 @@ fi
 
 # Gets length of string minus 1
 local str_len=$(( ${#1} - 1 ))
-local i=
+local i
 for i in {1..$str_len}; do
   # Character of string at the index
   local char=${1:$i:1}

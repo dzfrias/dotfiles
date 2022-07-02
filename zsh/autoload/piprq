@@ -35,7 +35,7 @@ if ($requirements); then
 fi
 
 local added=()
-local module=
+local module
 for module in $imports; do
   local search="^\b$module\b" 
   # Check if module is not in the txt file of modules and if it isn't in $added
