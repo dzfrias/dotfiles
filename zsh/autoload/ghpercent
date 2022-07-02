@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Get the language usage percentage of a git repository, mirrors the behavior
+# of the 'Languages' section of a GitHub repository's homepage.
+
 
 # Get the name and size of every language in the repo, of the form "NAME\nSIZE"
 local results=$(
@@ -12,8 +15,8 @@ local data=(${(f)results})
 
 # Declare an associative array
 local -A ordered_data
-
 local total=0.0
+
 local i
 for (( i=1; i<=${#data}; i++ )); do
   # If the index of the item is even, it will be a size, so add it to the total
