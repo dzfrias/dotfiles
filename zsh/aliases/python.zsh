@@ -10,7 +10,7 @@ alias jupyter-venv="python -m ipykernel install --user --name=$1"
 
 # -PIP-
 # Makes pip have to have venv to install to prevent accidental global installs
-alias pipin='pip install --require-virtualenv'
+alias pipi='pip install --require-virtualenv'
 alias pipw='which pip3'
 alias pipf='pip freeze'
 # Installs the google api client into the virtual environment
