@@ -33,6 +33,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/applescript.vim'
 Plug 'bfontaine/Brewfile.vim'
 call plug#end()
+" Load settings for plugins
+source ~/.config/nvim/plugin_settings.vim
 
 
 " -SETTINGS--------------------------------------------------------------------
@@ -97,19 +99,15 @@ xnoremap gm                 <Plug>MoveMotionXPlug
 " OverLineNo() checks if the total amount of lines is over 300, and if so,
 " folds everything
 function! OverLineNo()
-    if line('$') > 300
-        " Fold everything
-        normal! zM
-    endif
+  if line('$') > 300
+    " Fold everything
+    normal! zM
+  endif
 endfunction
 
 autocmd BufRead * :call OverLineNo()
 
 
 " -MISC------------------------------------------------------------------------
-" Load settings for plugins
-source ~/.config/nvim/plugin_settings.vim
-
-let g:tokyonight_style = 'night'
 colorscheme tokyonight
 packloadall
