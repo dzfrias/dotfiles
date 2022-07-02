@@ -9,7 +9,7 @@ alias gamm='git commit --amend'
 alias gtod='git rev-list --count --after=today00:00:00 --all'
 alias gc='git add --all && git commit --verbose'
 alias gprv='git push && repoview'
-alias glog="nvim +'Git log --oneline | execute \"normal! \<C-w>o\"'"
+alias glog="nvim +'Git log --oneline --decorate | execute \"normal! \<C-w>o\"'"
 
 # -GITHUB-
 alias ghl='ghlink'
