@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Forks the URL of the first tab of Google Chrome.
 
 

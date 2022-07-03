@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Open the closest matching repo to the first argument
 
 

@@ -18,6 +18,7 @@ aliases:
     op: '!zsh ~/.dotfiles/misc/config/gh/functions/open.zsh $1'
     pro: '!zsh ~/.dotfiles/misc/config/gh/functions/profile.zsh'
     not: '!zsh ~/.dotfiles/misc/config/gh/functions/notif.zsh'
+    per: '!zsh ~/.dotfiles/misc/config/gh/functions/percent.zsh'
     al: alias list
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:

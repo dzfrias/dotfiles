@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Copies the username/reponame part of link of first tab to clipboard
 
 

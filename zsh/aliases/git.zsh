@@ -11,5 +11,5 @@ alias gc='git add --all && git commit --verbose'
 alias glg="nvim +'Git log --oneline --decorate | execute \"normal! \<C-w>o\"'"
 
 # -GITHUB-
-alias ghp='ghpercent'
+alias ghp='gh per'
 alias gprv='git push && repoview'

@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Get the language usage percentage of a git repository, mirrors the behavior
 # of the 'Languages' section of a GitHub repository's homepage.
 

@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Opens the user's GitHub profile
 
 

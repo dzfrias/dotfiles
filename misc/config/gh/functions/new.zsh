@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Sets up a git repository in the current directory along with a remote
 # repository on GitHub. The first argument is the name, the second is either
 # pub[lic] or pri[vate].

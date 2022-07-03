@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # Opens the GitHub stars page
 
 

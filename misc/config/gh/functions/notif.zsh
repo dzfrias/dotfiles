@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 
 local notifs=$(
 gh api \
