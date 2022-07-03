@@ -4,7 +4,7 @@
 
 
 if [[ $# != 1 ]]; then
-  echo 'Usage: ghopen [repo]'
+  echo 'Usage: gh o [repo]'
   return 1
 fi
 

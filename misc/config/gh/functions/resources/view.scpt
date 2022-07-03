@@ -9,6 +9,6 @@ tell application "Google Chrome"
     set repoName to do shell script command
 
     set repoUrl to "https://github.com/" & repoName
-    -- Opens repoUrl in Google Chrome (see _ghopen.scpt)
-    do shell script "osascript ~/.dotfiles/zsh/autoload/resources/_ghopen.scpt " & repoUrl
+    -- Opens repoUrl in Google Chrome (see _open.scpt)
+    do shell script "osascript ~/.dotfiles/misc/config/gh/functions/resources/_open.scpt " & repoUrl
 end tell

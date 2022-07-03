@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-# Opens the current repository in the first tab of Chrome if it is on GitHub.
-# Much like gh repo view --web, but doesn't open it in a new tab.
-
-
-# Executes the AppleScript. Putting the AppleScript in autoload was causing an
-# error, so this was the other option
-osascript ~/.dotfiles/zsh/autoload/resources/repoview.scpt

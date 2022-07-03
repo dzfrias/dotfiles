@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-# Forks the URL of the first tab of Google Chrome.
-
-
-osascript ~/.dotfiles/zsh/autoload/resources/ghfork.scpt

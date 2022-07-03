@@ -10,6 +10,15 @@ pager:
 aliases:
     co: pr checkout
     rl: repo list
+    ln: '!zsh ~/.dotfiles/misc/config/gh/functions/link.zsh'
+    fk: '!zsh ~/.dotfiles/misc/config/gh/functions/fork.zsh'
+    new: '!zsh ~/.dotfiles/misc/config/gh/functions/new.zsh'
+    sr: '!zsh ~/.dotfiles/misc/config/gh/functions/stars.zsh'
+    v: '!zsh ~/.dotfiles/misc/config/gh/functions/view.zsh'
+    op: '!zsh ~/.dotfiles/misc/config/gh/functions/open.zsh $1'
+    pro: '!zsh ~/.dotfiles/misc/config/gh/functions/profile.zsh'
+    not: '!zsh ~/.dotfiles/misc/config/gh/functions/notif.zsh'
+    al: alias list
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
