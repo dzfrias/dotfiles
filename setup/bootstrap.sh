@@ -38,3 +38,6 @@ touch ~/.dotfiles/zsh/extra.zsh
 crontab <(cat ~/.dotfiles/setup/resources/crontab | sed '1,2d')
 # All files in here will be removed every day
 mkdir ~/.temporary
+
+# Set macOS defaults
+zsh ~/.dotfiles/misc/macos.zsh
