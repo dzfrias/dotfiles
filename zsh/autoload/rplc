@@ -6,6 +6,7 @@
 
 if [[ $# < 2 ]]; then
   echo 'Usage: rplc OLD/NEW GLOB'
+  return 1
 fi
 
 # Replaces contents of files matching GLOB with a sed replace expression
