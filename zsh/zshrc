@@ -53,9 +53,9 @@ bindkey -s 'uu'    '^Ucd ..^M'
 bindkey -s '^H'    '^Ucd ~/.dotfiles^M'
 
 # Copies current prompt text to clipboard
-bindkey -M viins '^Y'    copybuffer
-bindkey -M vicmd '^Y'    copybuffer
-bindkey -M emacs '^Y'    copybuffer
+bindkey -M viins '^Y' copybuffer
+bindkey -M vicmd '^Y' copybuffer
+bindkey -M emacs '^Y' copybuffer
 
 function zle-keymap-select {
   # Change cursor for depending on the mode
