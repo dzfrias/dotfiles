@@ -25,7 +25,8 @@ let g:EasyClipUseCutDefaults = 0
 " Open pager with these mappings
 autocmd User FugitivePager 
       \ nnoremap <buffer> <s-j> zj |
-      \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp
+      \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
+      \ nnoremap <buffer> q ZZ
 
 
 " -cinnamon.nvim-
