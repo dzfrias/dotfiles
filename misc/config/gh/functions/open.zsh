@@ -12,7 +12,7 @@ local matches=()
 local repo
 # Split into array by newline
 for repo in ${(f)repos}; do
-  # Checks if repo matches glob pattern
+  # Check if repo matches glob pattern
   if [[ $repo == *$1* ]]; then
     matches+=$repo
   fi
