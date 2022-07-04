@@ -7,6 +7,10 @@ let g:user_emmet_install_global = 0
 autocmd BufRead,BufNewFile *.htm,*.html,*.css EmmetInstall
 
 
+" -vim-go-
+let g:go_fmt_command = 'goimports'
+
+
 " -clever-f-
 let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1

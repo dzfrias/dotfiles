@@ -32,6 +32,7 @@ Plug 'dzfrias/vim-foldjump'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/applescript.vim'
 Plug 'bfontaine/Brewfile.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
