@@ -20,6 +20,10 @@ let g:clever_f_mark_direct = 1
 let g:mkdp_page_title = '${name} - Markdown'
 
 
+" -copilot.nvim-
+let g:copilot_filetypes = {'go': v:false}
+
+
 " -vim-easyclip-
 let g:EasyClipAutoFormat = 1
 let g:EasyClipUseCutDefaults = 0
