@@ -11,15 +11,13 @@ if [[ $# != 0 ]]; then
 fi
 
 readonly local PATTERN='main.*'
-# Get the amount of matches for the pattern
-local match_amount=$PATTERN(#qN)
 
-if [[ -z ${~match_amount} ]]; then
+if [[ -z $PATTERN(#qN) ]]; then
   echo 'No matches found'
   return 1
-else if
-  echo 'Found too many main files'
+elif [[ $(ls $~PATTERN | wc -l) -gt 1 ]]; then
+  echo 'More than one match found'
   return 1
 fi
 
-nvim ${~PATTERN}
+nvim $~PATTERN
