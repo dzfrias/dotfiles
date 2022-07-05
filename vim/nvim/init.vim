@@ -64,7 +64,7 @@ let g:callcmd = 'echo ' . @%
 " Jump down to nearest line with foldlevel > 0
 noremap  <s-j>              zj
 " Opens folds
-noremap  <space><space>     za
+noremap  <space>            za
 noremap  gi                 gi<Esc>
 " Traversing tabs
 noremap  <silent> <C-l>     :tabn<CR>
