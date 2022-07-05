@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+# nvimm will open any matching main.* file in neovim
+
+
+setopt EXTENDED_GLOB
+
+if [[ $# != 0 ]]; then
+  echo 'Usage: nvm'
+  return 1
+fi
+
+readonly local PATTERN='main.*'
+# Get the amount of matches for the pattern
+local match_amount=$(ls | grep -c $PATTERN)
+
+case $match_amount in
+  0)
+    echo 'No main files found'
+    return 1
+    ;;
+  1)
+    nvim ${~PATTERN}
+    ;;
+  *)
+    echo "Multiple main files found: $(ls $PATTERN)"
+    return 1
+    ;;
+esac
