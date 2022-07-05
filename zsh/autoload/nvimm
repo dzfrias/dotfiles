@@ -12,7 +12,7 @@ fi
 
 readonly local PATTERN='main.*'
 
-if [[ -z $PATTERN(#qN) ]]; then
+if [[ -z $~PATTERN(#qN) ]]; then
   echo 'No matches found'
   return 1
 elif [[ $(ls $~PATTERN | wc -l) -gt 1 ]]; then
