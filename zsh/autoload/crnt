@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-# Looks up the argument that was passed on crontab guru
+# crnt looks up the argument that was passed on crontab guru
 
 
 setopt RE_MATCH_PCRE
@@ -10,7 +10,6 @@ if [[ $# != 1 ]]; then
   return 1
 fi
 
-# Allowed values not of the regular cron time form
 local allowed=(@monthly @daily @yearly @weekly @hourly)
 # Check if the first argument is in the array
 if (($allowed[(Ie)$1])); then
@@ -18,7 +17,7 @@ if (($allowed[(Ie)$1])); then
   return 0
 fi
 
-# Gets length of string minus 1
+# Get length of string minus 1
 local str_len=$(( ${#1} - 1 ))
 local i
 for i in {1..$str_len}; do
@@ -28,20 +27,20 @@ for i in {1..$str_len}; do
     continue
   fi
 
-  # Tests if character is not one of these
+  # Test if character is not one of these
   if [[ $char != '*' && $char != '/' && ! $char =~ '^\d+$' ]]; then
     echo "Invalid character: $char"
     return 1
   fi
 done
 
-# Checks if the amount of words is not equal to five
+# Check if the amount of words is not equal to five
 if [[ ${#${=1}} != 5 ]]; then
   echo 'Needs five parts for valid cron time'
   return 1
 fi
 
-# Substitutes spaces for underscores and forms url
+# Substitute spaces for underscores and forms url
 local url="https://crontab.guru/#${1:gs/ /_}"
-# Opens url
+# Open url
 open -u $url

@@ -15,6 +15,7 @@ alias crne='crontab -e'
 alias chx='chmod +x'
 alias rmr='rm -r'
 alias srmr='sudo rm -r'
+alias cpr='cp -R'
 
 
 # -CLI-OPTIONS-
