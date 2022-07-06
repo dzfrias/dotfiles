@@ -9,6 +9,7 @@ autocmd BufRead,BufNewFile *.htm,*.html,*.css EmmetInstall
 
 " -vim-go-
 let g:go_fmt_command = 'goimports'
+let g:go_doc_keywordprg_enabled = 0
 
 
 " -clever-f-
