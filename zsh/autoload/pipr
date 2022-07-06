@@ -57,6 +57,6 @@ for module in $imports; do
   fi
 done
 
-if [[ ${#added} == 0 ]]; then
+if [[ $#added == 0 ]]; then
   echo 'No external packages found'
 fi

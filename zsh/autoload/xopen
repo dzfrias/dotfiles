@@ -21,10 +21,10 @@ setopt EXTENDED_GLOB
 local xcodeproj_pattern="$1/**/*.xcodeproj"
 
 # Checks if amount of matches of the glob pattern is zero
-if [[ -z ${~xcodeproj_pattern}(#qN) ]]; then
+if [[ -z $~xcodeproj_pattern(#qN) ]]; then
   echo 'No xcode project found'
   return 1
 fi
 
 # Opens the file (will default to opening in Xcode)
-open ${~xcodeproj_pattern}
+open $~xcodeproj_pattern

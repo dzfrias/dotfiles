@@ -48,7 +48,7 @@ esac
 local matches=($(fd "^$search.*" --type d))
 
 # Checks case for the number of matches
-case ${#matches} in
+case $#matches in
   1)
     local new_dir="$BOLD$matches[1]$PLAIN"
     if [[ ! -v preview ]]; then

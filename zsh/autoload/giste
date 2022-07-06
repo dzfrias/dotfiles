@@ -38,7 +38,7 @@ local part
 for part in $gists; do
   # Checks if length of string is 32, a there's a number, and the last element
   # was a iso formatted datetime
-  if [[ ${#part} == 32 && $part =~ '\d' && $last =~ '\d{4}-\d\d-\d\dT(?:\d\d:){2}\d\dZ' ]]; then
+  if [[ $#part == 32 && $part =~ '\d' && $last =~ '\d{4}-\d\d-\d\dT(?:\d\d:){2}\d\dZ' ]]; then
     gist_ids+=$part
   fi
   local last=$part

@@ -8,10 +8,10 @@
 function _print_lines() {
   # Prints line counts of files in the given glob pattern, sorted in descending
   # order
-  local count=$(wc -l ${~1})
+  local count=$(wc -l $~1)
   # Gets the last line of the $count (the total)
   local total=${${(f)count}[-1]}
-  if [[ ${#total} == 1 ]]; then
+  if [[ $#total == 1 ]]; then
     # $total will be of length 1 if there is only one match to $count
     echo $count
   else

@@ -11,9 +11,9 @@ setopt EXTENDED_GLOB
 if [[ -d $1 ]]; then
   local new="$1.*"
   # Checks if the glob matches by checking the amount of matches
-  if [[ -n ${~new}(#qN) ]]; then
+  if [[ -n $~new(#qN) ]]; then
     # Matches the glob pattern
-    local file=(${~new})
+    local file=($~new)
     # Uses command to non-recursively call neovim
     command nvim $file ${@[2,-1]}
   else

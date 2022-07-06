@@ -18,7 +18,7 @@ if (($allowed[(Ie)$1])); then
 fi
 
 # Get length of string minus 1
-local str_len=$(( ${#1} - 1 ))
+local str_len=$(( $#1 - 1 ))
 local i
 for i in {1..$str_len}; do
   # Character of string at the index
