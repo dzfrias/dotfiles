@@ -1,3 +1,4 @@
+# Show GitHub notifications
 
 local notifs=$(
 gh api \
