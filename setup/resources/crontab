@@ -2,8 +2,6 @@
 
 PATH="/usr/local/bin"
 
-# Every first minute of every day
-1 0 * * * '~/.dotfiles/zsh/cron/task_overdue.py'
 # Delete all files and directories in the ~/.temporary dir
 @daily /bin/rm -r ~/.temporary/*
 # Delete files in trash monthly
