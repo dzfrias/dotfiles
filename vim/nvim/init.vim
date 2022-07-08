@@ -70,7 +70,9 @@ noremap  gi                 gi<Esc>
 noremap  <silent> <C-l>     :tabn<CR>
 noremap  <silent> <C-h>     :tabp<CR>
 nnoremap <leader>w          :write<CR>
+nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
+" Reload init.vim
 nnoremap <leader>v          :source $MYVIMRC<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 " Open floating terminal
