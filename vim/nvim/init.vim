@@ -33,6 +33,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/applescript.vim'
 Plug 'bfontaine/Brewfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tpope/vim-endwise'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
