@@ -13,4 +13,3 @@ alias gcomms='git rev-list --all --count'
 
 # -GITHUB-
 alias ghp='gh per'
-alias gprv='git push && repoview'
