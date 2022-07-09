@@ -70,8 +70,6 @@ brew "oh-my-posh"
 brew "php"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Tool to enforce Swift style and conventions
-brew "swiftlint"
 # Feature-rich console based todo list manager
 brew "task"
 # Send macOS User Notifications from the command-line
