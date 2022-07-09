@@ -24,12 +24,10 @@ if [[ ${#matches} == 0 ]]; then
   return 1
 fi
 
-# Get the url associated with the repo
-local url=$(gh repo view --json 'url' --jq '.url')
-
 if [[ ${#matches} != 1 ]]; then
   for match in $matches; do
     if [[ $match == $1 ]]; then
+      local url=$(gh repo view $match --json 'url' --jq '.url')
       osascript ~/.dotfiles/misc/config/gh/functions/resources/_open.scpt $url
       unset matches
       return 0
@@ -41,6 +39,7 @@ if [[ ${#matches} != 1 ]]; then
   return 1
 fi
 
+local url=$(gh repo view $matches --json 'url' --jq '.url')
 osascript ~/.dotfiles/misc/config/gh/functions/resources/_open.scpt $url
 
 unset matches
