@@ -13,8 +13,6 @@ brew bundle --file ~/.dotfiles/setup/Brewfile
 
 # Symlink files from ~/.dotfiles
 zsh ~/.dotfiles/setup/symlink.zsh
-# Makes appropriate files executable
-zsh ~/.dotfiles/setup/executables.zsh
 
 # Install oh-my-zsh and keep the current zshrc
 export KEEP_ZSHRC='yes'
