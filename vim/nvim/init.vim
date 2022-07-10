@@ -13,7 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'declancm/cinnamon.nvim'
-Plug 'numToStr/FTerm.nvim', { 'commit': '2628685bddb50370bec6c65be95b68b343ed8443' }
+Plug 'numToStr/FTerm.nvim'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
