@@ -94,6 +94,8 @@ nmap     ysS                ys$
 " Traverse tabs better in insert mode
 inoremap <silent> <C-l>     <Esc>:tabn<CR>
 inoremap <silent> <C-h>     <Esc>:tabp<CR>
+" Triggers omnifunc
+inoremap <s-CR> <C-x><C-o>
 " Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
 

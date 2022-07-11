@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# h goes upwards until reaching the root directory of the project
+
+while [[ ! -f go.mod || ! -f go.sum || ! -f requirements.txt ]]; do
+  cd ..
+done
