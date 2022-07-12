@@ -4,13 +4,10 @@
 
 local start=$PWD
 
-while [[ ! -f go.mod || ! -f go.sum || ! -f requirements.txt ]]; do
-  if [[ $PWD == $HOME ]]; then
-    echo "Could not find project root directory"
-    break
-  fi
+while [[ ! -f go.mod && ! -f go.sum && ! -f requirements.txt && $PWD != $HOME ]]; do
   cd ..
 done
+pwd
 
 # For cleaner appearance on directory stack
 pushd $start > /dev/null
