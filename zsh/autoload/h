@@ -2,6 +2,16 @@
 
 # h goes upwards until reaching the root directory of the project
 
+local start=$PWD
+
 while [[ ! -f go.mod || ! -f go.sum || ! -f requirements.txt ]]; do
+  if [[ $PWD == $HOME ]]; then
+    echo "Could not find project root directory"
+    break
+  fi
   cd ..
 done
+
+# For cleaner appearance on directory stack
+pushd $start > /dev/null
+cd - > /dev/null
