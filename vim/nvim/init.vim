@@ -76,6 +76,8 @@ nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
 " Reload init.vim
 nnoremap <leader>v          :source $MYVIMRC<CR>
+" Accept first spelling suggestion
+nnoremap <leader>f          z=1<CR><CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 " Open floating terminal
 nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
