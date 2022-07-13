@@ -40,6 +40,8 @@ brew "gobject-introspection"
 brew "harfbuzz"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Perl compatible regular expressions library with a new API
@@ -82,7 +84,8 @@ brew "zsh"
 brew "heroku/brew/heroku"
 # Application launcher and productivity software
 cask "alfred"
-cask "font-meslo-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-inconsolata"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
