@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+if [[ $# > 1 ]]; then
+  echo 'Usage: proj <project type>'
+  return 1
+fi
+
+# Glob patterns match files starting with . too
+setopt GLOB_DOTS
+local available=(go)
+local proj_name=${PWD:t}
+case $1 in
+  'go')
+    go mod init github.com/dzfrias/$proj_name
+    cp -R ~/.dotfiles/zsh/autoload/resources/proj/all/* .
+    # Copy everything recursively and overwrite clashing files
+    cp -Rf ~/.dotfiles/zsh/autoload/resources/proj/go/* .
+    mv cmd/PROJNAME cmd/$proj_name
+    ;;
+  *)
+    echo 'Available types:'
+    for proj_type in $available; do
+      echo "  $proj_type"
+    done
+    return 1
+    ;;
+esac
+
+# To get around gitignore
+mv .projections_templ.json .projections.json
