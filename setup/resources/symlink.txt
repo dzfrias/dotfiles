@@ -4,3 +4,4 @@ misc/taskrc
 git/*
 vim/nvim ~/.config/nvim
 vim/nvim ~/.neovim
+misc/projections.json ~/.dotfiles/.projections.json

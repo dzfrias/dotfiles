@@ -1,0 +1,7 @@
+{
+    "zsh/autoload/*": {"template": "#!/bin/zsh", "type": "func", "alternate": "zsh/autoload/resources/{}.scpt"},
+    "zsh/autoload/resources/*": {"template": "", "type": "", "alternate": ""},
+    "zsh/autoload/resources/*.scpt": {"type": "osa", "alternate": "zsh/autoload/{}"},
+    "misc/config/gh/functions/resources/*.scpt": {"type": "osa", "alternate": "misc/config/gh/functions/{}.zsh"},
+    "misc/config/gh/functions/*.zsh": {"type": "gh", "alternate": "misc/config/gh/functions/resources/{}.scpt"}
+}
