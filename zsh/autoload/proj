@@ -27,4 +27,4 @@ case $1 in
 esac
 
 # To get around gitignore
-mv .projections_templ.json .projections.json
+mv projections.json .projections.json
