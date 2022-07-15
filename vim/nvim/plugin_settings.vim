@@ -29,7 +29,6 @@ let g:copilot_filetypes = {'go': v:false}
 
 " -vim-easyclip-
 let g:EasyClipAutoFormat = 1
-let g:EasyClipUseCutDefaults = 0
 
 
 " -vim-fugitive-

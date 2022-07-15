@@ -14,7 +14,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'declancm/cinnamon.nvim'
 Plug 'numToStr/FTerm.nvim'
-Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -35,6 +34,7 @@ Plug 'bfontaine/Brewfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
+Plug 'elihunter173/dirbuf.nvim'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
@@ -85,9 +85,6 @@ nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
 " Open floating terminal and call the command to run the file. Existed after
 " the escape key is pressed.
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
-" For easyclip
-nnoremap gm                 <Plug>MoveMotionPlug
-nnoremap gmm                <Plug>MoveMotionLinePlug
 " Trigger emmet autocomplete
 nmap     <C-v>              <C-y>,
 " Surround to end of line with vim-surround
@@ -101,10 +98,6 @@ inoremap <silent> <C-h>     <Esc>:tabp<CR>
 inoremap <s-CR> <C-x><C-o>
 " Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
-
-" -VISUAL-
-" Make easyclip cut bound to gm rather than m
-xnoremap gm                 <Plug>MoveMotionXPlug
 
 
 " -COMMANDS & FUNCTIONS--------------------------------------------------------
