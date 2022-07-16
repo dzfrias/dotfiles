@@ -4,7 +4,7 @@
 
 local start=$PWD
 
-while [[ ! -f go.mod && ! -f go.sum && ! -f requirements.txt && $PWD != $HOME && ! -f README.md ]]; do
+while [[ ! -f go.mod && ! -f go.sum && ! -f requirements.txt && $PWD != $HOME && ! -f LICENSE ]]; do
   cd ..
 done
 pwd
