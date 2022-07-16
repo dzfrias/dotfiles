@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+local editfile=$(fzf --preview "bat --color=always --style=numbers,changes {}")
+
+nvim $editfile
+cd $(dirname $editfile)
