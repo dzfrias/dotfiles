@@ -84,8 +84,6 @@ brew "zsh"
 brew "heroku/brew/heroku"
 # Application launcher and productivity software
 cask "alfred"
-cask "font-hack-nerd-font"
-cask "font-inconsolata"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
