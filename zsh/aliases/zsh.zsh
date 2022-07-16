@@ -16,7 +16,7 @@ alias chx='chmod +x'
 alias rmr='rm -r'
 alias srmr='sudo rm -r'
 alias cpr='cp -R'
-
+alias license='cp ~/.dotfiles/LICENSE .'
 
 # -CLI-OPTIONS-
 # Doesn't open pager for bat (default is always in misc/config/bat/config)

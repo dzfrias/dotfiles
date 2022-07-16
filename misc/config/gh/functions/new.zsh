@@ -20,22 +20,29 @@ case $2 in
     return 1
 esac
 
-# New git repo
-git init
+# Only used to check if in git repo, so supress all output
+git status > /dev/null 2>&1
+# Check if in a git repo
+local code=$?
+if [[ code == 128 ]]; then
+  git init
 
-# Adds a README if no other files exist in the directory
-local file_count=$(ls | wc -l)
-if [[ $file_count -eq 0 ]]; then
-  touch README.md
-  # Gets the endmost part of $PWD and puts it into README.md
-  echo "# ${PWD:t}" >> README.md
+  # Add a README if no other files exist in the directory
+  local file_count=$(ls | wc -l)
+  if [[ $file_count -eq 0 ]]; then
+    touch README.md
+    # Get the endmost part of $PWD and puts it into README.md
+    echo "# ${PWD:t}" >> README.md
+  fi
+
+  # Add to the new repo
+  git add --all
+  git commit --message='Initial commit'
+else
+  git commit
 fi
 
-# Adds to the new repo
-git add --all
-git commit --message='Initial commit'
-
-# Creates a new GitHub repo interactively
+# Create a new GitHub repo
 gh repo create $1 $view_status --remote origin --source .
 git push --set-upstream origin main
 echo 'All set up!'
