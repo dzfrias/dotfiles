@@ -41,3 +41,5 @@ fd 'PROJNAME' --type directory --exec mv {} {//}/$proj_name
 
 # To get around gitignore
 mv projections.json .projections.json
+
+rplc "PROJNAME/$proj_name" **/*(.)
