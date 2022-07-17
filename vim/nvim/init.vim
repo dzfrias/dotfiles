@@ -35,6 +35,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'elihunter173/dirbuf.nvim'
+Plug 'dzfrias/vim-gojson'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim

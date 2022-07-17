@@ -33,6 +33,7 @@ export _Z_NO_RESOLVE_SYMLINKS=1
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='gorm gor'
 # Mail goes to ~/.mbox instead of ~/mbox, less home directory clutter
 export MBOX="$HOME/.mbox"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 
 # -ALIASES---------------------------------------------------------------------

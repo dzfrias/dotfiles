@@ -19,6 +19,10 @@ let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1
 
 
+" -vim-gojson-
+let g:gojson_map_keys = 1
+
+
 " -markdown-preview-
 let g:mkdp_page_title = '${name} - Markdown'
 
@@ -33,7 +37,7 @@ let g:EasyClipAutoFormat = 1
 
 " -vim-fugitive-
 " Open pager with these mappings
-autocmd User FugitivePager 
+autocmd User FugitivePager
       \ nnoremap <buffer> <s-j> zj |
       \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
       \ nnoremap <buffer> q ZZ
