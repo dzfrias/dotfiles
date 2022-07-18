@@ -31,8 +31,7 @@ local size
 for language size in ${(kv)ordered_data}; do
   # Get percentage of total size of the language as a float
   local -F percentage=$((size * 100 / total))
-  echo -n "$language: "
   # Print the percentage rounded to one decimal place
-  printf "%.1f%%\n" $percentage
+  printf "%s: %.1f%%\n" $language $percentage
 # Sort by size
-done | sort --key=1.2
+done | sort --field-separator=':' --key=2 --ignore-leading-blanks --general-numeric-sort --reverse
