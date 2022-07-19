@@ -7,7 +7,7 @@ fi
 
 # Glob patterns match files starting with . too
 setopt GLOB_DOTS
-local available=(go vim)
+local available=($(ls ~/.dotfiles/zsh/autoload/resources/proj(/) | sed 's/all//g'))
 local proj_name=${PWD:t}
 
 if [[ ! " ${available[*]} " =~ " $1 " ]]; then
