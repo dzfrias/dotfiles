@@ -1,0 +1,5 @@
+{
+    "README.md": {"type": "doc"},
+    "doc/PROJNAME.txt": {"type": "help"},
+    "plugin/PROJNAME.vim": {"type": "main"}
+}
