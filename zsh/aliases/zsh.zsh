@@ -4,6 +4,7 @@ alias ls='ls -G'
 alias reload='exec zsh'
 # In case of mistype
 alias relaod='reload'
+alias rl='reload'
 # Copies to clipboard
 alias pb='pbcopy'
 # To perform calculations
@@ -19,7 +20,7 @@ alias cpr='cp -R'
 alias license='cp ~/.dotfiles/LICENSE .'
 
 # -CLI-OPTIONS-
-# Doesn't open pager for bat (default is always in misc/config/bat/config)
+# Doesn't open pager for bat (default is 'always' in misc/config/bat/config)
 alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
@@ -28,5 +29,3 @@ alias notif='terminal-notifier'
 alias ggl='google'
 alias todo='rg "^\s*.?.? TODO:"'
 alias osd='osadict'
-alias fp='fzf --preview "bat --color=always --style=numbers,changes {}"'
-alias fnf='nvim $(fzf --preview "bat --color=always --style=numbers,changes {}")'
