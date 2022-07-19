@@ -1,9 +1,10 @@
-let b:callcmd='go run ' . @%
+nnoremap <buffer> <leader>r :GoRun<CR>
 
-nnoremap <buffer> <C-p> <Plug>(go-doc)
+" vim-go
+nnoremap <buffer> <C-p>      <Plug>(go-doc)
 " Gojson
-nnoremap <leader>g      <Plug>Gojson
-nnoremap <leader>gg     <Plug>Gojson
-xnoremap <leader>g      <Plug>Gojson
+nnoremap <buffer> <leader>g  <Plug>Gojson
+nnoremap <buffer> <leader>gg <Plug>Gojson
+xnoremap <buffer> <leader>g  <Plug>Gojson
 
 setlocal foldmethod=syntax
