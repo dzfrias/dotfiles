@@ -10,19 +10,6 @@
 # Needed for the #q glob flag
 setopt EXTENDED_GLOB
 
-local filetype=$(file $1)
-if [[ $filetype == *"Mach-O 64-bit executable x86_64"* ]]; then
-  # Glob pattern for file to edit
-  local new="$1.*"
-  if [[ -n $~new(#qN) ]]; then
-    command nvim $~new ${@[2,-1]}
-    return 0
-  else
-    command nvim $1 ${@[2,-1]}
-    return 0
-  fi
-fi
-
 if [[ ${1:e} == '' ]]; then
   # Glob pattern for file to edit
   local new="$1.*"
