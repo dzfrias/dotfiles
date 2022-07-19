@@ -68,26 +68,39 @@ let g:callcmd = 'echo ' . @%
 noremap  <s-j>              zj
 " Opens folds
 noremap  <space>            za
+
+" Go back to last place in insert mode
 noremap  gi                 gi<Esc>
+
 " Traversing tabs
 noremap  <silent> <C-l>     :tabn<CR>
 noremap  <silent> <C-h>     :tabp<CR>
+
+" Simple editor commands
 nnoremap <leader>w          :write<CR>
 nnoremap <leader>s          :source %<CR>
 nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
-" Reload init.vim
 nnoremap <leader>v          :source $MYVIMRC<CR>
 " Accept first spelling suggestion
 nnoremap <leader>f          z=1<CR><CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
+
+" Move through windows
+nnoremap <leader>k          <C-w>k
+nnoremap <leader>l          <C-w>l
+nnoremap <leader>h          <C-w>h
+nnoremap <leader>j          <C-w>j
+
 " Open floating terminal
 nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
 " Open floating terminal and call the command to run the file. Existed after
 " the escape key is pressed.
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
+
 " Trigger emmet autocomplete
 nmap     <C-v>              <C-y>,
+
 " Surround to end of line with vim-surround
 nmap     ysS                ys$
 
