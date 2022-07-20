@@ -4,7 +4,7 @@ cobra-cli $*
 
 local comm=$1
 case $comm in
-  "init")
+  'init')
     mkdir pkg
     mv cmd pkg
     mkdir pkg/cmd/root
@@ -12,7 +12,7 @@ case $comm in
     mkdir -p cmd/${PWD:t}
     mv main.go cmd/${PWD:t}
     ;;
-  "add")
+  'add')
     local sub=$2
     mkdir pkg/cmd/$sub
     mv cmd/$sub.go pkg/cmd/$sub
