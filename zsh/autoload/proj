@@ -22,6 +22,10 @@ fi
 case $1 in
   'go')
     go mod init github.com/dzfrias/$proj_name
+    ;;
+  'vim')
+    # Remove 'vim-' suffix of project name if it exists
+    local proj_name=${${PWD:t}#vim-}
 esac
 
 cp -R ~/.dotfiles/zsh/autoload/resources/proj/all/* .
