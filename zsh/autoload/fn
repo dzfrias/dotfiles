@@ -1,6 +1,10 @@
 #!/bin/zsh
 
 local editfile=$(fzf --preview "bat --color=always --style=numbers,changes {}")
+if [[ -z $editfile ]]; then
+  # Return code for quit
+  return 130
+fi
 
 nvim $editfile
 cd $(dirname $editfile)
