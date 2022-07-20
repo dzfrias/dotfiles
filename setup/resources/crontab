@@ -3,6 +3,6 @@
 PATH="/usr/local/bin"
 
 # Delete all files and directories in the ~/.temporary dir
-0 */12 * * * /bin/rm -r ~/.temporary/*
+0 */12 * * * /bin/rm -rf ~/.temporary/*
 # Delete files in trash monthly
 @monthly /bin/rm -r ~/.Trash/*
