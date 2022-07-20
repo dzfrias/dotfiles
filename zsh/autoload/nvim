@@ -10,7 +10,7 @@
 # Needed for the #q glob flag
 setopt EXTENDED_GLOB
 
-if [[ ${1:e} == '' ]]; then
+if [[ ${1:e} == '' && ! -d $1 ]]; then
   # Glob pattern for file to edit
   local new="$1.*"
   if [[ -n $~new(#qN) ]]; then
