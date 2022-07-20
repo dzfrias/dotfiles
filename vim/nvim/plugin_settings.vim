@@ -36,7 +36,8 @@ let g:EasyClipAutoFormat = 1
 autocmd User FugitivePager
       \ nnoremap <buffer> <s-j> zj |
       \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
-      \ nnoremap <buffer> q ZZ
+      \ nnoremap <buffer> q ZZ |
+      \ nnoremap <buffer> <s-CR> <C-6>
 
 
 " -cinnamon.nvim-
