@@ -24,7 +24,7 @@ esac
 git status > /dev/null 2>&1
 # Check if in a git repo
 local code=$?
-if [[ code == 128 ]]; then
+if [[ $code == 128 ]]; then
   git init
 
   # Add a README if no other files exist in the directory
