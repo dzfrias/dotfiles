@@ -1,4 +1,4 @@
-nnoremap <buffer> <leader>r :GoRun<CR>
+nnoremap <buffer> <leader>r  :w<CR>:GoRun<CR>
 
 " vim-go
 nnoremap <buffer> <C-p>      <Plug>(go-doc)
