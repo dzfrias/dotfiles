@@ -36,6 +36,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'elihunter173/dirbuf.nvim'
 Plug 'dzfrias/vim-gojson'
+Plug 'dzfrias/vim-gitrebase'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
