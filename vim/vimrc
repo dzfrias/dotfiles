@@ -37,9 +37,3 @@ nnoremap <silent> <C-s> maA;<Esc>`a:delmarks a<CR>
 nnoremap <CR> o<Esc>
 
 inoremap jk <Esc>
-" Pairs
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha

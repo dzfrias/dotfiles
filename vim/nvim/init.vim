@@ -8,7 +8,6 @@ source ~/.vimrc
 
 " -PLUGINS---------------------------------------------------------------------
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -28,7 +27,6 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'matze/vim-move'
 Plug 'github/copilot.vim'
 Plug 'dzfrias/vim-foldjump'
-Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/applescript.vim'
 Plug 'bfontaine/Brewfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -37,6 +35,9 @@ Plug 'tpope/vim-projectionist'
 Plug 'elihunter173/dirbuf.nvim'
 Plug 'dzfrias/vim-gojson'
 Plug 'dzfrias/vim-gitrebase'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
@@ -46,6 +47,8 @@ source ~/.config/nvim/plugin_settings.vim
 set modeline
 set hidden
 set nobackup
+set autoindent
+set smartindent
 set nowritebackup
 set cmdheight=2
 set shortmess+=c
