@@ -56,6 +56,14 @@ let g:pymode_run_bind = '<leader>r'
 let g:SuperTabDefaultCompletionType = 'context'
 
 
+" -fzf-
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-o': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit' }
+
+
 "-vim-fugitive-
 " Open pager with these mappings
 autocmd User FugitivePager

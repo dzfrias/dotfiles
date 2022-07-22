@@ -18,7 +18,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
@@ -32,7 +31,6 @@ Plug 'bfontaine/Brewfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
-Plug 'elihunter173/dirbuf.nvim'
 Plug 'dzfrias/vim-gojson'
 Plug 'dzfrias/vim-gitrebase'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
