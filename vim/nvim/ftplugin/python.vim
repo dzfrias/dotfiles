@@ -1,7 +1,3 @@
-let b:ale_linters = ['flake8', 'pyflakes']
-" Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['autopep8', 'yapf']
-
 setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal colorcolumn=79
@@ -14,3 +10,6 @@ iabbrev <buffer> sefl self
 command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
 " Delete first line in a file
 command! Dprint normal mpggdd`pdmp
+
+" Lint on save
+autocmd BufWritePre * :execute 'PymodeLintAuto'
