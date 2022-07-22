@@ -63,6 +63,10 @@ autocmd User FugitivePager
       \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
       \ nnoremap <buffer> q ZZ |
       \ nnoremap <buffer> <s-CR> <C-6>
+" Activated when :G buffer is entered
+autocmd User FugitiveIndex
+      \ nnoremap <silent> <s-s> :Git add --all<CR> |
+      \ nnoremap <silent> <leader>p :Git push<CR>
 
 
 " -cinnamon.nvim-

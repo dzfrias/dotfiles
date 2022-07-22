@@ -136,7 +136,9 @@ autocmd BufRead * :call <SID>OverLineNo()
 command! -bang ProjFiles call fzf#vim#files(empty($PROJROOT) ? '.' : $PROJROOT, <bang>0)
 
 " Stage all (activates when :G buffer is entered)
-autocmd User FugitiveIndex :nmap <silent> <s-s> :Git add --all<CR>
+autocmd User FugitiveIndex
+      \ nnoremap <silent> <s-s> :Git add --all<CR> |
+      \ nnoremap <silent> <leader>p :Git push<CR>
 
 
 " -MISC------------------------------------------------------------------------
