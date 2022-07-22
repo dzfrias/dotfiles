@@ -90,6 +90,9 @@ nnoremap <leader>v          :source $MYVIMRC<CR>
 nnoremap <silent> <leader>f :ProjFiles<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 
+" fugitive
+nnoremap <silent> gq        :G<CR>
+
 " Move through windows
 nnoremap <leader>k          <C-w>k
 nnoremap <leader>l          <C-w>l

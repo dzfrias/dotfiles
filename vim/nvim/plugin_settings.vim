@@ -1,7 +1,3 @@
-" -vim-signature-
-let g:SignatureMarkTextHLDynamic = 1
-
-
 " -emmet-vim-
 let g:user_emmet_install_global = 0
 autocmd BufRead,BufNewFile *.htm,*.html,*.css EmmetInstall
@@ -31,10 +27,6 @@ let g:go_debug_log_output = ''
 " -clever-f-
 let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1
-
-
-" -markdown-preview-
-let g:mkdp_page_title = '${name} - Markdown'
 
 
 " -copilot.nvim-
