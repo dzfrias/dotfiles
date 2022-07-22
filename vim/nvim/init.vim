@@ -135,6 +135,9 @@ autocmd BufRead * :call <SID>OverLineNo()
 " Fzf's at the project root if possible. otherwise, at the current directory
 command! -bang ProjFiles call fzf#vim#files(empty($PROJROOT) ? '.' : $PROJROOT, <bang>0)
 
+" Stage all (activates when :G buffer is entered)
+autocmd User FugitiveIndex :nmap <silent> <s-s> :Git add --all<CR>
+
 
 " -MISC------------------------------------------------------------------------
 colorscheme tokyonight
