@@ -24,8 +24,6 @@ alias license='cp ~/.dotfiles/LICENSE .'
 alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
-# Makes a notification
-alias notif='terminal-notifier'
 alias ggl='google'
 alias todo='rg "^\s*.?.? TODO:"'
 alias osd='osadict'
