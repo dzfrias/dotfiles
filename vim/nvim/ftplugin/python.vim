@@ -10,6 +10,3 @@ iabbrev <buffer> sefl self
 command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
 " Delete first line in a file
 command! Dprint normal mpggdd`pdmp
-
-" Lint on save
-autocmd BufWritePre * :execute 'PymodeLintAuto'

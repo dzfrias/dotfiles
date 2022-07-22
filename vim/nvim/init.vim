@@ -38,6 +38,8 @@ Plug 'dzfrias/vim-gitrebase'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
@@ -86,8 +88,8 @@ nnoremap <leader>s          :source %<CR>
 nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
 nnoremap <leader>v          :source $MYVIMRC<CR>
-" Accept first spelling suggestion
-nnoremap <leader>f          z=1<CR><CR>
+" fzf, see definition of ProjFiles below
+nnoremap <silent> <leader>f :ProjFiles<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 
 " Move through windows
@@ -121,14 +123,16 @@ imap     <C-v>              <C-y>,
 " -COMMANDS & FUNCTIONS--------------------------------------------------------
 " OverLineNo() checks if the total amount of lines is over 300, and if so,
 " folds everything
-function! OverLineNo()
+function! s:OverLineNo()
   if line('$') > 300
     " Fold everything
     normal! zM
   endif
 endfunction
 
-autocmd BufRead * :call OverLineNo()
+autocmd BufRead * :call <SID>OverLineNo()
+" Fzf's at the project root if possible. otherwise, at the current directory
+command! -bang ProjFiles call fzf#vim#files(empty($PROJROOT) ? '.' : $PROJROOT, <bang>0)
 
 
 " -MISC------------------------------------------------------------------------
