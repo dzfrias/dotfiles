@@ -38,6 +38,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-scriptease'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
@@ -85,7 +86,7 @@ nnoremap <leader>w          :write<CR>
 nnoremap <leader>s          :source %<CR>
 nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
-nnoremap <leader>v          :source $MYVIMRC<CR>
+nnoremap <leader>v          :Runtime<CR>
 " fzf, see definition of ProjFiles below
 nnoremap <silent> <leader>f :ProjFiles<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
