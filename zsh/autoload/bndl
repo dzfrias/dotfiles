@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-# Check if Brewfile already exists
-if [[ -f Brewfile ]]; then
-  rm Brewfile
-fi
-
-brew bundle dump --describe
