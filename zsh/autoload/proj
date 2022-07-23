@@ -55,8 +55,4 @@ fd 'PROJNAME' --type directory --exec mv {} {//}/$proj_name
 # To get around gitignore
 mv projections.json .projections.json
 
-# direnv
-mv envrc .envrc
-direnv allow
-
 rplc "PROJNAME/$proj_name" **/*(.)
