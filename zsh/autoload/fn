@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# fn edits a file with fzf at the project root
+
+
 # Go to project root
 h > /dev/null
 if [[ $PWD == $HOME ]]; then

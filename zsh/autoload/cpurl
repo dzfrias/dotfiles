@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Copies the active tab's url to clipboard
+# cpurl copies the active tab's url to clipboard
 
 
 osascript ~/.dotfiles/zsh/autoload/resources/cpurl.scpt

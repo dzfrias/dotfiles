@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# proj creates a copies files from a template with a given name. Any instances
+# of PROJNAME in the template are replaced with the root directory name. An
+# optional -g or --git flag can be passed to create a git repo locally.
+
+
 if [[ $# != 1 && $# != 2 ]]; then
   echo 'Usage: proj <project type> [options...]'
   return 1

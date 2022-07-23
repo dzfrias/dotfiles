@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Gets the imports from .py files and puts them into requirements.txt
+# pipr gets the imports from .py files and puts them into requirements.txt
 
 
 case $1 in
@@ -30,7 +30,7 @@ local imports=("${(@f)$(rg '(?<=^import |^from )\b\w+\b' --pcre2 --only-matching
 local pip_freeze=$(pip freeze)
 
 if ($requirements); then
-  # Makes empty requirements.txt or clears it if it exists
+  # Make empty requirements.txt or clears it if it exists
   echo -n '' > requirements.txt
 fi
 
@@ -40,14 +40,14 @@ for module in $imports; do
   local search="^\b$module\b" 
   # Check if module is not in the txt file of modules and if it isn't in $added
   if [[ -z $(grep $search "$HOME/.dotfiles/zsh/autoload/resources/piprq.txt") && ${added[(Ie)$module]} == 0 ]]; then
-    # Gets version from pip freeze
+    # Get version from pip freeze
     local version=$(echo $pip_freeze | grep $search)
-    # Checks if string is empty (module not in pip freeze)
+    # Check if string is empty (module not in pip freeze)
     if [[ -z $version ]]; then
       continue
     fi
     if ($requirements); then
-      # Appends to requirements.txt
+      # Append to requirements.txt
       echo $version >> requirements.txt
       echo "$version put in requirements.txt"
     else

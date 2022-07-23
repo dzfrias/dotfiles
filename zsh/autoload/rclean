@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-# Cleans a git repository of the given arguments
+# rclean cleans a git repository of the given arguments
 
 
-# Cleans repo of arguments and removes the last line to avoid confusion
+# Clean repo of arguments and removes the last line to avoid confusion
 bfg --replace-text <(echo $@) .git | sed '$d'
 rm -r .git.bfg-report
-# Finishes cleaning
+# Push to GitHub
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
 git push --force

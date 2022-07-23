@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# rfn opens a file with nvim using fzf relative to fzf
+
+
 local editfile=$(fzf --preview "bat --color=always --style=numbers,changes {}")
 if [[ -z $editfile ]]; then
   # Return code for quit

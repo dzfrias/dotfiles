@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-# Replaces text with the form 'OLD/NEW' (first argument) in files matching glob
-# pattern (second argument)
+# rplc replaces text with the form 'OLD/NEW' (first argument) in files matching
+# glob pattern (second argument)
 
 
 if [[ $# < 2 ]]; then
@@ -9,5 +9,5 @@ if [[ $# < 2 ]]; then
   return 1
 fi
 
-# Replaces contents of files matching GLOB with a sed replace expression
+# Replace contents of files matching GLOB with a sed replace expression
 ls ${@:2} | xargs sed -i '' "s/$1/g"
