@@ -1,13 +1,7 @@
 #!/bin/zsh
 
-# Go to project root
-h > /dev/null
-if [[ $PWD == $HOME ]]; then
-  cd -
-fi
 local editfile=$(fzf --preview "bat --color=always --style=numbers,changes {}")
 if [[ -z $editfile ]]; then
-  cd - > /dev/null
   # Return code for quit
   return 130
 fi
