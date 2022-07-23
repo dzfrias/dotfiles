@@ -1,3 +1,3 @@
-if maparg('<CR>') !=? ''
+if maparg('<CR>', 'n') !=? ''
     nunmap <CR>
 endif
