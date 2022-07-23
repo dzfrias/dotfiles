@@ -1,3 +1,4 @@
+alias n='nvim'
 # Edits zshrc
 alias zrc="nvim $HOME/.zshrc"
 # Edits extra zsh config file
