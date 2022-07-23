@@ -1,4 +1,4 @@
-# Show GitHub notifications
+# notif shows GitHub notifications
 
 local notifs=$(
 gh api \
