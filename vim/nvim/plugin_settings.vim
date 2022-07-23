@@ -37,6 +37,10 @@ let g:copilot_filetypes = {'go': v:false}
 let g:EasyClipAutoFormat = 1
 
 
+" -fzf-
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
+
+
 " -pymode-
 let g:pymode_rope_goto_definition_bind = 'gd'
 let g:pymode_lint_ignore = ["E501"]
