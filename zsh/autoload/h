@@ -2,9 +2,10 @@
 
 # h goes upwards until reaching the root directory of the project
 
+
 local start=$PWD
 
-while [[ ! -f go.mod && ! -f go.sum && ! -f requirements.txt && $PWD != $HOME && ! -f LICENSE ]]; do
+while [[ ! -f go.mod && ! -f requirements.txt && $PWD != $HOME && ! -f LICENSE && ! -d .git ]]; do
   cd ..
 done
 pwd
