@@ -1,8 +1,17 @@
 #!/bin/zsh
 
-if [[ $# != 1 ]]; then
-  echo 'Usage: proj <project type>'
+if [[ $# != 1 && $# != 2 ]]; then
+  echo 'Usage: proj <project type> [options...]'
   return 1
+fi
+
+zmodload zsh/zutil
+
+local git
+zparseopts -D -E -F - g=git -git=git || exit 1
+
+if [[ -n $git && $# == 1 ]]; then
+  git init
 fi
 
 # Glob patterns match files starting with . too
