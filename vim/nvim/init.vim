@@ -123,18 +123,28 @@ imap     <C-v>              <C-y>,
 
 
 " -COMMANDS & FUNCTIONS--------------------------------------------------------
-" OverLineNo() checks if the total amount of lines is over 300, and if so,
-" folds everything
-function! s:OverLineNo()
+" OverLineNo folds everything if the line count is greater than 300
+function! s:OverLineNo() abort
   if line('$') > 300
     " Fold everything
     normal! zM
   endif
 endfunction
+autocmd BufRead * call <SID>OverLineNo()
 
-autocmd BufRead * :call <SID>OverLineNo()
-" Fzf's at the project root if possible. otherwise, at the current directory
-command! -bang ProjFiles call fzf#vim#files(empty($PROJROOT) ? '.' : $PROJROOT, <bang>0)
+" FindProjRoot gets the root of the project, assuming it is using git
+function! s:FindProjRoot(dir) abort
+  let dir = fnamemodify(a:dir, ':p')
+  let home = $HOME . '/'
+  if dir ==? home || dir[:-4] ==? home
+    return '.'
+  endif
+  if isdirectory(dir . '.git')
+    return dir
+  endif
+  return s:FindProjRoot(dir . '/' . '..')
+endfunction
+command! -bang ProjFiles call fzf#vim#files(<SID>FindProjRoot('.'), <bang>0)
 
 
 " -MISC------------------------------------------------------------------------
