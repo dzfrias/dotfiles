@@ -66,7 +66,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
 
 " -pymode-
 let g:pymode_rope_goto_definition_bind = 'gd'
-let g:pymode_lint_ignore = ["E501"]
+let g:pymode_lint_ignore = ['E501']
 let g:pymode_doc_bind = '<C-p>'
 let g:pymode_run_bind = '<leader>r'
 
@@ -84,8 +84,8 @@ autocmd User FugitivePager
       \ nnoremap <buffer> <s-CR> <C-6>
 " Activated when :G buffer is entered
 autocmd User FugitiveIndex
-      \ nnoremap <silent> <s-s> :Git add --all<CR> |
-      \ nnoremap <silent> <leader>p :Git push<CR>
+      \ nnoremap <buffer> <silent> <s-s> :Git add --all<CR> |
+      \ nnoremap <buffer> <silent> <leader>p :Git push<CR>
 
 
 " -cinnamon.nvim-

@@ -96,7 +96,8 @@ nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 nnoremap <silent> gq        :G<CR>
 
 " vimspector, see all in plugin_settings.vim
-nnoremap <leader>dd         :call vimspector#Launch()<CR>
+nnoremap <leader>dd         :call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
+nnoremap <leader>du         :call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
 
 " Move through windows
 nnoremap <leader>k          <C-w>k
