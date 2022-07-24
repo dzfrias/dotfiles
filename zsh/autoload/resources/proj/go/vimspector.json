@@ -14,8 +14,7 @@
             }
         },
         "test": {
-            "adapter": "delve",
-            "filetypes": [ "go" ],
+            "extends": "run",
             "configuration": {
                 "request": "launch",
                 "args": [
