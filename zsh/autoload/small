@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# small changes the iTerm window size to a small size
+
+
+osascript ~/.dotfiles/zsh/autoload/resources/small.scpt
