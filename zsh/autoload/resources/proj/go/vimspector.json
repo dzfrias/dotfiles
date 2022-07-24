@@ -1,0 +1,17 @@
+{
+    "configurations": {
+        "run": {
+            "adapter": "delve",
+            "filetypes": [ "go" ],
+            "configuration": {
+                "request": "launch",
+                "args": [
+                    "--",
+                    "${command}"
+                ],
+                "program": "${workspaceRoot}/cmd/PROJNAME",
+                "mode": "debug"
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
-# Get the language usage percentage of a git repository, mirrors the behavior
-# of the 'Languages' section of a GitHub repository's homepage.
+# percent gets the language usage percentage of a git repository, mirrors the
+# behavior of the 'Languages' section of a GitHub repository's homepage.
 
 
 # Get the name and size of every language in the repo, of the form "NAME\nSIZE"

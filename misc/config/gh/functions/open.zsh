@@ -1,4 +1,4 @@
-# Open the closest matching repo to the first argument
+# open opens the closest matching repo to the first argument
 
 
 if [[ $# != 1 ]]; then

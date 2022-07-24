@@ -8,25 +8,24 @@ let g:go_fmt_command = 'goimports'
 let g:go_doc_keywordprg_enabled = 0
 let g:go_auto_type_info = 1
 let g:go_metalinter_autosave = 1
-let g:go_debug_windows = {
-      \ 'vars':       'leftabove 30vnew',
-      \ 'stack':      'leftabove 15new',
-      \ 'out':        'botright 5new',
-      \ }
-let g:go_debug_mappings = {
-      \ '(go-debug-continue)':   {'key': 'N'},
-      \ '(go-debug-print)':      {'key': 'p'},
-      \ '(go-debug-breakpoint)': {'key': 'b'},
-      \ '(go-debug-next)':       {'key': 'n'},
-      \ '(go-debug-step)':       {'key': 's'},
-      \ '(go-debug-stepout)':    {'key': 'S'},
-      \ }
-let g:go_debug_log_output = ''
 
 
 " -clever-f-
 let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1
+
+" -vimspector-
+nnoremap <leader>dq :call vimspector#Reset()<CR>
+nnoremap <leader>dc :call vimspector#Continue()<CR>
+nnoremap <leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>dT :call vimspector#ClearBreakpoints()<CR>
+nnoremap <leader>dk <Plug>VimspectorRestart
+nnoremap <leader>dh <Plug>VimspectorStepOut
+nnoremap <leader>dl <Plug>VimspectorStepInto
+nnoremap <leader>dj <Plug>VimspectorStepOver
+nnoremap <leader>dz <Plug>VimspectorRunToCursor
+nnoremap <leader>di <Plug>VimspectorBalloonEval
+xnoremap <leader>di <Plug>VimspectorBalloonEval
 
 
 " -copilot.nvim-

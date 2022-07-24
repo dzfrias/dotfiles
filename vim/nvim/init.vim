@@ -39,6 +39,7 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-scriptease'
+Plug 'puremourning/vimspector'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
@@ -91,8 +92,11 @@ nnoremap <leader>v          :Runtime<CR>
 nnoremap <silent> <leader>f :ProjFiles<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 
-" fugitive
+" fugitive, see all in plugin_settings.vim
 nnoremap <silent> gq        :G<CR>
+
+" vimspector, see all in plugin_settings.vim
+nnoremap <leader>dd         :call vimspector#Launch()<CR>
 
 " Move through windows
 nnoremap <leader>k          <C-w>k

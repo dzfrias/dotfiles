@@ -59,5 +59,8 @@ fd 'PROJNAME' --type directory --exec mv {} {//}/$proj_name
 
 # To get around gitignore
 mv projections.json .projections.json
+if [[ -f vimspector.json ]]; then
+  mv vimspector.json .vimspector.json
+fi
 
 rplc "PROJNAME/$proj_name" **/*(.)
