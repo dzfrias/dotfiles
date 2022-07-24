@@ -15,5 +15,6 @@ if [[ -z $editfile ]]; then
   return 130
 fi
 
-nvim $editfile
+local abs=${editfile:a}
 cd $(dirname $editfile)
+nvim $abs
