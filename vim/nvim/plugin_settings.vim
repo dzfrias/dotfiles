@@ -56,6 +56,10 @@ let g:copilot_filetypes = {
 let g:EasyClipAutoFormat = 1
 
 
+" -gitgutter-
+let g:gitgutter_map_keys = 0
+
+
 " -fzf-
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
 
