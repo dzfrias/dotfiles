@@ -35,7 +35,21 @@ autocmd User VimspectorUICreated call s:CustomiseUI()
 
 
 " -copilot.nvim-
-let g:copilot_filetypes = {'go': v:false}
+let g:copilot_filetypes = {
+      \ '*': v:false,
+      \ 'python': v:true,
+      \ 'zsh': v:true,
+      \ 'zshrc': v:true,
+      \ 'sh': v:true,
+      \ 'bash': v:true,
+      \ 'html': v:true,
+      \ 'css': v:true,
+      \ 'js': v:true,
+      \ 'json': v:true,
+      \ 'vim': v:true,
+      \ 'vimrc': v:true,
+      \ 'applescript': v:true,
+      \ }
 
 
 " -vim-easyclip-
