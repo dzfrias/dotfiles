@@ -5,7 +5,7 @@
 
 local start=$PWD
 
-while [[ ! -f go.mod && ! -f requirements.txt && $PWD != $HOME && ! -f LICENSE && ! -d .git ]]; do
+while [[ $PWD != $HOME && ! -f LICENSE && ! -d .git ]]; do
   cd ..
 done
 pwd
