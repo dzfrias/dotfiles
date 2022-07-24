@@ -7,10 +7,24 @@
                 "request": "launch",
                 "args": [
                     "--",
-                    "${command}"
+                    "*${CliArgs}"
                 ],
                 "program": "${workspaceRoot}/cmd/PROJNAME",
                 "mode": "debug"
+            }
+        },
+        "test": {
+            "adapter": "delve",
+            "filetypes": [ "go" ],
+            "configuration": {
+                "request": "launch",
+                "args": [
+                    "--",
+                    "-test.run",
+                    "${TestName}"
+                ],
+                "program": "${fileDirname}",
+                "mode": "test"
             }
         }
     }
