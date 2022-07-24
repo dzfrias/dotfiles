@@ -87,7 +87,7 @@ nnoremap <leader>w          :write<CR>
 nnoremap <leader>s          :source %<CR>
 nnoremap <silent> <leader>q :quit!<CR>
 nnoremap <silent> <leader>e :write<CR>:edit<CR>
-nnoremap <leader>v          :Runtime<CR>
+nnoremap <silent> <leader>v :Runtime<CR>:source $MYVIMRC<CR>
 " fzf, see definition of ProjFiles below
 nnoremap <silent> <leader>f :ProjFiles<CR>
 nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
@@ -135,7 +135,10 @@ function! s:OverLineNo() abort
     normal! zM
   endif
 endfunction
-autocmd BufRead * call <SID>OverLineNo()
+augroup bufread
+  autocmd!
+  autocmd BufRead * call <SID>OverLineNo()
+augroup END
 
 " FindProjRoot gets the root of the project, assuming it is using git
 function! s:FindProjRoot(dir) abort
