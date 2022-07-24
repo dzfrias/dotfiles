@@ -7,6 +7,6 @@ iabbrev <buffer> slef self
 iabbrev <buffer> sefl self
 
 " Put pprint at the top of the file
-command! Pprint normal mpggOfrom pprint import pprintjk`pdmp
+command! -buffer Pprint normal! mpggOfrom pprint import pprint<Esc>`pdmp
 " Delete first line in a file
-command! Dprint normal mpggdd`pdmp
+command! -buffer Dprint normal! mpggdd`pdmp

@@ -18,4 +18,4 @@ noremap <buffer> <silent> $ g$
 
 let b:callcmd='open ' . @%
 
-nnoremap <buffer> <silent> <leader>t :set filetype=help<CR>
+nnoremap <buffer> <silent> <leader>t :setlocal filetype=help<CR>

@@ -1,4 +1,4 @@
-function s:ToggleDebugger() abort
+function! s:ToggleDebugger() abort
   if maparg('b', 'n') !=? '<Plug>(go-debug-breakpoint)'
     execute 'GoDebugStart'
   else
@@ -7,13 +7,13 @@ function s:ToggleDebugger() abort
 endfunction
 
 " vim-go
-nnoremap <buffer> <leader>r   :w<CR>:GoRun<CR>
-nnoremap <buffer> <C-p>       <Plug>(go-doc)
-nnoremap <buffer> <leader>c   <Plug>(go-coverage-toggle)
+nnoremap <buffer> <leader>r  :w<CR>:GoRun<CR>
+nnoremap <buffer> <C-p>      <Plug>(go-doc)
+nnoremap <buffer> <leader>c  <Plug>(go-coverage-toggle)
 
 " Gojson
-nnoremap <buffer> <leader>g   <Plug>Gojson
-nnoremap <buffer> <leader>gg  <Plug>GojsonLine
-xnoremap <buffer> <leader>g   <Plug>Gojson
+nnoremap <buffer> <leader>g  <Plug>Gojson
+nnoremap <buffer> <leader>gg <Plug>GojsonLine
+xnoremap <buffer> <leader>g  <Plug>Gojson
 
 setlocal foldmethod=syntax
