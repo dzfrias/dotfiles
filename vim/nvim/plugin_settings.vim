@@ -14,6 +14,7 @@ let g:go_metalinter_autosave = 1
 let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1
 
+
 " -vimspector-
 nnoremap <silent> <leader>dq :call vimspector#Reset()<CR>
 nnoremap <silent> <leader>dc :call vimspector#Continue()<CR>
@@ -27,12 +28,6 @@ nnoremap <leader>dj          <Plug>VimspectorStepOver
 nnoremap <leader>dz          <Plug>VimspectorRunToCursor
 nnoremap <leader>di          <Plug>VimspectorBalloonEval
 xnoremap <leader>di          <Plug>VimspectorBalloonEval
-" Delete console window
-function! s:CustomizeUI()
-  normal! <C-w>j<C-w>j
-  quit
-endfunction
-" autocmd User VimspectorUICreated call s:CustomizeUI()
 
 
 " -copilot.nvim-
