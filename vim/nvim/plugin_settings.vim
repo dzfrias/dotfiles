@@ -27,11 +27,11 @@ nnoremap <leader>dz <Plug>VimspectorRunToCursor
 nnoremap <leader>di <Plug>VimspectorBalloonEval
 xnoremap <leader>di <Plug>VimspectorBalloonEval
 " Delete console window
-function! s:CustomiseUI()
+function! s:CustomizeUI()
   normal! <C-w>j<C-w>j
   quit
 endfunction
-autocmd User VimspectorUICreated call s:CustomiseUI()
+autocmd User VimspectorUICreated call s:CustomizeUI()
 
 
 " -copilot.nvim-
