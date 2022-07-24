@@ -18,6 +18,7 @@ let g:clever_f_mark_direct = 1
 nnoremap <silent> <leader>dq :call vimspector#Reset()<CR>
 nnoremap <silent> <leader>dc :call vimspector#Continue()<CR>
 nnoremap <silent> <leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <silent> <leader>dm :call vimspector#ToggleBreakpoint({'logMessage': printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
 nnoremap <silent> <leader>dT :call vimspector#ClearBreakpoints()<CR>
 nnoremap <leader>dk          <Plug>VimspectorRestart
 nnoremap <leader>dh          <Plug>VimspectorStepOut
@@ -31,7 +32,7 @@ function! s:CustomizeUI()
   normal! <C-w>j<C-w>j
   quit
 endfunction
-autocmd User VimspectorUICreated call s:CustomizeUI()
+" autocmd User VimspectorUICreated call s:CustomizeUI()
 
 
 " -copilot.nvim-
