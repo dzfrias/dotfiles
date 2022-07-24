@@ -15,17 +15,17 @@ let g:clever_f_across_no_line = 1
 let g:clever_f_mark_direct = 1
 
 " -vimspector-
-nnoremap <leader>dq :call vimspector#Reset()<CR>
-nnoremap <leader>dc :call vimspector#Continue()<CR>
-nnoremap <leader>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <leader>dT :call vimspector#ClearBreakpoints()<CR>
-nnoremap <leader>dk <Plug>VimspectorRestart
-nnoremap <leader>dh <Plug>VimspectorStepOut
-nnoremap <leader>dl <Plug>VimspectorStepInto
-nnoremap <leader>dj <Plug>VimspectorStepOver
-nnoremap <leader>dz <Plug>VimspectorRunToCursor
-nnoremap <leader>di <Plug>VimspectorBalloonEval
-xnoremap <leader>di <Plug>VimspectorBalloonEval
+nnoremap <silent> <leader>dq :call vimspector#Reset()<CR>
+nnoremap <silent> <leader>dc :call vimspector#Continue()<CR>
+nnoremap <silent> <leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <silent> <leader>dT :call vimspector#ClearBreakpoints()<CR>
+nnoremap <leader>dk          <Plug>VimspectorRestart
+nnoremap <leader>dh          <Plug>VimspectorStepOut
+nnoremap <leader>dl          <Plug>VimspectorStepInto
+nnoremap <leader>dj          <Plug>VimspectorStepOver
+nnoremap <leader>dz          <Plug>VimspectorRunToCursor
+nnoremap <leader>di          <Plug>VimspectorBalloonEval
+xnoremap <leader>di          <Plug>VimspectorBalloonEval
 " Delete console window
 function! s:CustomizeUI()
   normal! <C-w>j<C-w>j
