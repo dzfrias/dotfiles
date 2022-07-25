@@ -4,5 +4,5 @@ misc/taskrc
 git/*
 vim/nvim ~/.config/nvim
 vim/nvim ~/.neovim
+misc/config/glow ~/Library/Preferences
 misc/projections.json ~/.dotfiles/.projections.json
-misc/cobra.yaml
