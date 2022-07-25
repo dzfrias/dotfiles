@@ -42,7 +42,6 @@ export FZF_DEFAULT_COMMAND='fd --type file --hidden'
 # -OPTIONS---------------------------------------------------------------------
 setopt NO_NOMATCH
 setopt NOTIFY
-setopt NO_SH_WORD_SPLIT
 
 
 # -ALIASES---------------------------------------------------------------------
