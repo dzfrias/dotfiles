@@ -52,8 +52,8 @@ bindkey    '^[[Z'  autosuggest-accept
 bindkey    '^[k'   up-line-or-search
 bindkey    '^[j'   down-line-or-search
 # Clears the prompt, writes the text, and enters it
-bindkey -s 'uu'    '^Ucd ..^M'
-bindkey -s '^H'    '^Ucd ~/.dotfiles^M'
+bindkey -s 'uu'    '^Uj ..^M'
+bindkey -s '^H'    '^Uj ~/.dotfiles^M'
 
 # Copies current prompt text to clipboard
 bindkey -M viins '^Y' copybuffer
