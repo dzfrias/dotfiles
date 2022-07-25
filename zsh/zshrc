@@ -39,6 +39,12 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export FZF_DEFAULT_COMMAND='fd --type file --hidden'
 
 
+# -OPTIONS---------------------------------------------------------------------
+setopt NO_NOMATCH
+setopt NOTIFY
+setopt NO_SH_WORD_SPLIT
+
+
 # -ALIASES---------------------------------------------------------------------
 for file in ~/.dotfiles/zsh/aliases/*; do
   source $file
