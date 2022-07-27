@@ -10,3 +10,10 @@ iabbrev <buffer> sefl self
 command! -buffer Pprint normal! mpggOfrom pprint import pprint<Esc>`pdmp
 " Delete first line in a file
 command! -buffer Dprint normal! mpggdd`pdmp
+
+" Treesitter doesn't always load, so this makes sure it does
+if exists('g:treesitter_bad_load')
+    autocmd VimEnter * edit
+endif
+setlocal foldmethod=expr
+setlocal foldexpr=nvim_treesitter#foldexpr()

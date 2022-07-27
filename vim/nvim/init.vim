@@ -1,12 +1,15 @@
-" -VIM-------------------------------------------------------------------------
+" vim: set foldmethod=marker foldmarker=---,--:
+
+" --- VIM
 " Adds ~/.vim to runtimepath
 set runtimepath^=~/.vim
 set runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
+" --
 
 
-" -PLUGINS---------------------------------------------------------------------
+" --- PLUGINS
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -40,12 +43,14 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-scriptease'
 Plug 'puremourning/vimspector'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
+" --
 
 
-" -SETTINGS--------------------------------------------------------------------
+" --- SETTINGS
 set modeline
 set hidden
 set nobackup
@@ -66,9 +71,10 @@ set clipboard=unnamed
 set modelines=1
 " callcmd is used when \r is typed and the current file is run
 let g:callcmd = 'echo ' . @%
+" --
 
 
-" -MAPPINGS--------------------------------------------------------------------
+" --- MAPPINGS
 " -NORMAL-
 " Jump down to nearest line with foldlevel > 0
 noremap  <s-j>              zj
@@ -125,9 +131,10 @@ inoremap <silent> <C-h>     <Esc>:tabp<CR>
 inoremap <s-CR> <C-x><C-o>
 " Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
+" --
 
 
-" -COMMANDS & FUNCTIONS--------------------------------------------------------
+" --- COMMANDS & FUNCTIONS
 " OverLineNo folds everything if the line count is greater than 300
 function! s:OverLineNo() abort
   if line('$') > 300
@@ -153,8 +160,10 @@ function! s:FindProjRoot(dir) abort
   return s:FindProjRoot(dir . '/' . '..')
 endfunction
 command! -bang ProjFiles call fzf#vim#files(<SID>FindProjRoot('.'), <bang>0)
+" --
 
 
-" -MISC------------------------------------------------------------------------
+" --- MISC
 colorscheme tokyonight
 packloadall
+" --

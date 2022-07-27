@@ -33,6 +33,22 @@ nnoremap <leader>di          <Plug>VimspectorBalloonEval
 xnoremap <leader>di          <Plug>VimspectorBalloonEval
 
 
+" -nvim-treesitter-
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+    },
+  }
+EOF
+" Treesitter doesn't always load, so this makes sure it does
+if !exists('g:loaded_nvim_treesitter')
+  autocmd VimEnter * source $HOME/.local/share/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.lua
+  let g:treesitter_bad_load = 1
+endif
+
+
 " -copilot.nvim-
 let g:copilot_filetypes = {
       \ '*': v:false,

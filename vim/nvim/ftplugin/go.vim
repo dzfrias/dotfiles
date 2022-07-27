@@ -16,4 +16,9 @@ nnoremap <buffer> <leader>g  <Plug>Gojson
 nnoremap <buffer> <leader>gg <Plug>GojsonLine
 xnoremap <buffer> <leader>g  <Plug>Gojson
 
-setlocal foldmethod=syntax
+" Treesitter doesn't always load, so this makes sure it does
+if exists('g:treesitter_bad_load')
+  autocmd VimEnter * edit
+endif
+setlocal foldmethod=expr
+setlocal foldexpr=nvim_treesitter#foldexpr()
