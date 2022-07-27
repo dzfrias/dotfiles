@@ -102,6 +102,7 @@ nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
 
 " fugitive, see all in plugin_settings.vim
 nnoremap <silent> gq        :G<CR>
+nnoremap <silent> gcm       :Git add --all <bar> Git commit --verbose<CR>
 
 " vimspector, see all in plugin_settings.vim
 nnoremap <leader>dd         :call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>

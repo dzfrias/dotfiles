@@ -45,11 +45,6 @@ require'nvim-treesitter.configs'.setup {
     },
   }
 EOF
-" Treesitter doesn't always load, so this makes sure it does
-" if !exists('g:loaded_nvim_treesitter')
-"   autocmd VimEnter * source $HOME/.local/share/nvim/plugged/nvim-treesitter/plugin/nvim-treesitter.lua
-"   let g:treesitter_bad_load = 1
-" endif
 
 
 " -copilot.nvim-
