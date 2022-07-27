@@ -1,15 +1,15 @@
-" vim: set foldmethod=marker foldmarker=---,--:
+" vim: set foldmethod=marker:
 
-" --- VIM
+" {{{ VIM
 " Adds ~/.vim to runtimepath
 set runtimepath^=~/.vim
 set runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-" --
+" }}}
 
 
-" --- PLUGINS
+" {{{ PLUGINS
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -49,10 +49,10 @@ Plug 'puremourning/vimspector'
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
-" --
+" }}}
 
 
-" --- SETTINGS
+" {{{ SETTINGS
 set modeline
 set hidden
 set nobackup
@@ -73,10 +73,10 @@ set clipboard=unnamed
 set modelines=1
 " callcmd is used when \r is typed and the current file is run
 let g:callcmd = 'echo ' . @%
-" --
+" }}}
 
 
-" --- MAPPINGS
+" {{{ MAPPINGS
 " -NORMAL-
 " Jump down to nearest line with foldlevel > 0
 noremap  <s-j>              zj
@@ -135,10 +135,10 @@ inoremap <silent> <C-h>     <Esc>:tabp<CR>
 inoremap <s-CR> <C-x><C-o>
 " Trigger emmet autocomplete
 imap     <C-v>              <C-y>,
-" --
+" }}}
 
 
-" --- COMMANDS & FUNCTIONS
+" {{{ COMMANDS & FUNCTIONS
 " OverLineNo folds everything if the line count is greater than 300
 function! s:OverLineNo() abort
   if line('$') > 300
@@ -171,10 +171,10 @@ function! CdToParent() abort
   execute 'cd ' . dir
 endfunction!
 command! Cpd call CdToParent()
-" --
+" }}}
 
 
-" --- MISC
+" {{{ MISC
 colorscheme tokyonight
 packloadall
-" --
+" }}}
