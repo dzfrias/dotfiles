@@ -1,11 +1,3 @@
-function! s:ToggleDebugger() abort
-  if maparg('b', 'n') !=? '<Plug>(go-debug-breakpoint)'
-    execute 'GoDebugStart'
-  else
-    execute 'GoDebugStop'
-  endif
-endfunction
-
 " vim-go
 nnoremap <buffer> <leader>r  :w<CR>:GoRun<CR>
 nnoremap <buffer> <C-p>      <Plug>(go-doc)
