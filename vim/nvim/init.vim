@@ -43,7 +43,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-scriptease'
 Plug 'puremourning/vimspector'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Doesn't work, so it was installed using vim's built in package manager. I've
+" listed it here to document that it exists.
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
