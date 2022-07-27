@@ -166,11 +166,11 @@ endfunction
 command! -bang ProjFiles call fzf#vim#files(<SID>FindProjRoot('.'), <bang>0)
 
 " CdToParent changes the current directory to the parent of the current file
-function! CdToParent() abort
+function! s:CdToParent() abort
   let dir = expand('%:h')
   execute 'cd ' . dir
 endfunction!
-command! Cpd call CdToParent()
+command! Cpd call <SID>CdToParent()
 " }}}
 
 
