@@ -121,8 +121,9 @@ nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
 " the escape key is pressed.
 nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
 
+
 " Trigger emmet autocomplete
-nmap     <C-v>              <C-y>,
+nnoremap <C-v>              <Plug>(emmet-expand-abbr)
 
 " Surround to end of line with vim-surround
 nmap     ysS                ys$
@@ -131,10 +132,8 @@ nmap     ysS                ys$
 " Traverse tabs better in insert mode
 inoremap <silent> <C-l>     <Esc>:tabn<CR>
 inoremap <silent> <C-h>     <Esc>:tabp<CR>
-" Triggers omnifunc
-inoremap <s-CR> <C-x><C-o>
 " Trigger emmet autocomplete
-imap     <C-v>              <C-y>,
+inoremap <C-v>              <Plug>(emmet-expand-abbr)
 " }}}
 
 
