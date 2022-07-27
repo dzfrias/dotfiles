@@ -1,3 +1,3 @@
 if maparg('<CR>', 'n') !=? ''
-    nunmap <CR>
+  nunmap <CR>
 endif

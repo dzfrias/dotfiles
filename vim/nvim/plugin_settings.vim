@@ -40,6 +40,9 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
     },
+  indent = {
+    enable = true,
+    },
   }
 EOF
 " Treesitter doesn't always load, so this makes sure it does
