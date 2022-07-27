@@ -4,4 +4,6 @@
     "zsh/autoload/resources/*.scpt": {"type": "osa", "alternate": "zsh/autoload/{}"},
     "misc/config/gh/functions/resources/*.scpt": {"type": "osa", "alternate": "misc/config/gh/functions/{}.zsh"},
     "misc/config/gh/functions/*.zsh": {"type": "gh", "alternate": "misc/config/gh/functions/resources/{}.scpt"}
+    "vim/nvim/init.vim": {"type": "vim", "alternate": "vim/nvim/plugin_settings.vim"},
+    "vim/nvim/plugin_settings.vim": {"type": "plug", "alternate": "vim/nvim/init.vim"}
 }
