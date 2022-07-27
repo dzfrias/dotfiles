@@ -43,8 +43,19 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true,
     },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gn",
+      node_incremental = "gn",
+      scope_incremental = "gs",
+      node_decremental = "gN",
+      },
+    },
   }
 EOF
+" Select current scope in visual mode
+nmap gs gngs
 
 
 " -copilot.nvim-
