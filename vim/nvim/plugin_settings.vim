@@ -19,11 +19,11 @@ let g:clever_f_mark_direct = 1
 
 
 " -vimspector-
-nnoremap <silent> <leader>dq :call vimspector#Reset()<CR>
-nnoremap <silent> <leader>dc :call vimspector#Continue()<CR>
-nnoremap <silent> <leader>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <silent> <leader>dm :call vimspector#ToggleBreakpoint({'logMessage': printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
-nnoremap <silent> <leader>dT :call vimspector#ClearBreakpoints()<CR>
+nnoremap <silent> <leader>dq <Cmd>call vimspector#Reset()<CR>
+nnoremap <silent> <leader>dc <Cmd>call vimspector#Continue()<CR>
+nnoremap <silent> <leader>dt <Cmd>call vimspector#ToggleBreakpoint()<CR>
+nnoremap <silent> <leader>dm <Cmd>call vimspector#ToggleBreakpoint({'logMessage': printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
+nnoremap <silent> <leader>dT <Cmd>call vimspector#ClearBreakpoints()<CR>
 nnoremap <leader>dk          <Plug>VimspectorRestart
 nnoremap <leader>dh          <Plug>VimspectorStepOut
 nnoremap <leader>dl          <Plug>VimspectorStepInto
@@ -80,6 +80,10 @@ let g:copilot_filetypes = {
 let g:EasyClipAutoFormat = 1
 
 
+" auto-pairs 
+let g:AutoPairsMapCh = 0
+
+
 " -gitgutter-
 let g:gitgutter_map_keys = 0
 
@@ -108,8 +112,8 @@ autocmd User FugitivePager
       \ nnoremap <buffer> <s-CR> <C-6>
 " Activated when :G buffer is entered
 autocmd User FugitiveIndex
-      \ nnoremap <buffer> <silent> <s-s> :Git add --all<CR> |
-      \ nnoremap <buffer> <silent> gp    :Git push<CR>
+      \ nnoremap <buffer> <silent> <s-s> <Cmd>Git add --all<CR> |
+      \ nnoremap <buffer> <silent> gp    <Cmd>Git push<CR>
 
 
 " -cinnamon.nvim-

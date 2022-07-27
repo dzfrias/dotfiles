@@ -87,27 +87,27 @@ noremap  <space>            za
 noremap  gi                 gi<Esc>
 
 " Traversing tabs
-noremap  <silent> <C-l>     :tabn<CR>
-noremap  <silent> <C-h>     :tabp<CR>
+noremap  <silent> <C-l>     <Cmd>tabn<CR>
+noremap  <silent> <C-h>     <Cmd>tabp<CR>
 
 " Simple editor commands
-nnoremap <leader>w          :write<CR>
-nnoremap <leader>s          :source %<CR>
-nnoremap <silent> <leader>q :quit!<CR>
-nnoremap <silent> <leader>e :write<CR>:edit<CR>
-nnoremap <silent> <leader>v :Runtime<CR>:source $MYVIMRC<CR>
+nnoremap <leader>w          <Cmd>write<CR>
+nnoremap <leader>s          <Cmd>source %<CR>
+nnoremap <silent> <leader>q <Cmd>quit!<CR>
+nnoremap <silent> <leader>e <Cmd>write<CR><Cmd>edit<CR>
+nnoremap <silent> <leader>v <Cmd>Runtime<CR><Cmd>source $MYVIMRC<CR>
 " fzf, see definition of ProjFiles below
-nnoremap <silent> <leader>f :ProjFiles<CR>
-nnoremap <silent> <C-n>     :NERDTreeToggle<CR>
+nnoremap <silent> <leader>f <Cmd>ProjFiles<CR>
+nnoremap <silent> <C-n>     <Cmd>NERDTreeToggle<CR>
 
 " fugitive, see all in plugin_settings.vim
-nnoremap <silent> gq        :Git<CR>
-nnoremap <silent> gcm       :Git add --all <bar> Git commit --verbose<CR>
-nnoremap <silent> gp        :Git push<CR>
+nnoremap <silent> gq        <Cmd>Git<CR>
+nnoremap <silent> gcm       <Cmd>Git add --all <bar> Git commit --verbose<CR>
+nnoremap <silent> gp        <Cmd>Git push<CR>
 
 " vimspector, see all in plugin_settings.vim
-nnoremap <leader>dd         :call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
-nnoremap <leader>du         :call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
+nnoremap <leader>dd         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
+nnoremap <leader>du         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
 
 " Move through windows
 nnoremap <leader>k          <C-w>k
@@ -116,10 +116,10 @@ nnoremap <leader>h          <C-w>h
 nnoremap <leader>j          <C-w>j
 
 " Open floating terminal
-nnoremap <silent> <leader>t :w<CR> :lua require('FTerm').toggle()<CR>
+nnoremap <silent> <leader>t <Cmd>w<CR><Cmd>lua require('FTerm').toggle()<CR>
 " Open floating terminal and call the command to run the file. Existed after
 " the escape key is pressed.
-nnoremap <silent> <leader>r :w<CR> :lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
+nnoremap <silent> <leader>r <Cmd>w<CR><Cmd>lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
 
 
 " Trigger emmet autocomplete
@@ -130,8 +130,8 @@ nmap     ysS                ys$
 
 " -INSERT-
 " Traverse tabs better in insert mode
-inoremap <silent> <C-l>     <Esc>:tabn<CR>
-inoremap <silent> <C-h>     <Esc>:tabp<CR>
+inoremap <silent> <C-l>     <Esc><Cmd>tabn<CR>
+inoremap <silent> <C-h>     <Esc><Cmd>tabp<CR>
 " Trigger emmet autocomplete
 inoremap <C-v>              <Plug>(emmet-expand-abbr)
 " }}}
