@@ -1,5 +1,5 @@
 " vim-go
-nnoremap <buffer> <leader>r  :w<CR>:GoRun<CR>
+nnoremap <buffer> <leader>r  <Cmd>w<CR><Cmd>GoRun<CR>
 nnoremap <buffer> <C-p>      <Plug>(go-doc)
 nnoremap <buffer> <leader>c  <Plug>(go-coverage-toggle)
 

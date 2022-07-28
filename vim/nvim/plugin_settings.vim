@@ -58,6 +58,7 @@ require'nvim-treesitter.configs'.setup {
     },
   }
 EOF
+
 " Select current scope in visual mode
 nmap gs gngs
 
