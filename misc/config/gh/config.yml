@@ -11,13 +11,11 @@ aliases:
     co: pr checkout
     rl: repo list
     ln: '!zsh ~/.dotfiles/misc/config/gh/functions/link.zsh'
-    fk: '!zsh ~/.dotfiles/misc/config/gh/functions/fork.zsh'
     new: '!zsh ~/.dotfiles/misc/config/gh/functions/new.zsh $@'
     sr: '!zsh ~/.dotfiles/misc/config/gh/functions/stars.zsh'
     v: '!zsh ~/.dotfiles/misc/config/gh/functions/view.zsh'
     op: '!zsh ~/.dotfiles/misc/config/gh/functions/open.zsh $1'
     pro: '!zsh ~/.dotfiles/misc/config/gh/functions/profile.zsh'
-    not: '!zsh ~/.dotfiles/misc/config/gh/functions/notif.zsh'
     per: '!zsh ~/.dotfiles/misc/config/gh/functions/percent.zsh'
     al: alias list
     rv: repo view
