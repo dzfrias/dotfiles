@@ -37,7 +37,6 @@ xnoremap <leader>di          <Plug>VimspectorBalloonEval
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "python", "vim", "go" },
-  auto_install = true,
 
   highlight = {
     enable = true,
