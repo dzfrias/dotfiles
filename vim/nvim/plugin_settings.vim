@@ -121,7 +121,6 @@ autocmd User FugitivePager
 " Activated when :G buffer is entered
 autocmd User FugitiveIndex
       \ nnoremap <buffer> <silent> <s-s> <Cmd>Git add --all<CR> |
-      \ nnoremap <buffer> <silent> gp    <Cmd>Git push<CR>
 
 
 " -cinnamon.nvim-
