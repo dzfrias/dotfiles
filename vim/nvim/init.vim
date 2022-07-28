@@ -168,7 +168,7 @@ command! -bang ProjFiles call fzf#vim#files(<SID>FindProjRoot('.'), <bang>0)
 function! s:CdToParent() abort
   let dir = expand('%:h')
   execute 'cd ' . dir
-endfunction!
+endfunction
 command! Cpd call <SID>CdToParent()
 " }}}
 
