@@ -84,8 +84,12 @@ let g:copilot_filetypes = {
 let g:EasyClipAutoFormat = 1
 
 
-" auto-pairs 
+" -auto-pairs- 
 let g:AutoPairsMapCh = 0
+
+
+" -hop.nvim-
+lua require'hop'.setup()
 
 
 " -gitgutter-

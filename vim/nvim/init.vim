@@ -43,6 +43,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-scriptease'
 Plug 'puremourning/vimspector'
+Plug 'phaazon/hop.nvim'
 " Doesn't work, so it was installed using vim's built in package manager. I've
 " listed it here to document that it exists.
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -108,6 +109,8 @@ nnoremap <silent> gp        <Cmd>Git push<CR>
 " vimspector, see all in plugin_settings.vim
 nnoremap <leader>dd         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
 nnoremap <leader>du         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
+
+nnoremap <C-f>              <Cmd>HopWord<CR>
 
 " Move through windows
 nnoremap <leader>k          <C-w>k
