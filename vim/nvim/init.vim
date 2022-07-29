@@ -11,42 +11,43 @@ source ~/.vimrc
 
 " {{{ PLUGINS
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'declancm/cinnamon.nvim'
-Plug 'numToStr/FTerm.nvim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-repeat'
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
-Plug 'rhysd/clever-f.vim'
-Plug 'svermeulen/vim-easyclip'
-Plug 'matze/vim-move'
-Plug 'github/copilot.vim'
-Plug 'dzfrias/vim-foldjump'
-Plug 'vim-scripts/applescript.vim'
-Plug 'bfontaine/Brewfile.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-projectionist'
-Plug 'dzfrias/vim-gojson'
-Plug 'dzfrias/vim-gitrebase'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'jiangmiao/auto-pairs'
-Plug 'ervandew/supertab'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-scriptease'
-Plug 'puremourning/vimspector'
-Plug 'phaazon/hop.nvim'
+Plug 'preservim/nerdtree'  " View of directory
+Plug 'ryanoasis/vim-devicons'  " Icons for various plugins
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }  " Colorscheme
+Plug 'declancm/cinnamon.nvim'  " Scrolling
+Plug 'numToStr/FTerm.nvim'  " Terminal inside vim session
+Plug 'tpope/vim-surround'  " Surround text with anything
+Plug 'tpope/vim-fugitive'  " Git integration
+Plug 'airblade/vim-gitgutter'  " Git changes in sign column
+Plug 'tpope/vim-commentary'  " Commenting
+Plug 'tpope/vim-sleuth'  " Setting tabs
+Plug 'tpope/vim-repeat'  " Repeating mappings
+Plug 'mattn/emmet-vim'  " Easy HTML editing
+Plug 'alvan/vim-closetag'  " Closing tags for HTML
+Plug 'rhysd/clever-f.vim'  " Movement with f and t
+Plug 'svermeulen/vim-easyclip'  " Better clipboard control
+Plug 'matze/vim-move'  " Moving lines/characters
+Plug 'github/copilot.vim'  " Suggestions
+Plug 'dzfrias/vim-foldjump'  " Easy fold movement
+Plug 'vim-scripts/applescript.vim'  " AppleScript syntax highlighting
+Plug 'bfontaine/Brewfile.vim'  " Brewfile syntax highlighting
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go language support
+Plug 'tpope/vim-endwise'  " Close statements automatically
+Plug 'tpope/vim-projectionist'  " Easy project management/movement
+Plug 'dzfrias/vim-gojson'  " Easy Go JSON field tags
+Plug 'dzfrias/vim-gitrebase'  " Git rebase mappings
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }  " Python language support
+Plug 'jiangmiao/auto-pairs'  " Auto-pairing of characters
+Plug 'ervandew/supertab'  " Tab completion
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy finder
+Plug 'junegunn/fzf.vim'  " Fuzzy finder
+Plug 'tpope/vim-scriptease'  " Make vimscript easier
+Plug 'puremourning/vimspector'  " Debugging with DAP
+Plug 'phaazon/hop.nvim'  " Easy movement in file
+Plug 'yegappan/mru'  " Most recently used files
 " Doesn't work, so it was installed using vim's built in package manager. I've
 " listed it here to document that it exists.
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Treesitter support
 call plug#end()
 " Load settings for plugins
 source ~/.config/nvim/plugin_settings.vim
