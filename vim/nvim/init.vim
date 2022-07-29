@@ -129,8 +129,6 @@ nnoremap <leader>l  <C-w>l
 nnoremap <leader>h  <C-w>h
 nnoremap <leader>j  <C-w>j
 
-" Open floating terminal
-nnoremap <leader>t  <Cmd>w<CR><Cmd>lua require('FTerm').toggle()<CR>
 " Open floating terminal and call the command to run the file. Existed after
 " the escape key is pressed.
 nnoremap <leader>r  <Cmd>w<CR><Cmd>lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
