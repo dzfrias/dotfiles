@@ -67,7 +67,6 @@ set signcolumn=number
 set background=dark
 " Sets cursor to line when not in normal mode
 set guicursor=c:ver20,i:ver20,ci:ver20,cr:ver20
-" The time of updating, specifically used for plugins like gitgutter
 set updatetime=100
 " Sets clipboard to system clipboard
 set clipboard=unnamed
@@ -79,65 +78,69 @@ let g:callcmd = 'echo ' . @%
 
 
 " {{{ MAPPINGS
-" -NORMAL-
 " Jump down to nearest line with foldlevel > 0
-noremap  <s-j>              zj
+noremap  <s-j>      zj
 " Opens folds
-noremap  <space>            za
+noremap  <space>    za
 
 " Go back to last place in insert mode
-noremap  gi                 gi<Esc>
+noremap  gi         gi<Esc>
 
 " Traversing tabs
-noremap  <silent> <C-l>     <Cmd>tabn<CR>
-noremap  <silent> <C-h>     <Cmd>tabp<CR>
+noremap  <C-l>      <Cmd>tabn<CR>
+noremap  <C-h>      <Cmd>tabp<CR>
+
+" Make wrapped lines easier to traverse
+noremap  k          gk
+noremap  j          gj
+noremap  0          g0
+noremap  $          g$
 
 " Simple editor commands
-nnoremap <leader>w          <Cmd>write<CR>
-nnoremap <leader>s          <Cmd>source %<CR>
-nnoremap <silent> <leader>q <Cmd>quit!<CR>
-nnoremap <silent> <leader>e <Cmd>write<CR><Cmd>edit<CR>
-nnoremap <silent> <leader>v <Cmd>Runtime<CR><Cmd>source $MYVIMRC<CR>
+nnoremap <leader>w  <Cmd>write<CR>
+nnoremap <leader>s  <Cmd>source %<CR>
+nnoremap <leader>q  <Cmd>quit!<CR>
+nnoremap <leader>e  <Cmd>write<CR><Cmd>edit<CR>
+
+" Scriptease
+nnoremap <leader>v  <Cmd>Runtime<CR><Cmd>source $MYVIMRC<CR>
+
 " fzf, see definition of ProjFiles below
-nnoremap <silent> <leader>f <Cmd>ProjFiles<CR>
-nnoremap <silent> <C-n>     <Cmd>NERDTreeToggle<CR>
+nnoremap <leader>f  <Cmd>ProjFiles<CR>
+
+" NerdTree
+nnoremap <C-n>      <Cmd>NERDTreeToggle<CR>
 
 " fugitive, see all in plugin_settings.vim
-nnoremap <silent> gq        <Cmd>Git<CR>
-nnoremap <silent> gcm       <Cmd>Git add --all <bar> Git commit --verbose<CR>
-nnoremap <silent> gp        <Cmd>Git push<CR>
+nnoremap gq         <Cmd>Git<CR>
+nnoremap gcm        <Cmd>Git add --all <bar> Git commit --verbose<CR>
+nnoremap gp         <Cmd>Git push<CR>
 
 " vimspector, see all in plugin_settings.vim
-nnoremap <leader>dd         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
-nnoremap <leader>du         <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
+nnoremap <leader>dd <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'run'})<CR>
+nnoremap <leader>du <Cmd>call vimspector#LaunchWithSettings(#{configuration: 'test'})<CR>
 
-nnoremap <C-f>              <Cmd>HopWord<CR>
+" hop.nvim
+nnoremap <C-f>      <Cmd>HopWord<CR>
 
 " Move through windows
-nnoremap <leader>k          <C-w>k
-nnoremap <leader>l          <C-w>l
-nnoremap <leader>h          <C-w>h
-nnoremap <leader>j          <C-w>j
+nnoremap <leader>k  <C-w>k
+nnoremap <leader>l  <C-w>l
+nnoremap <leader>h  <C-w>h
+nnoremap <leader>j  <C-w>j
 
 " Open floating terminal
-nnoremap <silent> <leader>t <Cmd>w<CR><Cmd>lua require('FTerm').toggle()<CR>
+nnoremap <leader>t  <Cmd>w<CR><Cmd>lua require('FTerm').toggle()<CR>
 " Open floating terminal and call the command to run the file. Existed after
 " the escape key is pressed.
-nnoremap <silent> <leader>r <Cmd>w<CR><Cmd>lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
-
-
-" Trigger emmet autocomplete
-nnoremap <C-v>              <Plug>(emmet-expand-abbr)
+nnoremap <leader>r  <Cmd>w<CR><Cmd>lua require('FTerm').run({vim.b.callcmd, '&&', 'read -n 1 && exit'})<CR>
 
 " Surround to end of line with vim-surround
-nmap     ysS                ys$
+nmap     ysS        ys$
 
-" -INSERT-
 " Traverse tabs better in insert mode
-inoremap <silent> <C-l>     <Esc><Cmd>tabn<CR>
-inoremap <silent> <C-h>     <Esc><Cmd>tabp<CR>
-" Trigger emmet autocomplete
-inoremap <C-v>              <Plug>(emmet-expand-abbr)
+inoremap <C-l>      <Esc><Cmd>tabn<CR>
+inoremap <C-h>      <Esc><Cmd>tabp<CR>
 " }}}
 
 

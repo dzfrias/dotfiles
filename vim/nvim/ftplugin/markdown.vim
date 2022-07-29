@@ -10,11 +10,6 @@ setlocal spell
 " Horizontal traversal
 noremap <buffer> + 30l
 noremap <buffer> - 30h
-" Make wrapped lines easier to traverse
-noremap <buffer> <silent> k gk
-noremap <buffer> <silent> j gj
-noremap <buffer> <silent> 0 g0
-noremap <buffer> <silent> $ g$
 
 let b:callcmd='open ' . @%
 
