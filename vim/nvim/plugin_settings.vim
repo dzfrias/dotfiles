@@ -19,18 +19,21 @@ let g:clever_f_mark_direct = 1
 
 
 " -vimspector-
-nnoremap <silent> <leader>dq <Cmd>call vimspector#Reset()<CR>
-nnoremap <silent> <leader>dc <Cmd>call vimspector#Continue()<CR>
-nnoremap <silent> <leader>dt <Cmd>call vimspector#ToggleBreakpoint()<CR>
-nnoremap <silent> <leader>dm <Cmd>call vimspector#ToggleBreakpoint({'logMessage': printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
-nnoremap <silent> <leader>dT <Cmd>call vimspector#ClearBreakpoints()<CR>
-nnoremap <leader>dk          <Plug>VimspectorRestart
-nnoremap <leader>dh          <Plug>VimspectorStepOut
-nnoremap <leader>dl          <Plug>VimspectorStepInto
-nnoremap <leader>dj          <Plug>VimspectorStepOver
-nnoremap <leader>dz          <Plug>VimspectorRunToCursor
-nnoremap <leader>di          <Plug>VimspectorBalloonEval
-xnoremap <leader>di          <Plug>VimspectorBalloonEval
+nnoremap <leader>dq <Cmd>call vimspector#Reset()<CR>
+nnoremap <leader>dc <Cmd>call vimspector#Continue()<CR>
+
+nnoremap <leader>dt <Cmd>call vimspector#ToggleBreakpoint()<CR>
+nnoremap <leader>dm <Cmd>call vimspector#ToggleBreakpoint({'logMessage': printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
+nnoremap <leader>dT <Cmd>call vimspector#ClearBreakpoints()<CR>
+
+nnoremap <leader>dl <Plug>VimspectorStepInto
+nnoremap <leader>dh <Plug>VimspectorStepOut
+nnoremap <leader>dj <Plug>VimspectorStepOver
+nnoremap <leader>dk <Plug>VimspectorRestart
+
+nnoremap <leader>dz <Plug>VimspectorRunToCursor
+nnoremap <leader>di <Plug>VimspectorBalloonEval
+xnoremap <leader>di <Plug>VimspectorBalloonEval
 
 
 " -nvim-treesitter-
@@ -119,9 +122,6 @@ autocmd User FugitivePager
       \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
       \ nnoremap <buffer> q ZZ |
       \ nnoremap <buffer> <s-CR> <C-6>
-" Activated when :G buffer is entered
-autocmd User FugitiveIndex
-      \ nnoremap <buffer> <silent> <s-s> <Cmd>Git add --all<CR> |
 
 
 " -cinnamon.nvim-
