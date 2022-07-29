@@ -17,6 +17,7 @@ aliases:
     op: '!zsh ~/.dotfiles/misc/config/gh/functions/open.zsh $1'
     pro: '!zsh ~/.dotfiles/misc/config/gh/functions/profile.zsh'
     per: '!zsh ~/.dotfiles/misc/config/gh/functions/percent.zsh'
+    par: '!zsh ~/.dotfiles/misc/config/gh/functions/participating.zsh'
     al: alias list
     rv: repo view
     gv: gist view
