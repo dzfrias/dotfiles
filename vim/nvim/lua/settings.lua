@@ -1,26 +1,40 @@
-local opt = vim.o
+local set = vim.o
 
-opt.modeline = true
-opt.hidden = true
-opt.backup = false
-opt.autoindent = true
-opt.smartindent = true
-opt.relativenumber = true
-opt.hlsearch = true
-opt.autoindent = true
-opt.expandtab = true
-opt.wrap = false
-opt.writebackup = false
-opt.foldmethod = 'indent'
-opt.foldlevelstart = 2
-opt.foldnestmax = 1
+set.hidden = true
 
-opt.colorcolumn = 80
-opt.cmdheight = 2
--- opt.shortmess = vim.o.shortmess + 'c'
-opt.signcolumn = 'number'
-opt.background = 'dark'
-opt.guicursor = 'c:ver20,i:ver20,ci:ver20,cr:ver20'
-opt.updatetime = 100
-opt.clipboard = 'unnamed'
-opt.modelines = 1
+set.writebackup = false
+set.backup = false
+
+set.relativenumber = true
+
+set.signcolumn = 'number'
+
+set.hlsearch = true
+
+vim.cmd[[set colorcolumn=80]]
+vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
+
+set.cmdheight = 2
+
+set.wrap = false
+
+set.shortmess = set.shortmess .. 'c'
+
+set.background = 'dark'
+
+set.guicursor = 'c:ver20,i:ver20,ci:ver20,cr:ver20'
+
+set.updatetime = 100
+
+set.clipboard = 'unnamed'
+
+set.foldmethod = 'indent'
+set.foldlevelstart = 2
+set.foldnestmax = 1
+
+set.autoindent = true
+set.smartindent = true
+set.expandtab = true
+
+set.modeline = true
+set.modelines = 1
