@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd(
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
+
 -- Set up language servers
 local servers = { 'pyright', 'gopls' }
 for _, lsp in ipairs(servers) do
@@ -59,11 +60,14 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
+      -- A snippet engine is required
       require('luasnip').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
+    -- <CR> to accept
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- <Tab> to advance completion
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -73,7 +77,8 @@ cmp.setup({
         fallback()
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function()
+    -- <s-tab> to go backwards in completion
+    ['<s-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
       end
