@@ -36,7 +36,7 @@ map('n', '<leader>dc', '<Cmd>call vimspector#Continue()<CR>')
 
 -- Breakpoints
 map('n', '<leader>dt', '<Cmd>call vimspector#ToggleBreakpoint()<CR>')
-map('n', '<leader>dm', '<Cmd>call vimspector#ToggleBreakpoint({"logMessage" = printf("log point at line %d in file \'%s\' reached!", line("."), expand("%"))})<CR>')
+map('n', '<leader>dm', '<Cmd>call vimspector#ToggleBreakpoint({"logMessage": printf("log point at line %d in file \'%s\' reached!", line("."), expand("%"))})<CR>')
 map('n', '<leader>dT', '<Cmd>call vimspector#ClearBreakpoints()<CR>')
 
 -- Movement and navigation
