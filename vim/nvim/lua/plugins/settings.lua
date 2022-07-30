@@ -2,10 +2,15 @@ local g = vim.g
 
 -- emmet-vim
 g.user_emmet_install_global = 0
--- augroup emmet
---   autocmd!
---   autocmd BufRead,BufNewFile *.htm,*.html,*.css EmmetInstall
--- augroup END
+local emmet = vim.api.nvim_create_augroup('emmet', {})
+vim.api.nvim_create_autocmd(
+  'BufEnter',
+  {
+    group = emmet,
+    pattern = {'*.html', '*.css'},
+    command = 'EmmetInstall'
+  }
+)
 
 
 -- vim-go
@@ -57,8 +62,6 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
-
--- nmap gs gngs
 
 
 -- copilot.nvim
