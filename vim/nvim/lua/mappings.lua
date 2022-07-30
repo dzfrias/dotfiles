@@ -1,14 +1,14 @@
-function nmap(shortcut, command)
+-- Helper functions
+local function nmap(shortcut, command)
   vim.api.nvim_set_keymap('n', shortcut, command, { noremap = true })
 end
-
-function imap(shortcut, command)
+local function imap(shortcut, command)
   vim.api.nvim_set_keymap('i', shortcut, command, { noremap = true })
 end
-
-function map(shortcut, command)
+local function map(shortcut, command)
   vim.api.nvim_set_keymap('', shortcut, command, { noremap = true })
 end
+
 
 map('gg', 'gg0')
 

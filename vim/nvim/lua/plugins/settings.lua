@@ -1,4 +1,7 @@
 local g = vim.g
+local function map(mode, shortcut, command)
+  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
+end
 
 
 -- emmet-vim
@@ -27,21 +30,25 @@ g.clever_f_mark_direct = 1
 
 
 -- vimspector
--- nnoremap <leader>dq <Cmd>call vimspector#Reset()<CR>
--- nnoremap <leader>dc <Cmd>call vimspector#Continue()<CR>
+-- Basic mappings
+map('n', '<leader>dq', '<Cmd>call vimspector#Reset()<CR>')
+map('n', '<leader>dc', '<Cmd>call vimspector#Continue()<CR>')
 
--- nnoremap <leader>dt <Cmd>call vimspector#ToggleBreakpoint()<CR>
--- nnoremap <leader>dm <Cmd>call vimspector#ToggleBreakpoint({'logMessage' = printf('log point at line %d in file "%s" reached!', line('.'), expand('%'))})<CR>
--- nnoremap <leader>dT <Cmd>call vimspector#ClearBreakpoints()<CR>
+-- Breakpoints
+map('n', '<leader>dt', '<Cmd>call vimspector#ToggleBreakpoint()<CR>')
+map('n', '<leader>dm', '<Cmd>call vimspector#ToggleBreakpoint({"logMessage" = printf("log point at line %d in file \'%s\' reached!", line("."), expand("%"))})<CR>')
+map('n', '<leader>dT', '<Cmd>call vimspector#ClearBreakpoints()<CR>')
 
--- nnoremap <leader>dl <Plug>VimspectorStepInto
--- nnoremap <leader>dh <Plug>VimspectorStepOut
--- nnoremap <leader>dj <Plug>VimspectorStepOver
--- nnoremap <leader>dk <Plug>VimspectorRestart
+-- Movement and navigation
+map('n', '<leader>dl', '<Plug>VimspectorStepInto')
+map('n', '<leader>dh', '<Plug>VimspectorStepOut')
+map('n', '<leader>dj', '<Plug>VimspectorStepOver')
+map('n', '<leader>dk', '<Plug>VimspectorRestart')
 
--- nnoremap <leader>dz <Plug>VimspectorRunToCursor
--- nnoremap <leader>di <Plug>VimspectorBalloonEval
--- xnoremap <leader>di <Plug>VimspectorBalloonEval
+-- Misc
+map('n', '<leader>dz', '<Plug>VimspectorRunToCursor')
+map('n', '<leader>di', '<Plug>VimspectorBalloonEval')
+map('x', '<leader>di', '<Plug>VimspectorBalloonEval')
 
 
 -- nvim-treesitter
@@ -115,11 +122,13 @@ g.SuperTabDefaultCompletionType = 'context'
 
 
 -- vim-fugitive
--- autocmd User FugitivePager
--- \ nnoremap <buffer> <s-j> zj |
--- \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
--- \ nnoremap <buffer> q ZZ |
--- \ nnoremap <buffer> <s-CR> <C-6>
+vim.cmd [[
+autocmd User FugitivePager
+  \ nnoremap <buffer> <s-j> zj |
+  \ nnoremap <buffer> <s-k> <Plug>FoldJumpUp |
+  \ nnoremap <buffer> q ZZ |
+  \ nnoremap <buffer> <s-CR> <C-6>
+]]
 
 
 -- cinnamon.nvim
