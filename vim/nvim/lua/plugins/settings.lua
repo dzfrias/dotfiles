@@ -17,11 +17,81 @@ vim.api.nvim_create_autocmd(
 )
 
 
+-- nvim-lspconfig
+local on_attach = function(client, bufnr)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<C-p>', vim.lsp.buf.hover, bufopts)
+end
+
+-- Format on save
+local format = vim.api.nvim_create_augroup('format', {})
+vim.api.nvim_create_autocmd(
+  'BufWritePre',
+  {
+    group = format,
+    pattern = '*',
+    command = 'lua vim.lsp.buf.formatting()'
+  }
+)
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local lspconfig = require('lspconfig')
+-- Set up language servers
+local servers = { 'pyright', 'gopls' }
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end
+
+-- nvim-cmp setup
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local luasnip = require('luasnip')
+local cmp = require'cmp'
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+
 -- vim-go
-g.go_fmt_command = 'goimports'
 g.go_doc_keywordprg_enabled = 0
 g.go_auto_type_info = 1
-g.go_metalinter_autosave = 1
+g.go_fmt_autosave = 0
+g.go_code_completion_enabled = 0
 
 
 -- clever-f
@@ -110,17 +180,6 @@ g.gitgutter_map_keys = 0
 
 -- fzf
 g.fzf_layout = { window = { width = 0.9, height = 0.7 } }
-
-
--- pymode
-g.pymode_rope_goto_definition_bind = 'gd'
-g.pymode_lint_ignore = {'E501'}
-g.pymode_doc_bind = '<C-p>'
-g.pymode_run_bind = '<leader>r'
-
-
--- supertab
-g.SuperTabDefaultCompletionType = 'context'
 
 
 -- vim-fugitive

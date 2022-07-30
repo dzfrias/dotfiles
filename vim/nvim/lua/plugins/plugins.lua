@@ -27,13 +27,15 @@ return require('packer').startup(function(use)
   use 'tpope/vim-projectionist'  -- Easy project management/movement
   use 'dzfrias/vim-gojson'  -- Easy Go JSON field tags
   use 'dzfrias/vim-gitrebase'  -- Git rebase mappings
-  use { 'python-mode/python-mode', ft = 'python', branch = 'develop' }  -- Python language support
   use 'jiangmiao/auto-pairs'  -- Auto-pairing of characters
-  use 'ervandew/supertab'  -- Tab completion
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'  -- Fuzzy finder
   use 'tpope/vim-scriptease'  -- Make vimscript easier
   use 'puremourning/vimspector'  -- Debugging with DAP
   use 'phaazon/hop.nvim'  -- Easy movement in file
   use 'yegappan/mru'  -- Most recently used files
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'L3MON4D3/LuaSnip'
 end)
