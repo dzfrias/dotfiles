@@ -73,9 +73,10 @@ require'nvim-treesitter.configs'.setup {
 
 
 -- copilot.nvim
-g.copilot_filetypes = {
+local copilot = {
   python = true,
   zsh = true,
+  lua = true,
   zshrc = true,
   sh = true,
   bash = true,
@@ -87,7 +88,8 @@ g.copilot_filetypes = {
   vimrc = true,
   applescript = true
 }
-g.copilot_filetypes['*'] = false
+copilot['*'] = false
+g.copilot_filetypes = copilot
 
 
 -- vim-easyclip
