@@ -1,5 +1,6 @@
 local g = vim.g
 
+
 -- emmet-vim
 g.user_emmet_install_global = 0
 local emmet = vim.api.nvim_create_augroup('emmet', {})
@@ -91,7 +92,7 @@ g.AutoPairsMapCh = 0
 
 
 -- hop.nvim
-require'hop'.setup()
+require('hop').setup()
 
 
 -- gitgutter
@@ -127,11 +128,3 @@ require('cinnamon').setup()
 
 -- tokyonight.nvim
 g.tokyonight_style = 'night'
-
-
--- nerdtree
--- augroup nerdtree
--- autocmd!
--- " Exit Vim if NERDTree is the only window remaining in the only tab.
--- autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
--- augroup END
