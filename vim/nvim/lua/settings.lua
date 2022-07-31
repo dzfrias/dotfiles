@@ -11,7 +11,7 @@ set.signcolumn = 'number'
 
 set.hlsearch = true
 
-vim.cmd[[set colorcolumn=80]]
+set.colorcolumn = '80'
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 set.cmdheight = 2
@@ -31,6 +31,7 @@ set.clipboard = 'unnamed'
 set.foldmethod = 'indent'
 set.foldlevelstart = 2
 set.foldnestmax = 1
+set.foldopen = set.foldopen:gsub('block,', '')
 
 set.autoindent = true
 set.smartindent = true

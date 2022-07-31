@@ -46,8 +46,6 @@ imap('jk', '<Esc>')
 nmap('<leader>du', '<Cmd>call vimspector#LaunchWithSettings(#{configuration: "test"})<CR>')
 nmap('<leader>dd', '<Cmd>call vimspector#LaunchWithSettings(#{configuration: "run"})<CR>')
 
-nmap('<C-f>', '<Cmd>HopWord<CR>')
-
 nmap('<leader>k', '<C-w>k')
 nmap('<leader>l', '<C-w>l')
 nmap('<leader>h', '<C-w>h')

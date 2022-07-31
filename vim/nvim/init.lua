@@ -1,7 +1,8 @@
-require('plugins/plugins')
-require('plugins/settings')
 require('settings')
 require('mappings')
 require('commands')
+require('plugins')
+require('plugins/lsp_config')
 
-vim.api.nvim_command('colorscheme tokyonight')
+vim.g.tokyonight_style = 'night'
+vim.cmd('colorscheme tokyonight')
