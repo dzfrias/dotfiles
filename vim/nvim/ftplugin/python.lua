@@ -1,8 +1,3 @@
-local function bufmap(mode, key, cmd)
-  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
-end
-
-
 vim.opt_local.shiftwidth = 4
 vim.opt_local.softtabstop = 4
 vim.opt_local.colorcolumn = '79'
