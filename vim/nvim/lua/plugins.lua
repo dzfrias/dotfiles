@@ -10,8 +10,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
   use 'ryanoasis/vim-devicons'  -- Icons for various plugins
+  -- Colorscheme
   use {
-    'folke/tokyonight.nvim',  -- Colorscheme
+    'folke/tokyonight.nvim',
     branch = 'main'
   }
   -- }}}
@@ -31,8 +32,9 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- AI suggestions
   use {
-    'github/copilot.vim',  -- AI Suggestinos
+    'github/copilot.vim',
     config = function()
       require('plugins/copilot')
     end
@@ -41,15 +43,17 @@ return require('packer').startup(function(use)
 
   -- {{{ Git-------------------------------------------------------------------
   use 'dzfrias/vim-gitrebase'  -- Git rebase mappings
+  -- Git integration
   use {
-    'tpope/vim-fugitive',  -- Git integration
+    'tpope/vim-fugitive',
     config = function()
       require('plugins/fugitive')
     end
   }
 
+  -- Git diffs in sign column
   use {
-    'airblade/vim-gitgutter',  -- Git signs in sign column
+    'airblade/vim-gitgutter',
     config = function()
       require('plugins/gitgutter')
     end
@@ -67,29 +71,33 @@ return require('packer').startup(function(use)
   use 'dzfrias/vim-foldjump'  -- Easy fold movement
   use 'nvim-lua/plenary.nvim' -- Better lua editing
 
+  -- Better movement with f and t
   use {
-    'rhysd/clever-f.vim',  -- Better movement with f and t
+    'rhysd/clever-f.vim',
     config = function()
       require('plugins/clever-f')
     end
   }
 
+  -- Better clipboard control
   use {
-    'svermeulen/vim-easyclip',  -- Better clipboard control
+    'svermeulen/vim-easyclip',
     config = function()
       require('plugins/easyclip')
     end
   }
 
+  -- Scrolling
   use {
-    'declancm/cinnamon.nvim',  -- Scrolling
+    'declancm/cinnamon.nvim',
     config = function()
       require('plugins/cinnamon')
     end
   }
 
+  -- Auto pairs
   use {
-    'jiangmiao/auto-pairs',  -- Auto-pairing of characters
+    'jiangmiao/auto-pairs',
     config = function()
       require('plugins/autopairs')
     end
@@ -98,11 +106,10 @@ return require('packer').startup(function(use)
 
   -- {{{ HTML------------------------------------------------------------------
   use 'alvan/vim-closetag'  -- Closing tags for HTML
+  -- Easy HTML editing
   use {
-    'mattn/emmet-vim',  -- Easy HTML editing
-    config = function()
-      require('plugins/emmet')
-    end
+    'mattn/emmet-vim',
+    ft = { 'html', 'css' },
   }
   -- }}}
 
@@ -112,8 +119,9 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Debugger--------------------------------------------------------------
+  -- Debugging with the DAP
   use {
-    'puremourning/vimspector',  -- Debugging with DAP
+    'puremourning/vimspector',
     config = function()
       require('plugins/vimspector')
     end
@@ -122,8 +130,9 @@ return require('packer').startup(function(use)
 
   -- {{{ Go--------------------------------------------------------------------
   use 'dzfrias/vim-gojson'  -- Easy Go JSON field tags
+  -- Go language support
   use {
-    'fatih/vim-go',  -- Go language support
+    'fatih/vim-go',
     run = ':GoUpdateBinaries',
     config = function()
       require('plugins/vim-go')
@@ -133,7 +142,8 @@ return require('packer').startup(function(use)
 
   -- {{{ Snippets--------------------------------------------------------------
   use 'rafamadriz/friendly-snippets'  -- A ton of useful snippets
-  use {  -- Snippet engine
+  -- Snippet engine
+  use {
     'L3MON4D3/LuaSnip',
     config = function()
       require('plugins/luasnip')
