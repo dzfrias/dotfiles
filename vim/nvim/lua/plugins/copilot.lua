@@ -1,3 +1,4 @@
+-- Enabled filetypes
 local copilot = {
   python = true,
   zsh = true,

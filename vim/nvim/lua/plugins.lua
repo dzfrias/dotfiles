@@ -12,10 +12,7 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'  -- Icons for various plugins
   use {
     'folke/tokyonight.nvim',  -- Colorscheme
-    branch = 'main',
-    config = function()
-      require('plugins.tokyonight')
-    end
+    branch = 'main'
   }
   -- }}}
 

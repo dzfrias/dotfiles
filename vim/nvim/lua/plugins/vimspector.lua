@@ -2,7 +2,9 @@ local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
 
+-- Quit session
 map('n', '<leader>dq', '<Cmd>call vimspector#Reset()<CR>')
+-- Continue to breakpoint
 map('n', '<leader>dc', '<Cmd>call vimspector#Continue()<CR>')
 
 -- Breakpoints

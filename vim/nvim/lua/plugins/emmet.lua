@@ -1,3 +1,4 @@
+-- Only install with filetype matching the given pattern
 vim.g.user_emmet_install_global = 0
 local emmet = vim.api.nvim_create_augroup('emmet', {})
 vim.api.nvim_create_autocmd(

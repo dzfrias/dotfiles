@@ -1,3 +1,4 @@
+-- Mappings in pagers
 vim.cmd [[
   autocmd User FugitivePager
   \ nnoremap <buffer> <s-j> zj |
