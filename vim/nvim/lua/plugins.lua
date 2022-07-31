@@ -146,5 +146,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration
+  use 'hrsh7th/cmp-path'  -- Path autocompletion for cmp
   -- }}}
 end)
