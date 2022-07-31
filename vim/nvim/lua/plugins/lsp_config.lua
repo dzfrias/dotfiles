@@ -51,7 +51,7 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- <CR> to accept
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<s-CR>'] = cmp.mapping.abort(),
+
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -74,6 +74,7 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   }),
+
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
@@ -110,10 +111,10 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gn",
-      node_incremental = "gn",
-      scope_incremental = "gs",
-      node_decremental = "gN",
+      init_selection = 'gn',
+      node_incremental = 'gn',
+      scope_incremental = 'gs',
+      node_decremental = 'gN',
     },
   },
 }
