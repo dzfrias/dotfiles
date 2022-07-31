@@ -3,6 +3,6 @@ local function bufmap(mode, key, cmd)
 end
 
 
-bufmap('n', '<CR>',      '<C-J>')
+bufmap('n', '<CR>',      '<C-]>')
 bufmap('n', '<BS>',      '<C-T>')
 bufmap('n', '<leader>t', '<Cmd>setlocal filetype=text<CR>')

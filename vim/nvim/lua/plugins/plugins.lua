@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
   use 'vim-scripts/applescript.vim'  -- AppleScript syntax highlighting
   use 'bfontaine/Brewfile.vim'  -- Brewfile syntax highlighting
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }  -- Go language support
-  use 'tpope/vim-endwise'  -- Close statements automatically
   use 'tpope/vim-projectionist'  -- Easy project management/movement
   use 'dzfrias/vim-gojson'  -- Easy Go JSON field tags
   use 'dzfrias/vim-gitrebase'  -- Git rebase mappings
@@ -38,4 +37,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
+  use 'saadparwaiz1/cmp_luasnip'
 end)

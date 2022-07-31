@@ -38,3 +38,5 @@ set.expandtab = true
 
 set.modeline = true
 set.modelines = 1
+
+set.pumheight = 5

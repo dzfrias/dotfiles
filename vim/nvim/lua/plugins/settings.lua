@@ -17,6 +17,10 @@ vim.api.nvim_create_autocmd(
 )
 
 
+-- luasnip
+require('luasnip.loaders.from_vscode').lazy_load()
+
+
 -- nvim-lspconfig
 local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -67,25 +71,32 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- <CR> to accept
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    -- <Tab> to advance completion
+    ['<s-CR>'] = cmp.mapping.abort(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
       else
         fallback()
       end
     end, { 'i', 's' }),
-    -- <s-tab> to go backwards in completion
-    ['<s-Tab>'] = cmp.mapping(function()
+
+    ['<s-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
       end
     end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'luasnip' }
   }, {
     { name = 'buffer' },
   })
@@ -181,6 +192,7 @@ require('hop').setup()
 
 -- gitgutter
 g.gitgutter_map_keys = 0
+g.gitgutter_sign_priority = 9
 
 
 -- fzf
