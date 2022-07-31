@@ -89,9 +89,18 @@ cmp.setup({
 })
 
 
+-- Null-ls
+null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.autopep8
+    },
+})
+
+
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "python", "vim", "go", "lua", "json" },
+  ensure_installed = { 'python', 'vim', 'go', 'lua', 'json' },
 
   highlight = {
     enable = true,

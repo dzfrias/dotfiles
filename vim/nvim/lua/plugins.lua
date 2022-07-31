@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-scriptease'  -- Make vimscript easier
   use 'matze/vim-move'  -- Moving lines/characters
   use 'dzfrias/vim-foldjump'  -- Easy fold movement
+  use 'nvim-lua/plenary.nvim' -- Better lua editing
 
   use {
     'rhysd/clever-f.vim',  -- Better movement with f and t
@@ -143,6 +144,7 @@ return require('packer').startup(function(use)
   -- {{{ LSP and autocomplete--------------------------------------------------
   -- See plugins/lsp-config.lua for configuration of all of these
   use 'neovim/nvim-lspconfig'  -- LSP
+  use 'jose-elias-alvarez/null-ls.nvim'  -- Null LSP
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration
