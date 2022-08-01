@@ -46,8 +46,8 @@ nmap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 -- Fzf files at the project root, see ProjFiles in commands.lua
 nmap('<leader>f', '<Cmd>ProjFiles<CR>')
 
--- Open NERDTree
-nmap('<C-n>', '<Cmd>NERDTreeToggle<CR>')
+-- Open NvimTree
+nmap('<C-n>', '<Cmd>NvimTreeToggle<CR>')
 
 -- Git mappings
 nmap('gq', '<Cmd>Git<CR>')

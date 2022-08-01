@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
-  use 'preservim/nerdtree'  -- View of directory
   use 'numToStr/FTerm.nvim'  -- Terminal inside vim session
   use 'yegappan/mru'  -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
@@ -29,6 +28,18 @@ return require('packer').startup(function(use)
     'junegunn/fzf.vim',
     config = function()
       require('plugins/fzf')
+    end
+  }
+
+  -- View of directory
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly',
+    config = function()
+      require('plugins/nvim-tree')
     end
   }
 
