@@ -99,19 +99,18 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('plugins/neoscroll')
+    end
+  }
+
   -- Better clipboard control
   use {
     'svermeulen/vim-easyclip',
     config = function()
       require('plugins/easyclip')
-    end
-  }
-
-  -- Scrolling
-  use {
-    'declancm/cinnamon.nvim',
-    config = function()
-      require('plugins/cinnamon')
     end
   }
 
@@ -171,12 +170,20 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- {{{ LSP and autocomplete--------------------------------------------------
+  -- {{{ LSP-------------------------------------------------------------------
   -- LSP
   use {
     'neovim/nvim-lspconfig',
     config = function()
       require('plugins/lspconfig')
+    end
+  }
+  -- Show code actions
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+    config = function()
+      require('plugins/nvim-lightbulb')
     end
   }
   -- Generic language server
@@ -186,6 +193,9 @@ return require('packer').startup(function(use)
       require('plugins/null-ls')
     end
   }
+  -- }}}
+
+  -- {{{ Autocomplete----------------------------------------------------------
   -- Completion engine
   use {
     'hrsh7th/nvim-cmp',
