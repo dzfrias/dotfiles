@@ -35,9 +35,21 @@ return require('packer').startup(function(use)
   -- AI suggestions
   use {
     'github/copilot.vim',
-    config = function()
-      require('plugins/copilot')
-    end
+    ft = {
+      'python',
+      'zsh',
+      'lua',
+      'zshrc',
+      'sh',
+      'bash',
+      'html',
+      'css',
+      'js',
+      'json',
+      'vim',
+      'vimrc',
+      'applescript'
+    }
   }
   -- }}}
 
