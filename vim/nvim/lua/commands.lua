@@ -15,18 +15,20 @@ vim.api.nvim_create_autocmd(
 
 -- get_project_root gets the root of the current directory (based on .git)
 local function get_project_root(dir)
-  -- Absolute path of directory
-  dir = vim.fn.fnamemodify(dir, ':p')
+  -- Absolute path of directory with no trailing /
+  dir = vim.fn.fnamemodify(dir, ':p'):sub(1, -2)
   home = os.getenv('HOME')
 
-  if dir == home or string.sub(dir, -4, -1) == home then
+  if dir == home then
     return '.'
   end
-  if vim.fn.isdirectory(dir .. '.git') == 1 then
+  if vim.fn.isdirectory(dir .. '/.git') == 1 then
     return dir
   end
 
-  return get_project_root(dir .. '/..')
+  -- Get parent directory
+  pdir = vim.fn.fnamemodify(dir, ':h')
+  return get_project_root(pdir)
 end
 -- ProjFiles is a command that calls get_project_root at the current directory
 vim.api.nvim_create_user_command(

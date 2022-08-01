@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
+  use 'kyazdani42/nvim-web-devicons'
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
@@ -21,15 +22,11 @@ return require('packer').startup(function(use)
   use 'yegappan/mru'  -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/plenary.nvim' }
-  }
+  use 'nvim-telescope/telescope.nvim'
 
   -- View of directory
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
     tag = 'nightly',
     config = function()
       require('plugins/nvim-tree')
@@ -83,12 +80,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-scriptease'  -- Make vimscript easier
   use 'matze/vim-move'  -- Moving lines/characters
   use 'dzfrias/vim-foldjump'  -- Easy fold movement
-
-  -- Surround text
-  use {
-    'tpope/vim-surround',
-    requires = { 'tpope/vim-repeat' }
-  }
+  use 'tpope/vim-repeat'  -- Repeat everything
+  use 'tpope/vim-surround'  -- Surround text
+  use 'nvim-lua/plenary.nvim'
 
   -- Better movement with f and t
   use {
@@ -173,10 +167,7 @@ return require('packer').startup(function(use)
   -- {{{ LSP and autocomplete--------------------------------------------------
   -- See plugins/lsp-config.lua for configuration of all of these
   use 'neovim/nvim-lspconfig'  -- LSP
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }  -- Null LSP
+  use 'jose-elias-alvarez/null-ls.nvim'  -- Null LSP
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration
