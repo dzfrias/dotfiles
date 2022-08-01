@@ -15,14 +15,21 @@ return require('packer').startup(function(use)
     'folke/tokyonight.nvim',
     branch = 'main'
   }
+  -- Tree sitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('plugins/treesitter')
+    end,
+    run = ':TSUpdate'
+  }
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
   use 'numToStr/FTerm.nvim'  -- Terminal inside vim session
   use 'yegappan/mru'  -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-
-  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope.nvim'  -- Fzf-like filter
 
   -- View of directory
   use {
@@ -165,10 +172,27 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ LSP and autocomplete--------------------------------------------------
-  -- See plugins/lsp-config.lua for configuration of all of these
-  use 'neovim/nvim-lspconfig'  -- LSP
-  use 'jose-elias-alvarez/null-ls.nvim'  -- Null LSP
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('plugins/lspconfig')
+    end
+  }
+  -- Generic language server
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('plugins/null-ls')
+    end
+  }
+  -- Completion engine
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('plugins/nvim-cmp')
+    end
+  }
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration
   use 'hrsh7th/cmp-path'  -- Path autocompletion for cmp
