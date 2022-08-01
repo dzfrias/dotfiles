@@ -9,7 +9,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
-  use 'ryanoasis/vim-devicons'  -- Icons for various plugins
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
@@ -22,21 +21,15 @@ return require('packer').startup(function(use)
   use 'yegappan/mru'  -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
-  -- Fzf
-  use 'junegunn/fzf'
   use {
-    'junegunn/fzf.vim',
-    config = function()
-      require('plugins/fzf')
-    end
+    'nvim-telescope/telescope.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/plenary.nvim' }
   }
 
   -- View of directory
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
+    requires = { 'kyazdani42/nvim-web-devicons' },
     tag = 'nightly',
     config = function()
       require('plugins/nvim-tree')
@@ -84,15 +77,18 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ General tools---------------------------------------------------------
-  use 'tpope/vim-surround'  -- Surround text with anything
   use 'tpope/vim-commentary'  -- Commenting
   use 'tpope/vim-sleuth'  -- Setting tabs
-  use 'tpope/vim-repeat'  -- Repeating mappings
   use 'tpope/vim-projectionist'  -- Easy project management/movement
   use 'tpope/vim-scriptease'  -- Make vimscript easier
   use 'matze/vim-move'  -- Moving lines/characters
   use 'dzfrias/vim-foldjump'  -- Easy fold movement
-  use 'nvim-lua/plenary.nvim' -- Better lua editing
+
+  -- Surround text
+  use {
+    'tpope/vim-surround',
+    requires = { 'tpope/vim-repeat' }
+  }
 
   -- Better movement with f and t
   use {
@@ -177,7 +173,10 @@ return require('packer').startup(function(use)
   -- {{{ LSP and autocomplete--------------------------------------------------
   -- See plugins/lsp-config.lua for configuration of all of these
   use 'neovim/nvim-lspconfig'  -- LSP
-  use 'jose-elias-alvarez/null-ls.nvim'  -- Null LSP
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }  -- Null LSP
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration

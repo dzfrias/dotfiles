@@ -31,9 +31,7 @@ end
 -- ProjFiles is a command that calls get_project_root at the current directory
 vim.api.nvim_create_user_command(
   'ProjFiles',
-  function(_)
-    vim.fn["fzf#vim#files"](get_project_root('.'))
-  end,
+  'Telescope find_files cwd=' .. get_project_root('.'),
   {}
 )
 
@@ -45,4 +43,15 @@ vim.api.nvim_create_user_command(
     vim.api.nvim_command('cd ' .. dir)
   end,
   {}
+)
+
+-- FF calls find_files, accepting an argument for the directory to search
+vim.api.nvim_create_user_command(
+  'FF',
+  function(opts)
+    vim.cmd('Telescope find_files cwd=' .. opts.args)
+  end,
+  {
+    nargs = 1
+  }
 )

@@ -43,8 +43,13 @@ nmap('<leader>e', '<Cmd>write<CR><Cmd>source $MYVIMRC<CR>')
 -- Re-edit file, also loading the entire runtime
 nmap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 
--- Fzf files at the project root, see ProjFiles in commands.lua
-nmap('<leader>f', '<Cmd>ProjFiles<CR>')
+-- Telescope
+nmap('<leader>tf', '<Cmd>Telescope find_files<CR>')
+nmap('<leader>tF', '<Cmd>ProjFiles<CR>')  -- See commands.lua for ProjFiles
+nmap('<leader>tu', '<Cmd>FF ..<CR>')  -- See commands.lua for FF
+nmap('<leader>tr', '<Cmd>Telescope lsp_references<CR>')
+nmap('<leader>tt', '<Cmd>Telescope treesitter<CR>')
+nmap('<leader>tl', '<Cmd>Telescope live_grep<CR>')
 
 -- Open NvimTree
 nmap('<C-n>', '<Cmd>NvimTreeToggle<CR>')
