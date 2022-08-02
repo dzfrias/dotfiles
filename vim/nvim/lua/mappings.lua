@@ -70,7 +70,7 @@ nmap('<leader>h', '<C-w>h')
 nmap('<leader>j', '<C-w>j')
 
 -- Run file
-nmap('<leader>r', '<Cmd>RunFile float<CR>')
+nmap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
 
 -- Escape
 imap('jk', '<Esc>')
