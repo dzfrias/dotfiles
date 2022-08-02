@@ -77,6 +77,3 @@ imap('jk', '<Esc>')
 -- Tab movement
 imap('<C-l>', '<Esc><Cmd>tabn<CR>')
 imap('<C-h>', '<Esc><Cmd>tabp<CR>')
-
--- Accept copilot suggestion
-vim.cmd('imap <silent><script><expr> <C-l> copilot#Accept("<CR>")')
