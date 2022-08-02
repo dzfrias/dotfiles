@@ -2,13 +2,14 @@
 local function nmap(shortcut, command)
   vim.api.nvim_set_keymap('n', shortcut, command, { noremap = true })
 end
+
 local function imap(shortcut, command)
   vim.api.nvim_set_keymap('i', shortcut, command, { noremap = true })
 end
+
 local function map(shortcut, command)
   vim.api.nvim_set_keymap('', shortcut, command, { noremap = true })
 end
-
 
 -- Go to top of file and first character
 map('gg', 'gg0')
@@ -45,7 +46,7 @@ nmap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 
 -- Telescope
 nmap('<leader>tf', '<Cmd>Telescope find_files<CR>')
-nmap('<leader>tF', '<Cmd>ProjFiles<CR>')  -- See commands.lua for ProjFiles
+nmap('<leader>tF', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
 nmap('<leader>tr', '<Cmd>Telescope lsp_references<CR>')
 nmap('<leader>tt', '<Cmd>Telescope treesitter<CR>')
 nmap('<leader>tl', '<Cmd>Telescope live_grep<CR>')
@@ -68,8 +69,8 @@ nmap('<leader>l', '<C-w>l')
 nmap('<leader>h', '<C-w>h')
 nmap('<leader>j', '<C-w>j')
 
--- Open floating terminal and run call callcmd on file
-nmap('<leader>r', '<Cmd>w<CR><Cmd>lua require("FTerm").run({vim.b.callcmd, "&&", "read -n 1 && exit"})<CR>')
+-- Run file
+nmap('<leader>r', '<Cmd>RunFile float<CR>')
 
 -- Escape
 imap('jk', '<Esc>')

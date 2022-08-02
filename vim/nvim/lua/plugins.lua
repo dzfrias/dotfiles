@@ -26,10 +26,15 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
-  use 'numToStr/FTerm.nvim' -- Terminal inside vim session
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'nvim-telescope/telescope.nvim' -- Fzf-like filter
+  use {
+    'CRAG666/code_runner.nvim',
+    config = function()
+      require('plugins/code_runner')
+    end
+  }
 
   -- View of directory
   use {
@@ -89,6 +94,7 @@ return require('packer').startup(function(use)
   use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-repeat' -- Repeat everything
   use 'tpope/vim-surround' -- Surround text
+  use 'tpope/vim-endwise'
   use 'nvim-lua/plenary.nvim'
 
   use {
