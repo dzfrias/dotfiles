@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'nvim-telescope/telescope.nvim' -- Fzf-like filter
+
+  -- Run code
   use {
     'CRAG666/code_runner.nvim',
     config = function()
@@ -94,7 +96,7 @@ return require('packer').startup(function(use)
   use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-repeat' -- Repeat everything
   use 'tpope/vim-surround' -- Surround text
-  use 'tpope/vim-endwise'
+  use 'tpope/vim-endwise' -- Automatically make end statements
   use 'nvim-lua/plenary.nvim'
 
   use {
