@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'  -- Repeat everything
   use 'tpope/vim-surround'  -- Surround text
   use 'nvim-lua/plenary.nvim'
+  use 'ggandor/lightspeed.nvim'
 
   -- Better movement with f and t
   use {
@@ -176,14 +177,6 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
     config = function()
       require('plugins/lspconfig')
-    end
-  }
-  -- Show code actions
-  use {
-    'kosayoda/nvim-lightbulb',
-    requires = 'antoinemadec/FixCursorHold.nvim',
-    config = function()
-      require('plugins/nvim-lightbulb')
     end
   }
   -- Generic language server
