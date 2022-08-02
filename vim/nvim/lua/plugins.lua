@@ -26,10 +26,10 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
-  use 'numToStr/FTerm.nvim'  -- Terminal inside vim session
-  use 'yegappan/mru'  -- Most recently used files
+  use 'numToStr/FTerm.nvim' -- Terminal inside vim session
+  use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'nvim-telescope/telescope.nvim'  -- Fzf-like filter
+  use 'nvim-telescope/telescope.nvim' -- Fzf-like filter
 
   -- View of directory
   use {
@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Git-------------------------------------------------------------------
-  use 'dzfrias/vim-gitrebase'  -- Git rebase mappings
+  use 'dzfrias/vim-gitrebase' -- Git rebase mappings
   -- Git integration
   use {
     'tpope/vim-fugitive',
@@ -81,14 +81,14 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ General tools---------------------------------------------------------
-  use 'tpope/vim-commentary'  -- Commenting
-  use 'tpope/vim-sleuth'  -- Setting tabs
-  use 'tpope/vim-projectionist'  -- Easy project management/movement
-  use 'tpope/vim-scriptease'  -- Make vimscript easier
-  use 'matze/vim-move'  -- Moving lines/characters
-  use 'dzfrias/vim-foldjump'  -- Easy fold movement
-  use 'tpope/vim-repeat'  -- Repeat everything
-  use 'tpope/vim-surround'  -- Surround text
+  use 'tpope/vim-commentary' -- Commenting
+  use 'tpope/vim-sleuth' -- Setting tabs
+  use 'tpope/vim-projectionist' -- Easy project management/movement
+  use 'tpope/vim-scriptease' -- Make vimscript easier
+  use 'matze/vim-move' -- Moving lines/characters
+  use 'dzfrias/vim-foldjump' -- Easy fold movement
+  use 'tpope/vim-repeat' -- Repeat everything
+  use 'tpope/vim-surround' -- Surround text
   use 'nvim-lua/plenary.nvim'
 
   use {
@@ -132,7 +132,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ HTML------------------------------------------------------------------
-  use 'alvan/vim-closetag'  -- Closing tags for HTML
+  use 'alvan/vim-closetag' -- Closing tags for HTML
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
@@ -141,8 +141,8 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Misc filetypes--------------------------------------------------------
-  use 'vim-scripts/applescript.vim'  -- AppleScript syntax highlighting
-  use 'bfontaine/Brewfile.vim'  -- Brewfile syntax highlighting
+  use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
+  use 'bfontaine/Brewfile.vim' -- Brewfile syntax highlighting
   -- }}}
 
   -- {{{ Debugger--------------------------------------------------------------
@@ -156,7 +156,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Go--------------------------------------------------------------------
-  use 'dzfrias/vim-gojson'  -- Easy Go JSON field tags
+  use 'dzfrias/vim-gojson' -- Easy Go JSON field tags
   -- Go language support
   use {
     'fatih/vim-go',

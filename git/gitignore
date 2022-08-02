@@ -22,3 +22,6 @@ venv
 # vim files
 .projections.json
 .vimspector.json
+
+# lua lsp
+.luarc.json

@@ -1,8 +1,8 @@
 -- Key bindings
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<C-p>', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>c', vim.lsp.buf.code_action, bufopts)
@@ -19,12 +19,35 @@ vim.api.nvim_create_autocmd(
   }
 )
 
+-- Setting up servers
 local lspconfig = require('lspconfig')
--- Set up language servers
 local servers = { 'pyright', 'gopls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
-    capabilities = capabilities
   }
 end
+
+-- lua setup
+require 'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
