@@ -178,5 +178,14 @@ return require('packer').startup(function(use)
       require('plugins/null-ls')
     end
   }
+
+  -- mason.nvim
+  use 'williamboman/mason.nvim'
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('plugins/mason')
+    end
+  }
   -- }}}
 end)
