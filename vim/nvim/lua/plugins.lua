@@ -94,7 +94,7 @@ return require('packer').startup(function(use)
   use {
     'ggandor/leap.nvim',
     config = function()
-      require('leap').set_default_keymaps()
+      require('plugins/leap')
     end
   }
 
@@ -106,6 +106,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Scrolling
   use {
     'karb94/neoscroll.nvim',
     config = function()
