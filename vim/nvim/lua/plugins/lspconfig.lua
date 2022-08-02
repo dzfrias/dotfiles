@@ -11,12 +11,12 @@ end
 -- Format on save
 local format = vim.api.nvim_create_augroup('format', {})
 vim.api.nvim_create_autocmd(
-'BufWritePre',
-{
-  group = format,
-  pattern = '*',
-  command = 'lua vim.lsp.buf.formatting()'
-}
+  'BufWritePre',
+  {
+    group = format,
+    pattern = '*',
+    command = 'lua vim.lsp.buf.formatting()'
+  }
 )
 
 local lspconfig = require('lspconfig')
