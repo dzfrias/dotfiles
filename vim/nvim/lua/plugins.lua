@@ -164,27 +164,27 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
-  -- LSP
+  -- Lsp setup
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require('plugins/lspconfig')
+      require('plugins/lsp/lspconfig')
     end
   }
   -- Generic language server
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
-      require('plugins/null-ls')
+      require('plugins/lsp/null-ls')
     end
   }
 
-  -- mason.nvim
+  -- Lsp installer
   use 'williamboman/mason.nvim'
   use {
     'williamboman/mason-lspconfig.nvim',
     config = function()
-      require('plugins/mason')
+      require('plugins/lsp/mason')
     end
   }
   -- }}}

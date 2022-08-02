@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd(
 
 -- Setting up servers
 local lspconfig = require('lspconfig')
-local servers = { 'pyright', 'gopls', 'vimls', 'ltex' }
+local servers = require('servers')
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
