@@ -19,11 +19,7 @@ vim.api.nvim_create_autocmd(
 }
 )
 
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
-
 -- Set up language servers
 local servers = { 'pyright', 'gopls' }
 for _, lsp in ipairs(servers) do

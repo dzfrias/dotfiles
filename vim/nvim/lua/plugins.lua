@@ -165,18 +165,6 @@ return require('packer').startup(function(use)
     end
   }
   -- }}}
-
-  -- {{{ Snippets--------------------------------------------------------------
-  use 'rafamadriz/friendly-snippets'  -- A ton of useful snippets
-  -- Snippet engine
-  use {
-    'L3MON4D3/LuaSnip',
-    config = function()
-      require('plugins/luasnip')
-    end
-  }
-  -- }}}
-
   -- {{{ LSP-------------------------------------------------------------------
   -- LSP
   use {
@@ -192,18 +180,5 @@ return require('packer').startup(function(use)
       require('plugins/null-ls')
     end
   }
-  -- }}}
-
-  -- {{{ Autocomplete----------------------------------------------------------
-  -- Completion engine
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function()
-      require('plugins/nvim-cmp')
-    end
-  }
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip'  -- cmp and luasnip integration
-  use 'hrsh7th/cmp-path'  -- Path autocompletion for cmp
   -- }}}
 end)
