@@ -90,7 +90,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'  -- Repeat everything
   use 'tpope/vim-surround'  -- Surround text
   use 'nvim-lua/plenary.nvim'
-  use 'ggandor/lightspeed.nvim'
+
+  use {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+  }
 
   -- Better movement with f and t
   use {
