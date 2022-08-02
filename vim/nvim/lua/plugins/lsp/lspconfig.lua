@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd(
 
 -- Setting up servers
 local lspconfig = require('lspconfig')
-local servers = require('servers')
+local servers = require('plugins/lsp/servers')
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
