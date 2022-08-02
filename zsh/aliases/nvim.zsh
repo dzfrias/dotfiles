@@ -7,6 +7,7 @@ alias zrc="nvim $HOME/.zshrc"
 alias ezrc="nvim $HOME/.dotfiles/zsh/extra.zsh"
 alias vrc="j ~/.dotfiles/vim/nvim/lua"
 alias evrc="nvim $HOME/.dotfiles/vim/vimrc"
+alias nvdir='j ~/.local/share/nvim'
 
 # packer.nvim
 alias pack='cd ~/.local/share/nvim/site/pack/packer/start'
