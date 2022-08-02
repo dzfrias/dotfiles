@@ -15,6 +15,4 @@ vim.opt_local.spell = true
 bufmap('', '+', '30l')
 bufmap('', '-', '30h')
 
-vim.b.callcmd = 'open ' .. vim.fn.expand('%')
-
 bufmap('n', '<leader>t', '<Cmd>setlocal filetype=help<CR>')
