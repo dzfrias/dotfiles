@@ -21,9 +21,14 @@ vim.api.nvim_create_autocmd(
 
 -- Setting up servers
 local lspconfig = require('lspconfig')
-local servers = require('plugins/lsp/servers')
+local servers = require('plugins/lsp/servers').default
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
   }
 end
+
+lspconfig.ltex.setup {
+  on_attach = on_attach,
+  filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex' }
+}

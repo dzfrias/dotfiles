@@ -1,2 +1,5 @@
 -- Servers to install/setup
-return { 'pyright', 'gopls', 'vimls', 'ltex' }
+return {
+  default = { 'pyright', 'gopls', 'vimls' },
+  special = { 'ltex' }
+}
