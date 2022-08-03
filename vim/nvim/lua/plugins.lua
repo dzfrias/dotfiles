@@ -9,8 +9,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
-  use 'kyazdani42/nvim-web-devicons'  -- Icons
-
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
@@ -29,7 +27,17 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'nvim-telescope/telescope.nvim' -- Fzf-like filter
+
+  -- Fzf-like filter
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'neovim/nvim-lspconfig',
+      'kyazdani42/nvim-web-devicons'
+    }
+  }
 
   -- Run code
   use {
@@ -45,7 +53,8 @@ return require('packer').startup(function(use)
     tag = 'nightly',
     config = function()
       require('plugins/nvim-tree')
-    end
+    end,
+    requires = 'kyazdani42/nvim-web-devicons'
   }
 
   -- AI suggestions
@@ -84,16 +93,28 @@ return require('packer').startup(function(use)
   use 'tpope/vim-scriptease' -- Make vimscript easier
   use 'matze/vim-move' -- Moving lines/characters
   use 'dzfrias/vim-foldjump' -- Easy fold movement
-  use 'tpope/vim-repeat' -- Repeat everything
-  use 'tpope/vim-surround' -- Surround text
   use 'tpope/vim-endwise' -- Automatically make end statements
-  use 'nvim-lua/plenary.nvim'
+
+  -- Surround text
+  use {
+    'tpope/vim-surround',
+    requires = 'tpope/vim-repeat'
+  }
+
+  use {
+    'lewis6991/spellsitter.nvim',
+    requires = 'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('plugins/spellsitter')
+    end
+  }
 
   use {
     'ggandor/leap.nvim',
     config = function()
       require('plugins/leap')
-    end
+    end,
+    requires = 'tpope/vim-repeat'
   }
 
   -- Better movement with f and t
@@ -166,7 +187,7 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
-  -- Lsp setup
+  -- LSP setup
   use {
     'neovim/nvim-lspconfig',
     config = function()
@@ -181,13 +202,14 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Lsp installer
+  -- LSP installer
   use 'williamboman/mason.nvim'
   use {
     'williamboman/mason-lspconfig.nvim',
     config = function()
       require('plugins/lsp/mason')
-    end
+    end,
+    requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' }
   }
   -- }}}
 end)

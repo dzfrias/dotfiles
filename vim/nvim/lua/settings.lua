@@ -57,3 +57,6 @@ set.modelines = 1
 
 -- Completion window max items
 set.pumheight = 5
+
+-- Spelling
+set.spell = true
