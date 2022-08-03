@@ -45,11 +45,12 @@ nmap('<leader>e', '<Cmd>write<CR><Cmd>source $MYVIMRC<CR>')
 nmap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 
 -- Telescope
-nmap('<leader>tf', '<Cmd>Telescope find_files<CR>')
-nmap('<leader>tF', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
-nmap('<leader>tr', '<Cmd>Telescope lsp_references<CR>')
-nmap('<leader>tt', '<Cmd>Telescope treesitter<CR>')
+nmap('<leader>tf', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
+nmap('<leader>tt', '<Cmd>Telescope lsp_document_symbols<CR>')
 nmap('<leader>tl', '<Cmd>Telescope live_grep<CR>')
+
+-- Trouble
+nmap('<leader>x', '<Cmd>TroubleToggle<CR>')
 
 -- Open NvimTree
 nmap('<C-n>', '<Cmd>NvimTreeToggle<CR>')

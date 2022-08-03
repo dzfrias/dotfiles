@@ -28,6 +28,14 @@ return require('packer').startup(function(use)
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('plugins/trouble')
+    end
+  }
+
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
@@ -37,6 +45,9 @@ return require('packer').startup(function(use)
   -- Fzf-like filter
   use {
     'nvim-telescope/telescope.nvim',
+    config = function()
+      require('plugins/telescope')
+    end,
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
