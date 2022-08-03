@@ -9,7 +9,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
-  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-web-devicons'  -- Icons
+
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
@@ -58,6 +59,7 @@ return require('packer').startup(function(use)
 
   -- {{{ Git-------------------------------------------------------------------
   use 'dzfrias/vim-gitrebase' -- Git rebase mappings
+
   -- Git integration
   use {
     'tpope/vim-fugitive',
