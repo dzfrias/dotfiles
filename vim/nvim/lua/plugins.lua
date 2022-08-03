@@ -28,6 +28,12 @@ return require('packer').startup(function(use)
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
+  -- Easy HTML editing
+  use {
+    'mattn/emmet-vim',
+    ft = { 'html', 'css' },
+  }
+
   -- Fzf-like filter
   use {
     'nvim-telescope/telescope.nvim',
@@ -147,14 +153,6 @@ return require('packer').startup(function(use)
     config = function()
       require('plugins/autopairs')
     end
-  }
-  -- }}}
-
-  -- {{{ HTML------------------------------------------------------------------
-  -- Easy HTML editing
-  use {
-    'mattn/emmet-vim',
-    ft = { 'html', 'css' },
   }
   -- }}}
 
