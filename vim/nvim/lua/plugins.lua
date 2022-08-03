@@ -151,7 +151,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ HTML------------------------------------------------------------------
-  use 'alvan/vim-closetag' -- Closing tags for HTML
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',

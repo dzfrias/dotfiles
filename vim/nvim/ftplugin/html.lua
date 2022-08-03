@@ -11,5 +11,5 @@ vim.opt_local.softtabstop = 2
 bufmap('i', '{%', '{%  %}<Esc>hhi')
 
 -- Emmet
-bufmap('i', '<C-v>', '<Plug>(emmet-expand-abbr)')
+bufmap('i', 'ee', '<Plug>(emmet-expand-abbr)')
 bufmap('n', '<C-v>', '<Plug>(emmet-expand-abbr)')
