@@ -36,6 +36,13 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'https://github.com/ervandew/supertab',
+    config = function()
+      require('plugins/supertab')
+    end
+  }
+
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
