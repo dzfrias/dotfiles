@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# ghs searches GitHub for a repository interactively and opens it in the browser
+
+
+local res=$(gh s $@)
+local st=$?
+if [[ $st != 0 ]]; then
+  echo $res >&2
+  return $st
+fi
+
+# Remove last line
+echo $res | sed '$d'
+echo $res | xargs -n1 gh browse --repo
