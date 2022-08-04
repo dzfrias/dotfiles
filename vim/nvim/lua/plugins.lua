@@ -29,6 +29,20 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
   use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('plugins/nvim-cmp')
+    end
+  }
+  use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('plugins/luasnip')
+    end
+  }
+  use 'saadparwaiz1/cmp_luasnip'
+
+  use {
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
