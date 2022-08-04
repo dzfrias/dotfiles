@@ -76,10 +76,6 @@ nmap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
 -- Escape
 imap('jk', '<Esc>')
 
--- Tab movement
-imap('<C-l>', '<Esc><Cmd>tabn<CR>')
-imap('<C-h>', '<Esc><Cmd>tabp<CR>')
-
 vim.cmd [[
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
