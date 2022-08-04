@@ -140,14 +140,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  use {
-    'ggandor/leap.nvim',
-    config = function()
-      require('plugins/leap')
-    end,
-    requires = 'tpope/vim-repeat'
-  }
-
   -- Better movement with f and t
   use {
     'rhysd/clever-f.vim',
