@@ -22,10 +22,6 @@ map('<space>', 'za')
 -- Go to last place in insert mode
 map('gi', 'gi<Esc>')
 
--- Tab movement
-map('<C-l>', '<Cmd>tabn<CR>')
-map('<C-h>', '<Cmd>tabp<CR>')
-
 -- Better wrapped line movement
 map('k', 'gk')
 map('j', 'gj')
@@ -57,7 +53,7 @@ nmap('<C-n>', '<Cmd>NvimTreeToggle<CR>')
 
 -- Git mappings
 nmap('gq', '<Cmd>Git<CR>')
-nmap('gcm', '<Cmd>Git add --all <bar> Git commit --verbose<CR>')
+nmap('gcm', '<Cmd>write<CR><Cmd>Git add --all <bar> Git commit --verbose<CR>')
 nmap('gp', '<Cmd>Git push<CR>')
 
 -- Vimspector launch settings, see all in plugins/vimspector.lua
