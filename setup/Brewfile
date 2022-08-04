@@ -34,10 +34,10 @@ brew "direnv"
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -50,6 +50,8 @@ brew "pcre2"
 brew "git"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
+# Render markdown on the CLI
+brew "glow"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Platform built on V8 to build network applications
@@ -62,6 +64,8 @@ brew "jupyterlab"
 brew "languagetool"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Prompt theme engine for any shell
@@ -72,10 +76,10 @@ brew "php"
 brew "ripgrep"
 # JavaScript package manager
 brew "yarn"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Everything you need to get started with Heroku
-brew "heroku/brew/heroku"
 # Application launcher and productivity software
 cask "alfred"
 # Desktop client for GitHub repositories
