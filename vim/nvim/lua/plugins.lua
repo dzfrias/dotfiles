@@ -161,7 +161,8 @@ return require('packer').startup(function(use)
     'svermeulen/vim-easyclip',
     config = function()
       require('plugins/easyclip')
-    end
+    end,
+    requires = 'tpope/vim-repeat'
   }
 
   -- Auto pairs
