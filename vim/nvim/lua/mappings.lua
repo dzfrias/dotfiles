@@ -57,10 +57,6 @@ nmap('gq', '<Cmd>Git<CR>')
 nmap('gcm', '<Cmd>write<CR><Cmd>Git add --all <bar> Git commit --verbose<CR>')
 nmap('gp', '<Cmd>Git push<CR>')
 
--- Vimspector launch settings, see all in plugins/vimspector.lua
-nmap('<leader>du', '<Cmd>call vimspector#LaunchWithSettings(#{configuration: "test"})<CR>')
-nmap('<leader>dd', '<Cmd>call vimspector#LaunchWithSettings(#{configuration: "run"})<CR>')
-
 -- Window movement
 nmap('<leader>k', '<C-w>k')
 nmap('<leader>l', '<C-w>l')

@@ -5,6 +5,7 @@ local copilot = {
   sh = true,
   bash = true,
   html = true,
+  lua = true,
   css = true,
   js = true,
   json = true,

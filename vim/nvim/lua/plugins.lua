@@ -173,13 +173,14 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Debugger--------------------------------------------------------------
-  -- Debugging with the DAP
   use {
-    'puremourning/vimspector',
+    'mfussenegger/nvim-dap',
     config = function()
-      require('plugins/vimspector')
+      require('plugins/dap')
     end
   }
+  use 'leoluz/nvim-dap-go'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   -- }}}
 
   -- {{{ Go--------------------------------------------------------------------
