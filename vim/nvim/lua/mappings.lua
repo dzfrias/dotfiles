@@ -42,6 +42,7 @@ nmap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 
 -- Telescope
 nmap('<leader>tf', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
+nmap('<leader>tL', '<Cmd>ProjLines<CR>') -- See commands.lua for ProjLines
 nmap('<leader>tt', '<Cmd>Telescope lsp_document_symbols<CR>')
 nmap('<leader>tl', '<Cmd>Telescope live_grep<CR>')
 

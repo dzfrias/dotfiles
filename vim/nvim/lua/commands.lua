@@ -30,10 +30,18 @@ local function get_project_root(dir)
   pdir = vim.fn.fnamemodify(dir, ':h')
   return get_project_root(pdir)
 end
--- ProjFiles is a command that calls get_project_root at the current directory
+
+-- ProjFiles is a command that finds files at the project root
 vim.api.nvim_create_user_command(
   'ProjFiles',
   'Telescope find_files cwd=' .. get_project_root('.'),
+  {}
+)
+
+-- ProjLines is a command that finds lines at the project root
+vim.api.nvim_create_user_command(
+  'ProjLines',
+  'Telescope live_grep cwd=' .. get_project_root('.'),
   {}
 )
 
