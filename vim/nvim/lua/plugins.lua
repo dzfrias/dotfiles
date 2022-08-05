@@ -192,6 +192,12 @@ return require('packer').startup(function(use)
       require('plugins/vim-go')
     end
   }
+  use {
+    'buoto/gotests-vim',
+    config = function()
+      require('plugins/gotests')
+    end
+  }
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
