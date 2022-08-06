@@ -19,8 +19,6 @@ noremap('gi', 'gi<Esc>')
 -- Better wrapped line movement
 noremap('k', 'gk')
 noremap('j', 'gj')
-noremap('0', 'g0')
-noremap('$', 'g$')
 
 -- Make a newline
 nnoremap('<CR>', 'o<Esc>')
