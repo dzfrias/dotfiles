@@ -1,5 +1,5 @@
 local function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap('n', shortcut, command, { noremap = true })
+  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
 
 -- Run/continue
@@ -26,3 +26,5 @@ map('n', '<leader>dk', '<Cmd>lua require("dap").step_back()<CR>')
 
 -- Misc
 map('n', '<leader>dz', '<Cmd>lua require("dap").run_to_cursor()<CR>')
+map('n', '<leader>di', '<Cmd>lua require("dapui").eval()<CR>')
+map('x', '<leader>di', '<Cmd>lua require("dapui").eval()<CR>')
