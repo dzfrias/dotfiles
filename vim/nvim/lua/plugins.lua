@@ -191,13 +191,6 @@ return require('packer').startup(function(use)
     }
   }
   use {
-    'leoluz/nvim-dap-go',
-    requires = {
-      'mfussenegger/nvim-dap',
-      'nvim-treesitter/nvim-treesitter'
-    }
-  }
-  use {
     'nvim-telescope/telescope-dap.nvim',
     requires = {
       'mfussenegger/nvim-dap',
