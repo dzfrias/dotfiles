@@ -9,6 +9,7 @@ dap.adapters.delve = {
   }
 }
 
+local cli = require('plugins/dap/cli')
 dap.configurations.go = {
   {
     type = "delve",
@@ -35,5 +36,12 @@ dap.configurations.go = {
     request = "launch",
     mode = "test",
     program = "./${relativeFileDirname}",
+  },
+  {
+    type = "delve",
+    name = "CLI",
+    request = "launch",
+    program = cli.add_args_go,
+    args = cli.get_args
   }
 }

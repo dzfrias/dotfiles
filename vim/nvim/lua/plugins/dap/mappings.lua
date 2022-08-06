@@ -4,9 +4,7 @@ local nnoremap = util.nnoremap
 local xnoremap = util.xnoremap
 
 -- Run configuration
-nnoremap('<leader>dd', '<Cmd>Telescope dap configurations<CR>')
--- Run configuration as if it is a go CLI app
-nnoremap('<leader>dg', '<Cmd>lua require("dap").run(require("plugins/dap/cli").add_args_go())<CR>')
+nnoremap('<leader>dd', '<Cmd>lua require("dap").continue()<CR>')
 
 -- Quit
 nnoremap('<leader>dq', '<Cmd>lua require("dap").terminate()<CR>')
