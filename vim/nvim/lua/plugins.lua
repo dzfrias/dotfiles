@@ -179,8 +179,17 @@ return require('packer').startup(function(use)
       require('plugins/dap')
     end
   }
-  use 'leoluz/nvim-dap-go'
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use {
+    'leoluz/nvim-dap-go',
+    requires = {
+      'mfussenegger/nvim-dap',
+      'nvim-treesitter/nvim-treesitter'
+    }
+  }
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = {"mfussenegger/nvim-dap"}
+  }
   -- }}}
 
   -- {{{ Go--------------------------------------------------------------------
