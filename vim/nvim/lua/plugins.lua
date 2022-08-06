@@ -176,7 +176,7 @@ return require('packer').startup(function(use)
   use {
     'mfussenegger/nvim-dap',
     config = function()
-      require('plugins/dap')
+      require('plugins/dap') -- Has configurations for other Debugger plugins
     end
   }
   use {
@@ -195,6 +195,14 @@ return require('packer').startup(function(use)
     requires = {
       'mfussenegger/nvim-dap',
       'nvim-treesitter/nvim-treesitter'
+    }
+  }
+  use {
+    'nvim-telescope/telescope-dap.nvim',
+    requires = {
+      'mfussenegger/nvim-dap',
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-telescope/telescope.nvim'
     }
   }
   -- }}}

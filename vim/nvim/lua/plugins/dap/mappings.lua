@@ -2,8 +2,8 @@ local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
 
--- Run/continue
-map('n', '<leader>dd', '<Cmd>lua require("dap").continue()<CR>')
+-- Run configuration
+map('n', '<leader>dd', '<Cmd>Telescope dap configurations<CR>')
 -- Run configuration as if it is a go CLI app
 map('n', '<leader>dg', '<Cmd>lua require("dap").run(require("plugins/dap/cli").add_args_go())<CR>')
 
@@ -28,3 +28,7 @@ map('n', '<leader>dk', '<Cmd>lua require("dap").step_back()<CR>')
 map('n', '<leader>dz', '<Cmd>lua require("dap").run_to_cursor()<CR>')
 map('n', '<leader>di', '<Cmd>lua require("dapui").eval()<CR>')
 map('x', '<leader>di', '<Cmd>lua require("dapui").eval()<CR>')
+
+-- Telescope
+map('n', '<leader>dv', '<Cmd>Telescope dap variables<CR>')
+map('n', '<leader>df', '<Cmd>Telescope dap frames<CR>')
