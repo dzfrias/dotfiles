@@ -1,8 +1,6 @@
-local function bufmap(mode, key, cmd)
-  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
-end
+local bufnoremap = require('util').bufnoremap
 
 
-bufmap('n', '<CR>',      '<C-]>')
-bufmap('n', '<BS>',      '<C-T>')
-bufmap('n', '<leader>t', '<Cmd>setlocal filetype=text<CR>')
+bufnoremap('n', '<CR>',      '<C-]>')
+bufnoremap('n', '<BS>',      '<C-T>')
+bufnoremap('n', '<leader>t', '<Cmd>setlocal filetype=text<CR>')

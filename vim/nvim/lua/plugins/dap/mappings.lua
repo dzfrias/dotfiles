@@ -1,7 +1,7 @@
-util = require('util')
+local util = require('util')
 -- Set up map functions
-nnoremap = util.nnoremap
-xnoremap = util.xnoremap
+local nnoremap = util.nnoremap
+local xnoremap = util.xnoremap
 
 -- Run configuration
 nnoremap('<leader>dd', '<Cmd>Telescope dap configurations<CR>')

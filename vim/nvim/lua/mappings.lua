@@ -1,9 +1,9 @@
-util = require('util')
+local util = require('util')
 -- Set up map functions
-nnoremap = util.nnoremap
-inoremap = util.inoremap
-noremap = util.noremap
-xnoremap = util.xnoremap
+local nnoremap = util.nnoremap
+local inoremap = util.inoremap
+local noremap = util.noremap
+local xnoremap = util.xnoremap
 
 -- Go to top of file and first character
 noremap('gg', 'gg0')

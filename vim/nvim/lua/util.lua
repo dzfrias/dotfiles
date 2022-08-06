@@ -35,4 +35,8 @@ function M.xnoremap(shortcut, command)
   vim.api.nvim_set_keymap('x', shortcut, command, { noremap = true })
 end
 
+function M.bufnoremap(mode, key, cmd)
+  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
+end
+
 return M

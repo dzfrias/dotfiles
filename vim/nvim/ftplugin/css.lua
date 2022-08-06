@@ -1,6 +1,4 @@
-local function bufmap(mode, key, cmd)
-  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
-end
+local bufnoremap = require('util').bufnoremap
 
-bufmap('i', 'ee', '<Plug>(emmet-expand-abbr)')
-bufmap('n', '<C-v>', '<Plug>(emmet-expand-abbr)')
+bufnoremap('i', 'ee', '<Plug>(emmet-expand-abbr)')
+bufnoremap('n', '<C-v>', '<Plug>(emmet-expand-abbr)')
