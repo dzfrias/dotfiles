@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'https://github.com/ervandew/supertab',
+    'ervandew/supertab',
     config = function()
       require('plugins/supertab')
     end
