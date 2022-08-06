@@ -1,1 +1,1 @@
-vim.api.nvim_command('normal! zM')
+vim.api.nvim_command 'normal! zM'

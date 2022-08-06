@@ -10,17 +10,14 @@ end
 
 -- Format on save
 local format = vim.api.nvim_create_augroup('format', {})
-vim.api.nvim_create_autocmd(
-  'BufWritePre',
-  {
-    group = format,
-    pattern = '*',
-    command = 'lua vim.lsp.buf.formatting()'
-  }
-)
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = format,
+  pattern = '*',
+  command = 'lua vim.lsp.buf.formatting()',
+})
 
 -- Setting up servers
-local lspconfig = require('lspconfig')
+local lspconfig = require 'lspconfig'
 local servers = require('plugins/lsp/servers').default
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,5 +27,5 @@ end
 
 lspconfig.ltex.setup {
   on_attach = on_attach,
-  filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex' }
+  filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex' },
 }

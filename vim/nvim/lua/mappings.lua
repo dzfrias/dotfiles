@@ -1,4 +1,4 @@
-local util = require('util')
+local util = require 'util'
 -- Set up map functions
 local nnoremap = util.nnoremap
 local inoremap = util.inoremap

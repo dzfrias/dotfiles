@@ -5,14 +5,14 @@ vim.opt_local.foldmethod = 'expr'
 vim.opt_local.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- Correct some spelling
-vim.cmd([[
+vim.cmd [[
 iabbrev <buffer> slef self
 iabbrev <buffer> sefl self
-]])
+]]
 
-vim.cmd([[
+vim.cmd [[
 " Put pprint at the top of the file
 command! -buffer Pprint normal! mpggOfrom pprint import pprint<Esc>`pdmp
 " Delete first line in a file
 command! -buffer Dprint normal! mpggdd`pdmp
-]])
+]]

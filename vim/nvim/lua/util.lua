@@ -2,7 +2,7 @@ local M = {}
 
 local function get_project_root(dir)
   dir = vim.fn.fnamemodify(dir, ':p'):sub(1, -2)
-  home = os.getenv('HOME')
+  home = os.getenv 'HOME'
 
   if dir == home or dir == '' then
     return '.'
@@ -16,7 +16,7 @@ local function get_project_root(dir)
 end
 
 function M.get_project_root()
-  return get_project_root('.')
+  return get_project_root '.'
 end
 
 function M.nnoremap(shortcut, command)

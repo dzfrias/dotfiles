@@ -11,7 +11,7 @@ local copilot = {
   json = true,
   vim = true,
   vimrc = true,
-  applescript = true
+  applescript = true,
 }
 copilot['*'] = false
 

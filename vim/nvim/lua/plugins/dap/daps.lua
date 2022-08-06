@@ -1,15 +1,15 @@
-dap = require('dap')
+dap = require 'dap'
 
 dap.adapters.delve = {
   type = 'server',
   port = '${port}',
   executable = {
     command = 'dlv',
-    args = {'dap', '-l', '127.0.0.1:${port}'},
-  }
+    args = { 'dap', '-l', '127.0.0.1:${port}' },
+  },
 }
 
-local cli = require('plugins/dap/cli')
+local cli = require 'plugins/dap/cli'
 dap.configurations.go = {
   {
     type = 'delve',
@@ -29,6 +29,6 @@ dap.configurations.go = {
     name = 'CLI',
     request = 'launch',
     program = cli.get_main_go,
-    args = cli.get_args
-  }
+    args = cli.get_args,
+  },
 }

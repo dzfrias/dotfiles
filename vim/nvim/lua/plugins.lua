@@ -12,15 +12,15 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
-    branch = 'main'
+    branch = 'main',
   }
   -- Tree sitter
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require('plugins/treesitter')
+      require 'plugins/treesitter'
     end,
-    run = ':TSUpdate'
+    run = ':TSUpdate',
   }
   -- }}}
 
@@ -32,15 +32,15 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('plugins/trouble')
-    end
+      require 'plugins/trouble'
+    end,
   }
 
   use {
     'ervandew/supertab',
     config = function()
-      require('plugins/supertab')
-    end
+      require 'plugins/supertab'
+    end,
   }
 
   -- Easy HTML editing
@@ -53,22 +53,22 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     config = function()
-      require('plugins/telescope')
+      require 'plugins/telescope'
     end,
     requires = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'neovim/nvim-lspconfig',
-      'kyazdani42/nvim-web-devicons'
-    }
+      'kyazdani42/nvim-web-devicons',
+    },
   }
 
   -- Run code
   use {
     'CRAG666/code_runner.nvim',
     config = function()
-      require('plugins/code_runner')
-    end
+      require 'plugins/code_runner'
+    end,
   }
 
   -- View of directory
@@ -76,17 +76,17 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     tag = 'nightly',
     config = function()
-      require('plugins/nvim-tree')
+      require 'plugins/nvim-tree'
     end,
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
   }
 
   -- AI suggestions
   use {
     'github/copilot.vim',
     config = function()
-      require('plugins/copilot')
-    end
+      require 'plugins/copilot'
+    end,
   }
   -- }}}
 
@@ -97,16 +97,16 @@ return require('packer').startup(function(use)
   use {
     'tpope/vim-fugitive',
     config = function()
-      require('plugins/fugitive')
-    end
+      require 'plugins/fugitive'
+    end,
   }
 
   -- Git diffs in sign column
   use {
     'airblade/vim-gitgutter',
     config = function()
-      require('plugins/gitgutter')
-    end
+      require 'plugins/gitgutter'
+    end,
   }
   -- }}}
 
@@ -122,48 +122,48 @@ return require('packer').startup(function(use)
   -- Surround text
   use {
     'tpope/vim-surround',
-    requires = 'tpope/vim-repeat'
+    requires = 'tpope/vim-repeat',
   }
 
   use {
     'lewis6991/spellsitter.nvim',
     requires = 'nvim-treesitter/nvim-treesitter',
     config = function()
-      require('plugins/spellsitter')
-    end
+      require 'plugins/spellsitter'
+    end,
   }
 
   -- Better movement with f and t
   use {
     'rhysd/clever-f.vim',
     config = function()
-      require('plugins/clever-f')
-    end
+      require 'plugins/clever-f'
+    end,
   }
 
   -- Scrolling
   use {
     'karb94/neoscroll.nvim',
     config = function()
-      require('plugins/neoscroll')
-    end
+      require 'plugins/neoscroll'
+    end,
   }
 
   -- Better clipboard control
   use {
     'svermeulen/vim-easyclip',
     config = function()
-      require('plugins/easyclip')
+      require 'plugins/easyclip'
     end,
-    requires = 'tpope/vim-repeat'
+    requires = 'tpope/vim-repeat',
   }
 
   -- Auto pairs
   use {
     'jiangmiao/auto-pairs',
     config = function()
-      require('plugins/autopairs')
-    end
+      require 'plugins/autopairs'
+    end,
   }
   -- }}}
 
@@ -176,27 +176,27 @@ return require('packer').startup(function(use)
   use {
     'mfussenegger/nvim-dap',
     config = function()
-      require('plugins/dap') -- Has configurations for other Debugger plugins
-    end
+      require 'plugins/dap' -- Has configurations for other Debugger plugins
+    end,
   }
   use {
     'rcarriga/nvim-dap-ui',
-    requires = 'mfussenegger/nvim-dap'
+    requires = 'mfussenegger/nvim-dap',
   }
   use {
     'theHamsta/nvim-dap-virtual-text',
     requires = {
       'mfussenegger/nvim-dap',
-      'nvim-treesitter/nvim-treesitter'
-    }
+      'nvim-treesitter/nvim-treesitter',
+    },
   }
   use {
     'nvim-telescope/telescope-dap.nvim',
     requires = {
       'mfussenegger/nvim-dap',
       'nvim-treesitter/nvim-treesitter',
-      'nvim-telescope/telescope.nvim'
-    }
+      'nvim-telescope/telescope.nvim',
+    },
   }
   -- }}}
 
@@ -207,14 +207,14 @@ return require('packer').startup(function(use)
     'fatih/vim-go',
     run = ':GoUpdateBinaries',
     config = function()
-      require('plugins/vim-go')
-    end
+      require 'plugins/vim-go'
+    end,
   }
   use {
     'buoto/gotests-vim',
     config = function()
-      require('plugins/gotests')
-    end
+      require 'plugins/gotests'
+    end,
   }
   -- }}}
 
@@ -223,15 +223,15 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require('plugins/lsp/lspconfig')
-    end
+      require 'plugins/lsp/lspconfig'
+    end,
   }
   -- Generic language server
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
-      require('plugins/lsp/null-ls')
-    end
+      require 'plugins/lsp/null-ls'
+    end,
   }
 
   -- LSP installer
@@ -239,9 +239,9 @@ return require('packer').startup(function(use)
   use {
     'williamboman/mason-lspconfig.nvim',
     config = function()
-      require('plugins/lsp/mason')
+      require 'plugins/lsp/mason'
     end,
-    requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' }
+    requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' },
   }
   -- }}}
 end)

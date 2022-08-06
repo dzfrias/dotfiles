@@ -1,6 +1,5 @@
 local bufnoremap = require('util').bufnoremap
 
-
 -- Soft wrap text at the width of the screen
 vim.opt_local.textwidth = 0
 vim.opt_local.wrapmargin = 0

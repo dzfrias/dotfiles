@@ -1,11 +1,11 @@
 require('dapui').setup()
 require('nvim-dap-virtual-text').setup()
-require('telescope').load_extension('dap')
+require('telescope').load_extension 'dap'
 
-require('plugins/dap/daps')
-require('plugins/dap/mappings')
+require 'plugins/dap/daps'
+require 'plugins/dap/mappings'
 
-local dap, dapui = require('dap'), require('dapui')
+local dap, dapui = require 'dap', require 'dapui'
 dap.listeners.after.event_initialized['dapui_config'] = function()
   dapui.open()
 end

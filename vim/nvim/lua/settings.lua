@@ -1,6 +1,5 @@
 local set = vim.o
 
-
 -- No backups
 set.writebackup = false
 set.backup = false
@@ -17,7 +16,7 @@ set.hlsearch = true
 
 -- Color column
 set.colorcolumn = '80'
-vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
+vim.cmd [[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 --  Lines to use for the command line
 set.cmdheight = 2
@@ -25,7 +24,7 @@ set.cmdheight = 2
 -- Don't wrap lines
 set.wrap = false
 
-vim.opt.shortmess:append({ c = true })
+vim.opt.shortmess:append { c = true }
 
 -- For colors
 set.background = 'dark'

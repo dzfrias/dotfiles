@@ -8,9 +8,9 @@ require('code_runner').setup {
     cpp = 'g+ $file',
     javascript = 'node $file',
     swift = 'swift $file',
-    markdown = 'glow $file'
+    markdown = 'glow $file',
   },
   float = {
-    border = 'rounded'
-  }
+    border = 'rounded',
+  },
 }
