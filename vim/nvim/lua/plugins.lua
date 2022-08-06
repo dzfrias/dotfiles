@@ -114,7 +114,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary' -- Commenting
   use 'tpope/vim-sleuth' -- Setting tabs
   use 'tpope/vim-projectionist' -- Easy project management/movement
-  use 'tpope/vim-scriptease' -- Make vimscript easier
   use 'matze/vim-move' -- Moving lines/characters
   use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-endwise' -- Automatically make end statements

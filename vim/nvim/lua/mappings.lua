@@ -31,9 +31,6 @@ nnoremap('<leader>s', '<Cmd>source %<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
 nnoremap('<leader>e', '<Cmd>write<CR><Cmd>source $MYVIMRC<CR>')
 
--- Re-edit file, also loading the entire runtime
-nnoremap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
-
 -- Telescope
 nnoremap('<leader>tf', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
 nnoremap('<leader>tl', '<Cmd>ProjLines<CR>') -- See commands.lua for ProjLines
