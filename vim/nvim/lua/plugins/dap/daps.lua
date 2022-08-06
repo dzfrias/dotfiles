@@ -13,26 +13,13 @@ local cli = require('plugins/dap/cli')
 dap.configurations.go = {
   {
     type = 'delve',
-    name = 'Debug',
+    name = 'Package',
     request = 'launch',
     program = '${file}',
   },
   {
     type = 'delve',
-    name = 'Debug Package',
-    request = 'launch',
-    program = '${fileDirname}',
-  },
-  {
-    type = 'delve',
-    name = 'Debug test',
-    request = 'launch',
-    mode = 'test',
-    program = '${file}',
-  },
-  {
-    type = 'delve',
-    name = 'Debug test (go.mod)',
+    name = 'Test',
     request = 'launch',
     mode = 'test',
     program = './${relativeFileDirname}',
@@ -41,7 +28,7 @@ dap.configurations.go = {
     type = 'delve',
     name = 'CLI',
     request = 'launch',
-    program = cli.add_args_go,
+    program = cli.get_main_go,
     args = cli.get_args
   }
 }

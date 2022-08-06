@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
   use 'matze/vim-move' -- Moving lines/characters
   use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-endwise' -- Automatically make end statements
+  use 'tpope/vim-scriptease' -- Easier vimscript editing
 
   -- Surround text
   use {
