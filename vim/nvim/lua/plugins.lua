@@ -180,15 +180,22 @@ return require('packer').startup(function(use)
     end
   }
   use {
-    'leoluz/nvim-dap-go',
+    'rcarriga/nvim-dap-ui',
+    requires = 'mfussenegger/nvim-dap'
+  }
+  use {
+    'theHamsta/nvim-dap-virtual-text',
     requires = {
       'mfussenegger/nvim-dap',
       'nvim-treesitter/nvim-treesitter'
     }
   }
   use {
-    "rcarriga/nvim-dap-ui",
-    requires = {"mfussenegger/nvim-dap"}
+    'leoluz/nvim-dap-go',
+    requires = {
+      'mfussenegger/nvim-dap',
+      'nvim-treesitter/nvim-treesitter'
+    }
   }
   -- }}}
 

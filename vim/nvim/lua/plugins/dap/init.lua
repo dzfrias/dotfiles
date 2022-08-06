@@ -1,5 +1,6 @@
 require('dap-go').setup()
 require('dapui').setup()
+require("nvim-dap-virtual-text").setup()
 
 require('plugins/dap/daps')
 require('plugins/dap/mappings')
