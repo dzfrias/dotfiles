@@ -1,6 +1,3 @@
-require('dap-go').setup()
-require('dapui').setup()
-
 dap = require('dap')
 dap.adapters.delve = {
   type = 'server',

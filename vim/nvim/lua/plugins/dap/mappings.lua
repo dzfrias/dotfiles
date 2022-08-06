@@ -3,12 +3,12 @@ local function map(mode, shortcut, command)
 end
 
 -- Run/continue
-map('n', '<leader>dd', '<Cmd>lua require("dap").continue()<CR><Cmd>lua require("dapui").open()<CR>')
+map('n', '<leader>dd', '<Cmd>lua require("dap").continue()<CR>')
 -- Run configuration as if it is a go CLI app
-map('n', '<leader>dg', '<Cmd>lua require("dap").run(require("plugins/dap/cli").add_args_go())<CR><Cmd>lua require("dapui").open()<CR>')
+map('n', '<leader>dg', '<Cmd>lua require("dap").run(require("plugins/dap/cli").add_args_go())<CR>')
 
 -- Quit
-map('n', '<leader>dq', '<Cmd>lua require("dap").terminate()<CR><Cmd>lua require("dapui").close()<CR>')
+map('n', '<leader>dq', '<Cmd>lua require("dap").terminate()<CR>')
 
 -- Continue to breakpoint or start debugging if no session is active
 map('n', '<leader>dc', '<Cmd>lua require("dap").continue()<CR>')
