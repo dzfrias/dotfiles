@@ -36,9 +36,8 @@ nnoremap('<leader>v', '<Cmd>Runtime<CR><Cmd>edit<CR>')
 
 -- Telescope
 nnoremap('<leader>tf', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
-nnoremap('<leader>tL', '<Cmd>ProjLines<CR>') -- See commands.lua for ProjLines
+nnoremap('<leader>tl', '<Cmd>ProjLines<CR>') -- See commands.lua for ProjLines
 nnoremap('<leader>tt', '<Cmd>Telescope lsp_document_symbols<CR>')
-nnoremap('<leader>tl', '<Cmd>Telescope live_grep<CR>')
 
 -- Trouble
 nnoremap('<leader>x', '<Cmd>TroubleToggle<CR>')
