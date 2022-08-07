@@ -28,6 +28,14 @@ return require('packer').startup(function(use)
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
+  -- Dashboard
+  use {
+    'glepnir/dashboard-nvim',
+    config = function()
+      require 'plugins/dashboard'
+    end,
+  }
+
   use {
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -68,7 +76,6 @@ return require('packer').startup(function(use)
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
     requires = 'nvim-telescope/telescope.nvim',
   }
-  use 'nvim-telescope/telescope-project.nvim'
 
   -- Run code
   use {
