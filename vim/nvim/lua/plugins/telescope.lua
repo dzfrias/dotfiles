@@ -16,3 +16,6 @@ require('telescope').setup {
     },
   },
 }
+
+-- Load fuzzy finder
+require('telescope').load_extension 'fzf'
