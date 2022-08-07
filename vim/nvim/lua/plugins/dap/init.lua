@@ -5,7 +5,9 @@ require('telescope').load_extension 'dap'
 require 'plugins/dap/daps'
 require 'plugins/dap/mappings'
 
-local dap, dapui = require 'dap', require 'dapui'
+local dap = require 'dap'
+
+local dapui = require 'dapui'
 dap.listeners.after.event_initialized['dapui_config'] = function()
   dapui.open()
 end
@@ -15,3 +17,8 @@ end
 dap.listeners.before.event_exited['dapui_config'] = function()
   dapui.close()
 end
+
+vim.api.nvim_set_hl(0, 'Breakpoint', { fg = '#ff9e64' })
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpointCondition', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
