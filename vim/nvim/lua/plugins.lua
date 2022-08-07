@@ -98,6 +98,7 @@ return require('packer').startup(function(use)
   -- AI suggestions
   use {
     'github/copilot.vim',
+    commit = 'c2e75a3a7519c126c6fdb35984976df9ae13f564',
     config = function()
       require 'plugins/copilot'
     end,
