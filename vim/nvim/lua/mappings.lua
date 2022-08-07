@@ -45,6 +45,9 @@ nnoremap('gq', '<Cmd>Git<CR>')
 nnoremap('gcm', '<Cmd>write<CR><Cmd>Git add --all <bar> Git commit --verbose<CR>')
 nnoremap('gp', '<Cmd>Git push<CR>')
 
+-- Dashboard
+nnoremap('<leader>b', '<Cmd>Dashboard<CR>')
+
 -- Window movement
 nnoremap('<leader>k', '<C-w>k')
 nnoremap('<leader>l', '<C-w>l')
