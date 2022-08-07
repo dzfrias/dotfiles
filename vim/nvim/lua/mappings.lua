@@ -30,15 +30,20 @@ nnoremap('<leader>q', '<Cmd>quit!<CR>')
 nnoremap('<leader>e', '<Cmd>write<CR><Cmd>source $MYVIMRC<CR>')
 
 -- Telescope
-nnoremap('<leader>tf', '<Cmd>ProjFiles<CR>') -- See commands.lua for ProjFiles
-nnoremap('<leader>tl', '<Cmd>ProjLines<CR>') -- See commands.lua for ProjLines
-nnoremap('<leader>tt', '<Cmd>Telescope lsp_document_symbols<CR>')
+local tel = require 'telescope.builtin'
+nnoremap('<leader>tf', function()
+  tel.find_files { cwd = util.get_project_root() }
+end)
+nnoremap('<leader>tl', function()
+  tel.live_grep { cwd = util.get_project_root() }
+end)
+nnoremap('<leader>tt', tel.lsp_document_symbols)
 
 -- Trouble
-nnoremap('<leader>x', '<Cmd>TroubleToggle<CR>')
+nnoremap('<leader>x', require('trouble').toggle)
 
 -- Open NvimTree
-nnoremap('<C-n>', '<Cmd>NvimTreeToggle<CR>')
+nnoremap('<C-n>', require('nvim-tree.api').tree.toggle)
 
 -- Git mappings
 nnoremap('gq', '<Cmd>Git<CR>')
