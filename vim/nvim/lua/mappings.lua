@@ -46,8 +46,26 @@ nnoremap('<leader>x', require('trouble').toggle)
 nnoremap('<C-n>', require('nvim-tree.api').tree.toggle)
 
 -- Git mappings
+function commit_all()
+  vim.cmd [[
+  write
+  Git add --all
+  Git commit --verbose
+  ]]
+  -- Reset staged if commit message was not edited
+  vim.api.nvim_create_autocmd('BufLeave', {
+    group = vim.api.nvim_create_augroup('commit', { clear = true }),
+    buffer = 0,
+    callback = function()
+      if vim.fn.getbufinfo(vim.fn.bufnr())[1].changed == 0 then
+        vim.cmd 'Git reset'
+      end
+    end,
+  })
+end
+
 nnoremap('gq', '<Cmd>Git<CR>')
-nnoremap('gcm', '<Cmd>write<CR><Cmd>Git add --all <bar> Git commit --verbose<CR>')
+nnoremap('gcm', commit_all)
 nnoremap('gp', '<Cmd>Git push<CR>')
 -- Hunk mappings
 local gs = require 'gitsigns'
