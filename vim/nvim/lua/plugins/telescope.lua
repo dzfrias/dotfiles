@@ -13,6 +13,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
         ['<C-f>'] = actions.preview_scrolling_down,
         ['<C-b>'] = actions.preview_scrolling_up,
+        ['<Esc>'] = actions.close,
       },
     },
   },
