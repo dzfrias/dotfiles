@@ -1,1 +1,5 @@
-require('todo-comments').setup()
+require('todo-comments').setup {
+  search = {
+    pattern = [[^\W*\b(KEYWORDS):]],
+  },
+}
