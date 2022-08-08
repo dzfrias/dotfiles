@@ -7,7 +7,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'source <afile> | PackerCompile',
 })
 
--- TODO: Add vim-startify
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
   -- Colorscheme
@@ -29,11 +28,10 @@ return require('packer').startup(function(use)
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
-  -- Dashboard
   use {
-    'glepnir/dashboard-nvim',
+    'mhinz/vim-startify',
     config = function()
-      require 'plugins/dashboard'
+      require 'plugins/startify'
     end,
   }
 
