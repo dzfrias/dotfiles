@@ -4,7 +4,15 @@ require('lualine').setup {
   },
   sections = {
     lualine_b = { 'branch', 'diagnostics' },
-    lualine_c = { 'filename' },
+    lualine_c = {
+      {
+        'filename',
+        symbols = {
+          modified = ' [+]',
+          readonly = ' [RO]',
+        },
+      },
+    },
     lualine_x = { 'filetype' },
   },
 }
