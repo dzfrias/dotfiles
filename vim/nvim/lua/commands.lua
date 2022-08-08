@@ -22,4 +22,4 @@ end, {
   nargs = 1,
 })
 
-vim.api.nvim_create_user_command('TODO', 'TodoTrouble', {})
+vim.api.nvim_create_user_command('TODO', 'TodoTrouble cwd=' .. require('util').get_project_root(), {})

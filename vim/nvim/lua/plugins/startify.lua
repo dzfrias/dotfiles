@@ -4,7 +4,7 @@ local function list_commits()
   if not in_repo then
     return {}
   end
-  commits = vim.fn.systemlist 'git log --oneline | head -n10'
+  commits = vim.fn.systemlist 'git log --oneline | head -n5'
   res = {}
   for _, v in ipairs(commits) do
     res[#res + 1] = {
@@ -28,6 +28,10 @@ local commands = {
 }
 if in_repo then
   table.insert(commands, 1, { s = { '  Git Summary', 'Git' } })
+end
+-- Get number of buffers
+if #vim.fn.getbufinfo { buflisted = 1 } > 0 then
+  table.insert(commands, #commands, { b = { '  Go back', 'bprevious' } })
 end
 vim.g.startify_commands = commands
 
