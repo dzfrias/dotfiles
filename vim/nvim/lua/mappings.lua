@@ -55,7 +55,7 @@ nnoremap('gh', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
 
 -- Dashboard
-nnoremap('<leader>b', '<Cmd>Dashboard<CR>')
+nnoremap('<leader>b', '<Cmd>Startify<CR>')
 
 -- Window movement
 nnoremap('<leader>k', '<C-w>k')

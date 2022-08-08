@@ -21,13 +21,14 @@ vim.g.startify_lists = {
 }
 
 local commands = {
-  { e = { 'Empty buffer', 'enew' } },
-  { f = { 'Find File', 'Telescope find_files cwd=' .. require('util').get_project_root() } },
-  { p = { 'Packer Install', 'PackerInstall' } },
-  { q = { 'Quit', 'quit' } },
+  { e = { '  Empty buffer', 'enew' } },
+  { f = { '  Find File', 'Telescope find_files cwd=' .. require('util').get_project_root() } },
+  { t = { '  Todo', 'TODO' } },
+  { q = { 'ﰸ  Quit', 'quit' } },
 }
 if in_repo then
-  table.insert(commands, 1, { g = { 'Git Summary', 'Git' } })
+  table.insert(commands, 1, { s = { '  Git Summary', 'Git' } })
 end
 vim.g.startify_commands = commands
+
 vim.g.startify_enable_special = false
