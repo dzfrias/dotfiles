@@ -44,6 +44,19 @@ return require('packer').startup(function(use)
     end,
   }
 
+  -- Better TODO comments
+  use {
+    'folke/todo-comments.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      'nvim-lua/plenary.nvim',
+      'folke/trouble.nvim',
+    },
+    config = function()
+      require 'plugins/todo-comments'
+    end,
+  }
+
   use {
     'ervandew/supertab',
     config = function()
@@ -118,9 +131,9 @@ return require('packer').startup(function(use)
 
   -- Git diffs in sign column
   use {
-    'airblade/vim-gitgutter',
+    'lewis6991/gitsigns.nvim',
     config = function()
-      require 'plugins/gitgutter'
+      require 'plugins/gitsigns'
     end,
   }
   -- }}}

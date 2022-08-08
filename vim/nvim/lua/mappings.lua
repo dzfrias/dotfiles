@@ -49,6 +49,10 @@ nnoremap('<C-n>', require('nvim-tree.api').tree.toggle)
 nnoremap('gq', '<Cmd>Git<CR>')
 nnoremap('gcm', '<Cmd>write<CR><Cmd>Git add --all <bar> Git commit --verbose<CR>')
 nnoremap('gp', '<Cmd>Git push<CR>')
+-- Hunk mappings
+local gs = require 'gitsigns'
+nnoremap('gh', gs.preview_hunk)
+nnoremap('gr', gs.reset_hunk)
 
 -- Dashboard
 nnoremap('<leader>b', '<Cmd>Dashboard<CR>')
