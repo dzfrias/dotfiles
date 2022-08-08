@@ -22,12 +22,12 @@ vim.g.startify_lists = {
 
 local commands = {
   { e = { '  Empty buffer', 'enew' } },
-  { f = { '  Find File', 'Telescope find_files cwd=' .. require('util').get_project_root() } },
+  { f = { '  Find file', 'Telescope find_files cwd=' .. require('util').get_project_root() } },
   { t = { '  Todo', 'TODO' } },
   { q = { 'ﰸ  Quit', 'quit' } },
 }
 if in_repo then
-  table.insert(commands, 1, { s = { '  Git Summary', 'Git' } })
+  table.insert(commands, 1, { s = { '  Git summary', 'Git' } })
 end
 -- Get number of buffers
 if #vim.fn.getbufinfo { buflisted = 1 } > 0 then
