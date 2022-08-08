@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'source <afile> | PackerCompile',
 })
 
+-- TODO: Add vim-startify
 return require('packer').startup(function(use)
   -- {{{ Visuals---------------------------------------------------------------
   -- Colorscheme
@@ -33,6 +34,14 @@ return require('packer').startup(function(use)
     'glepnir/dashboard-nvim',
     config = function()
       require 'plugins/dashboard'
+    end,
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require 'plugins/lualine'
     end,
   }
 
