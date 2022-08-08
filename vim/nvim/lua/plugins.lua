@@ -38,9 +38,6 @@ return require('packer').startup(function(use)
   use {
     'ggandor/leap.nvim',
     requires = 'tpope/vim-repeat',
-    config = function()
-      require 'plugins/leap'
-    end,
   }
 
   use {

@@ -15,11 +15,8 @@ vim.api.nvim_create_user_command('Cpd', function(_)
   vim.api.nvim_command('cd ' .. dir)
 end, {})
 
--- FF calls find_files, accepting an argument for the directory to search
-vim.api.nvim_create_user_command('FF', function(opts)
-  vim.cmd('Telescope find_files cwd=' .. opts.args)
-end, {
-  nargs = 1,
-})
-
-vim.api.nvim_create_user_command('TODO', 'TodoTrouble cwd=' .. require('util').get_project_root(), {})
+vim.api.nvim_create_user_command(
+  'TODO',
+  'TodoTrouble cwd=' .. require('util').get_project_root(),
+  {}
+)
