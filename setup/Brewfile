@@ -64,6 +64,8 @@ brew "jupyterlab"
 brew "languagetool"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Rainbows and unicorns in your console!
+brew "lolcat"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -82,10 +84,14 @@ brew "zoxide"
 brew "zsh"
 # Application launcher and productivity software
 cask "alfred"
+# Enable Windows-like alt-tab
+cask "alt-tab"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
 cask "google-chrome"
+# Desktop automation application
+cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Automation software

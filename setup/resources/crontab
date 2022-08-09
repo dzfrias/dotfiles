@@ -6,3 +6,4 @@ PATH="/usr/local/bin"
 0 */12 * * * /bin/rm -rf ~/.temporary/*
 # Delete files in trash monthly
 @monthly /bin/rm -r ~/.Trash/*
+0 */24 * * * cd ~/.dotfiles/setup && brew bundle dump --force
