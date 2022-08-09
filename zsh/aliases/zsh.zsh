@@ -18,6 +18,7 @@ alias rmr='rm -r'
 alias srmr='sudo rm -r'
 alias cpr='cp -R'
 alias license='cp ~/.dotfiles/LICENSE .'
+alias hs='j ~/.dotfiles/misc/hammerspoon'
 
 # -CLI-OPTIONS-
 # Doesn't open pager for bat (default is 'always' in misc/config/bat/config)

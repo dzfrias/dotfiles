@@ -12,7 +12,7 @@ end)
 
 -- Copy current tab's url to clipboard
 local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
-  hs.osascript.applescript([[
+  hs.osascript.applescript [[
   tell application "Google Chrome"
     -- Get current url of active tab
     set currentUrl to get URL of active tab of first window
@@ -20,7 +20,7 @@ local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
 
   -- Copy current url to clipboard
   set the clipboard to currentUrl
-  ]])
+  ]]
 end)
 
 -- Switches to next chrome profile, wraps if at end
