@@ -43,6 +43,7 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
   local hs_console = hs.appfinder.appFromName('Hammerspoon')
   if #hs_console:visibleWindows() == 0 then
     hs.application.open('Hammerspoon')
+    hs.application.get('iTerm2'):activate()
   else
     hs_console:hide()
   end
