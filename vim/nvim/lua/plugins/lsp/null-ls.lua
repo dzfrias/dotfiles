@@ -5,7 +5,7 @@ null_ls.setup {
     null_ls.builtins.formatting.autopep8,
     -- Basic zsh linting
     null_ls.builtins.diagnostics.zsh,
-    -- Lua autoformatting
-    null_ls.builtins.formatting.stylua,
+    -- -- Lua autoformatting
+    -- null_ls.builtins.formatting.stylua,
   },
 }
