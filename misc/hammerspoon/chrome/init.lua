@@ -14,6 +14,10 @@ local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
   hs.mouse.absolutePosition(old_pos)
 end)
 
+local tabs = hs.hotkey.new({ 'ctrl' }, 'T', function()
+  u.keyStroke({ 'cmd', 'shift' }, 'A')
+end)
+
 local up = hs.hotkey.new({ 'ctrl', 'shift' }, 'K', function()
   u.keyStroke('Up')
 end)
@@ -28,6 +32,7 @@ local keybinds = {
   bookmarks,
   up,
   down,
+  tabs,
 }
 
 local chrome_wf = hs.window.filter.new('Google Chrome')
