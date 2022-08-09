@@ -2,12 +2,12 @@ local u = require('util')
 
 -- Previous tab
 local tabp = hs.hotkey.new({ 'ctrl' }, 'J', function()
-  u.keyStroke({ 'cmd', 'alt' }, 'Left')
+  u.key_stroke({ 'cmd', 'alt' }, 'Left')
 end)
 
 -- Next tab
 local tabn = hs.hotkey.new({ 'ctrl' }, 'K', function()
-  u.keyStroke({ 'cmd', 'alt' }, 'Right')
+  u.key_stroke({ 'cmd', 'alt' }, 'Right')
 end)
 
 -- Copy current tab's url to clipboard
@@ -71,17 +71,17 @@ end)
 
 -- Fuzzy find tabs
 local tabs = hs.hotkey.new({ 'ctrl' }, 'T', function()
-  u.keyStroke({ 'cmd', 'shift' }, 'A')
+  u.key_stroke({ 'cmd', 'shift' }, 'A')
 end)
 
 -- Go up
 local up = hs.hotkey.new({ 'ctrl', 'shift' }, 'K', function()
-  u.keyStroke('Up')
+  u.key_stroke('Up')
 end)
 
 -- Go down
 local down = hs.hotkey.new({ 'ctrl', 'shift' }, 'J', function()
-  u.keyStroke('Down')
+  u.key_stroke('Down')
 end)
 
 local keybinds = {
@@ -95,15 +95,4 @@ local keybinds = {
   switch_profile,
 }
 
-local chrome_wf = hs.window.filter.new('Google Chrome')
-chrome_wf
-    :subscribe({ hs.window.filter.windowFocused, hs.window.filter.windowVisible }, function()
-      for _, keybind in ipairs(keybinds) do
-        keybind:enable()
-      end
-    end)
-    :subscribe(hs.window.filter.windowUnfocused, function()
-      for _, keybind in ipairs(keybinds) do
-        keybind:disable()
-      end
-    end)
+u.app_wf('Google Chrome', keybinds)

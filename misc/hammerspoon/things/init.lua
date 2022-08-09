@@ -1,27 +1,27 @@
 local u = require 'util'
 
 local down = hs.hotkey.new({ 'ctrl' }, 'J', function()
-  u.keyStroke('Down')
+  u.key_stroke('Down')
 end)
 
 local up = hs.hotkey.new({ 'ctrl' }, 'K', function()
-  u.keyStroke('Up')
+  u.key_stroke('Up')
 end)
 
 local out_of = hs.hotkey.new({ 'ctrl' }, 'H', function()
-  u.keyStroke({ 'cmd' }, 'Left')
+  u.key_stroke({ 'cmd' }, 'Left')
 end)
 
 local into = hs.hotkey.new({ 'ctrl' }, 'L', function()
-  u.keyStroke('Return')
+  u.key_stroke('Return')
 end)
 
 local reorder_up = hs.hotkey.new({ 'ctrl', 'shift' }, 'K', function()
-  u.keyStroke({ 'cmd' }, 'Up')
+  u.key_stroke({ 'cmd' }, 'Up')
 end)
 
 local reorder_down = hs.hotkey.new({ 'ctrl', 'shift' }, 'J', function()
-  u.keyStroke({ 'cmd' }, 'Down')
+  u.key_stroke({ 'cmd' }, 'Down')
 end)
 
 local school = hs.hotkey.new({ 'cmd' }, '8', function()
@@ -47,15 +47,4 @@ local keybinds = {
   coding,
 }
 
-local things_wf = hs.window.filter.new('Things')
-things_wf
-    :subscribe({ hs.window.filter.windowFocused, hs.window.filter.windowVisible }, function()
-      for _, keybind in ipairs(keybinds) do
-        keybind:enable()
-      end
-    end)
-    :subscribe(hs.window.filter.windowUnfocused, function()
-      for _, keybind in ipairs(keybinds) do
-        keybind:disable()
-      end
-    end)
+u.app_wf('Things', keybinds)
