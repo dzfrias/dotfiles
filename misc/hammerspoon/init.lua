@@ -1,9 +1,5 @@
-require('auto_reload')
-require('keybinds')
-require('things')
-require('chrome')
-
 local no_require = { '.', '..', 'util.lua', 'init.lua', 'Spoons' }
+
 for file in hs.fs.dir('.') do
   if not hs.fnutils.contains(no_require, file) then
     if file:find('.lua') then

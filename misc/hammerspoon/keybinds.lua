@@ -30,6 +30,24 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
   end
 end)
 
+-- Get current mouse position
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'M', function()
+  local mouse = hs.mouse.absolutePosition()
+  local x = math.floor(mouse.x)
+  local y = math.floor(mouse.y)
+  hs.alert.show(x .. ', ' .. y)
+end)
+
+-- Toggle Hammerspoon console
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
+  local hs_console = hs.appfinder.appFromName('Hammerspoon')
+  if not hs_console:isFrontmost() then
+    hs.application.open('Hammerspoon')
+  else
+    hs_console:hide()
+  end
+end)
+
 -- Toggle iTerm and Chrome vertical split
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
   local chrome = hs.appfinder.appFromName('Google Chrome'):mainWindow()
