@@ -1,3 +1,5 @@
+local u = require 'util'
+
 -- Center window
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'E', function()
   local win = hs.window.focusedWindow()
@@ -41,7 +43,7 @@ end)
 -- Toggle Hammerspoon console
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
   local hs_console = hs.appfinder.appFromName('Hammerspoon')
-  if not hs_console:isFrontmost() then
+  if #hs_console:visibleWindows() == 0 then
     hs.application.open('Hammerspoon')
   else
     hs_console:hide()
