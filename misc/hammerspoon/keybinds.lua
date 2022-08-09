@@ -1,5 +1,3 @@
-local u = require 'util'
-
 -- Center window
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'E', function()
   local win = hs.window.focusedWindow()
