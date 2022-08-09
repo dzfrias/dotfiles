@@ -12,11 +12,15 @@ end)
 -- Open Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
   hs.application.launchOrFocus('Google Chrome')
+  local chrome = hs.application.get('Google Chrome')
+  chrome:activate()
 end)
 
 -- Open iTerm
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
-  hs.application.launchOrFocus('Iterm')
+  hs.application.launchOrFocus('iTerm')
+  local iterm = hs.application.get('iTerm2')
+  iterm:activate()
 end)
 
 -- Toggle iTerm and Chrome
