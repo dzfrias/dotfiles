@@ -23,6 +23,22 @@ local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
   ]])
 end)
 
+-- Switches to next chrome profile, wraps if at end
+local switch_profile = hs.hotkey.new({ 'ctrl' }, 'P', function()
+  local chrome = hs.application.get('Google Chrome')
+  local profile_menu = chrome:getMenuItems()[7].AXChildren[1]
+  for i, profile in ipairs(profile_menu) do
+    if profile.AXMenuItemMarkChar ~= '' then
+      local next_profile = profile_menu[i + 1].AXTitle
+      if next_profile ~= '' then
+        chrome:selectMenuItem(next_profile)
+      else
+        chrome:selectMenuItem(profile_menu[1].AXTitle)
+      end
+    end
+  end
+end)
+
 -- Fuzzy find bookmarks
 local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
   local chrome = hs.application.get('Google Chrome')
@@ -76,6 +92,7 @@ local keybinds = {
   down,
   tabs,
   copy_url,
+  switch_profile,
 }
 
 local chrome_wf = hs.window.filter.new('Google Chrome')
