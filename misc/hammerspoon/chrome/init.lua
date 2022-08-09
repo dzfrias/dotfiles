@@ -10,6 +10,19 @@ local tabn = hs.hotkey.new({ 'ctrl' }, 'K', function()
   u.keyStroke({ 'cmd', 'alt' }, 'Right')
 end)
 
+-- Copy current tab's url to clipboard
+local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
+  hs.osascript.applescript([[
+  tell application "Google Chrome"
+    -- Get current url of active tab
+    set currentUrl to get URL of active tab of first window
+  end tell
+
+  -- Copy current url to clipboard
+  set the clipboard to currentUrl
+  ]])
+end)
+
 -- Fuzzy find bookmarks
 local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
   local chrome = hs.application.get('Google Chrome')
@@ -62,6 +75,7 @@ local keybinds = {
   up,
   down,
   tabs,
+  copy_url,
 }
 
 local chrome_wf = hs.window.filter.new('Google Chrome')
