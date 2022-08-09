@@ -28,14 +28,16 @@ local switch_profile = hs.hotkey.new({ 'ctrl' }, 'P', function()
   local chrome = hs.application.get('Google Chrome')
   local profile_menu = chrome:getMenuItems()[7].AXChildren[1]
   for i, profile in ipairs(profile_menu) do
-    if profile.AXMenuItemMarkChar ~= '' then
-      local next_profile = profile_menu[i + 1].AXTitle
-      if next_profile ~= '' then
-        chrome:selectMenuItem(next_profile)
-      else
-        chrome:selectMenuItem(profile_menu[1].AXTitle)
-      end
+    if profile.AXMenuItemMarkChar == '' then
+      goto continue
     end
+    local next_profile = profile_menu[i + 1].AXTitle
+    if next_profile ~= '' then
+      chrome:selectMenuItem(next_profile)
+    else
+      chrome:selectMenuItem(profile_menu[1].AXTitle)
+    end
+    ::continue::
   end
 end)
 
@@ -47,20 +49,25 @@ local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
 
   local bookmarks = {}
   for i, item in ipairs(bookmark_menu) do
-    if i > 4 then
-      if item.AXChildren then
-        for _, child in ipairs(item.AXChildren[1]) do
-          local choice = { text = child.AXTitle }
-          table.insert(bookmarks, choice)
-        end
-      else
-        local choice = { text = item.AXTitle }
+    if i < 5 then
+      goto continue
+    end
+    if item.AXChildren then
+      for _, child in ipairs(item.AXChildren[1]) do
+        local choice = { text = child.AXTitle }
         table.insert(bookmarks, choice)
       end
+    else
+      local choice = { text = item.AXTitle }
+      table.insert(bookmarks, choice)
     end
+    ::continue::
   end
 
   local chooser = hs.chooser.new(function(choice)
+    if not choice then
+      return
+    end
     chrome:activate()
     chrome:selectMenuItem('New Tab')
     chrome:selectMenuItem(choice.text)
