@@ -1,4 +1,4 @@
-local bufnoremap = require('util').bufnoremap
+local bufnoremap = require('dzfrias/util').bufnoremap
 
 vim.opt_local.tabstop = 2
 vim.opt_local.shiftwidth = 2

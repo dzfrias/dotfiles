@@ -1,4 +1,4 @@
-local bufnoremap = require('util').bufnoremap
+local bufnoremap = require('dzfrias/util').bufnoremap
 
 -- Soft wrap text at the width of the screen
 vim.opt_local.textwidth = 0

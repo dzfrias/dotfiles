@@ -1,4 +1,4 @@
-local bufnoremap = require('util').bufnoremap
+local bufnoremap = require('dzfrias/util').bufnoremap
 
 vim.opt_local.foldmethod = 'expr'
 vim.opt_local.foldexpr = 'nvim_treesitter#foldexpr()'
