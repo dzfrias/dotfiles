@@ -1,4 +1,4 @@
-local u = require('dzfrias/util')
+local u = require 'dzfrias/util'
 
 -- Fold all if line number is greater than 300
 local bufread = vim.api.nvim_create_augroup('bufread', {})

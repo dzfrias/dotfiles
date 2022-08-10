@@ -60,6 +60,9 @@ nnoremap('gp', '<Cmd>Git push<CR>')
 local gs = require 'gitsigns'
 nnoremap('gh', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
+nnoremap('gD', function()
+  gs.setqflist 'all'
+end)
 
 -- Startify
 nnoremap('<leader>b', '<Cmd>Startify<CR>')
