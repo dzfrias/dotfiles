@@ -27,7 +27,6 @@ alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 alias ggl='google'
-alias todo='rg "^\s*.?.? TODO:"'
 alias osd='osadict'
 alias bndl='brew bundle dump --describe --force'
 alias brwo='brew outdated'

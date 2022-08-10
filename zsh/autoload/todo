@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+# todo checks for todo lines, either at the project root or in the current
+# working directory.
+
+h > /dev/null
+
+if [[ $PWD == $HOME ]]; then
+  cd - > /dev/null
+  rg "^\s*.?.? TODO:"
+  return $?
+fi
+
+rg "^\s*.?.? TODO:"
+cd - > /dev/null
+return $?
