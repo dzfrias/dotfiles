@@ -31,7 +31,12 @@ lspconfig.ltex.setup {
 }
 
 lspconfig.sumneko_lua.setup {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    -- Do not format code
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end,
   settings = {
     Lua = {
       runtime = {

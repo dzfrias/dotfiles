@@ -11,22 +11,22 @@ end)
 
 -- Open Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
-  hs.application.launchOrFocus('Google Chrome')
-  local chrome = hs.application.get('Google Chrome')
+  hs.application.launchOrFocus 'Google Chrome'
+  local chrome = hs.application.get 'Google Chrome'
   chrome:activate()
 end)
 
 -- Open iTerm
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
-  hs.application.launchOrFocus('iTerm')
-  local iterm = hs.application.get('iTerm2')
+  hs.application.launchOrFocus 'iTerm'
+  local iterm = hs.application.get 'iTerm2'
   iterm:activate()
 end)
 
 -- Toggle iTerm and Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
-  local chrome = hs.application.get('Google Chrome')
-  local iterm = hs.application.get('iTerm2')
+  local chrome = hs.application.get 'Google Chrome'
+  local iterm = hs.application.get 'iTerm2'
   if chrome:isFrontmost() then
     iterm:activate()
   elseif iterm:isFrontmost() then
@@ -44,9 +44,9 @@ end)
 
 -- Toggle Hammerspoon console
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
-  local hs_console = hs.appfinder.appFromName('Hammerspoon')
+  local hs_console = hs.appfinder.appFromName 'Hammerspoon'
   if #hs_console:visibleWindows() == 0 then
-    hs.application.open('Hammerspoon')
+    hs.application.open 'Hammerspoon'
     hs.application.get('iTerm2'):activate()
   else
     hs_console:hide()

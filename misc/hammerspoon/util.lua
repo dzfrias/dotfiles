@@ -12,16 +12,19 @@ end
 function M.app_wf(app_name, keybinds)
   local wf = hs.window.filter.new(app_name)
   wf
-      :subscribe({ hs.window.filter.windowFocused, hs.window.filter.windowVisible }, function()
+    :subscribe(
+      { hs.window.filter.windowFocused, hs.window.filter.windowVisible },
+      function()
         for _, keybind in ipairs(keybinds) do
           keybind:enable()
         end
-      end)
-      :subscribe(hs.window.filter.windowUnfocused, function()
-        for _, keybind in ipairs(keybinds) do
-          keybind:disable()
-        end
-      end)
+      end
+    )
+    :subscribe(hs.window.filter.windowUnfocused, function()
+      for _, keybind in ipairs(keybinds) do
+        keybind:disable()
+      end
+    end)
   return wf
 end
 

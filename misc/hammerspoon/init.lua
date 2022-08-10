@@ -1,10 +1,10 @@
 local no_require = { '.', '..', 'util.lua', 'init.lua', 'Spoons' }
 
-for file in hs.fs.dir('.') do
+for file in hs.fs.dir '.' do
   if hs.fnutils.contains(no_require, file) then
     goto continue
   end
-  if file:find('.lua') then
+  if file:find '.lua' then
     require(file:sub(1, -5))
   else
     require(file)

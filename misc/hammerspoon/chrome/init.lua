@@ -1,4 +1,4 @@
-local u = require('util')
+local u = require 'util'
 
 -- Previous tab
 local tabp = hs.hotkey.new({ 'ctrl' }, 'J', function()
@@ -25,7 +25,7 @@ end)
 
 -- Switches to next chrome profile, wraps if at end
 local switch_profile = hs.hotkey.new({ 'ctrl' }, 'P', function()
-  local chrome = hs.application.get('Google Chrome')
+  local chrome = hs.application.get 'Google Chrome'
   local profile_menu = chrome:getMenuItems()[7].AXChildren[1]
   for i, profile in ipairs(profile_menu) do
     if profile.AXMenuItemMarkChar == '' then
@@ -43,7 +43,7 @@ end)
 
 -- Fuzzy find bookmarks
 local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
-  local chrome = hs.application.get('Google Chrome')
+  local chrome = hs.application.get 'Google Chrome'
   local items = chrome:getMenuItems()
   local bookmark_menu = items[6].AXChildren[1]
 
@@ -69,7 +69,7 @@ local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
       return
     end
     chrome:activate()
-    chrome:selectMenuItem('New Tab')
+    chrome:selectMenuItem 'New Tab'
     chrome:selectMenuItem(choice.text)
   end)
   chooser:choices(bookmarks)
@@ -83,12 +83,12 @@ end)
 
 -- Go up
 local up = hs.hotkey.new({ 'ctrl', 'shift' }, 'K', function()
-  u.key_stroke('Up')
+  u.key_stroke 'Up'
 end)
 
 -- Go down
 local down = hs.hotkey.new({ 'ctrl', 'shift' }, 'J', function()
-  u.key_stroke('Down')
+  u.key_stroke 'Down'
 end)
 
 local keybinds = {
