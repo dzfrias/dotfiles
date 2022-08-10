@@ -159,6 +159,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-endwise' -- Automatically make end statements
   use 'tpope/vim-scriptease' -- Easier vimscript editing
 
+  use 'christoomey/vim-tmux-navigator'
+
   -- Surround text
   use {
     'tpope/vim-surround',

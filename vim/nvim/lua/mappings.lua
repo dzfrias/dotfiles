@@ -60,14 +60,8 @@ local gs = require 'gitsigns'
 nnoremap('gh', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
 
--- Dashboard
+-- Startify
 nnoremap('<leader>b', '<Cmd>Startify<CR>')
-
--- Window movement
-nnoremap('<leader>k', '<C-w>k')
-nnoremap('<leader>l', '<C-w>l')
-nnoremap('<leader>h', '<C-w>h')
-nnoremap('<leader>j', '<C-w>j')
 
 -- Run file
 nnoremap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')

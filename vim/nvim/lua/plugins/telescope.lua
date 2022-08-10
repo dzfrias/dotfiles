@@ -1,5 +1,7 @@
+local telescope = require 'telescope'
+
 local actions = require 'telescope.actions'
-require('telescope').setup {
+telescope.setup {
   defaults = {
     layout_strategy = 'vertical',
     layout_config = {
@@ -18,4 +20,4 @@ require('telescope').setup {
 }
 
 -- Load fuzzy finder
-require('telescope').load_extension 'fzf'
+telescope.load_extension 'fzf'
