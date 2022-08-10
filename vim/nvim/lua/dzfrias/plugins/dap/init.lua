@@ -3,7 +3,7 @@ require('nvim-dap-virtual-text').setup()
 require('telescope').load_extension 'dap'
 
 require 'dzfrias/plugins/dap/daps'
-require 'dzfrias/plugins/dap/mappings'
+require 'dzfrias/plugins/dap/keymaps'
 
 local dap = require 'dap'
 
@@ -19,6 +19,15 @@ dap.listeners.before.event_exited['dapui_config'] = function()
 end
 
 vim.api.nvim_set_hl(0, 'Breakpoint', { fg = '#ff9e64' })
-vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
-vim.fn.sign_define('DapBreakpointCondition', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
-vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define(
+  'DapBreakpoint',
+  { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' }
+)
+vim.fn.sign_define(
+  'DapBreakpointCondition',
+  { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' }
+)
+vim.fn.sign_define(
+  'DapLogPoint',
+  { text = '', texthl = 'Breakpoint', linehl = '', numhl = '' }
+)

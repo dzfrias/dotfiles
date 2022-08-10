@@ -1,5 +1,5 @@
 require 'dzfrias/settings'
-require 'dzfrias/mappings'
+require 'dzfrias/keymaps'
 require 'dzfrias/commands'
 require 'dzfrias/plugins'
 
