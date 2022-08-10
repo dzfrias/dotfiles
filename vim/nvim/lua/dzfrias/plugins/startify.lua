@@ -4,8 +4,8 @@ local function list_commits()
   if not in_repo then
     return {}
   end
-  commits = vim.fn.systemlist 'git log --oneline | head -n5'
-  res = {}
+  local commits = vim.fn.systemlist 'git log --oneline | head -n5'
+  local res = {}
   for _, v in ipairs(commits) do
     res[#res + 1] = {
       line = vim.fn.matchstr(v, '\\s\\zs.*'),
