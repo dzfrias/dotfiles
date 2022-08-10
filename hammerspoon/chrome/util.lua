@@ -16,15 +16,23 @@ function M.site_wf(site_domain, keybinds)
   local wf = hs.window.filter
     .new(false)
     :setAppFilter('Google Chrome')
-    :subscribe({ hs.window.filter.windowTitleChanged }, function()
-      if not M.current_url():find(site_domain) then
-        for _, keybind in ipairs(keybinds) do
-          keybind:disable()
+    :subscribe(
+      { hs.window.filter.windowTitleChanged, hs.window.filter.windowFocused },
+      function()
+        if not M.current_url():find(site_domain) then
+          for _, keybind in ipairs(keybinds) do
+            keybind:disable()
+          end
+          return
         end
-        return
+        for _, keybind in ipairs(keybinds) do
+          keybind:enable()
+        end
       end
+    )
+    :subscribe({ hs.window.filter.windowUnfocused }, function()
       for _, keybind in ipairs(keybinds) do
-        keybind:enable()
+        keybind:disable()
       end
     end)
   return wf
