@@ -1,0 +1,18 @@
+" vim: set ft=text syntax=vim ts=2 sw=2:
+
+let blacklists = ['https://www.youtube.com/*', 'https://monkeytype.com/*', 'https://mail.google.com/*']
+
+unmap ?
+
+site 'https://github.com/*' {
+  unmap /
+  map gd :open https://github.com<CR>
+  map gp :open https://github.com/pulls<CR>
+  map gi :open https://github.com/issues<CR>
+}
+
+site 'https://pkg.go.dev/*' {
+  map gf createHint
+  unmap /
+  unmap f
+}
