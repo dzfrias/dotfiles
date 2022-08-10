@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 -- Setting up servers
 local lspconfig = require 'lspconfig'
-local servers = require('plugins/lsp/servers').default
+local servers = require('dzfrias/plugins/lsp/servers').default
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

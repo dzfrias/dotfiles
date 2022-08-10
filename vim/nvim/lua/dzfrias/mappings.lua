@@ -1,4 +1,4 @@
-local util = require 'util'
+local util = require 'dzfrias/util'
 -- Set up map functions
 local nnoremap = util.nnoremap
 local inoremap = util.inoremap
@@ -38,6 +38,7 @@ nnoremap('<leader>tl', function()
   tel.live_grep { cwd = util.get_project_root() }
 end)
 nnoremap('<leader>tt', tel.lsp_document_symbols)
+nnoremap('<leader>tr', tel.lsp_references)
 
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)

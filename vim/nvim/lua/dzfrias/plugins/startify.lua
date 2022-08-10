@@ -25,7 +25,7 @@ local commands = {
   {
     f = {
       '  Find file',
-      'Telescope find_files cwd=' .. require('util').get_project_root(),
+      'Telescope find_files cwd=' .. require('dzfrias/util').get_project_root(),
     },
   },
   { t = { '  Todo', 'TODO' } },

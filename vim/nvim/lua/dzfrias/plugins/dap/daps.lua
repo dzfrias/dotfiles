@@ -9,7 +9,7 @@ dap.adapters.delve = {
   },
 }
 
-local cli = require 'plugins/dap/cli'
+local cli = require 'dzfrias/plugins/dap/cli'
 dap.configurations.go = {
   {
     type = 'delve',

@@ -2,8 +2,8 @@ require('dapui').setup()
 require('nvim-dap-virtual-text').setup()
 require('telescope').load_extension 'dap'
 
-require 'plugins/dap/daps'
-require 'plugins/dap/mappings'
+require 'dzfrias/plugins/dap/daps'
+require 'dzfrias/plugins/dap/mappings'
 
 local dap = require 'dap'
 

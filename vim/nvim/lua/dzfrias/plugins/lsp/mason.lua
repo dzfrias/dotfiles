@@ -1,4 +1,4 @@
-local servers = require 'plugins/lsp/servers'
+local servers = require 'dzfrias/plugins/lsp/servers'
 local defaults = servers.default
 
 local all = {}

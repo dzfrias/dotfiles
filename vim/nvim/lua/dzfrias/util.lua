@@ -24,4 +24,14 @@ function M.bufnoremap(mode, key, cmd)
   vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
 end
 
+function M.reload_config()
+  for name, _ in pairs(package.loaded) do
+    if name:find('dzfrias') then
+      package.loaded[name] = nil
+    end
+  end
+
+  dofile(vim.env.MYVIMRC)
+end
+
 return M

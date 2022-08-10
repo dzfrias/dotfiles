@@ -23,7 +23,7 @@ local function find_main_go(proj_root, strategy)
 end
 
 function M.get_main_go()
-  local proj_root = require('util').get_project_root()
+  local proj_root = require('dzfrias/util').get_project_root()
   for _, strategy in ipairs { 'cmd', 'root', 'cmdfind', 'find' } do
     local target = find_main_go(proj_root, strategy)
     -- Check if main.go was found

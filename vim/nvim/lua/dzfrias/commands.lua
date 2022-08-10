@@ -17,6 +17,6 @@ end, {})
 
 vim.api.nvim_create_user_command(
   'TODO',
-  'TodoTrouble cwd=' .. require('util').get_project_root(),
+  'TodoTrouble cwd=' .. require('dzfrias/util').get_project_root(),
   {}
 )

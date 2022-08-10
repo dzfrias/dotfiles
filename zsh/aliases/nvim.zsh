@@ -5,7 +5,7 @@ alias no="nvim -c 'execute \"edit\" . MruGetFiles()[0]'"
 # Quick access
 alias zrc="nvim $HOME/.zshrc"
 alias ezrc="nvim $HOME/.dotfiles/zsh/extra.zsh"
-alias vrc='j ~/.dotfiles/vim/nvim/lua'
+alias vrc='j ~/.dotfiles/vim/nvim/lua/dzfrias'
 alias trc='nvim ~/.dotfiles/misc/tmux.conf'
 alias evrc="nvim $HOME/.dotfiles/vim/vimrc"
 alias nvdir='j ~/.local/share/nvim'

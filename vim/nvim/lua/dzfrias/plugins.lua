@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require 'plugins/treesitter'
+      require 'dzfrias/plugins/treesitter'
     end,
     run = ':TSUpdate',
   }
@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
   use {
     'mhinz/vim-startify',
     config = function()
-      require 'plugins/startify'
+      require 'dzfrias/plugins/startify'
     end,
   }
 
@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require 'plugins/lualine'
+      require 'dzfrias/plugins/lualine'
     end,
   }
 
@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins/trouble'
+      require 'dzfrias/plugins/trouble'
     end,
   }
 
@@ -65,14 +65,14 @@ return require('packer').startup(function(use)
       'folke/trouble.nvim',
     },
     config = function()
-      require 'plugins/todo-comments'
+      require 'dzfrias/plugins/todo-comments'
     end,
   }
 
   use {
     'ervandew/supertab',
     config = function()
-      require 'plugins/supertab'
+      require 'dzfrias/plugins/supertab'
     end,
   }
 
@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     config = function()
-      require 'plugins/telescope'
+      require 'dzfrias/plugins/telescope'
     end,
     requires = {
       'nvim-lua/plenary.nvim',
@@ -106,7 +106,7 @@ return require('packer').startup(function(use)
   use {
     'CRAG666/code_runner.nvim',
     config = function()
-      require 'plugins/code_runner'
+      require 'dzfrias/plugins/code_runner'
     end,
   }
 
@@ -115,7 +115,7 @@ return require('packer').startup(function(use)
     'kyazdani42/nvim-tree.lua',
     tag = 'nightly',
     config = function()
-      require 'plugins/nvim-tree'
+      require 'dzfrias/plugins/nvim-tree'
     end,
     requires = 'kyazdani42/nvim-web-devicons',
   }
@@ -125,7 +125,7 @@ return require('packer').startup(function(use)
     'github/copilot.vim',
     commit = 'c2e75a3a7519c126c6fdb35984976df9ae13f564',
     config = function()
-      require 'plugins/copilot'
+      require 'dzfrias/plugins/copilot'
     end,
   }
   -- }}}
@@ -137,7 +137,7 @@ return require('packer').startup(function(use)
   use {
     'tpope/vim-fugitive',
     config = function()
-      require 'plugins/fugitive'
+      require 'dzfrias/plugins/fugitive'
     end,
   }
 
@@ -145,7 +145,7 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
-      require 'plugins/gitsigns'
+      require 'dzfrias/plugins/gitsigns'
     end,
   }
   -- }}}
@@ -171,7 +171,7 @@ return require('packer').startup(function(use)
     'lewis6991/spellsitter.nvim',
     requires = 'nvim-treesitter/nvim-treesitter',
     config = function()
-      require 'plugins/spellsitter'
+      require 'dzfrias/plugins/spellsitter'
     end,
   }
 
@@ -179,7 +179,7 @@ return require('packer').startup(function(use)
   use {
     'rhysd/clever-f.vim',
     config = function()
-      require 'plugins/clever-f'
+      require 'dzfrias/plugins/clever-f'
     end,
   }
 
@@ -187,7 +187,7 @@ return require('packer').startup(function(use)
   use {
     'karb94/neoscroll.nvim',
     config = function()
-      require 'plugins/neoscroll'
+      require 'dzfrias/plugins/neoscroll'
     end,
   }
 
@@ -195,7 +195,7 @@ return require('packer').startup(function(use)
   use {
     'svermeulen/vim-easyclip',
     config = function()
-      require 'plugins/easyclip'
+      require 'dzfrias/plugins/easyclip'
     end,
     requires = 'tpope/vim-repeat',
   }
@@ -204,7 +204,7 @@ return require('packer').startup(function(use)
   use {
     'jiangmiao/auto-pairs',
     config = function()
-      require 'plugins/autopairs'
+      require 'dzfrias/plugins/autopairs'
     end,
   }
   -- }}}
@@ -218,7 +218,7 @@ return require('packer').startup(function(use)
   use {
     'mfussenegger/nvim-dap',
     config = function()
-      require 'plugins/dap' -- Has configurations for other Debugger plugins
+      require 'dzfrias/plugins/dap' -- Has configurations for other Debugger plugins
     end,
   }
   use {
@@ -249,13 +249,13 @@ return require('packer').startup(function(use)
     'fatih/vim-go',
     run = ':GoUpdateBinaries',
     config = function()
-      require 'plugins/vim-go'
+      require 'dzfrias/plugins/vim-go'
     end,
   }
   use {
     'buoto/gotests-vim',
     config = function()
-      require 'plugins/gotests'
+      require 'dzfrias/plugins/gotests'
     end,
   }
   -- }}}
@@ -265,14 +265,14 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'plugins/lsp/lspconfig'
+      require 'dzfrias/plugins/lsp/lspconfig'
     end,
   }
   -- Generic language server
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
-      require 'plugins/lsp/null-ls'
+      require 'dzfrias/plugins/lsp/null-ls'
     end,
   }
 
@@ -281,7 +281,7 @@ return require('packer').startup(function(use)
   use {
     'williamboman/mason-lspconfig.nvim',
     config = function()
-      require 'plugins/lsp/mason'
+      require 'dzfrias/plugins/lsp/mason'
     end,
     requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' },
   }
