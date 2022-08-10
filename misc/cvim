@@ -1,5 +1,7 @@
 " vim: set ft=text syntax=vim ts=2 sw=2:
 
+" This file is used for the Chromium Vim Google Chrome extension
+
 let blacklists = ['https://www.youtube.com/*', 'https://monkeytype.com/*', 'https://mail.google.com/*']
 
 unmap ?

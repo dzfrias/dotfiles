@@ -70,11 +70,5 @@ nnoremap('<leader>b', '<Cmd>Startify<CR>')
 -- Run file
 nnoremap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
 
--- Leap
-nnoremap('gs', '<Plug>(leap-forward)')
-nnoremap('gS', '<Plug>(leap-backward)')
-xnoremap('gs', '<Plug>(leap-forward)')
-xnoremap('gS', '<Plug>(leap-backward)')
-
 -- Escape
 inoremap('jk', '<Esc>')
