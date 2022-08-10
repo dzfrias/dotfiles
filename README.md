@@ -1,11 +1,17 @@
 # Dotfiles
 My dotfiles! Main configs:
-<!-- TODO: Finish -->
-- [neovim](https://github.com/dzfrias/dotfiles/tree/main/vim/nvim)
-- [Hammerspoon](https://github.com/dzfrias/dotfiles/tree/main/hammerspoon)
-- [zsh](https://github.com/dzfrias/dotfiles/tree/main/zsh), check out the
-`autoload` directory for some nice functions
+- [neovim](https://github.com/dzfrias/dotfiles/tree/main/vim/nvim), the text
+editor I use
+- [Hammerspoon](https://github.com/dzfrias/dotfiles/tree/main/hammerspoon), a
+macOS automation app using Lua
+- [zsh](https://github.com/dzfrias/dotfiles/tree/main/zsh), the shell I use.
+See the `autoload` directory for some nice functions
+- [gh](https://github.com/dzfrias/dotfiles/tree/main/misc/config/gh), the
+GitHub CLI tool, see the `functions` directory for some useful GitHub related
+commands.
 
+
+## Special Files
 
 ### Autoload
 Any files in the
