@@ -1,4 +1,5 @@
 local u = require 'util'
+local cu = require 'chrome/util'
 
 -- Previous tab
 local tabp = hs.hotkey.new({ 'ctrl' }, 'J', function()
@@ -12,15 +13,8 @@ end)
 
 -- Copy current tab's url to clipboard
 local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
-  hs.osascript.applescript [[
-  tell application "Google Chrome"
-    -- Get current url of active tab
-    set currentUrl to get URL of active tab of first window
-  end tell
-
-  -- Copy current url to clipboard
-  set the clipboard to currentUrl
-  ]]
+  local url = cu.current_url()
+  hs.pasteboard.setContents(url)
 end)
 
 -- Switches to next chrome profile, wraps if at end
@@ -113,3 +107,21 @@ local keybinds = {
 }
 
 u.app_wf('Google Chrome', keybinds)
+
+-- Site specific keybindings
+local sites = {
+  github = {},
+}
+
+-- Github
+local github = sites.github
+github.stars = hs.hotkey.new({ 'ctrl' }, 'S', function()
+  local url = 'https://github.com/dzfrias?tab=stars'
+  hs.urlevent.openURL(url)
+end)
+
+github.keybinds = {
+  sites.github.stars,
+}
+
+cu.site_wf('github', sites.github.keybinds)
