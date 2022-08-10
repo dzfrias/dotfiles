@@ -3,7 +3,6 @@ local util = require 'dzfrias/util'
 local nnoremap = util.nnoremap
 local inoremap = util.inoremap
 local noremap = util.noremap
-local xnoremap = util.xnoremap
 
 -- Go to top of file and first character
 noremap('gg', 'gg0')
@@ -27,7 +26,10 @@ nnoremap('<CR>', 'o<Esc>')
 nnoremap('<leader>w', '<Cmd>write<CR>')
 nnoremap('<leader>s', '<Cmd>source %<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
-nnoremap('<leader>e', '<Cmd>write<CR><Cmd>source $MYVIMRC<CR>')
+nnoremap('<leader>e', '<Cmd>edit<CR>')
+
+-- Reload config
+nnoremap('<leader>R', '<Cmd>Reload<CR>') -- See commands.lua for Reload
 
 -- Telescope
 local tel = require 'telescope.builtin'
