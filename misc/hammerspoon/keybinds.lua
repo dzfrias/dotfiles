@@ -53,6 +53,11 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
   end
 end)
 
+-- Go to lock screen
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'L', function()
+  hs.caffeinate.lockScreen()
+end)
+
 -- Toggle iTerm and Chrome vertical split
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
   local chrome = hs.appfinder.appFromName('Google Chrome'):mainWindow()
