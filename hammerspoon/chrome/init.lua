@@ -86,6 +86,15 @@ local up = hs.hotkey.new({ 'ctrl', 'shift' }, 'K', function()
   u.key_stroke 'Up'
 end)
 
+-- Deselect current input box
+local deselect = hs.hotkey.new({ 'ctrl' }, 'D', function()
+  hs.osascript.applescript [[
+  tell application "Google Chrome"
+    execute front window's active tab javascript "document.activeElement.blur();"
+  end tell
+  ]]
+end)
+
 -- Go down
 local down = hs.hotkey.new({ 'ctrl', 'shift' }, 'J', function()
   u.key_stroke 'Down'
@@ -100,6 +109,7 @@ local keybinds = {
   tabs,
   copy_url,
   switch_profile,
+  deselect,
 }
 
 u.app_wf('Google Chrome', keybinds)
