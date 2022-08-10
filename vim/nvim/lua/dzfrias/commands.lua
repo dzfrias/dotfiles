@@ -1,3 +1,5 @@
+local u = require('dzfrias/util')
+
 -- Fold all if line number is greater than 300
 local bufread = vim.api.nvim_create_augroup('bufread', {})
 vim.api.nvim_create_autocmd('BufRead', {
@@ -10,13 +12,18 @@ vim.api.nvim_create_autocmd('BufRead', {
   end,
 })
 
+-- Go to directory of current file
 vim.api.nvim_create_user_command('Cpd', function(_)
-  dir = vim.fn.expand '%:h'
+  local dir = vim.fn.expand '%:h'
   vim.api.nvim_command('cd ' .. dir)
 end, {})
 
+-- Reload config
+vim.api.nvim_create_user_command('Reload', u.reload_config, {})
+
+-- View todos at the project root
 vim.api.nvim_create_user_command(
   'TODO',
-  'TodoTrouble cwd=' .. require('dzfrias/util').get_project_root(),
+  'TodoTrouble cwd=' .. u.get_project_root(),
   {}
 )
