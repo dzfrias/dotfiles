@@ -18,7 +18,7 @@ alias rmr='rm -r'
 alias srmr='sudo rm -r'
 alias cpr='cp -R'
 alias license='cp ~/.dotfiles/LICENSE .'
-alias hs='j ~/.dotfiles/misc/hammerspoon'
+alias hs='j ~/.dotfiles/hammerspoon'
 alias cl='j && clear'
 
 # -CLI-OPTIONS-

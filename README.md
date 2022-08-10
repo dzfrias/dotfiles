@@ -1,5 +1,8 @@
 # Dotfiles
-My important dotfiles! I wouldn't recommend cloning this repository directly, as it hasn't been tested yet. Configuring for Linux and Windows will definitely not work out of the box.
+My dotfiles! Main configs:
+<!-- TODO: Finish -->
+- [neovim](https://github.com/dzfrias/dotfiles/tree/main/vim/nvim)
+- Hammerspoon
 
 
 ### Autoload
