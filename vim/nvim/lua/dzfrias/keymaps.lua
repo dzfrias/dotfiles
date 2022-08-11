@@ -3,6 +3,7 @@ local util = require 'dzfrias/util'
 local nnoremap = util.nnoremap
 local inoremap = util.inoremap
 local noremap = util.noremap
+local xnoremap = util.xnoremap
 
 -- Go to top of file and first character
 noremap('gg', 'gg0')
@@ -71,6 +72,12 @@ nnoremap('<leader>b', '<Cmd>Startify<CR>')
 
 -- Run file
 nnoremap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
+
+-- Leap
+nnoremap('gs', '<Plug>(leap-forward)')
+nnoremap('gS', '<Plug>(leap-backward)')
+xnoremap('gs', '<Plug>(leap-forward)')
+xnoremap('gS', '<Plug>(leap-backward)')
 
 -- Escape
 inoremap('jk', '<Esc>')
