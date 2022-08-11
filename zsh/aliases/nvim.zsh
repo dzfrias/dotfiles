@@ -9,6 +9,7 @@ alias vrc='j ~/.dotfiles/vim/nvim/lua/dzfrias'
 alias trc='nvim ~/.dotfiles/misc/tmux.conf'
 alias evrc="nvim $HOME/.dotfiles/vim/vimrc"
 alias nvdir='j ~/.local/share/nvim'
+alias hs='j ~/.dotfiles/hammerspoon'
 
 # packer.nvim
 alias pack='cd ~/.local/share/nvim/site/pack/packer/start'

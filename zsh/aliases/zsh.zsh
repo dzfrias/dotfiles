@@ -1,4 +1,4 @@
-# -GENERAL-
+# -GENERAL
 alias ex='exit'
 alias ls='ls -G'
 alias reload='exec zsh'
@@ -18,8 +18,9 @@ alias rmr='rm -r'
 alias srmr='sudo rm -r'
 alias cpr='cp -R'
 alias license='cp ~/.dotfiles/LICENSE .'
-alias hs='j ~/.dotfiles/hammerspoon'
 alias cl='j && clear'
+# Clear mbox file
+alias clmb='echo "" > ~/.mbox'
 
 # -CLI-OPTIONS-
 # Doesn't open pager for bat (default is 'always' in misc/config/bat/config)
