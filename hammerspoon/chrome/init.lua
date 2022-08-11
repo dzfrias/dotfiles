@@ -106,7 +106,7 @@ local keybinds = {
   deselect,
 }
 
-u.app_wf('Google Chrome', keybinds)
+require('app_wf').add_app_wf('Google Chrome', keybinds)
 
 -- Site specific keybindings
 local sites = {

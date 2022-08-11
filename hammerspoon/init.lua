@@ -11,3 +11,5 @@ for file in hs.fs.dir '.' do
   end
   ::continue::
 end
+
+require('app_wf').start()
