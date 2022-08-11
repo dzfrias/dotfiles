@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
+  use 'justinmk/vim-dirvish'
 
   use {
     'mhinz/vim-startify',
@@ -34,8 +35,6 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/startify'
     end,
   }
-
-  use 'justinmk/vim-dirvish'
 
   use {
     'ggandor/leap.nvim',
@@ -110,16 +109,6 @@ return require('packer').startup(function(use)
     config = function()
       require 'dzfrias/plugins/code_runner'
     end,
-  }
-
-  -- View of directory
-  use {
-    'kyazdani42/nvim-tree.lua',
-    tag = 'nightly',
-    config = function()
-      require 'dzfrias/plugins/nvim-tree'
-    end,
-    requires = 'kyazdani42/nvim-web-devicons',
   }
 
   -- AI suggestions
