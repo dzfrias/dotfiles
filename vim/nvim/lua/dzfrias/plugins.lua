@@ -30,13 +30,6 @@ return require('packer').startup(function(use)
   use 'justinmk/vim-dirvish'
 
   use {
-    'mhinz/vim-startify',
-    config = function()
-      require 'dzfrias/plugins/startify'
-    end,
-  }
-
-  use {
     'ggandor/leap.nvim',
     requires = 'tpope/vim-repeat',
   }
@@ -234,7 +227,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Go--------------------------------------------------------------------
-  use 'dzfrias/vim-gojson' -- Easy Go JSON field tags
   -- Go language support
   use {
     'fatih/vim-go',

@@ -47,9 +47,6 @@ nnoremap('<leader>tk', tel.keymaps)
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)
 
--- Open NvimTree
-nnoremap('<C-n>', require('nvim-tree.api').tree.toggle)
-
 -- Git mappings
 nnoremap('gq', '<Cmd>Git<CR>')
 nnoremap('gcm', function()
@@ -67,9 +64,6 @@ nnoremap('gr', gs.reset_hunk)
 nnoremap('gD', function()
   gs.setqflist 'all'
 end)
-
--- Startify
-nnoremap('<leader>b', '<Cmd>Startify<CR>')
 
 -- Run file
 nnoremap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
