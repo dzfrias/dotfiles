@@ -36,6 +36,7 @@ end)
 
 -- Get the current time
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
+  -- Of the form: (ABBREV_DAY) (12 HOUR):(MINUTE)(AM/PM)
   local now = os.date '%a %I:%M%p'
   hs.alert.show(now)
 end)
@@ -74,24 +75,4 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'N', function()
     perform action 4 of notif
   end tell
   ]]
-end)
-
--- Toggle iTerm and Chrome vertical split
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
-  local chrome = hs.appfinder.appFromName('Google Chrome'):mainWindow()
-  local iterm = hs.appfinder.appFromName('iTerm2'):mainWindow()
-  if not chrome:isFullScreen() or not iterm:isFullScreen() then
-    chrome:setFullScreen(true)
-    iterm:setFullScreen(true)
-    return
-  end
-  chrome:setFullScreen(false)
-  iterm:setFullScreen(false)
-
-  local screen = hs.screen.mainScreen():name()
-  local windowLayout = {
-    { 'iTerm2', nil, screen, hs.layout.left50, nil, nil },
-    { 'Google Chrome', nil, screen, hs.layout.right50, nil, nil },
-  }
-  hs.layout.apply(windowLayout)
 end)
