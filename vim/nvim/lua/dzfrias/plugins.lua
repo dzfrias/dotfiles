@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'justinmk/vim-dirvish'
+  use 'justinmk/vim-dirvish' -- Directory viewer
 
   use {
     'ggandor/leap.nvim',
@@ -130,6 +130,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-endwise' -- Automatically make end statements
   use 'tpope/vim-scriptease' -- Easier vimscript editing
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
+  use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
 
   -- Surround text
   use {
@@ -177,11 +178,6 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/autopairs'
     end,
   }
-  -- }}}
-
-  -- {{{ Misc filetypes--------------------------------------------------------
-  use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
-  use 'bfontaine/Brewfile.vim' -- Brewfile syntax highlighting
   -- }}}
 
   -- {{{ Debugger--------------------------------------------------------------
