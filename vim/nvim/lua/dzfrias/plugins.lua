@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
-  use 'yegappan/mru' -- Most recently used files
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
 

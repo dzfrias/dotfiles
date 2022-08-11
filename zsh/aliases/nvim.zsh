@@ -1,6 +1,6 @@
 alias n='nvim'
 alias nm='nvimm'
-alias no="nvim -c 'execute \"edit\" . MruGetFiles()[0]'"
+alias no='nvim -c "edit #<1"'
 
 # Quick access
 alias zrc="nvim $HOME/.zshrc"
