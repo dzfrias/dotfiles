@@ -121,7 +121,7 @@ github.stars = hs.hotkey.new({ 'ctrl' }, 'S', function()
 end)
 
 github.keybinds = {
-  sites.github.stars,
+  github.stars,
 }
 
-cu.site_wf('github', sites.github.keybinds)
+cu.site_wf('github', github.keybinds)
