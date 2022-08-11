@@ -35,6 +35,8 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use 'justinmk/vim-dirvish'
+
   use {
     'ggandor/leap.nvim',
     requires = 'tpope/vim-repeat',

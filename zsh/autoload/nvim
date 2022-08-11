@@ -32,8 +32,7 @@ if [[ -d $1 ]]; then
     # Use command to non-recursively call neovim
     command nvim $file ${@[2,-1]}
   else
-    echo "$1 is a directory!"
-    return 1
+    command nvim $1
   fi
 else
   command nvim $@

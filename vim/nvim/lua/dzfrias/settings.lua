@@ -60,3 +60,5 @@ set.pumheight = 5
 
 -- Spelling
 set.spell = true
+
+set.splitright = true
