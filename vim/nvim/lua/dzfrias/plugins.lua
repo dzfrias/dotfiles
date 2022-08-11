@@ -83,14 +83,6 @@ return require('packer').startup(function(use)
     requires = 'nvim-telescope/telescope.nvim',
   }
 
-  -- Run code
-  use {
-    'CRAG666/code_runner.nvim',
-    config = function()
-      require 'dzfrias/plugins/code_runner'
-    end,
-  }
-
   -- AI suggestions
   use {
     'github/copilot.vim',
