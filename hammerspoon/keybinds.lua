@@ -34,6 +34,12 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
   end
 end)
 
+-- Get the current time
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
+  local now = os.date '%a %I:%M%p'
+  hs.alert.show(now)
+end)
+
 -- Get current mouse position
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'M', function()
   local mouse = hs.mouse.absolutePosition()
