@@ -20,13 +20,15 @@ function M.xnoremap(shortcut, command)
   vim.keymap.set('x', shortcut, command, { noremap = true })
 end
 
-function M.bufnoremap(mode, key, cmd)
-  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, { noremap = true })
+function M.bufnoremap(mode, key, cmd, opts)
+  opts = opts or {}
+  opts.noremap = true
+  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, opts)
 end
 
 function M.reload_config()
   for name, _ in pairs(package.loaded) do
-    if name:find('dzfrias') then
+    if name:find 'dzfrias' then
       package.loaded[name] = nil
     end
   end
