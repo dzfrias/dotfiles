@@ -42,6 +42,7 @@ nnoremap('<leader>tl', function()
 end)
 nnoremap('<leader>tt', tel.lsp_document_symbols)
 nnoremap('<leader>tr', tel.lsp_references)
+nnoremap('<leader>tk', tel.keymaps)
 
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)

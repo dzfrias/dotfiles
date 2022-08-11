@@ -5,7 +5,7 @@ vim.opt_local.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- vim-go
 bufnoremap('n', '<leader>r', '<Cmd>w<CR><Cmd>GoRun<CR>')
-bufnoremap('n', '<leader>t', '<Cmd>w<CR><Cmd>GoTest<CR>')
+bufnoremap('n', '<leader>T', '<Cmd>w<CR><Cmd>GoTest<CR>')
 bufnoremap('n', '<C-p>', '<Plug>(go-doc)')
 bufnoremap('n', '<leader>c', '<Plug>(go-coverage-toggle)')
 bufnoremap('n', '<C-i>', '<Cmd>GoIfErr<CR>k')
