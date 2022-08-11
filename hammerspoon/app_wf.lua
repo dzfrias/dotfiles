@@ -3,8 +3,8 @@ local M = {
   global_wf = hs.window.filter.new(false),
 }
 
--- add_app_wf adds a window filter for an application to the global window filter
-function M.add_app_wf(app_name, keybinds)
+-- add adds a window filter for an application to the global window filter
+function M.add(app_name, keybinds)
   M.global_wf:allowApp(app_name)
   M.app_wfs[app_name] = keybinds
 end

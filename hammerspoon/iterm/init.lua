@@ -10,4 +10,4 @@ local keybinds = {
   quit,
 }
 
-require('app_wf').add_app_wf('iTerm2', keybinds)
+require('app_wf').add('iTerm2', keybinds)
