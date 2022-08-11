@@ -50,19 +50,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Better TODO comments
-  use {
-    'folke/todo-comments.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-      'nvim-lua/plenary.nvim',
-      'folke/trouble.nvim',
-    },
-    config = function()
-      require 'dzfrias/plugins/todo-comments'
-    end,
-  }
-
   use {
     'ervandew/supertab',
     config = function()
@@ -125,7 +112,7 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Git diffs in sign column
+  -- Git diffs in sign column and hunk interactions
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -142,8 +129,7 @@ return require('packer').startup(function(use)
   use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-endwise' -- Automatically make end statements
   use 'tpope/vim-scriptease' -- Easier vimscript editing
-
-  use 'christoomey/vim-tmux-navigator'
+  use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
 
   -- Surround text
   use {

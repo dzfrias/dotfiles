@@ -20,10 +20,3 @@ end, {})
 
 -- Reload config
 vim.api.nvim_create_user_command('Reload', u.reload_config, {})
-
--- View todos at the project root
-vim.api.nvim_create_user_command(
-  'TODO',
-  'TodoTrouble cwd=' .. u.get_project_root(),
-  {}
-)
