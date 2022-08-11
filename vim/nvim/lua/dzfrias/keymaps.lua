@@ -65,14 +65,26 @@ nnoremap('gD', function()
   gs.setqflist 'all'
 end)
 
--- Run file
-nnoremap('<leader>r', '<Cmd>write<CR><Cmd>RunFile float<CR>')
-
 -- Leap
 nnoremap('gs', '<Plug>(leap-forward)')
 nnoremap('gS', '<Plug>(leap-backward)')
 xnoremap('gs', '<Plug>(leap-forward)')
 xnoremap('gS', '<Plug>(leap-backward)')
+
+-- Neotest
+local neotest = require 'neotest'
+nnoremap('<leader>ur', function()
+  neotest.run.run(vim.fn.expand '%')
+end)
+nnoremap('<leader>uR', function()
+  neotest.run.run(util.get_project_root())
+end)
+nnoremap('<leader>uo', function()
+  neotest.output.open()
+end)
+nnoremap('<leader>us', function()
+  neotest.summary.toggle()
+end)
 
 -- Escape
 inoremap('jk', '<Esc>')

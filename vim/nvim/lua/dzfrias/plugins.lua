@@ -34,6 +34,26 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'stevearc/overseer.nvim',
+    config = function()
+      require 'dzfrias/plugins/overseer'
+    end,
+  }
+
+  use {
+    'nvim-neotest/neotest',
+    requires = {
+      'nvim-neotest/neotest-go',
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'antoinemadec/FixCursorHold.nvim',
+    },
+    config = function()
+      require 'dzfrias/plugins/neotest'
+    end,
+  }
+
+  use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
