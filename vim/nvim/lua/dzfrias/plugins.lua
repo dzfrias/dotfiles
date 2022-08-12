@@ -34,6 +34,13 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'stevearc/overseer.nvim',
+    config = function()
+      require 'dzfrias/plugins/overseer'
+    end,
+  }
+
+  use {
     'nvim-neotest/neotest',
     requires = {
       'nvim-neotest/neotest-go',

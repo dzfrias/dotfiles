@@ -86,5 +86,18 @@ nnoremap('<leader>us', function()
   neotest.summary.toggle()
 end)
 
+-- Overseer
+local overseer = require 'overseer'
+nnoremap('<leader>or', '<Cmd>OverseerRun<CR>')
+nnoremap('<leader>ot', '<Cmd>OverseerToggle<CR>')
+nnoremap('<leader>r', function()
+  -- Run a task and immediately open the floating window
+  overseer.run_template({ name = 'run' }, function(task)
+    if task then
+      overseer.run_action(task, 'open float')
+    end
+  end)
+end)
+
 -- Escape
 inoremap('jk', '<Esc>')

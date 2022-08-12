@@ -10,6 +10,7 @@ dap.adapters.delve = {
 }
 
 local cli = require 'dzfrias/plugins/dap/cli'
+local util = require 'dzfrias/util'
 dap.configurations.go = {
   {
     type = 'delve',
@@ -28,7 +29,9 @@ dap.configurations.go = {
     type = 'delve',
     name = 'CLI',
     request = 'launch',
-    program = cli.get_main_go,
+    program = function()
+      return util.get_main 'go'
+    end,
     args = cli.get_args,
   },
 }
