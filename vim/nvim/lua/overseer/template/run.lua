@@ -26,6 +26,12 @@ local go_parser = {
   },
 }
 
+-- TODO: Make python parser
+-- test until: 'Traceback (most recent call last):'
+-- Loop
+--   sequence
+--     Get file and line number
+--     Get text
 local function select_parser(ft)
   if ft == 'go' then
     return go_parser
