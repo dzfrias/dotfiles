@@ -1,25 +1,38 @@
 local M = {}
 
+---@return string
 function M.get_project_root()
   return vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':h:p')
 end
 
+---@param shortcut string
+---@param command string
 function M.nnoremap(shortcut, command)
   vim.keymap.set('n', shortcut, command, { noremap = true })
 end
 
+---@param shortcut string
+---@param command string
 function M.inoremap(shortcut, command)
   vim.keymap.set('i', shortcut, command, { noremap = true })
 end
 
+---@param shortcut string
+---@param command string
 function M.noremap(shortcut, command)
   vim.keymap.set('', shortcut, command, { noremap = true })
 end
 
+---@param shortcut string
+---@param command string
 function M.xnoremap(shortcut, command)
   vim.keymap.set('x', shortcut, command, { noremap = true })
 end
 
+---@param mode string
+---@param key string
+---@param cmd string|function
+---@param opts? table
 function M.bufnoremap(mode, key, cmd, opts)
   opts = opts or {}
   opts.noremap = true
@@ -36,6 +49,7 @@ function M.reload_config()
   dofile(vim.env.MYVIMRC)
 end
 
+---@param proj_root string
 local function find_main_go(proj_root)
   local target = nil
   local proj_name = vim.fn.fnamemodify(proj_root, ':t')

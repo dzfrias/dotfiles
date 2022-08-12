@@ -3,13 +3,14 @@ local M = {
   global_wf = hs.window.filter.new(false),
 }
 
--- add adds a window filter for an application to the global window filter
+--- add adds a window filter for an application to the global window filter
+---@param app_name string
 function M.add(app_name, keybinds)
   M.global_wf:allowApp(app_name)
   M.app_wfs[app_name] = keybinds
 end
 
--- start starts the global window filter, subscribing to window events
+---start starts the global window filter, subscribing to window events
 function M.start()
   M.global_wf
     :subscribe(
