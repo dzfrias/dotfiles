@@ -38,8 +38,7 @@ return {
 
       components = {
         'default',
-        { 'on_result_diagnostics_quickfix', open = true },
-        { 'on_result_diagnostics', remove_on_restart = true },
+        'on_result_diagnostics_quickfix',
         parser,
       },
     }

@@ -36,7 +36,8 @@ end
 function M.bufnoremap(mode, key, cmd, opts)
   opts = opts or {}
   opts.noremap = true
-  vim.api.nvim_buf_set_keymap(0, mode, key, cmd, opts)
+  opts.buffer = true
+  vim.keymap.set(mode, key, cmd, opts)
 end
 
 function M.reload_config()

@@ -83,20 +83,49 @@ nnoremap('<leader>us', function()
   neotest.summary.toggle()
 end)
 
--- Overseer
 local overseer = require 'overseer'
 local function open_float(task)
-  if task then
-    overseer.run_action(task, 'open float')
+  if not task then
+    return
   end
+  overseer.run_action(task, 'open float')
 end
 nnoremap('<leader>O', '<Cmd>OverseerRun<CR>')
-nnoremap('<leader>o', '<Cmd>OverseerToggle<CR>')
+nnoremap('<leader>o', overseer.toggle)
+
 nnoremap('<leader>R', function()
   overseer.run_template({ name = 'run' }, open_float)
+  -- Hacky solution to auto-open quickfix if there are errors. It wouldn't open
+  -- previously because the autocmd would attach to the OverseerPrompt buffer.
+  local seen_buffers = 0
+  vim.api.nvim_create_autocmd('BufLeave', {
+    group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
+    pattern = '*',
+    callback = function()
+      seen_buffers = seen_buffers + 1
+      if seen_buffers ~= 3 then
+        return
+      end
+      if #vim.fn.getqflist() > 0 then
+        vim.cmd 'copen'
+      end
+    end,
+  })
+  util.bufnoremap('n', 'q', '<Cmd>quit<CR>')
 end)
+
 nnoremap('<leader>r', function()
   overseer.run_template({ name = 'run', params = { args = {} } }, open_float)
+  vim.api.nvim_create_autocmd('BufLeave', {
+    group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
+    callback = function()
+      if #vim.fn.getqflist() > 0 then
+        vim.cmd 'copen'
+      end
+    end,
+    buffer = 0,
+  })
+  util.bufnoremap('n', 'q', '<Cmd>quit<CR>')
 end)
 
 -- Escape

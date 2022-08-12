@@ -8,6 +8,7 @@ require('overseer').setup {
       ['q'] = '<Cmd>quit<CR>',
       ['K'] = 'PrevTask',
       ['J'] = 'NextTask',
+      ['r'] = '<Cmd>OverseerQuickAction restart<CR>',
     },
   },
   templates = { 'builtin', 'run' },
