@@ -3,5 +3,5 @@
 -- the API of code_runner, a table with the filetype and command.
 
 require('overseer').setup {
-  templates = { 'builtin', 'run' },
+  templates = { 'builtin', 'run', 'run_noargs' },
 }

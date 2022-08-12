@@ -98,6 +98,14 @@ nnoremap('<leader>r', function()
     end
   end)
 end)
+nnoremap('<leader>R', function()
+  -- Run a task and immediately open the floating window
+  overseer.run_template({ name = 'run noargs' }, function(task)
+    if task then
+      overseer.run_action(task, 'open float')
+    end
+  end)
+end)
 
 -- Escape
 inoremap('jk', '<Esc>')
