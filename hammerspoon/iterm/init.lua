@@ -1,7 +1,7 @@
 local u = require 'util'
 
 local quit = hs.hotkey.new({ 'ctrl' }, 'Q', function()
-  hs.eventtap.keyStrokes 'cl'
+  hs.eventtap.keyStrokes 'cd && clear'
   u.key_stroke 'Return'
   hs.caffeinate.lockScreen()
 end)
