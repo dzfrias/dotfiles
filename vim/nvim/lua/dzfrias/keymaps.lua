@@ -29,9 +29,6 @@ nnoremap('<leader>s', '<Cmd>source %<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
 nnoremap('<leader>e', '<Cmd>edit<CR>')
 
--- Reload config
-nnoremap('<leader>R', '<Cmd>Reload<CR>') -- See commands.lua for Reload
-
 -- Telescope
 local tel = require 'telescope.builtin'
 nnoremap('<leader>tf', function()
