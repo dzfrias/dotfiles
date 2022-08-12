@@ -27,17 +27,21 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
+  use 'stevearc/dressing.nvim' -- Better UI defaults for vim
 
+  -- Quick jumping across files
   use {
     'ggandor/leap.nvim',
     requires = 'tpope/vim-repeat',
   }
 
+  -- Async task runner
   use {
     'stevearc/overseer.nvim',
     config = function()
       require 'dzfrias/plugins/overseer'
     end,
+    requires = { 'nvim-telescope/telescope.nvim', 'stevearc/dressing.nvim' },
   }
 
   use {

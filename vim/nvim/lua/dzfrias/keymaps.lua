@@ -90,7 +90,7 @@ local function open_float(task)
   end
   overseer.run_action(task, 'open float')
 end
-nnoremap('<leader>O', '<Cmd>OverseerRun<CR>')
+nnoremap('<leader>O', overseer.run_template)
 nnoremap('<leader>o', overseer.toggle)
 
 nnoremap('<leader>R', function()
