@@ -44,36 +44,40 @@ local function find_main_go(proj_root)
   if vim.fn.filereadable(target) == 1 then
     return target
   end
-
   target = proj_root .. '/main.go'
   if vim.fn.filereadable(target) == 1 then
     return target
   end
-
   target = vim.fn.findfile('main.go', proj_root .. '/cmd/*', -1)
   if #target == 1 then
     return target[1]
   end
-
   target = vim.fn.findfile('main.go', proj_root .. '/**', -1)
   if #target == 1 then
     return target[1]
   end
 
-  return nil
+  return vim.fn.expand '%'
 end
 
 local function find_main_py(proj_root)
   local target = vim.fn.findfile('main.py', proj_root .. '/**', -1)
-  if #target == 1 then
+  if target[1] then
     return target[1]
   end
-  return nil
+  return vim.fn.expand '%'
 end
 
+M.run_cmds = {
+  zsh = { 'zsh' },
+  markdown = { 'glow' },
+  applescript = { 'osascript' },
+  go = { 'go', 'run' },
+  python = { 'python3' },
+}
+
 function M.main_supported(ft)
-  local supported = { 'go', 'python' }
-  return vim.tbl_contains(supported, ft)
+  return M.run_cmds[ft] ~= nil
 end
 
 function M.get_main(filetype)
@@ -82,22 +86,18 @@ function M.get_main(filetype)
     fn = find_main_go
   elseif filetype == 'python' then
     fn = find_main_py
+  elseif M.run_cmds[filetype] then
+    return vim.fn.expand '%'
   else
     return 'Invalid filetype'
   end
 
-  local cur_file = vim.fn.expand '%'
-
   local proj_root = M.get_project_root()
   if proj_root == '.' then
-    return cur_file
-  end
-  local target = fn(proj_root)
-  if target ~= nil then
-    return target
+    return vim.fn.expand '%'
   end
 
-  return cur_file
+  return fn(proj_root)
 end
 
 return M
