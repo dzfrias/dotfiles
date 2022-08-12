@@ -93,13 +93,13 @@ local function open_float(task)
     overseer.run_action(task, 'open float')
   end
 end
-nnoremap('<leader>or', '<Cmd>OverseerRun<CR>')
-nnoremap('<leader>ot', '<Cmd>OverseerToggle<CR>')
+nnoremap('<leader>O', '<Cmd>OverseerRun<CR>')
+nnoremap('<leader>o', '<Cmd>OverseerToggle<CR>')
 nnoremap('<leader>R', function()
   overseer.run_template({ name = 'run' }, open_float)
 end)
 nnoremap('<leader>r', function()
-  overseer.run_template({ name = 'run', params = { args = '' } }, open_float)
+  overseer.run_template({ name = 'run', params = { args = {} } }, open_float)
 end)
 
 -- Escape

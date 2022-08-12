@@ -27,10 +27,14 @@ return {
     if parser then
       parser = wrap_parser(parser)
     end
+    local name = 'run (<noargs>)'
+    if #task.args > 0 then
+      name = 'run (' .. table.concat(task.args, ' ') .. ')'
+    end
     return {
-      name = 'run',
+      name = name,
       cmd = util.run_cmds[ft],
-      args = { main, task.args },
+      args = { main, unpack(task.args) },
 
       components = {
         'default',
@@ -40,9 +44,14 @@ return {
       },
     }
   end,
+
   params = {
     args = {
-      type = 'string',
+      type = 'list',
+      subtype = {
+        type = 'string',
+      },
+      delimiter = ' ',
       name = 'Arguments',
       description = 'Arguments for the command',
     },
