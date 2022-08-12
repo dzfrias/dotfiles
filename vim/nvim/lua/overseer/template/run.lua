@@ -1,63 +1,10 @@
 local util = require 'dzfrias/util'
 
-local go_parser = {
-  -- Do not parse anything unless a panic line exists
-  { 'test', '^panic:' },
-  -- Skip until we hit a line matching this pattern
-  { 'skip_until', '^goroutine%s' },
-  {
-    'loop',
-    {
-      'sequence',
-      {
-        'extract',
-        { append = false },
-        -- Extract info in stack trace
-        { '^(.+)%(.*%)$', '^created by (.+)$' },
-        'text',
-      },
-      {
-        'extract',
-        -- Get filename and line number from next line
-        '^%s+([^:]+.go):([0-9]+)',
-        'filename',
-        'lnum',
-      },
-    },
-  },
-}
-
-local python_parser = {
-  -- Do not parse until this line is found
-  { 'test', '^Traceback %(most recent call last%):$' },
-  { 'skip_until', '^Traceback %(most recent call last%):$' },
-  {
-    'loop',
-    {
-      'sequence',
-      {
-        'extract',
-        { append = false },
-        -- Extract filename and line number
-        '^  File "(.+)", line ([0-9]+), in .+$',
-        'filename',
-        'lnum',
-      },
-      {
-        'extract',
-        -- Extract text of traceback
-        '^    (.+)$',
-        'text',
-      },
-    },
-  },
-}
-
 local function select_parser(ft)
   if ft == 'go' then
-    return go_parser
+    return require 'overseer/template/parsers/go'
   elseif ft == 'python' then
-    return python_parser
+    return require 'overseer/template/parsers/python'
   end
   return nil
 end
