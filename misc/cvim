@@ -6,11 +6,21 @@ let blacklists = ['https://www.youtube.com/*', 'https://monkeytype.com/*', 'http
 
 unmap ?
 
+toTwoPath -> {{
+  const newPath = window.location.pathname.split('/').slice(1, 3)
+    if (newPath.length !== 2) {
+      return
+    }
+  const fullUrl = 'https://github.com/' + newPath.join('/')
+  window.location.replace(fullUrl)
+}}
+
 site 'https://github.com/*' {
   unmap /
   map gd :open https://github.com<CR>
   map gp :open https://github.com/pulls<CR>
   map gi :open https://github.com/issues<CR>
+  map gc :call toTwoPath<CR>
 }
 
 site 'https://pkg.go.dev/*' {
