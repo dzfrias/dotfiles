@@ -38,6 +38,7 @@ return {
 
       components = {
         'default',
+        'unique',
         'on_result_diagnostics_quickfix',
         parser,
       },

@@ -89,33 +89,9 @@ local function open_float(task)
     return
   end
   overseer.run_action(task, 'open float')
-end
-nnoremap('<leader>O', overseer.run_template)
-nnoremap('<leader>o', overseer.toggle)
-
-nnoremap('<leader>R', function()
-  overseer.run_template({ name = 'run' }, open_float)
-  -- Hacky solution to auto-open quickfix if there are errors. It wouldn't open
-  -- previously because the autocmd would attach to the OverseerPrompt buffer.
-  local seen_buffers = 0
-  vim.api.nvim_create_autocmd('BufLeave', {
-    group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
-    pattern = '*',
-    callback = function()
-      seen_buffers = seen_buffers + 1
-      if seen_buffers ~= 3 then
-        return
-      end
-      if #vim.fn.getqflist() > 0 then
-        vim.cmd 'Trouble quickfix'
-      end
-    end,
-  })
   util.bufnoremap('n', 'q', '<Cmd>quit<CR>')
-end)
 
-nnoremap('<leader>r', function()
-  overseer.run_template({ name = 'run', params = { args = {} } }, open_float)
+  -- Open Trouble if quickfix is not empty
   vim.api.nvim_create_autocmd('BufLeave', {
     group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
     callback = function()
@@ -125,7 +101,16 @@ nnoremap('<leader>r', function()
     end,
     buffer = 0,
   })
-  util.bufnoremap('n', 'q', '<Cmd>quit<CR>')
+end
+nnoremap('<leader>O', overseer.run_template)
+nnoremap('<leader>o', overseer.toggle)
+
+nnoremap('<leader>R', function()
+  overseer.run_template({ name = 'run' }, open_float)
+end)
+
+nnoremap('<leader>r', function()
+  overseer.run_template({ name = 'run', params = { args = {} } }, open_float)
 end)
 
 -- Escape
