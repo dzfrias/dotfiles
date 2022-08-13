@@ -39,6 +39,7 @@ return {
       components = {
         'default',
         'unique',
+        'open_float',
         'on_result_diagnostics_quickfix',
         parser,
       },

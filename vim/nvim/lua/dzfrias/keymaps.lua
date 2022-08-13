@@ -86,38 +86,55 @@ end)
 -- Overseer
 local overseer = require 'overseer'
 
-local function open_run(task)
-  if not task then
-    return
-  end
-  overseer.run_action(task, 'open float')
-  util.bufnoremap('n', 'q', '<Cmd>quit<CR>')
-
-  -- Open Trouble if quickfix is not empty
-  vim.api.nvim_create_autocmd('BufLeave', {
-    group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
-    callback = function()
-      if #vim.fn.getqflist() > 0 then
-        vim.cmd [[
-        Trouble quickfix
-        normal! G
-        ]]
-      end
-    end,
-    buffer = 0,
-  })
-end
-
 -- Basic commands
 nnoremap('<leader>O', overseer.run_template)
 nnoremap('<leader>o', overseer.toggle)
 
+-- Pick a task to re-run with telescope
+nnoremap('<leader>p', function()
+  local pickers = require 'telescope.pickers'
+  local finders = require 'telescope.finders'
+  local conf = require('telescope.config').values
+  local actions = require 'telescope.actions'
+  local action_state = require 'telescope.actions.state'
+  local tasks = {}
+  for _, task in ipairs(require('overseer.task_list').list_tasks()) do
+    table.insert(tasks, { task.name, task })
+  end
+  pickers
+    .new({}, {
+      prompt_title = 'Choose a task to re-run',
+      finder = finders.new_table {
+        results = tasks,
+        entry_maker = function(task)
+          return {
+            value = task,
+            display = task[1],
+            ordinal = task[1],
+          }
+        end,
+      },
+      sorter = conf.generic_sorter {},
+      attach_mappings = function(prompt_bufnr)
+        actions.select_default:replace(function()
+          actions.close(prompt_bufnr)
+          local selection = action_state.get_selected_entry().value[2]
+          if selection then
+            selection:restart()
+          end
+        end)
+        return true
+      end,
+    })
+    :find()
+end)
+
 -- Run commands
 nnoremap('<leader>R', function()
-  overseer.run_template({ name = 'run' }, open_run)
+  overseer.run_template { name = 'run' }
 end)
 nnoremap('<leader>r', function()
-  overseer.run_template({ name = 'run', params = { args = {} } }, open_run)
+  overseer.run_template { name = 'run', params = { args = {} } }
 end)
 
 -- Escape
