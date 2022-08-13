@@ -1,8 +1,6 @@
 return {
-  desc = [[
-  Open task output in a floating window after completion.
-  If the quickfix is not empty, open that with Trouble
-  ]],
+  desc = 'Open task output in a floating window after completion. If the'
+    .. 'quickfix is not empty, open that with Trouble',
   editable = false,
   serializable = true,
   constructor = function()
