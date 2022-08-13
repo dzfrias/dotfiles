@@ -83,8 +83,10 @@ nnoremap('<leader>us', function()
   neotest.summary.toggle()
 end)
 
+-- Overseer
 local overseer = require 'overseer'
-local function open_float(task)
+
+local function open_run(task)
   if not task then
     return
   end
@@ -96,21 +98,26 @@ local function open_float(task)
     group = vim.api.nvim_create_augroup('overseer_leave', { clear = true }),
     callback = function()
       if #vim.fn.getqflist() > 0 then
-        vim.cmd 'Trouble quickfix'
+        vim.cmd [[
+        Trouble quickfix
+        normal! G
+        ]]
       end
     end,
     buffer = 0,
   })
 end
+
+-- Basic commands
 nnoremap('<leader>O', overseer.run_template)
 nnoremap('<leader>o', overseer.toggle)
 
+-- Run commands
 nnoremap('<leader>R', function()
-  overseer.run_template({ name = 'run' }, open_float)
+  overseer.run_template({ name = 'run' }, open_run)
 end)
-
 nnoremap('<leader>r', function()
-  overseer.run_template({ name = 'run', params = { args = {} } }, open_float)
+  overseer.run_template({ name = 'run', params = { args = {} } }, open_run)
 end)
 
 -- Escape
