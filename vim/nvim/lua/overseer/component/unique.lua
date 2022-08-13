@@ -1,5 +1,5 @@
 return {
-  desc = 'Make a task unique by name',
+  desc = 'Make this task restart when tasks with the same name are run',
   editable = false,
   constructor = function()
     return {

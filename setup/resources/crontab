@@ -6,4 +6,4 @@ PATH="/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versio
 0 */12 * * * /bin/rm -rf ~/.temporary/*
 # Delete files in trash monthly
 @monthly /bin/rm -r ~/.Trash/*
-0 */24 * * * cd ~/.dotfiles/setup && brew bundle dump --force
+0 */24 * * * cd ~/.dotfiles/setup && brew bundle dump --force --describe --quiet
