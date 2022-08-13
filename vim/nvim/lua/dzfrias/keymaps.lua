@@ -99,6 +99,7 @@ nnoremap('<leader>p', function()
   for _, task in ipairs(require('overseer.task_list').list_tasks()) do
     table.insert(tasks, { task.name, task })
   end
+
   pickers
     .new({}, {
       prompt_title = 'Choose a task to re-run',

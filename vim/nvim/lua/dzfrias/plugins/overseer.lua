@@ -11,5 +11,15 @@ require('overseer').setup {
       ['r'] = '<Cmd>OverseerQuickAction restart<CR>',
     },
   },
+  task_editor = {
+    bindings = {
+      i = {
+        ['<Esc>'] = '<Cmd>quit<CR>',
+      },
+      n = {
+        ['q'] = '<Cmd>quit<CR>',
+      },
+    },
+  },
   templates = { 'builtin', 'run' },
 }
