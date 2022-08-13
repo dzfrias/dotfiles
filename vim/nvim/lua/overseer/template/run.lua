@@ -22,7 +22,6 @@ return {
   name = 'run',
   builder = function(task)
     local ft = vim.o.filetype
-    local main = util.get_main(ft)
     local parser = select_parser(ft)
     if parser then
       parser = wrap_parser(parser)
@@ -34,7 +33,7 @@ return {
     return {
       name = name,
       cmd = util.run_cmds[ft],
-      args = { main, unpack(task.args) },
+      args = { '${proj_main}', unpack(task.args) },
 
       components = {
         'default',
@@ -42,6 +41,7 @@ return {
         'open_float',
         'on_result_diagnostics_quickfix',
         'on_result_diagnostics',
+        'interpolate_args',
         parser,
       },
     }

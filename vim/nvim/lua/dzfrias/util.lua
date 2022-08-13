@@ -85,7 +85,8 @@ end
 
 M.run_cmds = {
   zsh = { 'zsh' },
-  markdown = { 'glow' },
+  markdown = { 'cat' },
+  text = { 'cat' },
   applescript = { 'osascript' },
   go = { 'go', 'run' },
   python = { 'python3' },
