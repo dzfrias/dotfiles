@@ -41,6 +41,7 @@ return {
         'unique',
         'open_float',
         'on_result_diagnostics_quickfix',
+        'on_result_diagnostics',
         parser,
       },
     }
