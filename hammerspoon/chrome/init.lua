@@ -119,9 +119,21 @@ github.stars = hs.hotkey.new({ 'ctrl' }, 'S', function()
   local url = 'https://github.com/dzfrias?tab=stars'
   hs.urlevent.openURL(url)
 end)
+github.profile = hs.hotkey.new({ 'ctrl' }, 'G', function()
+  local url = 'https://github.com/dzfrias'
+  hs.urlevent.openURL(url)
+end)
+github.profile_anon = hs.hotkey.new({ 'ctrl', 'shift' }, 'G', function()
+  local chrome = hs.application.get 'Google Chrome'
+  chrome:selectMenuItem 'New Incognito Window'
+  hs.eventtap.keyStrokes 'https://github.com/dzfrias'
+  hs.eventtap.keyStroke({}, 'Return')
+end)
 
 github.keybinds = {
   github.stars,
+  github.profile,
+  github.profile_anon,
 }
 
 cu.site_wf('github', github.keybinds)
