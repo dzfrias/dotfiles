@@ -1,5 +1,3 @@
-# set ft=ruby:
-
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -78,6 +76,10 @@ brew "oh-my-posh"
 brew "php"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Terminal multiplexer
+brew "tmux"
 # JavaScript package manager
 brew "yarn"
 # Shell extension to navigate your filesystem faster

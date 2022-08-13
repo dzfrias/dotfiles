@@ -62,3 +62,5 @@ set.pumheight = 5
 set.spell = true
 
 set.splitright = true
+
+vim.g.mapleader = ' '
