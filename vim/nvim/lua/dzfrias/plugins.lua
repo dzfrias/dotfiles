@@ -111,6 +111,8 @@ return require('packer').startup(function(use)
     config = function()
       require 'dzfrias/plugins/copilot'
     end,
+    commit = 'c2e75a3a7519c126c6fdb35984976df9ae13f564',
+    ft = { 'python' },
   }
   -- }}}
 

@@ -54,6 +54,8 @@ brew "git-filter-repo"
 brew "glow"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Terminal based graphical activity monitor inspired by gtop and vtop
+brew "gotop"
 # Platform built on V8 to build network applications
 brew "node", link: false
 # Swiss-army knife of markup format conversion
@@ -64,8 +66,6 @@ brew "jupyterlab"
 brew "languagetool"
 # Next-gen compiler infrastructure
 brew "llvm"
-# Rainbows and unicorns in your console!
-brew "lolcat"
 # Package manager for the Lua programming language
 brew "luarocks"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -76,8 +76,6 @@ brew "oh-my-posh"
 brew "php"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Send macOS User Notifications from the command-line
-brew "terminal-notifier"
 # Terminal multiplexer
 brew "tmux"
 # JavaScript package manager
