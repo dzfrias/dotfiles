@@ -68,10 +68,10 @@ xnoremap('gS', '<Plug>(leap-backward)')
 
 -- Neotest
 local neotest = require 'neotest'
-nnoremap('<leader>ur', function()
+nnoremap('<leader>uu', function()
   neotest.run.run(vim.fn.expand '%')
 end)
-nnoremap('<leader>uR', function()
+nnoremap('<leader>ua', function()
   neotest.run.run(util.get_project_root())
 end)
 nnoremap('<leader>uo', function()
