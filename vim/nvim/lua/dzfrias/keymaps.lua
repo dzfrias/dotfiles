@@ -10,6 +10,7 @@ noremap('gg', 'gg0')
 
 -- Fold movement down
 noremap('<s-j>', 'zj')
+noremap('<space><space>', 'za')
 
 -- Go to last place in insert mode
 noremap('gi', 'gi<Esc>')
