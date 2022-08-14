@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
-  use 'stevearc/dressing.nvim' -- Better UI defaults for vim
 
   -- Quick jumping across files
   use {
@@ -145,6 +144,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-scriptease' -- Easier vimscript editing
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
+  use 'stevearc/dressing.nvim' -- Better UI defaults for vim
 
   -- Surround text
   use {
