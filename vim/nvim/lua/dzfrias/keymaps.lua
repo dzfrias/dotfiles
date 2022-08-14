@@ -21,6 +21,7 @@ noremap('j', 'gj')
 
 -- Make a newline
 nnoremap('<CR>', 'o<Esc>')
+nnoremap('<s-CR>', 'O<Esc>')
 
 -- Basic command mappings
 nnoremap('<leader>w', '<Cmd>write<CR>')
@@ -80,6 +81,7 @@ nnoremap('<leader>uo', function()
 end)
 nnoremap('<leader>us', function()
   neotest.summary.toggle()
+  vim.cmd 'wincmd l'
 end)
 
 -- Overseer

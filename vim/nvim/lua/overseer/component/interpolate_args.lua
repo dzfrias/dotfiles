@@ -58,10 +58,7 @@ return {
       end,
 
       render = function(self, _, lines)
-        if not params.hide_interpolation then
-          return
-        end
-        if #self.interpolated_args == 0 then
+        if not params.hide_interpolation or #self.interpolated_args == 0 then
           return
         end
         table.insert(lines, 'Interpolated arguments:')
