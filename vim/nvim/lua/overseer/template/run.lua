@@ -5,6 +5,8 @@ local function select_parser(ft)
     return require 'overseer/template/parsers/go'
   elseif ft == 'python' then
     return require 'overseer/template/parsers/python'
+  elseif ft == 'zsh' then
+    return require 'overseer/template/parsers/zsh'
   end
   return nil
 end
@@ -40,7 +42,6 @@ return {
         'unique',
         'open_float',
         'on_result_diagnostics_quickfix',
-        'on_result_diagnostics',
         'interpolate_args',
         parser,
       },

@@ -23,10 +23,7 @@ return {
           ),
           callback = function()
             if #vim.fn.getqflist() > 0 then
-              vim.cmd [[
-              Trouble quickfix
-              normal! G
-              ]]
+              vim.cmd 'Trouble quickfix'
             end
           end,
           buffer = 0,
