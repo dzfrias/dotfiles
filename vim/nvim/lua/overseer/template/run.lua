@@ -1,6 +1,12 @@
 local util = require 'dzfrias/util'
 
 local function select_parser(ft)
+  -- TODO: Finish automatic parser require
+  local parsers =
+    vim.fn.split(vim.fn.globpath('overseer/template/parsers', '*'), '\n')
+  for _, parser in ipairs(parsers) do
+    print(parser)
+  end
   if ft == 'go' then
     return require 'overseer/template/parsers/go'
   elseif ft == 'python' then

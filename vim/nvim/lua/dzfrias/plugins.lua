@@ -109,10 +109,10 @@ return require('packer').startup(function(use)
   use {
     'github/copilot.vim',
     config = function()
-      require 'dzfrias/plugins/copilot'
+      require 'dzfrias/plugins/copilot/copilot'
     end,
     commit = 'c2e75a3a7519c126c6fdb35984976df9ae13f564',
-    ft = { 'python' },
+    ft = require 'dzfrias/plugins/copilot/filetypes',
   }
   -- }}}
 
@@ -147,6 +147,7 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
+  use 'mattn/webapi-vim' -- HTTP requests
 
   -- Surround text
   use {

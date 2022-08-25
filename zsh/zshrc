@@ -66,7 +66,6 @@ bindkey    '^[j'   down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu'    '^Uj ..^M'
 bindkey -s '^E'    '^Uj ~/.dotfiles^M'
-bindkey -s '^N'    '^Un^M'
 
 # Copies current prompt text to clipboard
 bindkey -M viins '^Y' copybuffer
