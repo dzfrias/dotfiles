@@ -7,5 +7,6 @@ null_ls.setup {
     null_ls.builtins.diagnostics.zsh,
     -- Lua autoformatting
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.diagnostics.shellcheck,
   },
 }
