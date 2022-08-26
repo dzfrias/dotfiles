@@ -149,6 +149,11 @@ return require('packer').startup(function(use)
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'mattn/webapi-vim' -- HTTP requests
 
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  }
+
   -- Surround text
   use {
     'tpope/vim-surround',
