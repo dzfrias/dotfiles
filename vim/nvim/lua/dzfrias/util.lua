@@ -90,6 +90,7 @@ M.run_cmds = {
   applescript = { 'osascript' },
   go = { 'go', 'run' },
   python = { 'python3' },
+  sh = { 'sh' },
 }
 
 M.run_cmds_no_main = {
