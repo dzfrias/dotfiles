@@ -115,8 +115,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Git-------------------------------------------------------------------
-  use 'dzfrias/vim-gitrebase' -- Git rebase mappings
-
   -- Git integration
   use {
     'tpope/vim-fugitive',
