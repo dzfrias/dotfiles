@@ -35,7 +35,6 @@ end
 ---@param opts? table
 function M.bufnoremap(mode, key, cmd, opts)
   opts = opts or {}
-  opts.noremap = true
   opts.buffer = true
   vim.keymap.set(mode, key, cmd, opts)
 end
