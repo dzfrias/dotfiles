@@ -8,8 +8,9 @@ local xnoremap = util.xnoremap
 -- Go to top of file and first character
 noremap('gg', 'gg0')
 
--- Fold movement down
-noremap('<s-j>', 'zj')
+-- Fold movement
+nnoremap('zk', '<Plug>FoldJumpUp')
+
 noremap('<space><space>', 'za')
 
 -- Go to last place in insert mode

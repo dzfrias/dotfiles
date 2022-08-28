@@ -4,7 +4,7 @@ local on_attach = function(_, bufnr)
 
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', '<C-p>', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<s-k>', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, bufopts)
 end
 
