@@ -16,18 +16,25 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'lua vim.lsp.buf.formatting()',
 })
 
+-- Setup lspconfig capabilities
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
+
 -- Setting up servers
 local lspconfig = require 'lspconfig'
 local servers = require('dzfrias/plugins/lsp/servers').default
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
   }
 end
 
 lspconfig.ltex.setup {
   on_attach = on_attach,
   filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex' },
+  capabilities = capabilities,
 }
 
 lspconfig.sumneko_lua.setup {
@@ -37,6 +44,7 @@ lspconfig.sumneko_lua.setup {
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
   end,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {

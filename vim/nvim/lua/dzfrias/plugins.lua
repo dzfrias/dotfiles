@@ -77,13 +77,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'ervandew/supertab',
-    config = function()
-      require 'dzfrias/plugins/supertab'
-    end,
-  }
-
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
@@ -276,6 +269,46 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/lsp/mason'
     end,
     requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' },
+  }
+  -- }}}
+
+  -- {{{ Autocomplete----------------------------------------------------------
+  use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require 'dzfrias/plugins/luasnip'
+    end,
+  }
+  use {
+    'rafamadriz/friendly-snippets',
+    requires = 'L3MON4D3/LuaSnip',
+  }
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = 'L3MON4D3/LuaSnip',
+    config = function()
+      require 'dzfrias/plugins/cmp'
+    end,
+  }
+  use {
+    'saadparwaiz1/cmp_luasnip',
+    requires = { 'L3MON4D3/LuaSnip', 'hrsh7th/nvim-cmp' },
+  }
+  use {
+    'hrsh7th/cmp-nvim-lsp',
+    requires = { 'neovim/nvim-lspconfig', 'hrsh7th/nvim-cmp' },
+  }
+  use {
+    'hrsh7th/cmp-buffer',
+    requires = 'hrsh7th/nvim-cmp',
+  }
+  use {
+    'hrsh7th/cmp-path',
+    requires = 'hrsh7th/nvim-cmp',
+  }
+  use {
+    'hrsh7th/cmp-cmdline',
+    requires = 'hrsh7th/nvim-cmp',
   }
   -- }}}
 end)

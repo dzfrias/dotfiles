@@ -143,3 +143,19 @@ end)
 
 -- Escape
 inoremap('jk', '<Esc>')
+
+-- luasnip
+local luasnip = require 'luasnip'
+vim.keymap.set('i', '<C-j>', function()
+  if luasnip.expand_or_jumpable() then
+    luasnip.expand_or_jump()
+  end
+end, { silent = true })
+
+vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+  luasnip.jump(-1)
+end, { silent = true })
+
+vim.keymap.set('s', '<C-j>', function()
+  luasnip.jump(1)
+end, { silent = true })
