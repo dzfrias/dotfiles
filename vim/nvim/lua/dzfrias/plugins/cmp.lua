@@ -25,6 +25,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
+    { name = 'git' },
   }, {
     { name = 'buffer' },
   }),
@@ -45,3 +46,5 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' },
   }),
 })
+
+require('cmp_git').setup()

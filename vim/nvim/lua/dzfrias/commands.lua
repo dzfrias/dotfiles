@@ -20,3 +20,10 @@ end, {})
 
 -- Reload config
 vim.api.nvim_create_user_command('Reload', u.reload_config, {})
+
+vim.g.loaded_netrwPlugin = 1
+vim.cmd [[
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+]]

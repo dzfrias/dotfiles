@@ -310,5 +310,9 @@ return require('packer').startup(function(use)
     'hrsh7th/cmp-cmdline',
     requires = 'hrsh7th/nvim-cmp',
   }
+  use {
+    'petertriho/cmp-git',
+    requires = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' },
+  }
   -- }}}
 end)
