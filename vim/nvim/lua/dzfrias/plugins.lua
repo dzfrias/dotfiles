@@ -34,6 +34,11 @@ return require('packer').startup(function(use)
     requires = 'tpope/vim-repeat',
   }
 
+  use {
+    'nvim-treesitter/playground',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  }
+
   -- Async task runner
   use {
     'stevearc/overseer.nvim',

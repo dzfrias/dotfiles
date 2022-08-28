@@ -1,7 +1,5 @@
 # vim:syntax=crontab
 
-PATH="/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin/python2.7:/Library/Frameworks/Python.framework/Versions/3.10/bin/python3:/Library/Apple/usr/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/diegofrias/.cargo/bin:/Users/diegofrias/go/bin:/Users/diegofrias/go/bin"
-
 # Delete all files and directories in the ~/.temporary dir
 0 */12 * * * /bin/rm -rf ~/.temporary/*
 

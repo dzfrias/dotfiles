@@ -1,9 +1,22 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'python', 'vim', 'go', 'lua', 'json', 'regex', 'rust' },
+  ensure_installed = {
+    'python',
+    'vim',
+    'go',
+    'lua',
+    'json',
+    'regex',
+    'rust',
+    'query',
+  },
 
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
+  },
+
+  playground = {
+    enable = true,
   },
 
   textobjects = {
@@ -14,6 +27,7 @@ require('nvim-treesitter.configs').setup {
         ['if'] = '@function.inner',
         ['ac'] = '@call.outer',
         ['ic'] = '@call.inner',
+        ['ia'] = '@argument',
       },
     },
 
@@ -22,9 +36,11 @@ require('nvim-treesitter.configs').setup {
       set_jumps = true,
       goto_next_start = {
         [']]'] = '@function.outer',
+        [')'] = '@argument',
       },
       goto_previous_start = {
         ['[['] = '@function.outer',
+        ['('] = '@argument',
       },
     },
   },

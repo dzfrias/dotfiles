@@ -92,8 +92,12 @@ M.run_cmds = {
   python = { 'python3' },
 }
 
+M.run_cmds_no_main = {
+  rust = { 'cargo', 'run' },
+}
+
 function M.main_supported(ft)
-  return M.run_cmds[ft] ~= nil
+  return M.run_cmds[ft] ~= nil or M.run_cmds_no_main[ft] ~= nil
 end
 
 function M.get_main(filetype)

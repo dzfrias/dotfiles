@@ -38,10 +38,16 @@ return {
     if #task.args > 0 then
       name = 'run (' .. table.concat(task.args, ' ') .. ')'
     end
+    local args
+    if util.run_cmds[ft] then
+      args = { '${proj_main}', unpack(task.args) }
+    else
+      args = task.args
+    end
     return {
       name = name,
-      cmd = util.run_cmds[ft],
-      args = { '${proj_main}', unpack(task.args) },
+      cmd = util.run_cmds[ft] or util.run_cmds_no_main[ft],
+      args = args,
 
       components = {
         'default',
