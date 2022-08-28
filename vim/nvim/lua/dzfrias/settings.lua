@@ -65,4 +65,6 @@ set.splitright = true
 
 set.completeopt = 'menu,menuone,noselect'
 
+set.smartcase = true
+
 vim.g.mapleader = ' '
