@@ -8,6 +8,7 @@ autopairs['['] = ']'
 autopairs['{'] = '}'
 autopairs['"'] = '"'
 autopairs['`'] = '`'
+autopairs['<'] = '>'
 vim.b.AutoPairs = autopairs
 
 local ts_utils = require 'nvim-treesitter.ts_utils'
