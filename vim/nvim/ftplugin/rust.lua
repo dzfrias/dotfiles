@@ -2,6 +2,14 @@ vim.opt_local.colorcolumn = '80'
 vim.opt_local.foldmethod = 'expr'
 vim.opt_local.foldexpr = 'nvim_treesitter#foldexpr()'
 
+local autopairs = {}
+autopairs['('] = ')'
+autopairs['['] = ']'
+autopairs['{'] = '}'
+autopairs['"'] = '"'
+autopairs['`'] = '`'
+vim.b.AutoPairs = autopairs
+
 local ts_utils = require 'nvim-treesitter.ts_utils'
 local ts_locals = require 'nvim-treesitter.locals'
 
