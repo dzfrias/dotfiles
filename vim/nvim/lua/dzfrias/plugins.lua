@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
+  use 'AndrewRadev/splitjoin.vim'
 
   -- Quick jumping across files
   use {
@@ -146,6 +147,11 @@ return require('packer').startup(function(use)
   use 'mattn/webapi-vim' -- HTTP requests
 
   use {
+    'nvim-treesitter/nvim-treesitter-context',
+    requires = 'nvim-treesitter/nvim-treesitter',
+  }
+
+  use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     requires = 'nvim-treesitter/nvim-treesitter',
   }
@@ -169,14 +175,6 @@ return require('packer').startup(function(use)
     'rhysd/clever-f.vim',
     config = function()
       require 'dzfrias/plugins/clever-f'
-    end,
-  }
-
-  -- Scrolling
-  use {
-    'karb94/neoscroll.nvim',
-    config = function()
-      require 'dzfrias/plugins/neoscroll'
     end,
   }
 
