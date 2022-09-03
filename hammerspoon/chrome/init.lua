@@ -18,7 +18,7 @@ local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
 end)
 
 -- Switches to next chrome profile, wraps if at end
-local switch_profile = hs.hotkey.new({ 'ctrl' }, 'P', function()
+local switch_profile = hs.hotkey.new({ 'ctrl', 'shift' }, 'P', function()
   local chrome = hs.application.get 'Google Chrome'
   local profile_menu = chrome:getMenuItems()[7].AXChildren[1]
   for i, profile in ipairs(profile_menu) do
