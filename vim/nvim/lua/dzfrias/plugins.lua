@@ -232,7 +232,7 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- {{{ Go--------------------------------------------------------------------
+  -- {{{ Filetypes-------------------------------------------------------------
   -- Go language support
   use {
     'fatih/vim-go',
@@ -245,6 +245,12 @@ return require('packer').startup(function(use)
     'buoto/gotests-vim',
     config = function()
       require 'dzfrias/plugins/gotests'
+    end,
+  }
+  use {
+    'simrat39/rust-tools.nvim',
+    config = function()
+      require 'dzfrias/plugins/rust-tools'
     end,
   }
   -- }}}
