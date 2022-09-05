@@ -21,4 +21,3 @@ telescope.setup {
 
 -- Load fuzzy finder
 telescope.load_extension 'fzf'
-telescope.load_extension 'project'

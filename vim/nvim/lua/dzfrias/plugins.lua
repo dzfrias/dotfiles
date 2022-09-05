@@ -104,11 +104,6 @@ return require('packer').startup(function(use)
     requires = 'nvim-telescope/telescope.nvim',
   }
 
-  use {
-    'nvim-telescope/telescope-project.nvim',
-    requires = 'nvim-telescope/telescope.nvim',
-  }
-
   -- AI suggestions
   use {
     'github/copilot.vim',
