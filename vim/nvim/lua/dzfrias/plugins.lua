@@ -272,12 +272,14 @@ return require('packer').startup(function(use)
   }
 
   -- LSP installer
-  use 'williamboman/mason.nvim'
   use {
-    'williamboman/mason-lspconfig.nvim',
+    'williamboman/mason.nvim',
     config = function()
       require 'dzfrias/plugins/lsp/mason'
     end,
+  }
+  use {
+    'williamboman/mason-lspconfig.nvim',
     requires = { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' },
   }
   -- }}}

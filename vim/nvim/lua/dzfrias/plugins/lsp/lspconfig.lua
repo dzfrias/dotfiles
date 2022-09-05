@@ -27,8 +27,8 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 
 -- Setting up servers
 local lspconfig = require 'lspconfig'
-local servers = require('dzfrias/plugins/lsp/servers').default
-for _, lsp in ipairs(servers) do
+local default_install = { 'pyright', 'gopls', 'vimls', 'jsonls' }
+for _, lsp in ipairs(default_install) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
