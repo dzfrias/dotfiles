@@ -29,7 +29,6 @@ nnoremap('✠', 'O<Esc>')
 nnoremap('<leader>w', '<Cmd>write<CR>')
 nnoremap('<leader>s', '<Cmd>source %<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
-nnoremap('<leader>e', '<Cmd>edit<CR>')
 
 -- Telescope
 local tel = require 'telescope.builtin'

@@ -1,3 +1,6 @@
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+
 -- Key bindings
 local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -6,6 +9,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<s-k>', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
 end
 
 -- Format on save
