@@ -27,7 +27,13 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
-  use 'AndrewRadev/splitjoin.vim'
+
+  use {
+    'vimwiki/vimwiki',
+    config = function()
+      require 'dzfrias/plugins/vimwiki'
+    end,
+  }
 
   -- Quick jumping across files
   use {
