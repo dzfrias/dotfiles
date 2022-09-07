@@ -28,10 +28,7 @@ require('overseer').setup {
       'on_exit_set_status',
       'on_complete_notify',
       'on_complete_dispose',
-      {
-        'unique',
-        by = 'cmd',
-      },
+      'unique',
     },
   },
 }
