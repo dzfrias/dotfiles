@@ -27,13 +27,7 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
-
-  use {
-    'vimwiki/vimwiki',
-    config = function()
-      require 'dzfrias/plugins/vimwiki'
-    end,
-  }
+  use 'vimwiki/vimwiki'
 
   -- Quick jumping across files
   use {
@@ -151,6 +145,7 @@ return require('packer').startup(function(use)
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'mattn/webapi-vim' -- HTTP requests
+  use 'haya14busa/is.vim' -- Better searching
 
   use {
     'nvim-treesitter/nvim-treesitter-context',
