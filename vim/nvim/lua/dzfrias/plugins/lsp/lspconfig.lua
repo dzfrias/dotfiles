@@ -35,12 +35,6 @@ for _, lsp in ipairs(default_install) do
   }
 end
 
-lspconfig.ltex.setup {
-  on_attach = on_attach,
-  filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex' },
-  capabilities = capabilities,
-}
-
 lspconfig.sumneko_lua.setup {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)

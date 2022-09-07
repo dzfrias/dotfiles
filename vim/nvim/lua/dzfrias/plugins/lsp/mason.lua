@@ -4,7 +4,6 @@ require('mason-lspconfig').setup {
     'codelldb',
     'gopls',
     'json-lsp',
-    'ltex-ls',
     'lua-language-server',
     'pyright',
     'rust-analyzer',
