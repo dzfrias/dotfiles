@@ -29,6 +29,13 @@ return require('packer').startup(function(use)
   use 'justinmk/vim-dirvish' -- Directory viewer
   use 'vimwiki/vimwiki'
 
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  }
+
   -- Quick jumping across files
   use {
     'ggandor/leap.nvim',

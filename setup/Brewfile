@@ -6,6 +6,8 @@ tap "homebrew/core"
 tap "jandedobbeleer/oh-my-posh"
 # Companion library to apr, the Apache Portable Runtime library
 brew "apr-util"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Development kit for the Java programming language
@@ -88,6 +90,8 @@ brew "zsh"
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# Automatic tiling window manager similar to xmonad
+cask "amethyst"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
