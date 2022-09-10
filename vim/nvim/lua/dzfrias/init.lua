@@ -5,7 +5,7 @@ require 'dzfrias/plugins'
 
 vim.g.vimwiki_list = {
   {
-    path = '~/vimwiki/school/classes/notes/math/',
+    path = '~/vimwiki/school/classes/notes/',
     syntax = 'markdown',
     ext = '.md',
   },
