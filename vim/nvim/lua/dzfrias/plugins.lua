@@ -91,7 +91,7 @@ return require('packer').startup(function(use)
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
-    ft = { 'html', 'css' },
+    ft = { 'html', 'css', 'markdown', 'vimwiki' },
   }
 
   -- Fzf-like filter
@@ -206,6 +206,13 @@ return require('packer').startup(function(use)
     'jiangmiao/auto-pairs',
     config = function()
       require 'dzfrias/plugins/autopairs'
+    end,
+  }
+
+  use {
+    'alvan/vim-closetag',
+    config = function()
+      require 'dzfrias/plugins/closetag'
     end,
   }
   -- }}}
