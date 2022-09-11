@@ -12,6 +12,7 @@ alias nvdir='j ~/.local/share/nvim'
 alias hs='j ~/.dotfiles/hammerspoon'
 alias vw='nvim ~/vimwiki/index.wiki'
 alias sc='nvim ~/vimwiki/school/index.wiki'
+alias cde='nvim ~/vimwiki/coding/index.wiki'
 
 # packer.nvim
 alias pack='cd ~/.local/share/nvim/site/pack/packer/start'

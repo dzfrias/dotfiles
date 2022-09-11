@@ -153,7 +153,6 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
-  use 'mattn/webapi-vim' -- HTTP requests
   use 'haya14busa/is.vim' -- Better searching
 
   use {
