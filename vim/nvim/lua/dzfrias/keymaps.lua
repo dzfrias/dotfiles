@@ -40,6 +40,8 @@ nnoremap('<leader>tt', tel.lsp_document_symbols)
 nnoremap('<leader>tr', tel.lsp_references)
 nnoremap('<leader>tk', tel.keymaps)
 nnoremap('<leader>th', tel.help_tags)
+nnoremap('<leader>tb', tel.buffers)
+nnoremap('<leader>tg', require('gsearch').search)
 
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)

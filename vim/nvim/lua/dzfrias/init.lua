@@ -3,6 +3,7 @@ require 'dzfrias/keymaps'
 require 'dzfrias/commands'
 require 'dzfrias/plugins'
 
+-- These need to be set before plugins are loaded
 vim.g.vimwiki_list = {
   {
     path = '~/vimwiki/school/classes/notes/',
@@ -13,6 +14,7 @@ vim.g.vimwiki_list = {
     path = '~/vimwiki/',
   },
 }
--- These need to be set before plugins are loaded
+vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_map_prefix = '<leader>v'
+
 vim.cmd 'colorscheme tokyonight-night'

@@ -114,6 +114,12 @@ return require('packer').startup(function(use)
     requires = 'nvim-telescope/telescope.nvim',
   }
 
+  -- Google from neovim
+  use {
+    'dzfrias/gsearch.nvim',
+    requires = { { 'nvim-telescope/telescope.nvim', tag = '0.1.0' } },
+  }
+
   -- AI suggestions
   use {
     'github/copilot.vim',
@@ -262,6 +268,13 @@ return require('packer').startup(function(use)
     'simrat39/rust-tools.nvim',
     config = function()
       require 'dzfrias/plugins/rust-tools'
+    end,
+  }
+  use {
+    'preservim/vim-markdown',
+    requires = 'godlygeek/tabular',
+    config = function()
+      require 'dzfrias/plugins/vim-markdown'
     end,
   }
   -- }}}
