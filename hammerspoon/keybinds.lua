@@ -29,7 +29,7 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
   local iterm = hs.application.get 'iTerm2'
   if chrome:isFrontmost() then
     iterm:activate()
-  elseif iterm:isFrontmost() then
+  else
     chrome:activate()
   end
 end)
