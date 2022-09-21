@@ -142,6 +142,7 @@ return require('packer').startup(function(use)
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'haya14busa/is.vim' -- Better searching
+  use 'windwp/nvim-ts-autotag'
 
   use {
     'nvim-treesitter/nvim-treesitter-context',
@@ -192,13 +193,6 @@ return require('packer').startup(function(use)
     'jiangmiao/auto-pairs',
     config = function()
       require 'dzfrias/plugins/autopairs'
-    end,
-  }
-
-  use {
-    'alvan/vim-closetag',
-    config = function()
-      require 'dzfrias/plugins/closetag'
     end,
   }
   -- }}}
