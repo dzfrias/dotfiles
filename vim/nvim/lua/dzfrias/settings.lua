@@ -9,7 +9,7 @@ set.relativenumber = true
 set.number = true
 
 -- Merge signcolumn with the number column
-set.signcolumn = 'number'
+set.signcolumn = 'yes'
 
 -- Highlight search matches
 set.hlsearch = true

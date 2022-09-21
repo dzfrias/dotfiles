@@ -55,10 +55,10 @@ nnoremap('gcm', function()
   Git commit --verbose
   ]]
 end)
-nnoremap('gp', '<Cmd>Git push<CR>')
+nnoremap('gP', '<Cmd>Git push<CR>')
 -- Hunk mappings
 local gs = require 'gitsigns'
-nnoremap('gh', gs.preview_hunk)
+nnoremap('gp', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
 nnoremap('gD', function()
   gs.setqflist 'all'

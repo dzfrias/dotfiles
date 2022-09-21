@@ -11,9 +11,9 @@ end)
 
 -- Open Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
-  hs.application.launchOrFocus 'Google Chrome'
-  local chrome = hs.application.get 'Google Chrome'
-  chrome:activate()
+  hs.application.launchOrFocus 'Arc'
+  local arc = hs.application.get 'Arc'
+  arc:activate()
 end)
 
 -- Open iTerm
@@ -25,12 +25,12 @@ end)
 
 -- Toggle iTerm and Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
-  local chrome = hs.application.get 'Google Chrome'
+  local arc = hs.application.get 'Arc'
   local iterm = hs.application.get 'iTerm2'
-  if chrome:isFrontmost() then
+  if arc:isFrontmost() then
     iterm:activate()
   else
-    chrome:activate()
+    arc:activate()
   end
 end)
 
