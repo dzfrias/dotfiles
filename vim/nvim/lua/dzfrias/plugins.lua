@@ -131,24 +131,6 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- {{{ Git-------------------------------------------------------------------
-  -- Git integration
-  use {
-    'tpope/vim-fugitive',
-    config = function()
-      require 'dzfrias/plugins/fugitive'
-    end,
-  }
-
-  -- Git diffs in sign column and hunk interactions
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require 'dzfrias/plugins/gitsigns'
-    end,
-  }
-  -- }}}
-
   -- {{{ General tools---------------------------------------------------------
   use 'tpope/vim-commentary' -- Commenting
   use 'tpope/vim-sleuth' -- Setting tabs
@@ -217,6 +199,24 @@ return require('packer').startup(function(use)
     'alvan/vim-closetag',
     config = function()
       require 'dzfrias/plugins/closetag'
+    end,
+  }
+  -- }}}
+
+  -- {{{ Git-------------------------------------------------------------------
+  -- Git integration
+  use {
+    'tpope/vim-fugitive',
+    config = function()
+      require 'dzfrias/plugins/fugitive'
+    end,
+  }
+
+  -- Git diffs in sign column and hunk interactions
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require 'dzfrias/plugins/gitsigns'
     end,
   }
   -- }}}
