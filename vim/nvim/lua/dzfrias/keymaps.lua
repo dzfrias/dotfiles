@@ -46,10 +46,14 @@ nnoremap('<leader>tg', require('gsearch').search)
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)
 
+-- Todo comments
 nnoremap(
   '<leader>f',
   '<Cmd>TodoTrouble cwd=' .. util.get_project_root() .. '<CR>'
 )
+
+-- Scriptease
+nnoremap('<leader>m', '<Cmd>Messages<CR>')
 
 -- Git mappings
 nnoremap('gq', '<Cmd>Git<CR>')
