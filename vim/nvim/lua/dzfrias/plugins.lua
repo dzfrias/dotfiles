@@ -36,15 +36,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- Quick jumping across files
-  use {
-    'ggandor/leap.nvim',
-    requires = 'tpope/vim-repeat',
-    config = function()
-      require 'dzfrias/plugins/leap'
-    end,
-  }
-
   use {
     'nvim-treesitter/playground',
     requires = 'nvim-treesitter/nvim-treesitter',

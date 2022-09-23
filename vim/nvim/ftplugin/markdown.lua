@@ -6,12 +6,6 @@ vim.opt_local.wrapmargin = 0
 vim.opt_local.wrap = true
 vim.opt_local.linebreak = true
 
-vim.opt_local.spell = true
-
--- Horizontal traversal
-bufnoremap('', '+', '30l')
-bufnoremap('', '-', '30h')
-
 bufnoremap('n', '<leader>t', '<Cmd>setlocal filetype=help<CR>')
 
 -- Emmet
