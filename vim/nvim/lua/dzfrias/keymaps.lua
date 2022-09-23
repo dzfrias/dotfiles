@@ -46,6 +46,11 @@ nnoremap('<leader>tg', require('gsearch').search)
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)
 
+nnoremap(
+  '<leader>f',
+  '<Cmd>TodoTrouble cwd=' .. util.get_project_root() .. '<CR>'
+)
+
 -- Git mappings
 nnoremap('gq', '<Cmd>Git<CR>')
 nnoremap('gcm', function()

@@ -30,6 +30,14 @@ return require('packer').startup(function(use)
   use 'vimwiki/vimwiki'
 
   use {
+    'folke/todo-comments.nvim',
+    requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' },
+    config = function()
+      require 'dzfrias/plugins/todo-comments'
+    end,
+  }
+
+  use {
     'iamcco/markdown-preview.nvim',
     run = function()
       vim.fn['mkdp#util#install']()
