@@ -130,7 +130,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sleuth' -- Setting tabs
   use 'tpope/vim-projectionist' -- Easy project management/movement
   use 'matze/vim-move' -- Moving lines/characters
-  use 'dzfrias/vim-foldjump' -- Easy fold movement
   use 'tpope/vim-scriptease' -- Easier vimscript editing
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
