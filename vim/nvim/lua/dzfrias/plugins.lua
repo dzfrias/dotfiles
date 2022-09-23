@@ -117,6 +117,9 @@ return require('packer').startup(function(use)
   -- Google from neovim
   use {
     'dzfrias/gsearch.nvim',
+    config = function()
+      require 'dzfrias/plugins/gsearch'
+    end,
     requires = { { 'nvim-telescope/telescope.nvim', tag = '0.1.0' } },
   }
 
