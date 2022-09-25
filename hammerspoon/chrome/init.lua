@@ -1,6 +1,22 @@
 local u = require 'util'
 local cu = require 'chrome/util'
 
+-- Previous tab
+local tabp = hs.hotkey.new({ 'ctrl' }, 'J', function()
+  u.key_stroke({ 'cmd', 'alt' }, 'Left')
+end)
+
+-- Next tab
+local tabn = hs.hotkey.new({ 'ctrl' }, 'K', function()
+  u.key_stroke({ 'cmd', 'alt' }, 'Right')
+end)
+
+-- Copy current tab's url to clipboard
+local copy_url = hs.hotkey.new({ 'ctrl' }, 'Y', function()
+  local url = cu.current_url()
+  hs.pasteboard.setContents(url)
+end)
+
 -- Switches to next chrome profile, wraps if at end
 local switch_profile = hs.hotkey.new({ 'ctrl', 'shift' }, 'P', function()
   local chrome = hs.application.get 'Google Chrome'
@@ -79,10 +95,13 @@ local down = hs.hotkey.new({ 'ctrl', 'shift' }, 'J', function()
 end)
 
 local keybinds = {
+  tabp,
+  tabn,
   bookmarks,
   up,
   down,
   tabs,
+  copy_url,
   switch_profile,
   deselect,
 }
@@ -96,7 +115,7 @@ local sites = {
 
 -- Github
 local github = sites.github
-github.stars = hs.hotkey.new({ 'ctrl' }, 'T', function()
+github.stars = hs.hotkey.new({ 'ctrl' }, 'S', function()
   local url = 'https://github.com/dzfrias?tab=stars'
   hs.urlevent.openURL(url)
 end)
