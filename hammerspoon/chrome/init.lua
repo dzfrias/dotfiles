@@ -63,7 +63,6 @@ local bookmarks = hs.hotkey.new({ 'ctrl' }, 'B', function()
       return
     end
     chrome:activate()
-    chrome:selectMenuItem 'New Tab'
     chrome:selectMenuItem(choice.text)
   end)
   chooser:choices(bookmarks)
