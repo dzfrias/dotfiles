@@ -23,11 +23,20 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
   iterm:activate()
 end)
 
+-- Open Things
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
+  hs.application.launchOrFocus 'Things'
+  local iterm = hs.application.get 'Things'
+  iterm:activate()
+end)
+
 -- Toggle iTerm and Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
   local chrome = hs.application.get 'Google Chrome'
   local iterm = hs.application.get 'iTerm2'
   if chrome:isFrontmost() then
+    iterm:activate()
+  elseif hs.application.get('Things'):isFrontmost() then
     iterm:activate()
   else
     chrome:activate()
