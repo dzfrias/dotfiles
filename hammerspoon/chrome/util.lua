@@ -19,7 +19,7 @@ end
 function M.site_wf(site_domain, keybinds)
   local wf = hs.window.filter
     .new(false)
-    :setAppFilter('Google Chrome')
+    :allowApp('Google Chrome')
     :subscribe(
       { hs.window.filter.windowTitleChanged, hs.window.filter.windowFocused },
       function()

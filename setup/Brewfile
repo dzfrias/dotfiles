@@ -14,10 +14,12 @@ brew "bat"
 brew "openjdk"
 # Remove large files or passwords from Git history like git-filter-branch
 brew "bfg"
-# Perl compatible regular expressions library
-brew "pcre"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Core application library for C
 brew "glib"
+# Perl compatible regular expressions library
+brew "pcre"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -42,12 +44,14 @@ brew "harfbuzz"
 brew "gobject-introspection"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Platform built on V8 to build network applications
+brew "node"
+# Firebase command-line tools
+brew "firebase-cli"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # Distributed revision control system
 brew "git"
 # Quickly rewrite git repository history
@@ -58,8 +62,6 @@ brew "glow"
 brew "go"
 # Terminal based graphical activity monitor inspired by gtop and vtop
 brew "gotop"
-# Platform built on V8 to build network applications
-brew "node", link: false
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Interactive environments for writing and running code
