@@ -37,7 +37,7 @@ if [[ $code == 128 ]]; then
 
   # Add to the new repo
   git add --all
-  git commit --message='Initial commit'
+  git commit --message='feat: initial commit'
 else
   git commit
 fi
