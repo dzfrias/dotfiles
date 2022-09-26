@@ -200,12 +200,7 @@ return require('packer').startup(function(use)
 
   -- {{{ Git-------------------------------------------------------------------
   -- Git integration
-  use {
-    'tpope/vim-fugitive',
-    config = function()
-      require 'dzfrias/plugins/fugitive'
-    end,
-  }
+  use 'tpope/vim-fugitive'
 
   -- Git diffs in sign column and hunk interactions
   use {
