@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
     'nvim-neotest/neotest',
     requires = {
       'nvim-neotest/neotest-go',
+      'rouge8/neotest-rust',
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'antoinemadec/FixCursorHold.nvim',

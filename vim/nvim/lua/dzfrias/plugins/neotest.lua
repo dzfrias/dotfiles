@@ -1,8 +1,10 @@
 require('neotest').setup {
   adapters = {
     require 'neotest-go',
+    require 'neotest-rust',
   },
-  consumers = {
-    overseer = require 'neotest.consumers.overseer',
+  icons = {
+    failed = '✗',
+    passed = '✓',
   },
 }
