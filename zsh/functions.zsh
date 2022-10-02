@@ -30,7 +30,7 @@ function ea() {
 }
 
 function tea() {
-  if [[ $PWD =~ 'Rust' ]]; then
+  if [[ -f 'Cargo.toml' ]]; then
     # Only ignores the target directory if in a rust project
     ea -T --ignore-glob="$TEA_IGNORE|target" $@
   else
