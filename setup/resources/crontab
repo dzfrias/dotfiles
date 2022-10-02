@@ -7,5 +7,3 @@
 @monthly /bin/rm -rf ~/.Trash/*
 
 0 */24 * * * cd ~/.dotfiles/setup && /usr/local/bin/brew bundle dump --force --describe --quiet
-
-0 0 * * MON /bin/sh ~/.dotfiles/misc/things_homework.sh
