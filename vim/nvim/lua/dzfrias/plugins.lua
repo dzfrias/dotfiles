@@ -209,6 +209,7 @@ return require('packer').startup(function(use)
   -- {{{ Git-------------------------------------------------------------------
   -- Git integration
   use 'tpope/vim-fugitive'
+  use 'kdheepak/lazygit.nvim'
 
   -- Git diffs in sign column and hunk interactions
   use {
