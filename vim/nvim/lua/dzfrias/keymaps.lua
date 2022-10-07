@@ -56,16 +56,7 @@ nnoremap(
 nnoremap('<leader>m', '<Cmd>Messages<CR>')
 
 -- Git mappings
-nnoremap('gq', '<Cmd>Git<CR>')
-nnoremap('gcm', function()
-  vim.cmd [[
-  write
-  Git add --all
-  Git commit --verbose
-  ]]
-end)
-nnoremap('gP', '<Cmd>Git push<CR>')
--- Hunk mappings
+nnoremap('<leader>g', '<Cmd>LazyGit<CR>')
 local gs = require 'gitsigns'
 nnoremap('gp', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
