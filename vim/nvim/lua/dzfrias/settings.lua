@@ -8,7 +8,7 @@ set.backup = false
 set.relativenumber = true
 set.number = true
 
--- Merge signcolumn with the number column
+-- Permanently show sign column
 set.signcolumn = 'yes'
 
 -- Highlight search matches

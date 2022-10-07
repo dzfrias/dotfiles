@@ -44,11 +44,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'nvim-treesitter/playground',
-    requires = 'nvim-treesitter/nvim-treesitter',
-  }
-
   -- Async task runner
   use {
     'stevearc/overseer.nvim',
@@ -137,7 +132,6 @@ return require('packer').startup(function(use)
   -- {{{ General tools---------------------------------------------------------
   use 'tpope/vim-commentary' -- Commenting
   use 'tpope/vim-sleuth' -- Setting tabs
-  use 'tpope/vim-projectionist' -- Easy project management/movement
   use 'matze/vim-move' -- Moving lines/characters
   use 'tpope/vim-scriptease' -- Easier vimscript editing
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
@@ -170,14 +164,6 @@ return require('packer').startup(function(use)
   use {
     'tpope/vim-surround',
     requires = 'tpope/vim-repeat',
-  }
-
-  use {
-    'lewis6991/spellsitter.nvim',
-    requires = 'nvim-treesitter/nvim-treesitter',
-    config = function()
-      require 'dzfrias/plugins/spellsitter'
-    end,
   }
 
   -- Better movement with f and t
@@ -254,12 +240,6 @@ return require('packer').startup(function(use)
     run = ':GoUpdateBinaries',
     config = function()
       require 'dzfrias/plugins/vim-go'
-    end,
-  }
-  use {
-    'buoto/gotests-vim',
-    config = function()
-      require 'dzfrias/plugins/gotests'
     end,
   }
   use {
