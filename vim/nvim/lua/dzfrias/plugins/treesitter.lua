@@ -15,10 +15,6 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = { 'markdown' },
   },
 
-  playground = {
-    enable = true,
-  },
-
   autotag = {
     enable = true,
   },

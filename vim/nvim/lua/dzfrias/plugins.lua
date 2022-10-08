@@ -149,13 +149,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'LhKipp/nvim-nu',
-    config = function()
-      require 'dzfrias/plugins/nu'
-    end,
-  }
-
-  use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     requires = 'nvim-treesitter/nvim-treesitter',
   }
