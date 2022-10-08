@@ -71,15 +71,6 @@
           "template": "\uE7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "trailing_diamond": "\ue0b4",
           "type": "rust"
-        },
-        {
-          "background": "p:background",
-          "foreground": "#42E66C",
-          "leading_diamond": " \ue0b6",
-          "style": "diamond",
-          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
-          "trailing_diamond": "\ue0b4",
-          "type": "node"
         }
       ],
       "type": "prompt"
