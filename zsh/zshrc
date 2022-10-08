@@ -21,6 +21,7 @@ export FZF_DEFAULT_OPTS="\
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
 export _ZO_OMZ_CMD=j
+export TERM='screen-256color'
 # }}}
 
 
