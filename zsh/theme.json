@@ -76,11 +76,8 @@
           "background": "p:background",
           "foreground": "#42E66C",
           "leading_diamond": " \ue0b6",
-          "properties": {
-            "fetch_version": false
-          },
           "style": "diamond",
-          "template": "\ue718{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
           "trailing_diamond": "\ue0b4",
           "type": "node"
         }
