@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-local move_path="$HOME/vimwiki/school/classes/notes/math/resources/$1"
-mv "$HOME/Desktop/$(cd ~/Desktop && ls -Art | tail -n 1)" "$move_path"

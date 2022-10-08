@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-# big changes the iTerm window size to a larger size
-
-
-osascript ~/.dotfiles/zsh/autoload/resources/big.scpt

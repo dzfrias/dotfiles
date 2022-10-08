@@ -11,6 +11,7 @@ alias gc='git add --all && git commit --verbose'
 alias glg="nvim +'Git log --oneline --decorate | wincmd o'"
 alias gcomms='git rev-list --all --count'
 alias gcom='git checkout main'
+alias lg='lazygit'
 
 # -GITHUB-
 alias ghp='gh per'
