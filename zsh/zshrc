@@ -45,7 +45,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-# Not oh-my-zsh, but sets up theme;
+# Not oh-my-zsh, but sets up theme
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/zsh/theme.json)"
 # }}}
 
@@ -61,9 +61,6 @@ setopt NOTIFY
 bindkey    jk      vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
 bindkey    '^[[Z'  autosuggest-accept
-# Binds history keys to alt-k and alt-j
-bindkey    '^[k'   up-line-or-search
-bindkey    '^[j'   down-line-or-search
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu'    '^Uj ..^M'
 bindkey -s '^E'    '^Uj ~/.dotfiles^M'
