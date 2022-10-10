@@ -1,6 +1,0 @@
-{
-    "*.go":      {"type": "go", "alternate": "{}_test.go"},
-    "*_test.go": {"type": "go", "alternate": "{}.go"},
-    "README.md": {"type": "doc"},
-    "cmd/PROJNAME/main.go": {"type": "main"}
-}
