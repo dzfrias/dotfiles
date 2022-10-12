@@ -4,6 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "jandedobbeleer/oh-my-posh"
+tap "jesseduffield/lazygit"
 # Companion library to apr, the Apache Portable Runtime library
 brew "apr-util"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -20,6 +21,8 @@ brew "pcre2"
 brew "glib"
 # Perl compatible regular expressions library
 brew "pcre"
+# Next-generation test runner for Rust
+brew "cargo-nextest"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -54,6 +57,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
 # Render markdown on the CLI
@@ -80,20 +85,28 @@ brew "oh-my-posh"
 brew "php"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Intuitive find & replace CLI
+brew "sd"
 # Terminal multiplexer
 brew "tmux"
+# Program that allows you to count code, quickly
+brew "tokei"
 # JavaScript package manager
 brew "yarn"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# A simple terminal UI for git commands, written in Go
+brew "jesseduffield/lazygit/lazygit"
 # Application launcher and productivity software
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Automatic tiling window manager similar to xmonad
 cask "amethyst"
+# Developer platform
+cask "dotnet-sdk"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser

@@ -37,6 +37,19 @@
           "type": "git"
         },
         {
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "leading_diamond": " \ue0b6",
+          "foreground": "green",
+          "background": "p:background",
+          "properties": {
+            "shell": "zsh",
+            "command": "pgrep -P $(ps -fp $PPID | awk \"/$PPID/\"' { print $3 } ') | wc -l | awk '{print $1-1}'"
+          },
+          "template": "{{ if ne .Output \"-1\" }}\uf827 {{ .Output }}{{ end }}",
+          "type": "command"
+        },
+        {
           "background": "p:background",
           "foreground": "#E4F34A",
           "leading_diamond": " \ue0b6",
