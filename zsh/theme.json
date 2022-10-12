@@ -40,7 +40,7 @@
           "style": "diamond",
           "trailing_diamond": "\ue0b4",
           "leading_diamond": " \ue0b6",
-          "foreground": "green",
+          "foreground": "#86DC3D",
           "background": "p:background",
           "properties": {
             "shell": "zsh",
