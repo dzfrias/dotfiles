@@ -78,12 +78,27 @@
         },
         {
           "background": "p:background",
-          "foreground": "#e64d43",
+          "foreground": "#F77921",
           "leading_diamond": " \ue0b6",
           "style": "diamond",
           "template": "\uE7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "trailing_diamond": "\ue0b4",
           "type": "rust"
+        },
+        {
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "leading_diamond": " \ue0b6",
+          "foreground": "#e64d43",
+          "background": "p:background",
+          "template": " {{ if le .Percentage 10 }}{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}%{{ end }} ",
+          "properties": {
+            "discharging_icon": "\uf579 ",
+            "not_charging_icon": "\uf579 ",
+            "charging_icon": "\uf585 ",
+            "charged_icon": "\uf585 "
+          },
+          "type": "battery"
         }
       ],
       "type": "prompt"
