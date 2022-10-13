@@ -78,7 +78,7 @@
         },
         {
           "background": "p:background",
-          "foreground": "#F77921",
+          "foreground": "#ff9e64",
           "leading_diamond": " \ue0b6",
           "style": "diamond",
           "template": "\uE7a8 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
