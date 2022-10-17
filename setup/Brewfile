@@ -117,5 +117,7 @@ cask "hammerspoon"
 cask "iterm2"
 # Automation software
 cask "keyboard-maestro"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
 # Team communication and collaboration software
 cask "slack"

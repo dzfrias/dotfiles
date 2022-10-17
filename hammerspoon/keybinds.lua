@@ -30,6 +30,12 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
   iterm:activate()
 end)
 
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', function()
+  hs.application.launchOrFocus 'Obsidian'
+  local obsidian = hs.application.get 'Obsidian'
+  obsidian:activate()
+end)
+
 -- Toggle iTerm and Chrome
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
   local chrome = hs.application.get 'Google Chrome'
