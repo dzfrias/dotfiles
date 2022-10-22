@@ -5,22 +5,22 @@ function ea() {
     # Icons, directories first, and every file gets its own line
     command exa \
       --icons \
-      --ignore-glob $EXA_IGNORE \
+      --ignore-glob \
       --group-directories-first \
       --oneline \
       $@
   else
     # Icons and directories come first
-    command exa --icons --ignore-glob $EXA_IGNORE --group-directories-first $@
+    command exa --icons --ignore-glob --group-directories-first $@
   fi
 }
 
 function tea() {
   if [[ -f 'Cargo.toml' ]]; then
     # Only ignores the target directory if in a rust project
-    ea -T --ignore-glob="$TEA_IGNORE|target" $@
+    ea -T --ignore-glob "venv|__pycache__|.git|target" $@
   else
-    ea -T --ignore-glob=$TEA_IGNORE $@
+    ea -T --ignore-glob "venv|__pycache__|.git" $@
   fi
 }
 

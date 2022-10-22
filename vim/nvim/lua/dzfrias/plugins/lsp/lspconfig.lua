@@ -21,13 +21,11 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 -- Setup lspconfig capabilities
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Setting up servers
 local lspconfig = require 'lspconfig'
-local default_install = { 'pyright', 'gopls', 'vimls', 'jsonls', 'cssls' }
+local default_install = { 'pyright', 'gopls' }
 for _, lsp in ipairs(default_install) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

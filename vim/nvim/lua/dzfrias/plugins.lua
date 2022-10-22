@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'justinmk/vim-dirvish' -- Directory viewer
-  use 'vimwiki/vimwiki'
 
   use {
     'folke/todo-comments.nvim',
@@ -105,7 +104,7 @@ return require('packer').startup(function(use)
   -- Fuzzy finding algorithm for telescope
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+    run = 'make',
     requires = 'nvim-telescope/telescope.nvim',
   }
 
@@ -116,16 +115,6 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/gsearch'
     end,
     requires = { { 'nvim-telescope/telescope.nvim', tag = '0.1.0' } },
-  }
-
-  -- AI suggestions
-  use {
-    'github/copilot.vim',
-    config = function()
-      require 'dzfrias/plugins/copilot/copilot'
-    end,
-    commit = 'c2e75a3a7519c126c6fdb35984976df9ae13f564',
-    ft = require 'dzfrias/plugins/copilot/filetypes',
   }
   -- }}}
 

@@ -12,7 +12,6 @@ export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='gorm gor'
 # Mail goes to ~/.mbox instead of ~/mbox, less home directory clutter
 export MBOX="$HOME/.mbox"
-export PATH=$PATH:$(go env GOPATH)/bin
 export FZF_DEFAULT_COMMAND='fd --type file --hidden'
 export FZF_DEFAULT_OPTS="\
   --preview-window=up \
@@ -20,12 +19,13 @@ export FZF_DEFAULT_OPTS="\
   --color='pointer:#00FFFF,prompt:#0db9d7,bg+:#263c42,hl+:#c19eff,hl:#b38aff,info:#75bf7a,border:#4f4970' \
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
-export _ZO_OMZ_CMD=j
 export TERM='screen-256color'
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH='/Users/dzfrias/.cargo/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin'
 # }}}
 
 
-# {{{ OH-MY-ZSH
+# {{{ SETUPS
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
@@ -45,8 +45,8 @@ plugins=(
   zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-# Not oh-my-zsh, but sets up theme
 eval "$(oh-my-posh --init --shell zsh --config ~/.dotfiles/zsh/theme.json)"
+eval "$(zoxide init zsh --cmd j)"
 # }}}
 
 
@@ -87,7 +87,6 @@ zle -N zle-keymap-select
 
 # {{{ FUNCTIONS
 source "$HOME/.dotfiles/zsh/functions.zsh"
-source "$HOME/.dotfiles/zsh/extra.zsh"
 # This script will load everything in the autload directory
 source $HOME/.dotfiles/zsh/autoload.zsh
 # }}}

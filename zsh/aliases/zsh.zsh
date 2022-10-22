@@ -1,10 +1,6 @@
 # -GENERAL
 alias ex='exit'
-alias ls='ls -G'
-alias reload='exec zsh'
-# In case of mistype
-alias relaod='reload'
-alias rl='reload'
+alias rl='exec zsh'
 # Copies to clipboard
 alias pb='pbcopy'
 # To perform calculations
@@ -28,9 +24,9 @@ alias clmb='echo "" > ~/.mbox'
 alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
+alias ea='ea --group-directories-first'
 alias ggl='google'
 alias osd='osadict'
 alias bndl='brew bundle dump --describe --force'
 alias brwo='brew outdated'
 alias almt='almostontop toggle'
-alias gt='gotop'

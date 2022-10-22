@@ -1,5 +1,7 @@
 # vim:syntax=crontab
 
+# vim:syntax=crontab
+
 # Delete all files and directories in the ~/.temporary dir
 0 */3 * * * /bin/rm -rf ~/.temporary/*
 
