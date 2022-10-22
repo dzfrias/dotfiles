@@ -9,11 +9,11 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'E', function()
   win:setFrame(f)
 end)
 
--- Open Chrome
+-- Open Safari
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
-  hs.application.launchOrFocus 'Google Chrome'
-  local chrome = hs.application.get 'Google Chrome'
-  chrome:activate()
+  hs.application.launchOrFocus 'Safari'
+  local safari = hs.application.get 'Safari'
+  safari:activate()
 end)
 
 -- Open iTerm
@@ -36,16 +36,16 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', function()
   obsidian:activate()
 end)
 
--- Toggle iTerm and Chrome
+-- Toggle iTerm and Safari
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
-  local chrome = hs.application.get 'Google Chrome'
+  local safari = hs.application.get 'Safari'
   local iterm = hs.application.get 'iTerm2'
-  if chrome:isFrontmost() then
+  if safari:isFrontmost() then
     iterm:activate()
   elseif hs.application.get('Things'):isFrontmost() then
     iterm:activate()
   else
-    chrome:activate()
+    safari:activate()
   end
 end)
 
@@ -54,30 +54,6 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
   -- Of the form: (ABBREV_DAY) (12 HOUR):(MINUTE)(AM/PM)
   local now = os.date '%a %I:%M%p'
   hs.alert.show(now)
-end)
-
--- Get current mouse position
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'M', function()
-  local mouse = hs.mouse.absolutePosition()
-  local x = math.floor(mouse.x)
-  local y = math.floor(mouse.y)
-  hs.alert.show(x .. ', ' .. y)
-end)
-
--- Toggle Hammerspoon console
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'H', function()
-  local hs_console = hs.appfinder.appFromName 'Hammerspoon'
-  if #hs_console:visibleWindows() == 0 then
-    hs.application.open 'Hammerspoon'
-    hs.application.get('iTerm2'):activate()
-  else
-    hs_console:hide()
-  end
-end)
-
--- Go to lock screen
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'L', function()
-  hs.caffeinate.lockScreen()
 end)
 
 -- Clear all notifications
