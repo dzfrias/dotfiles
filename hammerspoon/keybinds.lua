@@ -9,13 +9,6 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'E', function()
   win:setFrame(f)
 end)
 
--- Open Safari
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
-  hs.application.launchOrFocus 'Safari'
-  local safari = hs.application.get 'Safari'
-  safari:activate()
-end)
-
 -- Open iTerm
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
   hs.application.launchOrFocus 'iTerm'
@@ -26,27 +19,14 @@ end)
 -- Open Things
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
   hs.application.launchOrFocus 'Things'
-  local iterm = hs.application.get 'Things'
-  iterm:activate()
+  local things = hs.application.get 'Things'
+  things:activate()
 end)
 
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', function()
   hs.application.launchOrFocus 'Obsidian'
   local obsidian = hs.application.get 'Obsidian'
   obsidian:activate()
-end)
-
--- Toggle iTerm and Safari
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
-  local safari = hs.application.get 'Safari'
-  local iterm = hs.application.get 'iTerm2'
-  if safari:isFrontmost() then
-    iterm:activate()
-  elseif hs.application.get('Things'):isFrontmost() then
-    iterm:activate()
-  else
-    safari:activate()
-  end
 end)
 
 -- Get the current time
