@@ -19,10 +19,16 @@ yabai -m config window_shadow float
 # 90% unfocused window opacity
 yabai -m config window_opacity on
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.9
+yabai -m config normal_window_opacity 0.8
 
 # Floating windows on top
 yabai -m config window_topmost on
 
 # When window is focused, mouse follows too
 yabai -m config mouse_follows_focus on
+
+# Float system preferences
+yabai -m rule --add app="^System Preferences$" manage=off
+
+# Float alfred
+yabai -m rule --add app="^Alfred Preferences$" manage=off
