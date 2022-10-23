@@ -7,11 +7,11 @@ sudo yabai --load-sa
 # Default layout
 yabai -m config layout bsp
 
-yabai -m config top_padding    5
-yabai -m config bottom_padding 5
-yabai -m config left_padding   5
-yabai -m config right_padding  5
-yabai -m config window_gap     5
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
 
 # Only have window shadows for floating windows
 yabai -m config window_shadow float
@@ -21,14 +21,18 @@ yabai -m config window_opacity on
 yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.8
 
+yabai -m config window_border on
+yabai -m config window_border_width 2
+yabai -m config active_window_border_color 0xbb4cb8d9
+yabai -m config normal_window_border_color 0x00ffffff
+
 # Floating windows on top
 yabai -m config window_topmost on
 
 # When window is focused, mouse follows too
 yabai -m config mouse_follows_focus on
 
-# Float system preferences
+# Float these apps
 yabai -m rule --add app="^System Preferences$" manage=off
-
-# Float alfred
 yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^Digital Color Meter$" manage=off
