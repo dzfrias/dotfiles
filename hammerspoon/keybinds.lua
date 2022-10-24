@@ -16,6 +16,13 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
   iterm:activate()
 end)
 
+-- Open Calendar
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', function()
+  hs.application.launchOrFocus 'Calendar'
+  local calendar = hs.application.get 'Calendar'
+  calendar:activate()
+end)
+
 -- Open Things
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', function()
   hs.application.launchOrFocus 'Things'
