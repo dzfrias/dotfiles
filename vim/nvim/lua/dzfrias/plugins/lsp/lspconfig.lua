@@ -17,7 +17,7 @@ local format = vim.api.nvim_create_augroup('format', {})
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = format,
   pattern = '*',
-  command = 'lua vim.lsp.buf.formatting()',
+  command = 'lua vim.lsp.buf.format { async = true }',
 })
 
 -- Setup lspconfig capabilities
