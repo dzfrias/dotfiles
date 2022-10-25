@@ -22,12 +22,6 @@ return require('packer').startup(function(use)
     end,
     run = ':TSUpdate',
   }
-  use {
-    'xiyaowong/nvim-transparent',
-    config = function()
-      require 'dzfrias/plugins/transparent'
-    end,
-  }
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
