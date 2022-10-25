@@ -8,4 +8,4 @@
 # Delete files in trash monthly
 @monthly /bin/rm -rf ~/.Trash/*
 
-0 */24 * * * cd ~/.dotfiles/setup && /usr/local/bin/brew bundle dump --force --describe --quiet
+0 */24 * * * cd ~/.dotfiles/setup && /opt/homebrew/bin/brew bundle dump --force --describe --quiet

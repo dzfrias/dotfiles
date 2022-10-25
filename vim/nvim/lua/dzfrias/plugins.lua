@@ -133,7 +133,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary' -- Commenting
   use 'tpope/vim-sleuth' -- Setting tabs
   use 'matze/vim-move' -- Moving lines/characters
-  use 'tpope/vim-scriptease' -- Easier vimscript editing
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
