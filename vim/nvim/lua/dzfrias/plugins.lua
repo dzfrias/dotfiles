@@ -22,17 +22,6 @@ return require('packer').startup(function(use)
     end,
     run = ':TSUpdate',
   }
-  use {
-    'folke/noice.nvim',
-    event = 'VimEnter',
-    config = function()
-      require 'dzfrias/plugins/noice'
-    end,
-    requires = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
-    },
-  }
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
