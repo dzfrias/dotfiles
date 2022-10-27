@@ -62,3 +62,5 @@ cask "hammerspoon"
 cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Run commands and display their output on the desktop
+cask "ubersicht"

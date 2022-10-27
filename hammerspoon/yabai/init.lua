@@ -1,20 +1,24 @@
-local yabai = function(args)
-  local yabai_stdout = ''
-  local yabai_stderr = ''
-  local yabai_task = hs.task.new(
-    '/opt/homebrew/bin/yabai',
-    function() end,
-    function(_, stdout, stderr)
-      print(stdout)
-      print(stderr)
-      yabai_stdout = yabai_stdout .. stdout
-      yabai_stderr = yabai_stderr .. stderr
+local function yabai(args, callback, stream_callback)
+  if stream_callback == nil then
+    stream_callback = function()
       return true
-    end,
-    args
-  )
-  yabai_task:start()
-  return { yabai_stdout, yabai_stderr }
+    end
+  end
+  hs.task
+    .new('/opt/homebrew/bin/yabai', callback, stream_callback, args)
+    :start()
+end
+
+local function yabai_or(args, or_args)
+  hs.task
+    .new('/opt/homebrew/bin/yabai', function(exit_code)
+      if exit_code > 0 then
+        yabai(or_args)
+      end
+    end, function()
+      return false
+    end, args)
+    :start()
 end
 
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'F', function()
@@ -31,51 +35,37 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', function()
 end)
 
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'B', function()
-  -- yabai -m query --spaces --space | jq .type
-  print(
-    hs.execute '/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq .type'
-  )
-  -- yabai {
-  --   '-m',
-  --   'config',
-  --   'layout',
-  --   'stack',
-  -- }
+  hs.execute [[/opt/homebrew/bin/yabai -m space --layout "$(/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq -r 'if .type == "bsp" then "stack" else "bsp" end')"]]
+  if
+    hs.execute [[/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq .type]]
+    == '"stack"\n'
+  then
+    yabai { '-m', 'config', 'window_opacity', 'off' }
+  else
+    yabai { '-m', 'config', 'window_opacity', 'on' }
+  end
 end)
 
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'P', function()
-  yabai {
+  yabai_or({
     '-m',
     'window',
     '--focus',
     'stack.prev',
-    '||',
-    'yabai',
-    '-m',
-    'window',
-    '--focus',
-    'prev',
-  }
+  }, { '-m', 'window', '--focus', 'stack.last' })
 end)
 
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'N', function()
-  yabai {
+  yabai_or({
     '-m',
     'window',
     '--focus',
     'stack.next',
-    '||',
-    'yabai',
-    '-m',
-    'window',
-    '--focus',
-    'next',
-  }
+  }, { '-m', 'window', '--focus', 'stack.first' })
 end)
 
 hs.hotkey.bind({ 'alt', 'ctrl', 'shift' }, 'N', function()
   yabai { '-m', 'space', '--create' }
-  hs.timer.usleep(500000)
   yabai { '-m', 'space', '--focus', 'last' }
 end)
 
@@ -115,9 +105,10 @@ end)
 hs.hotkey.bind({ 'alt', 'ctrl', 'shift' }, 'H', function()
   yabai { '-m', 'window', '--resize', 'right:-20:0' }
 end)
+
 hs.hotkey.bind({ 'alt', 'ctrl', 'shift' }, 'K', function()
-  yabai { '-m', 'window', '--resize', 'top:0:-20' }
+  yabai { '-m', 'space', '--focus', 'next' }
 end)
 hs.hotkey.bind({ 'alt', 'ctrl', 'shift' }, 'J', function()
-  yabai { '-m', 'window', '--resize', 'top:0:20' }
+  yabai { '-m', 'space', '--focus', 'prev' }
 end)

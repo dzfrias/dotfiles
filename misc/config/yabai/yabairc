@@ -36,3 +36,5 @@ yabai -m config mouse_follows_focus on
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^Digital Color Meter$" manage=off
+
+yabai -m config external_bar all:25:2

@@ -229,13 +229,6 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/rust-tools'
     end,
   }
-  use {
-    'preservim/vim-markdown',
-    requires = 'godlygeek/tabular',
-    config = function()
-      require 'dzfrias/plugins/vim-markdown'
-    end,
-  }
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------

@@ -32,16 +32,12 @@ end)
 
 -- Go to the `School` area
 local school = hs.hotkey.new({ 'cmd' }, '8', function()
-  hs.eventtap.keyStroke({ 'cmd' }, 'F')
-  hs.eventtap.keyStrokes 'school'
-  hs.eventtap.keyStroke({}, 'Return')
+  hs.urlevent.openURL 'things:///show?query=School'
 end)
 
 -- Go to the `Coding` area
 local coding = hs.hotkey.new({ 'cmd' }, '9', function()
-  hs.eventtap.keyStroke({ 'cmd' }, 'F')
-  hs.eventtap.keyStrokes 'coding'
-  hs.eventtap.keyStroke({}, 'Return')
+  hs.urlevent.openURL 'things:///show?query=Coding'
 end)
 
 local keybinds = {
