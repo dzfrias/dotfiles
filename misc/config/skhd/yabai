@@ -1,0 +1,28 @@
+# Yabai
+ctrl + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+ctrl + alt - s : yabai -m space --focus school
+
+ctrl + alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+ctrl + alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+ctrl + alt + shift - n : yabai -m space --create && yabai -m space --focus last
+ctrl + alt - r : yabai -m space --destroy
+
+ctrl + alt - h : yabai -m window --focus west
+ctrl + alt - l : yabai -m window --focus east
+ctrl + alt - k : yabai -m window --focus north
+ctrl + alt - j : yabai -m window --focus south
+
+ctrl + alt - left : yabai -m window --swap west
+ctrl + alt - right : yabai -m window --swap north
+ctrl + alt - up : yabai -m window --swap north
+ctrl + alt - down : yabai -m window --swap south
+
+ctrl + alt + shift - l : yabai -m window --resize right:20:0
+ctrl + alt + shift - h : yabai -m window --resize right:-20:0
+
+ctrl + alt + shift - k : yabai -m space --focus next
+ctrl + alt + shift - j : yabai -m space --focus prev
+
+ctrl + alt - b : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r "if .type == \"bsp\" then \"stack\" else \"bsp\" end")" && if [[ $(yabai -m query --spaces --space | jq -r .type) == "stack" ]]; then; yabai -m config window_opacity off; else yabai -m config window_opacity on; fi

@@ -1,0 +1,12 @@
+.load "yabai"
+.load "appswitch"
+.load "things"
+
+ctrl - j [
+    "Things" : skhd -k "down"
+    "Safari" : skhd -k "cmd + shift + alt + ctrl - j"
+]
+ctrl - k [
+    "Things" : skhd -k "up"
+    "Safari" : skhd -k "cmd + shift + alt + ctrl - k"
+]
