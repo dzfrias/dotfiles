@@ -1,3 +1,5 @@
+# vim: set ft=conf
+
 ctrl - h [
     "Things" : skhd -k "cmd - left"
 ]

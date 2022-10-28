@@ -1,3 +1,5 @@
+# vim: set ft=conf
+
 ctrl + alt - d : open -a "Things3"
 ctrl + alt - i : open -a "iTerm"
 ctrl + alt - c : open -a "Calendar"

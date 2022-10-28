@@ -1,4 +1,3 @@
-# Yabai
 ctrl + alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 ctrl + alt - s : yabai -m space --focus school
@@ -25,4 +24,8 @@ ctrl + alt + shift - h : yabai -m window --resize right:-20:0
 ctrl + alt + shift - k : yabai -m space --focus next
 ctrl + alt + shift - j : yabai -m space --focus prev
 
-ctrl + alt - b : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r "if .type == \"bsp\" then \"stack\" else \"bsp\" end")" && if [[ $(yabai -m query --spaces --space | jq -r .type) == "stack" ]]; then; yabai -m config window_opacity off; else yabai -m config window_opacity on; fi
+ctrl + alt - b : \
+yabai -m space --layout "$(yabai -m query --spaces --space | jq -r "if .type == \"bsp\" then \"stack\" else \"bsp\" end")" &&\
+if [[ $(yabai -m query --spaces --space | jq -r .type) == "stack" ]]; then;\
+  yabai -m config window_opacity off; else yabai -m config window_opacity on;\
+fi
