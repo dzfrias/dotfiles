@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
   -- Easy HTML editing
   use {
     'mattn/emmet-vim',
-    ft = { 'html', 'css', 'markdown', 'vimwiki' },
+    ft = { 'html', 'css', 'markdown' },
   }
 
   -- Fzf-like filter
