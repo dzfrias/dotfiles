@@ -12,3 +12,23 @@ ctrl - k [
     "Things" : skhd -k "up"
     "Safari" : skhd -k "cmd + shift + alt + ctrl - k"
 ]
+ctrl - h [
+    "Things" : skhd -k "cmd - left"
+]
+ctrl - l [
+    "Things" : skhd -k "return"
+]
+
+ctrl + shift - k [
+    "Things" : skhd -k "cmd + shift - up"
+]
+ctrl + shift - j [
+    "Things" : skhd -k "cmd + shift - down"
+]
+
+cmd - 8 [
+    "Things" : open "things:///show?query=School"
+]
+cmd - 9 [
+    "Things" : open "things:///show?query=Coding"
+]
