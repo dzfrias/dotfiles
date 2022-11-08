@@ -2,3 +2,5 @@
 
 (call
   arguments: (argument_list (_) @argument))
+
+(list (_) @argument)

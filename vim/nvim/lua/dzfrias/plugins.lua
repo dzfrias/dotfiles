@@ -52,6 +52,8 @@ return require('packer').startup(function(use)
     requires = { 'nvim-telescope/telescope.nvim', 'stevearc/dressing.nvim' },
   }
 
+  use 'nvim-treesitter/playground'
+
   use {
     'nvim-neotest/neotest',
     requires = {

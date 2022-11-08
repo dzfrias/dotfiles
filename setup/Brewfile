@@ -48,6 +48,8 @@ brew "tokei"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Simple hotkey-daemon for macOS.
+brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 # Application launcher and productivity software
