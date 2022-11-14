@@ -18,9 +18,9 @@ function ea() {
 function tea() {
   if [[ -f 'Cargo.toml' ]]; then
     # Only ignores the target directory if in a rust project
-    ea -T --ignore-glob "venv|__pycache__|.git|target" $@
+    ea -T --ignore-glob "venv|__pycache__|.git|target" $@ --group-directories-first
   else
-    ea -T --ignore-glob "venv|__pycache__|.git" $@
+    ea -T --ignore-glob "venv|__pycache__|.git" $@ --group-directories-first
   fi
 }
 
