@@ -23,6 +23,14 @@ rt.setup {
         bufopts
       )
     end,
+
+    settings = {
+      ['rust-analyzer'] = {
+        files = {
+          excludeDirs = { 'website' },
+        },
+      },
+    },
   },
 
   dap = {
