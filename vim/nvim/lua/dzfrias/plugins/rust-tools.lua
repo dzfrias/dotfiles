@@ -27,7 +27,7 @@ rt.setup {
     settings = {
       ['rust-analyzer'] = {
         files = {
-          excludeDirs = { 'website' },
+          excludeDirs = { 'website', 'dist' },
         },
       },
     },

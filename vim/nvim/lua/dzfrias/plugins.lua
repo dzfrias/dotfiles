@@ -231,6 +231,8 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/rust-tools'
     end,
   }
+  use 'dzfrias/scurry.vim'
+
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
