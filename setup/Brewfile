@@ -4,6 +4,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Next-generation test runner for Rust
@@ -51,15 +53,15 @@ brew "zsh"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 # Application launcher and productivity software
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# Developer platform
+cask "dotnet-sdk"
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
-# Desktop automation application
-cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
