@@ -36,6 +36,23 @@ c.tabs.last_close = "startpage"
 c.tabs.padding = {"bottom": 4, "left": 5, "right": 5, "top": 4}
 c.tabs.title.alignment = "center"
 
+# Colors
+COLORS = {
+    "white": "rgb(169, 177, 214)",
+    "red": "rgb(247, 118, 142)",
+    "purple": "rgb(187, 154, 247)",
+    "black": "rgb(26, 27, 38)",
+    "green": "#9ece6a",
+}
+c.colors.hints.bg = "rgba(122, 162, 247, 0.8)"
+c.colors.hints.match.fg = "white"
+c.colors.messages.error.bg = COLORS["red"]
+c.colors.statusbar.caret.bg = COLORS["purple"]
+c.colors.statusbar.command.bg = COLORS["black"]
+c.colors.statusbar.normal.bg = COLORS["black"]
+c.colors.statusbar.insert.bg = COLORS["green"]
+c.colors.statusbar.insert.fg = "black"
+
 # Other options
 c.editor.command = [
     "/Users/dzfrias/.dotfiles/misc/qutebrowser/qutebrowser_edit.sh",
