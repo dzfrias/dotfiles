@@ -19,7 +19,6 @@ export FZF_DEFAULT_OPTS="\
   --color='pointer:#00FFFF,prompt:#0db9d7,bg+:#263c42,hl+:#c19eff,hl:#b38aff,info:#75bf7a,border:#4f4970' \
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
-export TERM='screen-256color'
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH='/Users/dzfrias/.cargo/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin'
 # }}}
