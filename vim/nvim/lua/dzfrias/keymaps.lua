@@ -32,7 +32,9 @@ nnoremap('<leader>q', '<Cmd>quit!<CR>')
 
 -- Telescope
 local tel = require 'telescope.builtin'
-nnoremap('<leader>tf', tel.git_files)
+nnoremap('<leader>tf', function()
+  tel.find_files { cwd = util.get_project_root() }
+end)
 nnoremap('<leader>tl', function()
   tel.live_grep { cwd = util.get_project_root() }
 end)
