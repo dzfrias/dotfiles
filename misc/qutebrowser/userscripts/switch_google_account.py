@@ -10,12 +10,9 @@ if not url.hostname.endswith(".google.com"):
     sys.exit(1)
 
 parts = url.path.split("/")
-if parts[2] == "u":
-    parts[3] = "1" if parts[3] == "0" else "0"
-    print(parts)
-else:
-    parts.insert(2, "u")
-    parts.insert(3, "1")
+idx = parts.index("u")
+if idx != -1:
+    parts[idx + 1] = "1" if parts[idx + 1] == "0" else "0"
 url = url._replace(path="/".join(parts[1:]))
 
 with open(os.environ["QUTE_FIFO"], "w") as fifo:
