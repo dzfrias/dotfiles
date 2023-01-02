@@ -44,7 +44,14 @@ c.input.links_included_in_focus_chain = False
 
 # Status bar
 c.statusbar.padding = {"bottom": 1, "left": 0, "right": 0, "top": 5}
-c.statusbar.widgets = ["url", "keypress", "scroll", "history", "tabs", "progress"]
+c.statusbar.widgets = [
+    "url",
+    "keypress",
+    "scroll",
+    "history",
+    "tabs",
+    "progress",
+]
 
 # Tabs
 c.tabs.indicator.width = 8
@@ -63,6 +70,8 @@ COLORS = {
     "dark blue": "#13265c",
     "light blue": "#b4f9f8",
 }
+
+c.colors.webpage.preferred_color_scheme = "dark"
 
 c.colors.hints.bg = COLORS["light blue"]
 c.colors.hints.match.fg = COLORS["light blue"]
