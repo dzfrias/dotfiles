@@ -36,6 +36,8 @@ brew "neovim"
 brew "node"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
+# Command-line interface for SQLite
+brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Search tool like grep and The Silver Searcher
@@ -58,8 +60,6 @@ brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
-# Developer platform
-cask "dotnet-sdk"
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
 # Terminal emulator as alternative to Apple's Terminal app
