@@ -18,6 +18,8 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
@@ -56,6 +58,8 @@ brew "zsh"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+# GPU-accelerated terminal emulator
+cask "alacritty"
 # Application launcher and productivity software
 cask "alfred"
 # Enable Windows-like alt-tab
@@ -66,5 +70,7 @@ cask "font-meslo-lg-nerd-font"
 cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Keyboard-driven, vim-like browser based on PyQt5
+cask "qutebrowser"
 # Run commands and display their output on the desktop
 cask "ubersicht"
