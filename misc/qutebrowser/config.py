@@ -19,6 +19,10 @@ config.bind(
     "tz",
     "spawn --userscript /Users/dzfrias/.dotfiles/misc/qutebrowser/userscripts/translate_to_chinese.py",
 )
+config.bind(
+    "sF",
+    "spawn --userscript /Users/dzfrias/.dotfiles/misc/qutebrowser/userscripts/open_in_safari.py",
+)
 
 # Commands
 c.aliases = {
