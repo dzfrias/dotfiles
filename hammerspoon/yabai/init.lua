@@ -64,12 +64,12 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'N', function()
   }, { '-m', 'window', '--focus', 'stack.first' })
 end)
 
-hs.hotkey.bind({ 'alt', 'ctrl', 'shift' }, 'N', function()
+hs.hotkey.bind({ 'alt', 'ctrl' }, '=', function()
   yabai { '-m', 'space', '--create' }
   yabai { '-m', 'space', '--focus', 'last' }
 end)
 
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'R', function()
+hs.hotkey.bind({ 'alt', 'ctrl' }, '-', function()
   yabai { '-m', 'space', '--destroy' }
 end)
 

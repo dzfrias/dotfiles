@@ -9,10 +9,10 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'E', function()
   win:setFrame(f)
 end)
 
--- Open iTerm
+-- Open Alacritty
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
-  hs.application.launchOrFocus 'iTerm'
-  local iterm = hs.application.get 'iTerm2'
+  hs.application.launchOrFocus 'Alacritty'
+  local iterm = hs.application.get 'Alacritty'
   iterm:activate()
 end)
 
