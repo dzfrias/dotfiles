@@ -22,6 +22,10 @@ return require('packer').startup(function(use)
     end,
     run = ':TSUpdate',
   }
+  use {
+    'rrethy/vim-hexokinase',
+    run = 'make hexokinase',
+  }
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
