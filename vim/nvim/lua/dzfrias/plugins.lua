@@ -26,6 +26,12 @@ return require('packer').startup(function(use)
     'rrethy/vim-hexokinase',
     run = 'make hexokinase',
   }
+  use {
+    'nvim-zh/colorful-winsep.nvim',
+    config = function()
+      require('colorful-winsep').setup()
+    end,
+  }
   -- }}}
 
   -- {{{ Full tools------------------------------------------------------------
