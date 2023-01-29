@@ -50,6 +50,8 @@ brew "shellcheck"
 brew "tmux"
 # Program that allows you to count code, quickly
 brew "tokei"
+# Pager/text based browser
+brew "w3m"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -57,7 +59,7 @@ brew "zsh"
 # Simple hotkey-daemon for macOS.
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+brew "koekeishiya/formulae/yabai"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
@@ -66,11 +68,13 @@ cask "alfred"
 cask "alt-tab"
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
+# Desktop automation application
+cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Keyboard-driven, vim-like browser based on PyQt5
-cask "qutebrowser"
 # Run commands and display their output on the desktop
 cask "ubersicht"
+# Mind mapping and brainstorming tool
+cask "xmind"
