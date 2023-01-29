@@ -35,5 +35,3 @@ yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^Digital Color Meter$" manage=off
 
 yabai -m config external_bar all:25:2
-
-YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
