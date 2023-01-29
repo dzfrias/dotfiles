@@ -22,8 +22,7 @@ noremap('j', 'gj')
 
 -- Make a newline
 nnoremap('<CR>', 'o<Esc>')
--- This symbol is sent with <s-CR>, using iTerm2
-nnoremap('✠', 'O<Esc>')
+nnoremap('<s-CR>', 'O<Esc>')
 
 -- Basic command mappings
 nnoremap('<leader>w', '<Cmd>write<CR>')
