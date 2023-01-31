@@ -78,6 +78,8 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use '~/code/nvim-classy'
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -139,6 +141,13 @@ return require('packer').startup(function(use)
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'haya14busa/is.vim' -- Better searching
   use 'windwp/nvim-ts-autotag'
+
+  use {
+    'Lilja/zellij.nvim',
+    config = function()
+      require 'dzfrias/plugins/zellij'
+    end,
+  }
 
   use {
     'nvim-treesitter/nvim-treesitter-context',
@@ -235,6 +244,7 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/vim-go'
     end,
   }
+  use 'imsnif/kdl.vim'
   use {
     'simrat39/rust-tools.nvim',
     config = function()
