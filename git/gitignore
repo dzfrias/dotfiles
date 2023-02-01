@@ -18,7 +18,3 @@ venv
 
 # Repo-cleaning report
 .git.bfg-report
-
-# vim files
-.projections.json
-.vimspector.json
