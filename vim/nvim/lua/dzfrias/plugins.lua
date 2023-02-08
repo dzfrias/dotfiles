@@ -179,9 +179,6 @@ return require('packer').startup(function(use)
   -- Better clipboard control
   use {
     'svermeulen/vim-easyclip',
-    config = function()
-      require 'dzfrias/plugins/easyclip'
-    end,
     requires = 'tpope/vim-repeat',
   }
 
