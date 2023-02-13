@@ -20,7 +20,7 @@ function tea() {
     # Only ignores the target directory if in a rust project
     ea -T --ignore-glob "venv|__pycache__|.git|target" $@ --group-directories-first
   else
-    ea -T --ignore-glob "venv|__pycache__|.git" $@ --group-directories-first
+    ea -T --ignore-glob "venv|__pycache__|.git|node_modules" $@ --group-directories-first
   fi
 }
 
