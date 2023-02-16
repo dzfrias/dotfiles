@@ -8,6 +8,10 @@ tap "koekeishiya/formulae"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Glorious Glasgow Haskell Compilation System
+brew "ghc"
+# Command-line interface for Cabal and Hackage
+brew "cabal-install"
 # Next-generation test runner for Rust
 brew "cargo-nextest"
 # Modern replacement for 'ls'
@@ -50,8 +54,6 @@ brew "shellcheck"
 brew "tmux"
 # Program that allows you to count code, quickly
 brew "tokei"
-# Pager/text based browser
-brew "w3m"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -70,8 +72,6 @@ cask "alt-tab"
 cask "font-meslo-lg-nerd-font"
 # Desktop automation application
 cask "hammerspoon"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Run commands and display their output on the desktop
