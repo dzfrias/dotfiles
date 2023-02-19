@@ -18,6 +18,10 @@ brew "cargo-nextest"
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Platform built on V8 to build network applications
+brew "node"
+# Firebase command-line tools
+brew "firebase-cli"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -38,8 +42,6 @@ brew "lazygit"
 brew "make"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
-brew "node"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
 # Command-line interface for SQLite
@@ -76,5 +78,3 @@ cask "hammerspoon"
 cask "obsidian"
 # Run commands and display their output on the desktop
 cask "ubersicht"
-# Mind mapping and brainstorming tool
-cask "xmind"
