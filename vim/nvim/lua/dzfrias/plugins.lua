@@ -46,13 +46,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    'iamcco/markdown-preview.nvim',
-    run = function()
-      vim.fn['mkdp#util#install']()
-    end,
-  }
-
   -- Async task runner
   use {
     'stevearc/overseer.nvim',
@@ -133,7 +126,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ General tools---------------------------------------------------------
-  use 'tpope/vim-commentary' -- Commenting
   use 'tpope/vim-sleuth' -- Setting tabs
   use 'matze/vim-move' -- Moving lines/characters
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
@@ -143,9 +135,9 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   use {
-    'Lilja/zellij.nvim',
+    'numToStr/Comment.nvim',
     config = function()
-      require 'dzfrias/plugins/zellij'
+      require('Comment').setup()
     end,
   }
 
@@ -241,7 +233,6 @@ return require('packer').startup(function(use)
       require 'dzfrias/plugins/vim-go'
     end,
   }
-  use 'imsnif/kdl.vim'
   use {
     'simrat39/rust-tools.nvim',
     config = function()
