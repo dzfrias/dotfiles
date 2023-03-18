@@ -44,6 +44,8 @@ brew "make"
 brew "neovim"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
 # Command-line interface for SQLite
 brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
