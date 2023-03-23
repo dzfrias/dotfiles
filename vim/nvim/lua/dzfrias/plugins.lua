@@ -142,14 +142,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'nvim-treesitter/nvim-treesitter-context',
-    config = function()
-      require 'dzfrias/plugins/treesitter-context'
-    end,
-    requires = 'nvim-treesitter/nvim-treesitter',
-  }
-
-  use {
     'nvim-treesitter/nvim-treesitter-textobjects',
     requires = 'nvim-treesitter/nvim-treesitter',
   }
