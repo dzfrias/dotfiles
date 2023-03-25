@@ -135,6 +135,13 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
 
   use {
+    'numToStr/FTerm.nvim',
+    config = function()
+      require 'dzfrias/plugins/FTerm'
+    end,
+  }
+
+  use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()

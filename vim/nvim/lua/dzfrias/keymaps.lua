@@ -17,6 +17,7 @@ noremap('gi', 'gi<Esc>')
 noremap('k', 'gk')
 noremap('j', 'gj')
 
+-- Window resizing
 nnoremap('<C-s-l>', '<Cmd>vertical resize -5<CR>')
 nnoremap('<C-s-h>', '<Cmd>vertical resize +5<CR>')
 nnoremap('<C-s-j>', '<Cmd>horizontal resize +2<CR>')
