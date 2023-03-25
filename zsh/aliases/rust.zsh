@@ -1,8 +1,7 @@
 # Cargo
 alias temprs='cargo init --name temprs'
-alias c='cargo'
 alias cr='cargo run'
-alias cra='cargo run --'
+alias ca='cargo add'
 alias ct='cargo nextest run'
 alias cdoc='cargo doc --open'
 alias rustc='~/.cargo/bin/rustc'
