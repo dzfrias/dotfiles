@@ -8,9 +8,6 @@ local xnoremap = util.xnoremap
 -- Go to top of file and first character
 noremap('gg', 'gg0')
 
--- Fold movement
-nnoremap('zk', '<Plug>FoldJumpUp')
-
 noremap('<space><space>', 'za')
 
 -- Go to last place in insert mode
@@ -19,6 +16,11 @@ noremap('gi', 'gi<Esc>')
 -- Better wrapped line movement
 noremap('k', 'gk')
 noremap('j', 'gj')
+
+nnoremap('<C-s-l>', '<Cmd>vertical resize -5<CR>')
+nnoremap('<C-s-h>', '<Cmd>vertical resize +5<CR>')
+nnoremap('<C-s-j>', '<Cmd>horizontal resize +2<CR>')
+nnoremap('<C-s-k>', '<Cmd>horizontal resize -2<CR>')
 
 -- Make a newline
 nnoremap('<CR>', 'o<Esc>')
