@@ -71,8 +71,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use '~/code/nvim-classy'
-
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -114,22 +112,12 @@ return require('packer').startup(function(use)
     run = 'make',
     requires = 'nvim-telescope/telescope.nvim',
   }
-
-  -- Google from neovim
-  use {
-    'dzfrias/gsearch.nvim',
-    config = function()
-      require 'dzfrias/plugins/gsearch'
-    end,
-    requires = { { 'nvim-telescope/telescope.nvim', tag = '0.1.0' } },
-  }
   -- }}}
 
   -- {{{ General tools---------------------------------------------------------
   use 'tpope/vim-sleuth' -- Setting tabs
   use 'matze/vim-move' -- Moving lines/characters
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
-  use 'vim-scripts/applescript.vim' -- AppleScript syntax highlighting
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'haya14busa/is.vim' -- Better searching
   use 'windwp/nvim-ts-autotag'
