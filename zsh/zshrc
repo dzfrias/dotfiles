@@ -21,6 +21,7 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH='/Users/dzfrias/.cargo/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin:/Users/dzfrias/go/bin'
+export RUST_LOG='trace'
 # }}}
 
 
