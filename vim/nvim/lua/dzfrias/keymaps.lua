@@ -3,7 +3,6 @@ local util = require 'dzfrias/util'
 local nnoremap = util.nnoremap
 local inoremap = util.inoremap
 local noremap = util.noremap
-local xnoremap = util.xnoremap
 
 -- Go to top of file and first character
 noremap('gg', 'gg0')
@@ -29,7 +28,6 @@ nnoremap('<s-CR>', 'O<Esc>')
 
 -- Basic command mappings
 nnoremap('<leader>w', '<Cmd>write<CR>')
-nnoremap('<leader>s', '<Cmd>source %<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
 
 -- Telescope
@@ -45,7 +43,6 @@ nnoremap('<leader>tr', tel.lsp_references)
 nnoremap('<leader>tk', tel.keymaps)
 nnoremap('<leader>th', tel.help_tags)
 nnoremap('<leader>tb', tel.buffers)
-nnoremap('<leader>tg', require('gsearch').search)
 
 -- Trouble
 nnoremap('<leader>x', require('trouble').toggle)
@@ -56,23 +53,14 @@ nnoremap(
   '<Cmd>TodoTrouble cwd=' .. util.get_project_root() .. '<CR>'
 )
 
--- Scriptease
-nnoremap('<leader>m', '<Cmd>Messages<CR>')
-
 -- Git mappings
 nnoremap('<leader>g', '<Cmd>LazyGit<CR>')
 local gs = require 'gitsigns'
 nnoremap('gp', gs.preview_hunk)
 nnoremap('gr', gs.reset_hunk)
-nnoremap('gD', function()
-  gs.setqflist 'all'
-end)
-
--- Leap
-nnoremap('gs', '<Plug>(leap-forward)')
-nnoremap('gS', '<Plug>(leap-backward)')
-xnoremap('gs', '<Plug>(leap-forward)')
-xnoremap('gS', '<Plug>(leap-backward)')
+nnoremap('gD', gs.setqflist)
+nnoremap('g]', gs.next_hunk)
+nnoremap('g[', gs.prev_hunk)
 
 -- Neotest
 local neotest = require 'neotest'
