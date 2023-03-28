@@ -43,7 +43,7 @@ lspconfig.yamlls.setup {
   },
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     -- Do not format code
