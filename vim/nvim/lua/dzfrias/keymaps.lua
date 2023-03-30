@@ -72,8 +72,11 @@ nnoremap('<leader>us', function()
 end)
 
 -- Harpoon
+local harpoon_ui = require 'harpoon.ui'
 nnoremap('<leader>mm', require('harpoon.mark').add_file)
-nnoremap('<leader>mo', require('harpoon.ui').toggle_quick_menu)
+nnoremap('<leader>mo', harpoon_ui.toggle_quick_menu)
+nnoremap('<leader>mn', harpoon_ui.nav_next)
+nnoremap('<leader>mp', harpoon_ui.nav_prev)
 
 -- Escape
 inoremap('jk', '<Esc>')
