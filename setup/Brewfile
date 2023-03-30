@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "konradsz/igrep", "https://github.com/konradsz/igrep.git"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -38,8 +39,6 @@ brew "go"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Utility for directing compilation
-brew "make"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Prompt theme engine for any shell
@@ -66,6 +65,8 @@ brew "zsh"
 brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
+# Interactive Grep
+brew "konradsz/igrep/igrep"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software

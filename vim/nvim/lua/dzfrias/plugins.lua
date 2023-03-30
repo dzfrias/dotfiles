@@ -36,23 +36,12 @@ return require('packer').startup(function(use)
 
   -- {{{ Full tools------------------------------------------------------------
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'justinmk/vim-dirvish' -- Directory viewer
 
   use {
-    'folke/todo-comments.nvim',
-    requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' },
+    'stevearc/oil.nvim',
     config = function()
-      require 'dzfrias/plugins/todo-comments'
+      require 'dzfrias/plugins/oil'
     end,
-  }
-
-  -- Async task runner
-  use {
-    'stevearc/overseer.nvim',
-    config = function()
-      require 'dzfrias/plugins/overseer'
-    end,
-    requires = { 'nvim-telescope/telescope.nvim', 'stevearc/dressing.nvim' },
   }
 
   use 'nvim-treesitter/playground'
@@ -120,12 +109,12 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'haya14busa/is.vim' -- Better searching
-  use 'windwp/nvim-ts-autotag'
+  use 'ThePrimeagen/harpoon'
 
   use {
-    'numToStr/FTerm.nvim',
+    'sunjon/shade.nvim',
     config = function()
-      require 'dzfrias/plugins/FTerm'
+      require('shade').setup()
     end,
   }
 
@@ -212,14 +201,6 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- {{{ Filetypes-------------------------------------------------------------
-  -- Go language support
-  use {
-    'fatih/vim-go',
-    run = ':GoUpdateBinaries',
-    config = function()
-      require 'dzfrias/plugins/vim-go'
-    end,
-  }
   use {
     'simrat39/rust-tools.nvim',
     config = function()
@@ -227,7 +208,6 @@ return require('packer').startup(function(use)
     end,
   }
   use 'dzfrias/scurry.vim'
-
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
