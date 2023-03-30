@@ -112,6 +112,13 @@ return require('packer').startup(function(use)
   use 'ThePrimeagen/harpoon'
 
   use {
+    'nguyenvukhang/nvim-toggler',
+    config = function()
+      require 'dzfrias/plugins/toggler'
+    end,
+  }
+
+  use {
     'sunjon/shade.nvim',
     config = function()
       require('shade').setup()
