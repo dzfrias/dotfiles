@@ -109,7 +109,11 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator' -- Vim and tmux integration
   use 'stevearc/dressing.nvim' -- Better UI defaults for vim
   use 'haya14busa/is.vim' -- Better searching
-  use 'ThePrimeagen/harpoon'
+
+  use {
+    'cbochs/grapple.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
 
   use {
     'nguyenvukhang/nvim-toggler',

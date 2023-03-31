@@ -7,6 +7,7 @@ local noremap = util.noremap
 -- Go to top of file and first character
 noremap('gg', 'gg0')
 
+-- Open fold
 noremap('<space><space>', 'za')
 
 -- Go to last place in insert mode
@@ -22,6 +23,9 @@ nnoremap('<C-s-h>', '<Cmd>vertical resize +5<CR>')
 nnoremap('<C-s-j>', '<Cmd>horizontal resize +2<CR>')
 nnoremap('<C-s-k>', '<Cmd>horizontal resize -2<CR>')
 
+nnoremap('<C-a>', '<C-^>')
+
+-- Oil
 nnoremap('-', require('oil').open)
 
 -- Make a newline
@@ -71,12 +75,10 @@ nnoremap('<leader>us', function()
   vim.cmd 'wincmd l'
 end)
 
--- Harpoon
-local harpoon_ui = require 'harpoon.ui'
-nnoremap('<leader>mm', require('harpoon.mark').add_file)
-nnoremap('<leader>mo', harpoon_ui.toggle_quick_menu)
-nnoremap('<leader>mn', harpoon_ui.nav_next)
-nnoremap('<leader>mp', harpoon_ui.nav_prev)
+-- Grapple
+local grapple = require 'grapple'
+nnoremap('<leader>m', grapple.toggle)
+nnoremap('<leader>o', grapple.popup_tags)
 
 -- Escape
 inoremap('jk', '<Esc>')
