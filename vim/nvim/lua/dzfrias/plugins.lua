@@ -119,9 +119,9 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'sunjon/shade.nvim',
+    'levouh/tint.nvim',
     config = function()
-      require('shade').setup()
+      require 'dzfrias/plugins/tint'
     end,
   }
 
