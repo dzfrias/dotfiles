@@ -1,5 +1,4 @@
--- TODO: Make bubbles lualine theme
-
+-- Based on the bubbles theme by lokesh-krishna
 require('lualine').setup {
   options = {
     globalstatus = true,
