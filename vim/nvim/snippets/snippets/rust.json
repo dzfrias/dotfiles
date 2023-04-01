@@ -1,0 +1,14 @@
+{
+  "mod-tests": {
+    "prefix": "mod-tests",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "    use super::*;",
+      "",
+      "    ${1:// tests}",
+      "}"
+    ],
+    "description": "mod tests"
+  }
+}
