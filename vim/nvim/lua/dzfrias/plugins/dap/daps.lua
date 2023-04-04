@@ -1,5 +1,10 @@
 local dap = require 'dap'
 
+local get_args = function()
+  local s = vim.fn.input 'Enter CLI args: '
+  return vim.fn.split(s, ' ')
+end
+
 dap.adapters.delve = {
   type = 'server',
   port = '${port}',
@@ -9,7 +14,6 @@ dap.adapters.delve = {
   },
 }
 
-local cli = require 'dzfrias/plugins/dap/cli'
 local util = require 'dzfrias/util'
 dap.configurations.go = {
   {
@@ -32,6 +36,6 @@ dap.configurations.go = {
     program = function()
       return util.get_main 'go'
     end,
-    args = cli.get_args,
+    args = get_args,
   },
 }

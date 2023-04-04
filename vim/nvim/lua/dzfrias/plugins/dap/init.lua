@@ -3,7 +3,6 @@ require('nvim-dap-virtual-text').setup()
 require('telescope').load_extension 'dap'
 
 require 'dzfrias/plugins/dap/daps'
-require 'dzfrias/plugins/dap/keymaps'
 
 local dap = require 'dap'
 

@@ -7,7 +7,3 @@ vim.opt_local.wrap = true
 vim.opt_local.linebreak = true
 
 bufnoremap('n', '<leader>t', '<Cmd>setlocal filetype=help<CR>')
-
--- Emmet
-bufnoremap('i', '<C-e>', '<Plug>(emmet-expand-abbr)')
-bufnoremap('n', '<C-e>', '<Plug>(emmet-expand-abbr)')
