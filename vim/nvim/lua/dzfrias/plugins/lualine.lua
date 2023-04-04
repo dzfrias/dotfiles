@@ -1,5 +1,5 @@
 -- Based on the bubbles theme by lokesh-krishna
-require('lualine').setup {
+return {
   options = {
     globalstatus = true,
     component_separators = '|',

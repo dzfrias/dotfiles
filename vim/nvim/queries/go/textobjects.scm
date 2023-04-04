@@ -1,3 +1,4 @@
+; extends
 ; vim: set ft=query
 
 (call_expression

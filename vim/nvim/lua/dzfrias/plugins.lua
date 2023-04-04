@@ -1,6 +1,6 @@
 -- vim: set foldmethod=marker:
 
-return require('lazy').setup {
+return {
   -- {{{ Visuals---------------------------------------------------------------
   -- Colorscheme
   {
@@ -19,8 +19,9 @@ return require('lazy').setup {
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
-    config = function()
-      require 'dzfrias/plugins/treesitter'
+    opts = require 'dzfrias.plugins.treesitter',
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
     end,
     build = ':TSUpdate',
   },
@@ -32,7 +33,7 @@ return require('lazy').setup {
 
   {
     'nvim-zh/colorful-winsep.nvim',
-    event = 'VeryLazy',
+    event = 'WinNew',
     config = true,
   },
   -- }}}
@@ -62,9 +63,7 @@ return require('lazy').setup {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require 'dzfrias/plugins/lualine'
-    end,
+    opts = require 'dzfrias.plugins.lualine',
   },
 
   {
@@ -98,70 +97,20 @@ return require('lazy').setup {
   {
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
-    keys = {
-      {
-        '<leader>tf',
-        function()
-          require('telescope.builtin').find_files {
-            cwd = require('dzfrias.util').get_project_root(),
-          }
-        end,
-        desc = 'Telescope files',
-      },
-      {
-        '<leader>tl',
-        function()
-          require('telescope.builtin').live_grep {
-            cwd = require('dzfrias.util').get_project_root(),
-          }
-        end,
-        desc = 'Telescope by line',
-      },
-      {
-        '<leader>tt',
-        function()
-          require('telescope.builtin').lsp_document_symbols()
-        end,
-        desc = 'Telescope document symbols',
-      },
-      {
-        '<leader>tr',
-        function()
-          require('telescope.builtin').lsp_references()
-        end,
-        desc = 'Telescope lsp references',
-      },
-      {
-        '<leader>tk',
-        function()
-          require('telescope.builtin').keymaps()
-        end,
-        desc = 'Telescope keymaps',
-      },
-      {
-        '<leader>th',
-        function()
-          require('telescope.builtin').help_tags()
-        end,
-        desc = 'Telescope help tags',
-      },
-      {
-        '<leader>tb',
-        function()
-          require('telescope.builtin').buffers()
-        end,
-        desc = 'Telescope buffers',
-      },
-    },
-    config = function()
-      require 'dzfrias/plugins/telescope'
-    end,
+    opts = require('dzfrias.plugins.telescope').opts,
+    keys = require('dzfrias.plugins.telescope').keys,
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'neovim/nvim-lspconfig',
       'kyazdani42/nvim-web-devicons',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+        config = function()
+          require('telescope').load_extension 'fzf'
+        end,
+      },
     },
   },
   -- }}}
@@ -169,8 +118,7 @@ return require('lazy').setup {
   -- {{{ General tools---------------------------------------------------------
   'christoomey/vim-tmux-navigator', -- Vim and tmux integration
   'nvim-lua/plenary.nvim',
-
-  { 'tpope/vim-sleuth', event = 'VeryLazy' },
+  'tpope/vim-sleuth',
 
   {
     'matze/vim-move',
@@ -219,7 +167,7 @@ return require('lazy').setup {
 
   {
     'levouh/tint.nvim',
-    event = 'BufWinEnter',
+    event = 'VeryLazy',
     opts = {
       darken = -45,
       saturation = 0.4,
@@ -227,11 +175,23 @@ return require('lazy').setup {
   },
 
   {
+    'anuvyklack/windows.nvim',
+    event = 'WinNew',
+    dependencies = {
+      'anuvyklack/middleclass',
+      'anuvyklack/animation.nvim',
+    },
+    config = function()
+      vim.o.winwidth = 5
+      vim.o.equalalways = false
+      require('windows').setup()
+    end,
+  },
+
+  {
     'numToStr/Comment.nvim',
     event = 'VeryLazy',
-    config = function()
-      require('Comment').setup()
-    end,
+    config = true,
   },
 
   -- Surround text
@@ -246,7 +206,10 @@ return require('lazy').setup {
     'rhysd/clever-f.vim',
     keys = { 'f', 'F', 't', 'T' },
     config = function()
-      require 'dzfrias/plugins/clever-f'
+      -- Do not use f over multiple lines
+      vim.g.clever_f_across_no_line = 1
+      -- Show the places that can be directly jumped to
+      vim.g.clever_f_mark_direct = 1
     end,
   },
 
@@ -261,7 +224,12 @@ return require('lazy').setup {
   {
     'jiangmiao/auto-pairs',
     config = function()
-      require 'dzfrias/plugins/autopairs'
+      -- Do not map <C-h>
+      vim.g.AutoPairsMapCh = 0
+      vim.g.AutoPairsShortcutToggle = ''
+      vim.g.AutoPairsShortcutFastWrap = ''
+      vim.g.AutoPairsShortcutBackInsert = ''
+      vim.g.AutoPairsShortcutJump = ''
     end,
   },
   -- }}}
@@ -279,46 +247,8 @@ return require('lazy').setup {
   {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
-    keys = {
-      {
-        'gp',
-        function()
-          require('gitsigns').preview_hunk()
-        end,
-        desc = 'Git preview hunk',
-      },
-      {
-        'gr',
-        function()
-          require('gitsigns').reset_hunk()
-        end,
-        desc = 'Git reset hunk',
-      },
-      {
-        'gD',
-        function()
-          require('gitsigns').setqflist()
-        end,
-        desc = 'Open list of diff hunks',
-      },
-      {
-        'g]',
-        function()
-          require('gitsigns').next_hunk()
-        end,
-        desc = 'Go to next diff hunk',
-      },
-      {
-        'g[',
-        function()
-          require('gitsigns').prev_hunk()
-        end,
-        desc = 'Go to previous diff hunk',
-      },
-    },
-    opts = {
-      attach_to_untracked = false,
-    },
+    keys = require('dzfrias.plugins.gitsigns').keys,
+    opts = require('dzfrias.plugins.gitsigns').opts,
   },
   -- }}}
 
@@ -326,106 +256,30 @@ return require('lazy').setup {
   {
     'mfussenegger/nvim-dap',
     dependencies = {
-      'rcarriga/nvim-dap-ui',
+      {
+        'rcarriga/nvim-dap-ui',
+        config = require('dzfrias.plugins.dap').config_dap_ui,
+      },
       {
         'theHamsta/nvim-dap-virtual-text',
+        config = true,
         dependencies = {
           'nvim-treesitter/nvim-treesitter',
         },
       },
       {
         'nvim-telescope/telescope-dap.nvim',
+        config = function()
+          require('telescope').load_extension 'dap'
+        end,
         dependencies = {
           'nvim-treesitter/nvim-treesitter',
           'nvim-telescope/telescope.nvim',
         },
       },
     },
-    keys = {
-      -- Run
-      {
-        '<leader>dd',
-        '<Cmd>lua require("dap").continue()<CR>',
-        desc = 'Open debugger',
-      },
-
-      -- Quit
-      {
-        '<leader>dq',
-        '<Cmd>lua require("dap").terminate()<CR>',
-        desc = 'Quit debugger',
-      },
-
-      -- Continue to breakpoint or start debugging if no session is active
-      {
-        '<leader>dc',
-        '<Cmd>lua require("dap").continue()<CR>',
-        desc = 'Go to next breakpoint in debugger',
-      },
-      -- Continue backwards until breakpoint
-      {
-        '<leader>dC',
-        '<Cmd>lua require("dap").reverse_continue()<CR>',
-        desc = 'Go to previous breakpoint in debugger',
-      },
-
-      -- Breakpoints
-      {
-        '<leader>dt',
-        '<Cmd>lua require("dap").toggle_breakpoint()<CR>',
-        desc = 'Toggle breakpoint in debugger',
-      },
-
-      -- Movement and navigation
-      {
-        '<leader>dl',
-        '<Cmd>lua require("dap").step_into()<CR>',
-        desc = 'Step into stack frame in debugger',
-      },
-      {
-        '<leader>dh',
-        '<Cmd>lua require("dap").step_out()<CR>',
-        desc = 'Step out of stack frame in debugger',
-      },
-      {
-        '<leader>dj',
-        '<Cmd>lua require("dap").step_over()<CR>',
-        desc = 'Step in debugger',
-      },
-      {
-        '<leader>dk',
-        '<Cmd>lua require("dap").step_back()<CR>',
-        desc = 'Step up in debugger',
-      },
-
-      -- Misc
-      {
-        '<leader>dz',
-        '<Cmd>lua require("dap").run_to_cursor()<CR>',
-        desc = 'Step until cursor in debugger',
-      },
-      {
-        '<leader>di',
-        '<Cmd>lua require("dapui").eval()<CR>',
-        mode = { 'n', 'x' },
-        desc = 'Evaluate expression in debugger',
-      },
-
-      -- Telescope
-      {
-        '<leader>dv',
-        '<Cmd>Telescope dap variables<CR>',
-        desc = 'Telescope variables in debugger',
-      },
-      {
-        '<leader>df',
-        '<Cmd>Telescope dap frames<CR>',
-        desc = 'Telescope stack frames in debugger',
-      },
-    },
-    config = function()
-      require 'dzfrias/plugins/dap'
-    end,
+    keys = require('dzfrias.plugins.dap').keys,
+    config = require('dzfrias.plugins.dap').config_dap,
   },
   -- }}}
 
@@ -433,10 +287,9 @@ return require('lazy').setup {
   {
     'simrat39/rust-tools.nvim',
     ft = { 'rust', 'toml' },
-    config = function()
-      require 'dzfrias/plugins/rust-tools'
-    end,
+    opts = require 'dzfrias.plugins.rust-tools',
   },
+
   { 'dzfrias/scurry.vim', ft = 'scurry' },
   -- }}}
 
@@ -451,9 +304,7 @@ return require('lazy').setup {
   -- Generic language server
   {
     'jose-elias-alvarez/null-ls.nvim',
-    config = function()
-      require 'dzfrias/plugins/lsp/null-ls'
-    end,
+    opts = require 'dzfrias.plugins.lsp.null-ls',
   },
 
   -- LSP installer
@@ -473,35 +324,7 @@ return require('lazy').setup {
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
-        keys = {
-          {
-            '<C-j>',
-            function()
-              local luasnip = require 'luasnip'
-              if luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              end
-            end,
-            mode = 'i',
-            silent = true,
-          },
-          {
-            '<C-k>',
-            function()
-              require('luasnip').jump(-1)
-            end,
-            mode = { 'i', 's' },
-            silent = true,
-          },
-          {
-            '<C-j>',
-            function()
-              require('luasnip').jump(1)
-            end,
-            mode = { 's' },
-            silent = true,
-          },
-        },
+        keys = require('dzfrias.plugins.cmp').luasnip_keys,
         dependencies = {
           'rafamadriz/friendly-snippets',
           config = function()
@@ -518,10 +341,11 @@ return require('lazy').setup {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
+      {
+        'hrsh7th/cmp-cmdline',
+        config = require('dzfrias.plugins.cmp').cmdline_config,
+      },
     },
-    config = function()
-      require 'dzfrias/plugins/cmp'
-    end,
+    opts = require('dzfrias.plugins.cmp').opts,
   },
 }
