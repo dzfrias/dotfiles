@@ -42,6 +42,7 @@ return {
   -- A directory explorer
   {
     'stevearc/oil.nvim',
+    cmd = 'Oil',
     keys = {
       {
         '-',
@@ -317,7 +318,6 @@ return {
   -- }}}
 
   -- {{{ Autocomplete----------------------------------------------------------
-
   {
     'hrsh7th/nvim-cmp',
     event = { 'InsertEnter', 'CmdlineEnter' },
