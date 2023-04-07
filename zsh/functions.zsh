@@ -24,9 +24,6 @@ function tea() {
   fi
 }
 
-# Evaluates arguments in python with the math library
-function calc() { python3 -c "from math import *; print($*);" }
-
 function precmd() {
   # Newline after every prompt
   echo ''
