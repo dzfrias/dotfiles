@@ -9,7 +9,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', '<s-k>', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, bufopts)
 end
 
 -- Format on save

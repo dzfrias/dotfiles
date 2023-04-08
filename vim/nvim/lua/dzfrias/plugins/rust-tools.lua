@@ -17,7 +17,7 @@ return function()
 
         vim.keymap.set('n', '<s-k>', rt.hover_actions.hover_actions, bufopts)
         vim.keymap.set(
-          'n',
+          { 'n', 'v' },
           '<leader>a',
           rt.code_action_group.code_action_group,
           bufopts
