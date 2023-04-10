@@ -3,10 +3,9 @@
 
 # {{{ EXPORTS
 export EDITOR=nvim
-# Highlights anything with main.* as purple to exa
-export EXA_COLORS='main.*=35'
-# Makes direnv not log anything
-export DIRENV_LOG_FORMAT=
+# Highlights anything with main.* as purple to exa, and any directory as blue 
+# and bold
+export EXA_COLORS='di=34;1:main.*=35'
 # Changes man pages to be viewed with bat
 export MANPAGER='sh -c "col -bx | bat --language man --plain"'
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES='gorm gor'
