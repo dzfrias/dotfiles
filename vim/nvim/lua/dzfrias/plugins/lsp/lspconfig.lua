@@ -1,3 +1,9 @@
+-- Remove semantic token highlighting for parameters
+vim.api.nvim_set_hl(0, '@lsp.type.parameter', {})
+-- Remove special highlighting for builtin methods and functions in Rust
+vim.api.nvim_set_hl(0, '@lsp.typemod.method.defaultLibrary.rust', {})
+vim.api.nvim_set_hl(0, '@lsp.typemod.function.defaultLibrary.rust', {})
+
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 
