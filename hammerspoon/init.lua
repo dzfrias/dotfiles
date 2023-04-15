@@ -1,4 +1,4 @@
-local no_require = { '.', '..', 'util.lua', 'init.lua', 'Spoons' }
+local no_require = { '.', '..', 'util.lua', 'init.lua', 'Spoons', '.DS_Store' }
 
 for file in hs.fs.dir '.' do
   if hs.fnutils.contains(no_require, file) then
