@@ -16,15 +16,10 @@ yabai -m config window_gap     8
 # Only have window shadows for floating windows
 yabai -m config window_shadow float
 
-# 80% unfocused window opacity
-yabai -m config window_opacity on
-yabai -m config active_window_opacity 1
-yabai -m config normal_window_opacity 0.8
-
 yabai -m config window_border on
 yabai -m config window_border_width 2
-yabai -m config active_window_border_color 0xbb4cb8d9
-yabai -m config normal_window_border_color 0x00ffffff
+yabai -m config active_window_border_color 0xffc0caf5
+yabai -m config normal_window_border_color 0xaac0caf5
 
 # When window is focused, mouse follows too
 yabai -m config mouse_follows_focus on
@@ -34,4 +29,4 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^Digital Color Meter$" manage=off
 
-yabai -m config external_bar all:25:2
+yabai -m config external_bar all:30:2
