@@ -36,6 +36,13 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', function()
   obsidian:activate()
 end)
 
+-- Open Firefox
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', function()
+  hs.application.launchOrFocus 'Firefox'
+  local iterm = hs.application.get 'Firefox'
+  iterm:activate()
+end)
+
 -- Get the current time
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
   -- Of the form: (ABBREV_DAY) (12 HOUR):(MINUTE)(AM/PM)

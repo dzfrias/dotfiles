@@ -25,15 +25,6 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'F', function()
   yabai { '-m', 'window', '--toggle', 'float', '--grid', '4:4:1:1:2:2' }
 end)
 
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', function()
-  yabai {
-    '-m',
-    'space',
-    '--focus',
-    'school',
-  }
-end)
-
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'B', function()
   hs.execute [[/opt/homebrew/bin/yabai -m space --layout "$(/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq -r 'if .type == "bsp" then "stack" else "bsp" end')"]]
   if
