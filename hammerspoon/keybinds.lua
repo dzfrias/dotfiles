@@ -39,8 +39,15 @@ end)
 -- Open Firefox
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', function()
   hs.application.launchOrFocus 'Firefox'
-  local iterm = hs.application.get 'Firefox'
-  iterm:activate()
+  local firefox = hs.application.get 'Firefox'
+  firefox:activate()
+end)
+
+-- Open Unity
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'U', function()
+  hs.application.launchOrFocus 'Unity'
+  local unity = hs.application.get 'Unity'
+  unity:activate()
 end)
 
 -- Get the current time
