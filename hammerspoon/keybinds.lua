@@ -11,8 +11,8 @@ end)
 
 -- Open Alacritty
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', function()
-  hs.application.launchOrFocus 'Alacritty'
-  local iterm = hs.application.get 'Alacritty'
+  hs.application.launchOrFocus 'WezTerm'
+  local iterm = hs.application.get 'WezTerm'
   iterm:activate()
 end)
 
