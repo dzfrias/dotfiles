@@ -1,7 +1,0 @@
-# vim: set ft=conf
-
-ctrl + alt - d : open -a "Things3"
-ctrl + alt - i : open -a "Alacritty"
-ctrl + alt - c : open -a "Calendar"
-ctrl + alt - o : open -a "Obsidian"
-ctrl + alt - u : open -a "Unity"
