@@ -1,0 +1,22 @@
+" General Settings
+set update.lastchecktime 1681681489038
+set update.nag true
+set update.nagwait 7
+set update.lastnaggedversion 1.14.0
+set update.checkintervalsecs 86400
+set configversion 2.0
+set theme midnight
+
+# Bindings
+bind n findnext 1
+bind N findnext -1
+set smoothscroll true
+
+" Autocmds
+autocmd DocStart gmail.com mode ignore
+autocmd DocStart mail.google.com/mail mode ignore
+autocmd DocStart docs.google.com mode ignore
+autocmd DocLoad ^https://github.com/tridactyl/tridactyl/issues/new$ issue
+autocmd TriStart .* source_quiet
+
+" vim: set filetype=tridactyl

@@ -292,6 +292,8 @@ return {
   },
 
   { 'dzfrias/scurry.vim', ft = 'scurry' },
+
+  { 'tridactyl/vim-tridactyl', ft = 'tridactyl' },
   -- }}}
 
   -- {{{ LSP-------------------------------------------------------------------
