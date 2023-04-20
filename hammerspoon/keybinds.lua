@@ -58,13 +58,6 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
 end)
 
 -- Clear all notifications
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'N', function()
-  hs.applescript [[
-  tell application "System Events" to tell process "Notification Center"
-    -- Get frontmost notification
-    set notif to group 1 of UI element 1 of scroll area 1 of window "Notification Center"
-    -- Perform action to clear notification or clear all notifications
-    perform action 4 of notif
-  end tell
-  ]]
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'X', function()
+  hs.execute '/usr/bin/sqlite3 "$(/usr/bin/getconf DARWIN_USER_DIR)/com.apple.notificationcenter/db2/db" "DELETE FROM record;" && /usr/bin/killall NotificationCenter'
 end)
