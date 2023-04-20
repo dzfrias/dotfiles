@@ -7,6 +7,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font 'MesloLGM Nerd Font'
 config.font_size = 12.0
 config.macos_window_background_blur = 9
+config.front_end = 'WebGpu'
 
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
 table.insert(config.hyperlink_rules, {
