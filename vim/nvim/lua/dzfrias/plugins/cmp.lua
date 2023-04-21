@@ -51,22 +51,12 @@ end
 
 M.luasnip_keys = {
   {
-    '<C-j>',
-    function()
-      local luasnip = require 'luasnip'
-      if luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      end
-    end,
-    mode = 'i',
-    silent = true,
-  },
-  {
     '<C-k>',
     function()
       require('luasnip').jump(-1)
     end,
     mode = { 'i', 's' },
+    desc = 'previous luasnip item',
     silent = true,
   },
   {
@@ -74,7 +64,8 @@ M.luasnip_keys = {
     function()
       require('luasnip').jump(1)
     end,
-    mode = { 's' },
+    mode = { 'i', 's' },
+    desc = 'next luasnip item',
     silent = true,
   },
 }
