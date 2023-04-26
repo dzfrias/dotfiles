@@ -8,6 +8,8 @@ return {
     'regex',
     'rust',
     'query',
+    'toml',
+    'markdown',
   },
 
   highlight = {
