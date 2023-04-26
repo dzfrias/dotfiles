@@ -10,6 +10,7 @@ return function()
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.diagnostics.shellcheck,
       null_ls.builtins.formatting.prettier,
+      null_ls.builtins.diagnostics.mypy,
     },
   }
 end
