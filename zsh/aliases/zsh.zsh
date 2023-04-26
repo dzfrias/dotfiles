@@ -26,6 +26,7 @@ alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 alias ea='ea --group-directories-first'
+alias eaa='ea -a'
 alias ggl='google'
 alias osd='osadict'
 alias bndl='brew bundle dump --describe --force'
