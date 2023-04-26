@@ -1,15 +1,13 @@
 " General Settings
-set update.lastchecktime 1681681489038
-set update.nag true
-set update.nagwait 7
-set update.lastnaggedversion 1.14.0
-set update.checkintervalsecs 86400
 set configversion 2.0
 set theme midnight
 
 # Bindings
 bind n findnext 1
 bind N findnext -1
+bind --mode=ex <C-n> ex.next_completion
+bind --mode=ex <C-p> ex.prev_completion
+
 set smoothscroll true
 
 " Autocmds
