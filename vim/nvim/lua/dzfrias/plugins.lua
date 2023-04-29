@@ -118,7 +118,6 @@ return {
 
   -- {{{ General tools---------------------------------------------------------
   'christoomey/vim-tmux-navigator', -- Vim and tmux integration
-  'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth',
 
   {
@@ -191,14 +190,14 @@ return {
 
   {
     'numToStr/Comment.nvim',
-    event = 'VeryLazy',
+    keys = 'gc',
     config = true,
   },
 
   -- Surround text
   {
     'tpope/vim-surround',
-    event = 'VeryLazy',
+    keys = { 'ys', { 'S', mode = 'v' } },
     dependencies = 'tpope/vim-repeat',
   },
 
