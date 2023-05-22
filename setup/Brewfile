@@ -21,10 +21,6 @@ brew "cargo-nextest"
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Platform built on V8 to build network applications
-brew "node"
-# Firebase command-line tools
-brew "firebase-cli"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -41,16 +37,16 @@ brew "go"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Experimental optional static type checker for Python
+brew "mypy"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Platform built on V8 to build network applications
+brew "node"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
-# Command-line interface for SQLite
-brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -63,8 +59,6 @@ brew "tokei"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 # Interactive Grep
@@ -73,12 +67,14 @@ brew "konradsz/igrep/igrep"
 cask "alacritty"
 # Application launcher and productivity software
 cask "alfred"
-# Enable Windows-like alt-tab
-cask "alt-tab"
+# Web browser
+cask "firefox"
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
 # Desktop automation application
 cask "hammerspoon"
+# Windows manager and desktop organiser
+cask "hazeover"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Browser for ambitious developers
