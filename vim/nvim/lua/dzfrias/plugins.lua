@@ -42,6 +42,7 @@ return {
   -- A directory explorer
   {
     'stevearc/oil.nvim',
+    lazy = false,
     cmd = 'Oil',
     keys = {
       {
