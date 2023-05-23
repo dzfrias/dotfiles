@@ -81,19 +81,6 @@ return {
     config = true,
   },
 
-  -- Easy HTML editing
-  {
-    'mattn/emmet-vim',
-    keys = {
-      {
-        '<C-l>',
-        '<Plug>(emmet-expand-abbr)',
-        mode = { 'i', 'n' },
-        desc = 'Expand emmet',
-      },
-    },
-  },
-
   -- Fzf-like filter
   {
     'nvim-telescope/telescope.nvim',
@@ -197,7 +184,7 @@ return {
   -- Surround text
   {
     'tpope/vim-surround',
-    keys = { 'ys', { 'S', mode = 'v' } },
+    keys = { 'ys', { 'S', mode = 'v' }, 'ds' },
     dependencies = 'tpope/vim-repeat',
   },
 

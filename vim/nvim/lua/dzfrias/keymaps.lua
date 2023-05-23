@@ -33,9 +33,5 @@ nnoremap('<s-CR>', 'O<Esc>')
 nnoremap('<leader>w', '<Cmd>write<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
 
-nnoremap('<leader>bn', '<Cmd>bnext<CR>')
-nnoremap('<leader>bp', '<Cmd>bprev<CR>')
-nnoremap('<leader>bd', '<Cmd>bdelete<CR>')
-
 -- Escape
 inoremap('jk', '<Esc>')
