@@ -7,6 +7,12 @@
           "rust"
         ],
         "path": "./snippets/rust.json"
+      },
+      {
+        "language": [
+          "hlsl"
+        ],
+        "path": "./snippets/hlsl.json"
       }
     ]
   }
