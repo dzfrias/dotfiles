@@ -74,3 +74,15 @@ lspconfig.lua_ls.setup {
     },
   },
 }
+
+local configs = require 'lspconfig.configs'
+configs.ast_grep = {
+  default_config = {
+    cmd = { 'sg', 'lsp' },
+    filetypes = { 'cs' },
+    single_file_support = true,
+    root_dir = require('lspconfig.util').root_pattern('.git', 'sgconfig.yml'),
+  },
+}
+
+lspconfig.ast_grep.setup {}

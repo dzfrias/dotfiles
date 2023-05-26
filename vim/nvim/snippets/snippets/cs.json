@@ -1,0 +1,12 @@
+{
+  "ser": {
+    "prefix": "ser",
+    "body": ["[SerializeField] private ${1:float} ${2};"],
+    "description": "a Unity serialized field"
+  },
+  "ienum": {
+    "prefix": "ienum",
+    "body": ["private IEnumerator ${1:Method}(${2})", "{", "${3}", "}"],
+    "description": "a IEnumerator method"
+  }
+}

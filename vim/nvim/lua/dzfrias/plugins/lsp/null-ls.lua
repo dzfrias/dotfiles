@@ -13,6 +13,7 @@ return function()
       null_ls.builtins.diagnostics.mypy.with {
         command = '/opt/homebrew/bin/mypy',
       },
+      null_ls.builtins.formatting.csharpier,
     },
   }
 end
