@@ -75,6 +75,16 @@ lspconfig.lua_ls.setup {
   },
 }
 
+lspconfig.omnisharp.setup {
+  cmd = {
+    'mono',
+    '--assembly-loader=strict',
+    '/Users/dzfrias/.dotfiles/downloads/omnisharp-osx/omnisharp/OmniSharp.exe',
+  },
+  on_attach = on_attach,
+  use_mono = true,
+}
+
 local configs = require 'lspconfig.configs'
 configs.ast_grep = {
   default_config = {

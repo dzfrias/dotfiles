@@ -37,8 +37,8 @@ brew "go"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Experimental optional static type checker for Python
-brew "mypy"
+# Cross platform, open source .NET development framework
+brew "mono"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Platform built on V8 to build network applications
