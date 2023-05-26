@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-nvim -c "Man $1 | wincmd o"

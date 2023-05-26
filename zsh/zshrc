@@ -20,7 +20,7 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="$HOME/.cargo/bin:$PATH:$HOME/.dotnet/tools"
+export PATH="$HOME/.cargo/bin:$PATH:$HOME/.dotfiles/zsh/autoload"
 export RUST_LOG='trace'
 # }}}
 
@@ -87,8 +87,6 @@ zle -N zle-keymap-select
 
 # {{{ FUNCTIONS
 source "$HOME/.dotfiles/zsh/functions.zsh"
-# This script will load everything in the autload directory
-source $HOME/.dotfiles/zsh/autoload.zsh
 # }}}
 
 
