@@ -1,0 +1,19 @@
+id: no-public-field-without-uppercamelcase-name
+message: Public field/property without UpperCamelCase name
+severity: warning
+language: CSharp
+
+rule:
+  all:
+    - any:
+        - kind: property_declaration
+        - kind: field_declaration
+
+    - has:
+        kind: modifier
+        regex: public
+    - not:
+        has:
+          kind: identifier
+          regex: "^[A-Z]"
+          stopBy: end

@@ -1,0 +1,16 @@
+id: no-string-start-coroutine
+message: Coroutine called with string
+severity: warning
+language: CSharp
+
+rule:
+  all:
+    - kind: invocation_expression
+    - has:
+        kind: identifier
+        regex: StartCoroutine
+    - has:
+        kind: argument
+        stopBy: end
+        has:
+          kind: string_literal
