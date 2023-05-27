@@ -19,7 +19,7 @@ case $1 in
   '-d' | '--dir')
     # Make a directory
     mkdir "$temp_path/$random"
-    cd "$temp_path/$random"
+    echo "$temp_path/$random"
     ;;
   '-c' | '--clipboard')
     # Make a txt file and pastes system clipboard into it

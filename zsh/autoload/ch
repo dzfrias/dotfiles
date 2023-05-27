@@ -49,8 +49,7 @@ case $#matches in
   1)
     local new_dir="$BOLD$matches[1]$PLAIN"
     if [[ ! -v preview ]]; then
-      echo "Changed directory to $new_dir!"
-      cd $matches[1]
+      echo $matches[1]
     else
       echo "Would change directory to: $new_dir"
     fi
@@ -80,8 +79,7 @@ case $#matches in
       return 1
     fi
     local new_dir="$BOLD$matches[$result]$PLAIN"
-    echo "Changed directory to $new_dir!"
-    cd $matches[$result]
+    echo $new_dir
 esac
 
 unfunction _enumerate
