@@ -1,0 +1,13 @@
+id: no-implicit-private-methods
+message: Implicitly private method
+severity: warning
+language: CSharp
+
+rule:
+  all:
+    - kind: method_declaration
+
+    - not:
+        has:
+          kind: modifier
+          regex: (private|public)
