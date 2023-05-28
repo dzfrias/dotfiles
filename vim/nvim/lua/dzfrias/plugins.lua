@@ -281,6 +281,24 @@ return {
     opts = require 'dzfrias.plugins.rust-tools',
   },
 
+  {
+    'Canop/nvim-bacon',
+    cmd = 'BaconList',
+    keys = {
+      { '<leader>Bl', '<Cmd>BaconList<CR>', desc = 'Open bacon' },
+      {
+        '<leader>Bn',
+        '<Cmd>BaconLoad<CR><Cmd>BaconNext<CR>',
+        desc = 'Go to next bacon result',
+      },
+      {
+        '<leader>Bp',
+        '<Cmd>BaconLoad<CR><Cmd>BaconPrev<CR>',
+        desc = 'Go to previous bacon result',
+      },
+    },
+  },
+
   { 'dzfrias/scurry.vim', ft = 'scurry' },
 
   { 'tridactyl/vim-tridactyl', ft = 'tridactyl' },

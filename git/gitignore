@@ -18,3 +18,6 @@ venv
 
 # Repo-cleaning report
 .git.bfg-report
+
+# Bacon
+.bacon-locations
