@@ -33,5 +33,11 @@ nnoremap('<s-CR>', 'O<Esc>')
 nnoremap('<leader>w', '<Cmd>write<CR>')
 nnoremap('<leader>q', '<Cmd>quit!<CR>')
 
+nnoremap('<C-n>', '<Cmd>BufferNext<CR>')
+nnoremap('<C-p>', '<Cmd>BufferPrevious<CR>')
+nnoremap('<leader>bd', '<Cmd>BufferClose<CR>')
+nnoremap('<leader>bp', '<Cmd>BufferPick<CR>')
+nnoremap('<leader>bP', '<Cmd>BufferPin<CR>')
+
 -- Escape
 inoremap('jk', '<Esc>')
