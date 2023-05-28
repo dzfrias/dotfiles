@@ -77,7 +77,5 @@ cask "hammerspoon"
 cask "hazeover"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Browser for ambitious developers
-cask "polypane"
 # Run commands and display their output on the desktop
 cask "ubersicht"
