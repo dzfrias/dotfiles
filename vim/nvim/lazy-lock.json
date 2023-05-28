@@ -30,6 +30,7 @@
   "nvim-toggler": { "branch": "main", "commit": "a9d320d2338611ef5310c3844c39d761dbf23769" },
   "nvim-treesitter": { "branch": "master", "commit": "ab3fb2a285e55a56b732d2f9f40ba7c3a10b87fc" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "95b76b95eff25e1e64f363938cd853852355d70a" },
+  "nvim-various-textobjs": { "branch": "main", "commit": "56662b7ea1983e28c778357e98c0744e2581b9e1" },
   "nvim-web-devicons": { "branch": "master", "commit": "e283ab937e0197b37ec5d8013e49495193407324" },
   "oil.nvim": { "branch": "master", "commit": "64d2f305d30cec13938aa99f8f13bd84c502e020" },
   "playground": { "branch": "master", "commit": "2b81a018a49f8e476341dfcb228b7b808baba68b" },

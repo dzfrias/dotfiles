@@ -109,6 +109,11 @@ return {
   'tpope/vim-sleuth',
 
   {
+    'chrisgrieser/nvim-various-textobjs',
+    opts = { useDefaultKeymaps = true },
+  },
+
+  {
     'matze/vim-move',
     keys = {
       { '<A-k>', mode = { 'v', 'n' } },
