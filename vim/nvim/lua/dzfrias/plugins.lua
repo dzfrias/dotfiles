@@ -109,6 +109,23 @@ return {
   'tpope/vim-sleuth',
 
   {
+    'Wansmer/treesj',
+    keys = {
+      {
+        '<Space>j',
+        function()
+          require('treesj').toggle()
+        end,
+        desc = 'Toggle split and join',
+      },
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {
+      use_default_keymaps = false,
+    },
+  },
+
+  {
     'chrisgrieser/nvim-various-textobjs',
     opts = { useDefaultKeymaps = true },
   },
@@ -126,37 +143,6 @@ return {
   { 'haya14busa/is.vim', keys = { '/', '?', 'n', 'N', '*', '#' } },
 
   { 'stevearc/dressing.nvim', event = 'VeryLazy' }, -- Better UI defaults for vim
-
-  {
-    'cbochs/grapple.nvim',
-    keys = {
-      {
-        '<leader>m',
-        function()
-          require('grapple').toggle()
-        end,
-        desc = 'Toggle mark for grappling',
-      },
-      {
-        '<leader>o',
-        function()
-          require('grapple').popup_tags()
-        end,
-        desc = 'Open grapple UI',
-      },
-    },
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-
-  {
-    'nguyenvukhang/nvim-toggler',
-    keys = { '<leader>i' },
-    opts = {
-      inverses = {
-        ['True'] = 'False',
-      },
-    },
-  },
 
   {
     'levouh/tint.nvim',
