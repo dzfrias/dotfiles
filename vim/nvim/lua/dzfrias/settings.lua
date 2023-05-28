@@ -74,3 +74,6 @@ set.smartcase = true
 vim.g.mapleader = ' '
 
 set.conceallevel = 2
+
+set.foldmethod = 'expr'
+set.foldexpr = 'nvim_treesitter#foldexpr()'
