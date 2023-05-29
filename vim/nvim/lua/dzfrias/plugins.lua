@@ -67,6 +67,8 @@ return {
     opts = require 'dzfrias/plugins/oil',
   },
 
+  { 'TimUntersberger/neogit' },
+
   {
     'nvim-treesitter/playground',
     cmd = 'TSPlaygroundToggle',
