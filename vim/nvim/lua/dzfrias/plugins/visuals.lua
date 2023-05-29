@@ -30,6 +30,14 @@ return {
     opts = {
       exclude_ft = { 'oil' },
     },
+    lazy = false,
+    keys = {
+      { '<C-n>', '<Cmd>BufferNext<CR>' },
+      { '<C-p>', '<Cmd>BufferPrevious<CR>' },
+      { '<leader>bd', '<Cmd>BufferClose<CR>' },
+      { '<leader>bp', '<Cmd>BufferPick<CR>' },
+      { '<leader>bP', '<Cmd>BufferPin<CR>' },
+    },
   },
 
   -- Status bar
