@@ -94,32 +94,55 @@ return {
   {
     'matze/vim-move',
     keys = {
-      { '<A-k>', mode = { 'v', 'n' } },
-      { '<A-j>', mode = { 'v', 'n' } },
-      { '<A-l>', mode = { 'v', 'n' } },
-      { '<A-h>', mode = { 'v', 'n' } },
+      { '<A-k>', mode = { 'v', 'n' }, desc = 'Move up' },
+      { '<A-j>', mode = { 'v', 'n' }, desc = 'Move down' },
+      { '<A-l>', mode = { 'v', 'n' }, desc = 'Move left' },
+      { '<A-h>', mode = { 'v', 'n' }, desc = 'Move right' },
     },
   },
 
-  { 'haya14busa/is.vim', keys = { '/', '?', 'n', 'N', '*', '#' } },
+  {
+    'haya14busa/is.vim',
+    keys = {
+      { '/', desc = 'Search' },
+      { '?', desc = 'Search backwards' },
+      { 'n', desc = 'Next match' },
+      { 'N', desc = 'Previous match' },
+      { '*', desc = 'Search word under cursor' },
+      { '#', desc = 'Search word under cursor backwards' },
+    },
+  },
 
   {
     'numToStr/Comment.nvim',
-    keys = { { 'gc', mode = { 'v', 'n' } } },
+    keys = { { 'gc', mode = { 'v', 'n' }, desc = 'Comment' } },
     config = true,
   },
 
   -- Surround text
   {
     'tpope/vim-surround',
-    keys = { 'ys', { 'S', mode = 'v' }, 'ds' },
+    keys = {
+      { 'ys', desc = 'Surround' },
+      { 'S', mode = 'v', desc = 'Surround' },
+      { 'ds', desc = 'Delete surrounding' },
+    },
     dependencies = 'tpope/vim-repeat',
   },
 
   -- Better movement with f and t
   {
     'rhysd/clever-f.vim',
-    keys = { 'f', 'F', 't', 'T' },
+    keys = {
+      { 'f', mode = { 'n', 'o' }, desc = 'Motion to character' },
+      { 'F', mode = { 'n', 'o' }, desc = 'Motion to character backwards' },
+      { 't', mode = { 'n', 'o' }, desc = 'Motion to behind character' },
+      {
+        'T',
+        mode = { 'n', 'o' },
+        desc = 'Motion to behind character backwards',
+      },
+    },
     config = function()
       -- Do not use f over multiple lines
       vim.g.clever_f_across_no_line = 1
@@ -131,7 +154,17 @@ return {
   -- Better clipboard control
   {
     'svermeulen/vim-easyclip',
-    keys = { 'y', 'p', 'P', 'Y', 'm', 'd', 'D', 'c', 'C' },
+    keys = {
+      { 'y', mode = { 'n', 'v' }, desc = 'Yank' },
+      { 'p', mode = { 'n', 'v' }, desc = 'Paste' },
+      { 'P', mode = { 'n', 'v' }, desc = 'Past above' },
+      { 'Y', mode = { 'n', 'v' }, desc = 'Yank until end of line' },
+      { 'm', mode = { 'n', 'v' }, desc = 'Cut' },
+      { 'd', mode = { 'n', 'v' }, desc = 'Delete' },
+      { 'D', mode = { 'n', 'v' }, desc = 'Delete until end of line' },
+      { 'c', mode = { 'n', 'v' }, desc = 'Change' },
+      { 'C', mode = { 'n', 'v' }, desc = 'Change until end of line' },
+    },
     dependencies = 'tpope/vim-repeat',
   },
 

@@ -7,26 +7,26 @@ end
 
 ---@param shortcut string
 ---@param command string|function
-function M.nnoremap(shortcut, command)
-  vim.keymap.set('n', shortcut, command, { noremap = true })
+function M.nnoremap(shortcut, command, desc)
+  vim.keymap.set('n', shortcut, command, { noremap = true, desc = desc })
 end
 
 ---@param shortcut string
 ---@param command string|function
-function M.inoremap(shortcut, command)
-  vim.keymap.set('i', shortcut, command, { noremap = true })
+function M.inoremap(shortcut, command, desc)
+  vim.keymap.set('i', shortcut, command, { noremap = true, desc = desc })
 end
 
 ---@param shortcut string
 ---@param command string|function
-function M.noremap(shortcut, command)
-  vim.keymap.set('', shortcut, command, { noremap = true })
+function M.noremap(shortcut, command, desc)
+  vim.keymap.set('', shortcut, command, { noremap = true, desc = desc })
 end
 
 ---@param shortcut string
 ---@param command string|function
-function M.xnoremap(shortcut, command)
-  vim.keymap.set('x', shortcut, command, { noremap = true })
+function M.xnoremap(shortcut, command, desc)
+  vim.keymap.set('x', shortcut, command, { noremap = true, desc = desc })
 end
 
 ---@param mode string

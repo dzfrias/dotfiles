@@ -12,7 +12,7 @@ return {
               require('luasnip').jump(-1)
             end,
             mode = { 'i', 's' },
-            desc = 'previous luasnip item',
+            desc = 'Previous luasnip item',
             silent = true,
           },
           {
@@ -21,7 +21,7 @@ return {
               require('luasnip').jump(1)
             end,
             mode = { 'i', 's' },
-            desc = 'next luasnip item',
+            desc = 'Next luasnip item',
             silent = true,
           },
         },
