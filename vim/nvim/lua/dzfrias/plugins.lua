@@ -67,8 +67,6 @@ return {
     opts = require 'dzfrias/plugins/oil',
   },
 
-  { 'TimUntersberger/neogit' },
-
   {
     'nvim-treesitter/playground',
     cmd = 'TSPlaygroundToggle',
@@ -257,15 +255,12 @@ return {
   -- }}}
 
   -- {{{ Git-------------------------------------------------------------------
-  -- Git integration
-  {
-    'kdheepak/lazygit.nvim',
-    keys = {
-      { '<leader>g', '<Cmd>LazyGit<CR>', desc = 'Open lazygit' },
-    },
-  },
-
   -- Git diffs in sign column and hunk interactions
+  {
+    'TimUntersberger/neogit',
+    cmd = 'Neogit',
+    keys = { { '<leader>g', '<Cmd>Neogit<CR>', desc = 'Open Neogit' } },
+  },
   {
     'lewis6991/gitsigns.nvim',
     event = 'VeryLazy',
