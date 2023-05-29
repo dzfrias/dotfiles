@@ -19,6 +19,9 @@ alias cl='j && clear'
 # Clear mbox file
 alias clmb='echo "" > ~/.mbox'
 alias rec='mv "$HOME/Downloads/"$(cd ~/Downloads; ls -Art | tail -n 1) .'
+alias h='cd $(home)'
+alias mkt='cd $(maketemp)'
+alias ch='cd $(changedir)'
 
 # -CLI-OPTIONS-
 # Doesn't open pager for bat (default is 'always' in misc/config/bat/config)
