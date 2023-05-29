@@ -55,7 +55,6 @@ return {
   {
     'stevearc/oil.nvim',
     lazy = false,
-    cmd = 'Oil',
     keys = {
       {
         '-',
@@ -139,6 +138,36 @@ return {
 
   {
     'chrisgrieser/nvim-various-textobjs',
+    keys = {
+      { 'iS', mode = 'o' },
+      { 'aS', mode = 'o' },
+      { 'ii', mode = 'o' },
+      { 'ai', mode = 'o' },
+      { 'aI', mode = 'o' },
+      { 'iI', mode = 'o' },
+      { 'R', mode = 'o' },
+      { '%', mode = 'o' },
+      { 'r', mode = 'o' },
+      { 'gG', mode = 'o' },
+      { 'n', mode = 'o' },
+      { 'i_', mode = 'o' },
+      { 'a_', mode = 'o' },
+      { '|', mode = 'o' },
+      { 'av', mode = 'o' },
+      { 'iv', mode = 'o' },
+      { 'ik', mode = 'o' },
+      { 'ak', mode = 'o' },
+      { 'L', mode = 'o' },
+      { 'in', mode = 'o' },
+      { 'an', mode = 'o' },
+      { '!', mode = 'o' },
+      { 'iz', mode = 'o' },
+      { 'az', mode = 'o' },
+      { 'im', mode = 'o' },
+      { 'am', mode = 'o' },
+      { 'gw', mode = 'o' },
+      { 'gW', mode = 'o' },
+    },
     opts = { useDefaultKeymaps = true },
   },
 
@@ -181,7 +210,7 @@ return {
 
   {
     'numToStr/Comment.nvim',
-    keys = 'gc',
+    keys = { { 'gc', mode = { 'v', 'n' } } },
     config = true,
   },
 

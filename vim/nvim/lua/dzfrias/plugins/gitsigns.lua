@@ -40,6 +40,7 @@ M.keys = {
 
 M.opts = {
   attach_to_untracked = false,
+  trouble = false,
 }
 
 return M
