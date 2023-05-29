@@ -1,4 +1,4 @@
 require 'dzfrias/settings'
-require('lazy').setup(require 'dzfrias.plugins')
+require('lazy').setup 'dzfrias.plugins'
 require 'dzfrias/commands'
 require 'dzfrias/keymaps'
