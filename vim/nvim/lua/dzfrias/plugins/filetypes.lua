@@ -87,6 +87,6 @@ return {
   {
     'rrethy/vim-hexokinase',
     build = 'make hexokinase',
-    ft = 'css',
+    ft = { 'css', 'scss' },
   },
 }
