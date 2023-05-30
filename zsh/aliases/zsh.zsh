@@ -20,7 +20,7 @@ alias cl='j && clear'
 alias clmb='echo "" > ~/.mbox'
 alias rec='mv "$HOME/Downloads/"$(cd ~/Downloads; ls -Art | tail -n 1) .'
 alias h='cd $(home)'
-alias mkt='cd $(maketemp)'
+alias mkt='cd $(maketemp -d)'
 alias ch='cd $(changedir)'
 
 # -CLI-OPTIONS-
