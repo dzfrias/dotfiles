@@ -15,8 +15,8 @@ return {
       keymaps = {
         ['<C-v>'] = 'actions.select_vsplit',
         ['<C-x>'] = 'actions.select_split',
-        ['<C-h>'] = '<Cmd>wincmd h<CR>',
-        ['<C-l>'] = '<Cmd>wincmd l<CR>',
+        ['<C-h>'] = false,
+        ['<C-l>'] = false,
         ['q'] = 'actions.close',
       },
     },
