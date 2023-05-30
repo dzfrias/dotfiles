@@ -45,6 +45,9 @@ end)
 
 -- Open Unity
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'U', function()
+  if hs.appfinder.appFromName 'Unity' == nil then
+    return
+  end
   hs.application.launchOrFocus 'Unity'
   local unity = hs.application.get 'Unity'
   unity:activate()
