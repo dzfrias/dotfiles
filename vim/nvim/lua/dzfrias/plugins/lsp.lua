@@ -40,7 +40,8 @@ return {
 
       -- Setting up servers
       local lspconfig = require 'lspconfig'
-      local default_install = { 'gopls', 'cssls', 'svelte', 'tsserver' }
+      local default_install =
+        { 'pyright', 'gopls', 'cssls', 'svelte', 'tsserver' }
       for _, lsp in ipairs(default_install) do
         lspconfig[lsp].setup {
           on_attach = on_attach,
