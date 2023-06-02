@@ -3,8 +3,6 @@ alias ex='exit'
 alias rl='exec zsh'
 # Copies to clipboard
 alias pb='pbcopy'
-# To perform calculations
-alias cc='noglob calc'
 # List cron jobs
 alias crnl='crontab -l'
 # Edit crontab
@@ -15,22 +13,21 @@ alias rmrf='rm -rf'
 alias srmr='sudo rm -r'
 alias cpr='cp -R'
 alias license='cp ~/.dotfiles/LICENSE .'
-alias cl='j && clear'
 # Clear mbox file
 alias clmb='echo "" > ~/.mbox'
-alias rec='mv "$HOME/Downloads/"$(cd ~/Downloads; ls -Art | tail -n 1) .'
 alias h='cd $(home)'
 alias mkt='cd $(maketemp -d)'
 alias ch='cd $(changedir)'
 
+# - FZF -
+alias fzfkill='ps | sed "1d" | fzf --with-nth 4.. | cut -w -f 1 | xargs kill'
+alias rec="command exa ~/Downloads | fzf | xargs -I {} mv '$HOME/Downloads/{}' ."
+
 # -CLI-OPTIONS-
-# Doesn't open pager for bat (default is 'always' in misc/config/bat/config)
-alias sbat='bat --paging=never'
 # Long form, no owner, icons, no permissions, git status
 alias exa='exa --long --header --no-user --icons --no-permissions --git'
 alias ea='ea --group-directories-first'
 alias eaa='ea -a'
-alias ggl='google'
 alias osd='osadict'
 alias bndl='brew bundle dump --describe --force'
 alias brwo='brew outdated'
