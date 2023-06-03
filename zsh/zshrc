@@ -18,6 +18,7 @@ export FZF_DEFAULT_OPTS="\
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
 export FZF_ALT_C_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_COMPLETION_TRIGGER=']]'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export PATH="$HOME/.cargo/bin:$PATH:$HOME/.dotfiles/zsh/autoload"
@@ -64,6 +65,9 @@ bindkey    '^[[Z'  autosuggest-accept
 # Clears the prompt, writes the text, and enters it
 bindkey -s 'uu'    '^Uj ..^M'
 bindkey -s '^E'    '^Uj ~/.dotfiles^M'
+# Alt-l to complete
+bindkey    '^[l'   expand-or-complete
+bindkey    '^[l'   fzf-completion
 
 # Copies current prompt text to clipboard
 bindkey -M viins '^Y' copybuffer
