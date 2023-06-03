@@ -14,11 +14,10 @@ export MBOX="$HOME/.mbox"
 export FZF_DEFAULT_COMMAND='fd --type file --hidden'
 export FZF_DEFAULT_OPTS="\
   --preview-window=up \
-  --prompt='~> ' \
   --color='pointer:#00FFFF,prompt:#0db9d7,bg+:#263c42,hl+:#c19eff,hl:#b38aff,info:#75bf7a,border:#4f4970' \
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
-export FZF_ALT_C_COMMAND='fd --type file --hidden'
+export FZF_ALT_C_COMMAND=$FZF_DEFAULT_COMMAND
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export PATH="$HOME/.cargo/bin:$PATH:$HOME/.dotfiles/zsh/autoload"
@@ -70,19 +69,6 @@ bindkey -s '^E'    '^Uj ~/.dotfiles^M'
 bindkey -M viins '^Y' copybuffer
 bindkey -M vicmd '^Y' copybuffer
 bindkey -M emacs '^Y' copybuffer
-
-function zle-keymap-select {
-  # Change cursor for depending on the mode
-  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-    echo -ne '\e[2 q'
-  elif [[ ${KEYMAP} == main ]] ||
-    [[ ${KEYMAP} == viins ]] ||
-    [[ ${KEYMAP} = '' ]] ||
-    [[ $1 = 'beam' ]]; then
-    echo -ne '\e[6 q'
-  fi
-}
-zle -N zle-keymap-select
 # }}}
 
 
