@@ -27,4 +27,6 @@ function tea() {
 function precmd() {
   # Newline after every prompt
   echo ''
+  # Vertical cursor every prompt
+  echo -ne '\e[6 q'
 }
