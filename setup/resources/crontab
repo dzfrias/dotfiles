@@ -5,4 +5,4 @@
 # Delete all files and directories in the ~/.temporary dir
 0 */3 * * * /bin/rm -rf ~/.temporary/*
 
-0 */24 * * * cd ~/.dotfiles/setup && /opt/homebrew/bin/brew bundle dump --force --describe --quiet
+0 */24 * * * cd ~/.dotfiles/setup && /opt/homebrew/bin/brew bundle dump --force --describe --quiet >/dev/null 2>&1
