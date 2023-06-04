@@ -27,7 +27,10 @@ set foldmethod=indent
 set foldlevelstart=2
 set foldnestmax=1
 
-colorscheme zellner
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+colorscheme slate
 
 
 " -MAPPINGS--------------------------------------------------------------------
