@@ -126,6 +126,7 @@ return {
       { 'ys', desc = 'Surround' },
       { 'S', mode = 'v', desc = 'Surround' },
       { 'ds', desc = 'Delete surrounding' },
+      { 'cs', desc = 'Change surrounding' },
     },
     dependencies = 'tpope/vim-repeat',
   },
