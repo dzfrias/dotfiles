@@ -17,7 +17,7 @@ export FZF_DEFAULT_OPTS="\
   --color='pointer:#00FFFF,prompt:#0db9d7,bg+:#263c42,hl+:#c19eff,hl:#b38aff,info:#75bf7a,border:#4f4970' \
   --black \
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
-export FZF_ALT_C_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_ALT_C_COMMAND='fd --type directory --hidden'
 export FZF_COMPLETION_TRIGGER=']]'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
