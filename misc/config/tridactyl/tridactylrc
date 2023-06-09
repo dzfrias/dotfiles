@@ -14,6 +14,7 @@ set smoothscroll true
 autocmd DocStart gmail.com mode ignore
 autocmd DocStart mail.google.com/mail mode ignore
 autocmd DocStart docs.google.com mode ignore
+autocmd DocStart www.figma.com mode ignore
 autocmd DocLoad ^https://github.com/tridactyl/tridactyl/issues/new$ issue
 autocmd TriStart .* source_quiet
 
