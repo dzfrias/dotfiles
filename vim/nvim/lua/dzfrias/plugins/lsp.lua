@@ -12,7 +12,11 @@ return {
       vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 
       -- Key bindings
-      local on_attach = function(_, bufnr)
+      local on_attach = function(client, bufnr)
+        if client.name == 'tsserver' then
+          client.server_capabilities.documentFormattingProvider = false
+        end
+
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         local bufopts = { noremap = true, silent = true, buffer = bufnr }
