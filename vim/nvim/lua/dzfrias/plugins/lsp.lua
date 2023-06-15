@@ -1,6 +1,10 @@
 return {
   {
     'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      'mason.nvim',
+    },
     config = function()
       -- Remove semantic token highlighting for parameters
       vim.api.nvim_set_hl(0, '@lsp.type.parameter', {})
@@ -119,6 +123,8 @@ return {
   -- Generic language server
   {
     'jose-elias-alvarez/null-ls.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = { 'mason.nvim' },
     opts = function()
       local null_ls = require 'null-ls'
       return {
@@ -141,6 +147,7 @@ return {
   {
     'williamboman/mason.nvim',
     dependencies = { 'williamboman/mason-lspconfig.nvim', config = true },
+    cmd = 'Mason',
     build = ':MasonUpdate',
     config = true,
   },

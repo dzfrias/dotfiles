@@ -5,6 +5,7 @@ return {
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
+    event = { 'BufReadPost', 'BufNewFile' },
     opts = {
       ensure_installed = {
         'python',

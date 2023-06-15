@@ -20,8 +20,8 @@ return {
   -- Buffer bar
   {
     'romgrk/barbar.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
     dependencies = {
-      'lewis6991/gitsigns.nvim',
       'kyazdani42/nvim-web-devicons',
     },
     init = function()
@@ -30,7 +30,6 @@ return {
     opts = {
       exclude_ft = { 'oil' },
     },
-    lazy = false,
     keys = {
       { '<C-n>', '<Cmd>BufferNext<CR>' },
       { '<C-p>', '<Cmd>BufferPrevious<CR>' },
@@ -44,6 +43,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
+    event = 'VeryLazy',
     opts = {
       -- Based on the bubbles theme by lokesh-krishna
       options = {
@@ -69,7 +69,22 @@ return {
   },
 
   -- Better UI defaults
-  { 'stevearc/dressing.nvim', event = 'VeryLazy' },
+  {
+    'stevearc/dressing.nvim',
+    lazy = true,
+    init = function()
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.select = function(...)
+        require('lazy').load { plugins = { 'dressing.nvim' } }
+        return vim.ui.select(...)
+      end
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.input = function(...)
+        require('lazy').load { plugins = { 'dressing.nvim' } }
+        return vim.ui.input(...)
+      end
+    end,
+  },
 
   -- Tint inactive windows
   {

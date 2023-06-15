@@ -1,7 +1,11 @@
 return {
   {
     'stevearc/oil.nvim',
-    lazy = false,
+    init = function()
+      if vim.fn.isdirectory(vim.api.nvim_buf_get_name(0)) == 1 then
+        require('lazy').load { plugins = { 'oil.nvim' } }
+      end
+    end,
     keys = {
       {
         '-',
@@ -36,7 +40,7 @@ return {
     config = true,
   },
 
-  'christoomey/vim-tmux-navigator', -- Vim and tmux integration
+  'christoomey/vim-tmux-navigator',
   'tpope/vim-sleuth',
 
   {

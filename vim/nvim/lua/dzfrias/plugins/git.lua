@@ -2,7 +2,7 @@ return {
   -- Git in signcolumn
   {
     'lewis6991/gitsigns.nvim',
-    event = 'VeryLazy',
+    event = { 'BufReadPre', 'BufNewFile' },
     keys = {
       {
         'gp',
