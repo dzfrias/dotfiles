@@ -4,6 +4,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'JoosepAlviste/nvim-ts-context-commentstring',
     },
     event = { 'BufReadPost', 'BufNewFile' },
     opts = {
@@ -23,6 +24,10 @@ return {
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = { 'markdown' },
+      },
+
+      context_commentstring = {
+        enable = true,
       },
 
       autotag = {
