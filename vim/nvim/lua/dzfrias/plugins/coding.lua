@@ -44,6 +44,16 @@ return {
   'tpope/vim-sleuth',
 
   {
+    'smjonas/live-command.nvim',
+    opts = {
+      commands = {
+        Norm = { cmd = 'norm' },
+      },
+    },
+    cmd = 'Norm',
+  },
+
+  {
     'Wansmer/treesj',
     keys = {
       {
