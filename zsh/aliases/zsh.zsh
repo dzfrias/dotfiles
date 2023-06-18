@@ -22,6 +22,7 @@ alias ch='cd $(changedir)'
 # - FZF -
 alias fzfkill='ps | sed "1d" | fzf --with-nth 4.. | cut -w -f 1 | xargs kill'
 alias rec="command exa ~/Downloads | fzf | xargs -I {} mv '$HOME/Downloads/{}' ."
+alias ghv='gh repo list -q ".[].name" --json "name" | fzf | xargs -I {} gh repo view {} --web'
 
 # -CLI-OPTIONS-
 # Long form, no owner, icons, no permissions, git status
