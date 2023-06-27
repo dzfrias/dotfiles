@@ -102,7 +102,12 @@ return {
       { 'gw', mode = 'o' },
       { 'gW', mode = 'o' },
     },
-    opts = { useDefaultKeymaps = true },
+    opts = {
+      useDefaultKeymaps = true,
+      disabledKeymaps = {
+        '%',
+      },
+    },
   },
 
   {
