@@ -1,0 +1,3 @@
+[submodule "vim/nvim"]
+	path = vim/nvim
+	url = https://github.com/dzfrias/dotnvim
