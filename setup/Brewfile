@@ -62,6 +62,10 @@ brew "prettier"
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Terminal-based client for Spotify
+brew "spotify-tui"
+# Spotify daemon
+brew "spotifyd"
 # Terminal multiplexer
 brew "tmux"
 # Program that allows you to count code, quickly
