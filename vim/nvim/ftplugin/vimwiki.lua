@@ -1,9 +1,0 @@
-local autopairs = {}
-autopairs['('] = ')'
-autopairs['['] = ']'
-autopairs['{'] = '}'
-autopairs["'"] = "'"
-autopairs['"'] = '"'
-autopairs['$'] = '$'
-autopairs['`'] = '`'
-vim.b.AutoPairs = autopairs
