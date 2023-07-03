@@ -14,8 +14,6 @@ brew "bat"
 brew "ghc"
 # Command-line interface for Cabal and Hackage
 brew "cabal-install"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Safe, concurrent, practical language
 brew "rust"
 # Next-generation test runner for Rust
@@ -62,10 +60,6 @@ brew "prettier"
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
-# Terminal-based client for Spotify
-brew "spotify-tui"
-# Spotify daemon
-brew "spotifyd"
 # Terminal multiplexer
 brew "tmux"
 # Program that allows you to count code, quickly
