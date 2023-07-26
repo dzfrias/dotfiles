@@ -64,6 +64,8 @@ brew "shellcheck"
 brew "tmux"
 # Program that allows you to count code, quickly
 brew "tokei"
+# Your favorite rust -> wasm workflow tool!
+brew "wasm-pack"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
