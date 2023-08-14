@@ -1,0 +1,5 @@
+alias wopt='/opt/homebrew/bin/wasm-opt'
+alias wobj='wasm-objdump'
+alias wstrip='wasm-strip'
+alias wat='wasm2wat'
+alias wasmwat='wat2wasm'
