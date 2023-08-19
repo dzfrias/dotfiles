@@ -1,3 +1,4 @@
+tap "dart-lang/dart"
 tap "dzfrias/formulae"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -6,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "konradsz/igrep", "https://github.com/konradsz/igrep.git"
+tap "sass/sass"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -14,10 +16,18 @@ brew "bat"
 brew "ghc"
 # Command-line interface for Cabal and Hackage
 brew "cabal-install"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Safe, concurrent, practical language
 brew "rust"
 # Next-generation test runner for Rust
 brew "cargo-nextest"
+# Platform built on V8 to build network applications
+brew "node"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# LLVM bytecode to JavaScript compiler
+brew "emscripten"
 # C library implementing the SSH2 protocol
 brew "libssh2"
 # C library of Git core methods that is re-entrant and linkable
@@ -30,8 +40,6 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
@@ -42,16 +50,16 @@ brew "go"
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
+# Bare libuv bindings for lua
+brew "luv"
 # Cross platform, open source .NET development framework
 brew "mono"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
-brew "node"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
@@ -66,6 +74,8 @@ brew "tmux"
 brew "tokei"
 # Your favorite rust -> wasm workflow tool!
 brew "wasm-pack"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -76,6 +86,8 @@ brew "dzfrias/formulae/projectable"
 brew "koekeishiya/formulae/yabai"
 # Interactive Grep
 brew "konradsz/igrep/igrep"
+# Stylesheet Preprocessor
+brew "sass/sass/sass"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
