@@ -8,10 +8,13 @@ tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "konradsz/igrep", "https://github.com/konradsz/igrep.git"
 tap "sass/sass"
+tap "tinygo-org/tools"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Compiler infrastructure and toolchain library for WebAssembly
+brew "binaryen"
 # Glorious Glasgow Haskell Compilation System
 brew "ghc"
 # Command-line interface for Cabal and Hackage
@@ -22,6 +25,8 @@ brew "pcre2"
 brew "rust"
 # Next-generation test runner for Rust
 brew "cargo-nextest"
+# Cross-platform make
+brew "cmake"
 # Platform built on V8 to build network applications
 brew "node"
 # Interpreted, interactive, object-oriented programming language
@@ -46,6 +51,8 @@ brew "git"
 brew "git-delta"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Perfect hash function generator
+brew "gperf"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
@@ -60,18 +67,26 @@ brew "luv"
 brew "mono"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Small build system for use with gyp or CMake
+brew "ninja"
 # Prompt theme engine for any shell
 brew "oh-my-posh"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Intuitive find & replace CLI
+brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Terminal multiplexer
 brew "tmux"
 # Program that allows you to count code, quickly
 brew "tokei"
+# Language for application scale JavaScript development
+brew "typescript"
+# Web Assembly Binary Toolkit
+brew "wabt"
 # Your favorite rust -> wasm workflow tool!
 brew "wasm-pack"
 # Programming language designed for robustness, optimality, and clarity
@@ -88,10 +103,14 @@ brew "koekeishiya/formulae/yabai"
 brew "konradsz/igrep/igrep"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
+# TinyGo is a Go compiler for small places. Microcontrollers, WebAssembly, and command-line tools. Based on LLVM.
+brew "tinygo-org/tools/tinygo"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
 cask "alfred"
+# App to build and share containerized applications and microservices
+cask "docker"
 # Web browser
 cask "firefox"
 # Developer targeted fonts with a high number of glyphs
