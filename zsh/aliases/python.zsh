@@ -1,4 +1,5 @@
 # -GENERAL-
+alias python='python3'
 alias py='python3'
 # Activates virtual environment
 alias activate='source venv/bin/activate'
