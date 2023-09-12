@@ -53,6 +53,8 @@ brew "git-delta"
 brew "go"
 # Perfect hash function generator
 brew "gperf"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
@@ -89,6 +91,8 @@ brew "typescript"
 brew "wabt"
 # Your favorite rust -> wasm workflow tool!
 brew "wasm-pack"
+# Standalone JIT-style runtime for WebAssembly, using Cranelift
+brew "wasmtime"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
 # Shell extension to navigate your filesystem faster
@@ -115,6 +119,8 @@ cask "docker"
 cask "firefox"
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
+# Web browser
+cask "google-chrome"
 # Desktop automation application
 cask "hammerspoon"
 # Windows manager and desktop organiser
