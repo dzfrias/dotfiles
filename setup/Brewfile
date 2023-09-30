@@ -21,8 +21,6 @@ brew "ghc"
 brew "cabal-install"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# Safe, concurrent, practical language
-brew "rust"
 # Next-generation test runner for Rust
 brew "cargo-nextest"
 # Cross-platform make
@@ -77,6 +75,8 @@ brew "oh-my-posh"
 brew "prettier"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
 # Intuitive find & replace CLI
 brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts
