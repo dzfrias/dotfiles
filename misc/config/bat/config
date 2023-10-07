@@ -3,5 +3,3 @@
 --italic-text='always'
 # Line numbers, git, grid, file header
 --style='numbers,changes,header,grid'
-# Always open pager
---paging='always'
