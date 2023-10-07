@@ -51,4 +51,4 @@ local keybinds = {
   coding,
 }
 
-require('app_wf').add('Things', keybinds)
+require('apps.app_wf').add('Things', keybinds)
