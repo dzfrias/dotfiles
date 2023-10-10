@@ -16,7 +16,7 @@ Watcher = hs.application.watcher.new(function(name, event, app)
   if not window then
     return
   end
-  window:maximize()
+  window:maximize(0)
 end)
 
 --- Blacklist certain applications, by app name.
