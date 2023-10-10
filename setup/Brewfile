@@ -59,8 +59,6 @@ brew "hyperfine"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
-# Simple terminal UI for git commands
-brew "lazygit"
 # Bare libuv bindings for lua
 brew "luv"
 # Cross platform, open source .NET development framework
