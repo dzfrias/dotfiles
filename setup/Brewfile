@@ -69,8 +69,6 @@ brew "mono"
 brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
-# Prompt theme engine for any shell
-brew "oh-my-posh"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Search tool like grep and The Silver Searcher
@@ -101,24 +99,18 @@ brew "zoxide"
 brew "zsh"
 # Highly configurable TUI project manager
 brew "dzfrias/formulae/projectable"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
 # Interactive Grep
 brew "konradsz/igrep/igrep"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
 # TinyGo is a Go compiler for small places. Microcontrollers, WebAssembly, and command-line tools. Based on LLVM.
 brew "tinygo-org/tools/tinygo"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # Application launcher and productivity software
 cask "alfred"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Web browser
 cask "firefox"
-# Developer targeted fonts with a high number of glyphs
-cask "font-meslo-lg-nerd-font"
 # Web browser
 cask "google-chrome"
 # Desktop automation application
@@ -129,5 +121,5 @@ cask "hazeover"
 cask "obsidian"
 # Browser for ambitious developers
 cask "polypane"
-# Run commands and display their output on the desktop
-cask "ubersicht"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
