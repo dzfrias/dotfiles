@@ -54,7 +54,7 @@ bindkey    jk      vi-cmd-mode
 # Binds shift-tab to accept autosuggestions
 bindkey    '^[[Z'  autosuggest-accept
 # Clears the prompt, writes the text, and enters it
-bindkey -s 'uu'    '^Uj ..^M'
+bindkey -s 'uu'    '^Ucd ..^M'
 # Alt-l to complete
 bindkey    '^[l'   expand-or-complete
 bindkey    '^[l'   fzf-completion
