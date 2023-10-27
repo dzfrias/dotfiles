@@ -39,6 +39,8 @@ brew "libgit2"
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
