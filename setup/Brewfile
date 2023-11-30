@@ -65,6 +65,8 @@ brew "just"
 brew "luv"
 # Cross platform, open source .NET development framework
 brew "mono"
+# Netwide Assembler (NASM) is an 80x86 assembler
+brew "nasm"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Small build system for use with gyp or CMake
