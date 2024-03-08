@@ -27,8 +27,6 @@ brew "cargo-nextest"
 brew "cmake"
 # Platform built on V8 to build network applications
 brew "node"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # LLVM bytecode to JavaScript compiler
 brew "emscripten"
 # C library implementing the SSH2 protocol
@@ -51,8 +49,6 @@ brew "git"
 brew "git-delta"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Perfect hash function generator
-brew "gperf"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Command-line benchmarking tool
@@ -63,6 +59,8 @@ brew "jq"
 brew "just"
 # Bare libuv bindings for lua
 brew "luv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Cross platform, open source .NET development framework
 brew "mono"
 # Netwide Assembler (NASM) is an 80x86 assembler
@@ -109,8 +107,14 @@ brew "sass/sass/sass"
 brew "tinygo-org/tools/tinygo"
 # Application launcher and productivity software
 cask "alfred"
-# App to build and share containerized applications and microservices
+# 3D creation suite
+cask "blender"
+# App to build and share containerised applications and microservices
 cask "docker"
+# Developer platform
+cask "dotnet-sdk"
+# Google Chromium, sans integration with Google
+cask "eloston-chromium"
 # Web browser
 cask "firefox"
 # Web browser
