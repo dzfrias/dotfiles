@@ -13,4 +13,4 @@ local keybinds = {
   tableft,
 }
 
-require('apps.app_wf').add('Firefox', keybinds)
+require('apps.app_wf').add('Chromium', keybinds)

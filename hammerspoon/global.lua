@@ -30,7 +30,7 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', open_app 'WezTerm')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', open_app 'Calendar')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', open_app 'Things')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', open_app 'Obsidian')
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', open_app 'Firefox')
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'S', open_app 'Chromium')
 
 -- Open Unity
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'U', function()
