@@ -89,15 +89,17 @@ source "$HOME/.dotfiles/zsh/functions.zsh"
 # for all possible highlight options
 typeset -A ZSH_HIGHLIGHT_STYLES
 # Modifiers like sudo and command
-ZSH_HIGHLIGHT_STYLES[precommand]="fg=blue,underline"
+ZSH_HIGHLIGHT_STYLES[precommand]="fg=cyan,underline"
 # The main part of commands
-ZSH_HIGHLIGHT_STYLES[arg0]="fg=cyan"
+ZSH_HIGHLIGHT_STYLES[arg0]="fg=green,bold"
 # Keywords like for and if (purple)
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
 # 'string', "string", and $"string"
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green'
 ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=green'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'
 # 'string and "string (red)
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=red'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=red'
