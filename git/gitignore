@@ -21,3 +21,6 @@ venv
 
 # Bacon
 .bacon-locations
+
+CMakeCache.txt
+CMakeFiles/
