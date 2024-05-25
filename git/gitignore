@@ -22,5 +22,9 @@ venv
 # Bacon
 .bacon-locations
 
+# C++
 CMakeCache.txt
 CMakeFiles/
+
+# Just
+.justfile
