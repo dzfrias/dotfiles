@@ -22,6 +22,8 @@ export FZF_COMPLETION_TRIGGER=']]'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export PATH="$HOME/.cargo/bin:$PATH:$HOME/.dotfiles/zsh/autoload"
+export CPATH=$(brew --prefix)/include
+export LIBRARY_PATH=$(brew --prefix)/lib
 ZSH_THEME=kennethreitz
 # }}}
 
