@@ -1,8 +1,8 @@
 # vim:syntax=gitconfig
 
 [user]
-    name = Diego
-    email = 96022404+dzfrias@users.noreply.github.com
+    name = Diego Frias
+    email = styx5242@gmail.com
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -30,3 +30,10 @@
 
 [diff]
     colorMoved = default
+
+[alias]
+	sw = switch
+	st = status
+	sta = stash
+	aa = add -A
+	br = branch
