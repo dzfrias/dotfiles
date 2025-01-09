@@ -1,3 +1,12 @@
 [submodule "vim/nvim"]
 	path = vim/nvim
 	url = https://github.com/dzfrias/dotnvim
+[submodule "zsh/agkozak-zsh-prompt"]
+	path = zsh/agkozak-zsh-prompt
+	url = https://github.com/agkozak/agkozak-zsh-prompt
+[submodule "zsh/almostontop"]
+	path = zsh/almostontop
+	url = https://github.com/Valiev/almostontop
+[submodule "zsh/zsh-syntax-highlighting"]
+	path = zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting

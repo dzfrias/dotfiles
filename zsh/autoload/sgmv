@@ -1,4 +1,0 @@
-#!/bin/bash
-
-lang=$1
-cp -r $HOME/.dotfiles/zsh/autoload/resources/sgmv/$lang/* .
