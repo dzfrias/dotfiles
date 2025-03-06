@@ -26,7 +26,7 @@ hs.hotkey.bind({ 'alt', 'ctrl' }, 'T', function()
 end)
 
 -- Open specific apps
-hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', open_app 'WezTerm')
+hs.hotkey.bind({ 'alt', 'ctrl' }, 'I', open_app 'Ghostty')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'C', open_app 'Spark Desktop')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'D', open_app 'Things')
 hs.hotkey.bind({ 'alt', 'ctrl' }, 'O', open_app 'Obsidian')
