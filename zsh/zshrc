@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="\
   --bind='ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up'"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="/opt/homebrew/opt/llvm/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/opt/llvm/bin:$HOME/.cargo/bin:$PATH"
 
 # Prompt
 source ~/.dotfiles/zsh/agkozak-zsh-prompt/agkozak-zsh-prompt.plugin.zsh
