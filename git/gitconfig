@@ -2,7 +2,7 @@
 
 [user]
     name = Diego Frias
-    email = styx5242@gmail.com
+    email = mail@dzfrias.dev
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
