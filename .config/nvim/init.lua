@@ -2,7 +2,14 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  local out = vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",
+    lazyrepo,
+    lazypath,
+  })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
@@ -70,19 +77,19 @@ vim.g.copilot_no_tab_map = true
 vim.g.dzfrias_fmt = true
 
 vim.keymap.set("n", "gg", "gg0", { noremap = true })
--- vim.keymap.set("n", "-", function()
---   local current_file = vim.fs.basename(vim.api.nvim_buf_get_name(0))
---   vim.cmd("Explore")
---   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
---   local target_line = 1
---   for i, line in ipairs(lines) do
---     if line == current_file then
---       target_line = i
---     end
---   end
---   -- Put cursor on the file we came from automatically
---   vim.api.nvim_win_set_cursor(0, { target_line, 0 })
--- end, { noremap = true })
+vim.keymap.set("n", "-", function()
+  local current_file = vim.fs.basename(vim.api.nvim_buf_get_name(0))
+  vim.cmd("Explore")
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local target_line = 1
+  for i, line in ipairs(lines) do
+    if line == current_file then
+      target_line = i
+    end
+  end
+  -- Put cursor on the file we came from automatically
+  vim.api.nvim_win_set_cursor(0, { target_line, 0 })
+end, { noremap = true })
 vim.keymap.set("n", "<CR>", "o<Esc>", { noremap = true })
 vim.keymap.set("n", "<s-CR>", "O<Esc>", { noremap = true })
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { noremap = true })
@@ -236,7 +243,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
           if vim.g.dzfrias_fmt == false then
             return
           end
-          vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+          vim.lsp.buf.format({
+            bufnr = args.buf,
+            id = client.id,
+            timeout_ms = 1000,
+          })
         end,
       })
     end
@@ -282,7 +293,12 @@ vim.lsp.enable("zls")
 vim.lsp.config["clangd"] = {
   cmd = { "clangd" },
   filetypes = { "c", "cpp" },
-  root_markers = { ".clangd", "compile_commands.json", ".git", "compile_flags.txt" },
+  root_markers = {
+    ".clangd",
+    "compile_commands.json",
+    ".git",
+    "compile_flags.txt",
+  },
 }
 vim.lsp.enable("clangd")
 
