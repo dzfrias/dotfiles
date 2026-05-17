@@ -1,1 +1,30 @@
-/downloads
+# MacOS files
+.DS_Store
+
+# Generated tag files
+tags
+
+# Python caches
+__pycache__
+
+# Environments
+venv
+.envrc
+.env
+
+# IDE & text editor files
+.idea
+.vscode
+
+# Repo-cleaning report
+.git.bfg-report
+
+# Bacon
+.bacon-locations
+
+# C++
+CMakeCache.txt
+CMakeFiles/
+
+# Just
+.justfile

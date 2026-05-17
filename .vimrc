@@ -1,0 +1,33 @@
+" -SETTINGS--------------------------------------------------------------------
+syntax on
+
+" Number system
+set relativenumber
+
+" Don't wrap lines
+set nowrap
+
+" Better searches: highlighted and matches shown
+set hlsearch
+set showmatch
+
+" Block movement doesn't open folds
+set foldopen-=block
+
+" Sets up nicer tab experience
+set autoindent
+set expandtab
+
+" No nested folds, fold based on indent
+set foldmethod=indent
+set foldlevelstart=2
+set foldnestmax=1
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+silent !echo -ne "\e[2 q"
+
+noremap gg gg0
+nnoremap <CR> o<Esc>
+
+inoremap jk <Esc>

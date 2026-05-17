@@ -1,5 +1,0 @@
-zsh/zshrc
-vim/vimrc
-git/*
-vim/nvim ~/.config/nvim
-vim/nvim ~/.neovim

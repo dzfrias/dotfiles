@@ -1,0 +1,40 @@
+# vim:syntax=gitconfig
+
+[user]
+    name = Diego Frias
+    email = mail@dzfrias.dev
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[core]
+    excludesFile = ~/.gitignore
+    editor = nvim
+    pager = delta
+
+[init]
+    defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
+
+[alias]
+	sw = switch
+	st = status
+	sta = stash
+	aa = add -A
+	br = branch
