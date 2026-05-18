@@ -34,7 +34,7 @@ alias reload='exec zsh'
 
 rec () {
   : ${1:=~/Downloads}
-  command ls "$1" | fzf | xargs -I{} mv "$1/{}" .
+  command ls -t "$1" | fzf | xargs -I{} mv "$1/{}" .
 }
 
 mkt () {
