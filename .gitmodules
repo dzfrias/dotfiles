@@ -1,0 +1,9 @@
+[submodule "extra/zsh-plugins/agkozak-zsh-prompt"]
+	path = extra/zsh-plugins/agkozak-zsh-prompt
+	url = https://github.com/agkozak/agkozak-zsh-prompt
+[submodule "extra/zsh-plugins/almostontop"]
+	path = extra/zsh-plugins/almostontop
+	url = https://github.com/Valiev/almostontop
+[submodule "extra/zsh-plugins/zsh-syntax-highlighting"]
+	path = extra/zsh-plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
