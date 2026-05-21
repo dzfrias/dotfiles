@@ -28,6 +28,13 @@ precmd () {
   echo -ne '\e[6 q'
 }
 
+# ssh wrapper that sets block cursor
+ssh() {
+  printf '\e[2 q'
+  command ssh "$@"
+  printf '\e[6 q'
+}
+
 alias ls='eza --long --header --no-user --icons --no-permissions --git --group-directories-first'
 alias tree='eza --tree --icons --group-directories-first --git-ignore'
 alias reload='exec zsh'
