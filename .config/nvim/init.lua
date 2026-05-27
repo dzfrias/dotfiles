@@ -1,27 +1,3 @@
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--branch=stable",
-    lazyrepo,
-    lazypath,
-  })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
@@ -237,7 +213,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     if client:supports_method("textDocument/formatting") then
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("dzfrias_lspfmt", { clear = false }),
+        group = vim.api.nvim_create_augroup(
+          "dzfrias_lspfmt",
+          { clear = false }
+        ),
         buffer = args.buf,
         callback = function()
           if vim.g.dzfrias_fmt == false then
@@ -312,139 +291,85 @@ local function get_project_root()
   return vim.fn.fnamemodify(vim.fn.finddir(".git", ".;"), ":h:p")
 end
 
--- Plugins
-require("lazy").setup({
-  spec = {
-    {
-      "dzfrias/arena.nvim",
-      event = "BufWinEnter",
-      opts = {
-        ignore_current = true,
-        devicons = true,
-      },
-      dev = true,
-      keys = {
-        {
-          "<leader>f",
-          function()
-            require("arena").toggle()
-          end,
-        },
-      },
+local function github(x)
+  return "https://github.com/" .. x
+end
+
+-- Packages
+vim.pack.add({
+  github("dzfrias/arena.nvim"),
+  github("tpope/vim-surround"),
+  github("tpope/vim-repeat"),
+  github("tpope/vim-sleuth"),
+  github("matze/vim-move"),
+  github("dzfrias/noir.nvim"),
+  github("nvim-tree/nvim-web-devicons"),
+  github("echasnovski/mini.comment"),
+  github("echasnovski/mini.pairs"),
+  github("lewis6991/gitsigns.nvim"),
+  github("nvim-lua/plenary.nvim"),
+  github("nvim-telescope/telescope.nvim"),
+})
+
+-- Configure arena.nvim
+local arena = require("arena")
+arena.setup({
+  ignore_current = true,
+  devicons = true,
+})
+vim.keymap.set("n", "<leader>f", arena.toggle, { noremap = true })
+
+-- Load noir.nvim
+vim.cmd.colorscheme("noir")
+
+-- Mini plugins setup
+require("mini.pairs").setup()
+require("mini.comment").setup()
+
+local gitsigns = require("gitsigns")
+gitsigns.setup({
+  attach_to_untracked = false,
+})
+vim.keymap.set(
+  "n",
+  "gr",
+  gitsigns.reset_hunk,
+  { noremap = true, nowait = true }
+)
+vim.keymap.set("n", "gp", gitsigns.preview_hunk, { noremap = true })
+vim.keymap.set("n", "]g", gitsigns.next_hunk, { noremap = true })
+vim.keymap.set("n", "[g", gitsigns.prev_hunk, { noremap = true })
+
+local telescope = require("telescope")
+local telescope_actions = require("telescope.actions")
+local telescope_builtin = require("telescope.builtin")
+telescope.setup({
+  defaults = {
+    layout_strategy = "vertical",
+    layout_config = {
+      vertical = { width = 0.7 },
     },
-
-    {
-      "dzfrias/noir.nvim",
-      lazy = false,
-      config = function()
-        vim.cmd([[colorscheme noir]])
-      end,
-    },
-
-    "tpope/vim-surround",
-    "tpope/vim-repeat",
-    "tpope/vim-sleuth",
-    "matze/vim-move",
-    { "nvim-tree/nvim-web-devicons", opts = {} },
-    { "echasnovski/mini.comment", config = true },
-    { "echasnovski/mini.pairs", event = "InsertEnter", config = true },
-    -- "github/copilot.vim",
-
-    {
-      "nvim-telescope/telescope.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      cmd = "Telescope",
-      opts = function()
-        local actions = require("telescope.actions")
-        return {
-          defaults = {
-            layout_strategy = "vertical",
-            layout_config = {
-              vertical = { width = 0.7 },
-            },
-            mappings = {
-              i = {
-                ["<C-u>"] = false,
-                ["<Esc>"] = actions.close,
-              },
-            },
-          },
-        }
-      end,
-      keys = {
-        {
-          "<leader>tf",
-          function()
-            require("telescope.builtin").find_files({
-              cwd = get_project_root(),
-            })
-          end,
-        },
-        {
-          "<leader>tl",
-          function()
-            require("telescope.builtin").live_grep({
-              cwd = get_project_root(),
-            })
-          end,
-        },
-        {
-          "<leader>tr",
-          function()
-            require("telescope.builtin").lsp_references()
-          end,
-        },
+    mappings = {
+      i = {
+        ["<C-u>"] = false,
+        ["<Esc>"] = telescope_actions.close,
       },
     },
-
-    {
-      "nvim-treesitter/nvim-treesitter",
-      lazy = false,
-      build = ":TSUpdate",
-      opts = {
-        highlight = {
-          enable = true,
-        },
-      },
-      config = function(_, opts)
-        require("nvim-treesitter.configs").setup(opts)
-      end,
-    },
-
-    {
-      "lewis6991/gitsigns.nvim",
-      event = { "BufReadPre", "BufNewFile" },
-      keys = {
-        {
-          "gp",
-          function()
-            require("gitsigns").preview_hunk()
-          end,
-        },
-        {
-          "gr",
-          function()
-            require("gitsigns").reset_hunk()
-          end,
-        },
-        {
-          "]g",
-          function()
-            require("gitsigns").next_hunk()
-          end,
-        },
-        {
-          "[g",
-          function()
-            require("gitsigns").prev_hunk()
-          end,
-        },
-      },
-      opts = { attach_to_untracked = false },
-    },
-  },
-
-  dev = {
-    path = "~/code",
   },
 })
+vim.keymap.set("n", "<leader>tf", function()
+  telescope_builtin.find_files({
+    cwd = get_project_root(),
+  })
+end, { noremap = true })
+vim.keymap.set("n", "<leader>tl", function()
+  telescope_builtin.live_grep({
+    cwd = get_project_root(),
+  })
+end, { noremap = true })
+vim.keymap.set(
+  "n",
+  "<leader>tr",
+  telescope_builtin.lsp_references,
+  { noremap = true }
+)

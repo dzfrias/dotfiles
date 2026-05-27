@@ -1,0 +1,52 @@
+{
+  "plugins": {
+    "arena.nvim": {
+      "rev": "9ebbf55b4f0e3815e3caf3264cc1a2721b5111e9",
+      "src": "https://github.com/dzfrias/arena.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "dd3f588bacbeb041be6facf1742e42097f62165d",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "mini.comment": {
+      "rev": "fc87ba6554f182161d9a4bab5017c575571f000f",
+      "src": "https://github.com/echasnovski/mini.comment"
+    },
+    "mini.pairs": {
+      "rev": "30cf2f01c4aaa2033db67376b9924fa2442c05d6",
+      "src": "https://github.com/echasnovski/mini.pairs"
+    },
+    "noir.nvim": {
+      "rev": "ad1dbcde722bacd8b5bb06175e401298658c7f65",
+      "src": "https://github.com/dzfrias/noir.nvim"
+    },
+    "nvim-web-devicons": {
+      "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "vim-move": {
+      "rev": "267fd1cff61fc643dfb5f9b188c434906f5214aa",
+      "src": "https://github.com/matze/vim-move"
+    },
+    "vim-repeat": {
+      "rev": "65846025c15494983dafe5e3b46c8f88ab2e9635",
+      "src": "https://github.com/tpope/vim-repeat"
+    },
+    "vim-sleuth": {
+      "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
+      "src": "https://github.com/tpope/vim-sleuth"
+    },
+    "vim-surround": {
+      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
+      "src": "https://github.com/tpope/vim-surround"
+    }
+  }
+}
