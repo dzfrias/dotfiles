@@ -5,3 +5,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     require("fmt").format_buffer(0, { "black", "-", "--quiet" })
   end,
 })
+
+vim.treesitter.start()
