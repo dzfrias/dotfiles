@@ -1,0 +1,34 @@
+{
+  "repos": {
+    "cpp": {
+      "rev": "8b5b49eb196bec7040441bee33b2c9a4838d6967",
+      "src": "https://github.com/tree-sitter/tree-sitter-cpp",
+      "wasm": false
+    },
+    "javascript": {
+      "rev": "58404d8cf191d69f2674a8fd507bd5776f46cb11",
+      "src": "https://github.com/tree-sitter/tree-sitter-javascript",
+      "wasm": false
+    },
+    "python": {
+      "rev": "293fdc02038ee2bf0e2e206711b69c90ac0d413f",
+      "src": "https://github.com/tree-sitter/tree-sitter-python",
+      "wasm": false
+    },
+    "rust": {
+      "rev": "77a3747266f4d621d0757825e6b11edcbf991ca5",
+      "src": "https://github.com/tree-sitter/tree-sitter-rust",
+      "wasm": false
+    },
+    "yaml": {
+      "rev": "a1c4812a73ec5e089de8e441fdea3a921e8d5079",
+      "src": "https://github.com/tree-sitter-grammars/tree-sitter-yaml",
+      "wasm": false
+    },
+    "zig": {
+      "rev": "6479aa13f32f701c383083d8b28360ebd682fb7d",
+      "src": "https://github.com/tree-sitter-grammars/tree-sitter-zig",
+      "wasm": false
+    }
+  }
+}
